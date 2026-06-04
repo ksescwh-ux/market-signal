@@ -1,0 +1,70 @@
+# ════════════════════════════════════════════════════════════════
+# 시장 신호등 자동 실행 (GitHub Actions)
+# 내 PC가 꺼져 있어도 GitHub 서버가 매일 자동으로 실행해 줍니다.
+#
+# [중요] 이 파일이 작동하려면 GitHub repo 의 Settings → Secrets 에
+#        FRED_API_KEY 와 SLACK_WEBHOOK_URL 두 개를 등록해야 합니다.
+#        (자세한 절차는 '내일_할일.md' 참고)
+# ════════════════════════════════════════════════════════════════
+
+name: 시장 신호등 모니터링
+
+on:
+  # ① 수동 실행 버튼 (Actions 탭에서 "Run workflow" 클릭으로 즉시 1회 테스트)
+  workflow_dispatch:
+
+  # ② 자동 스케줄 (UTC 기준!). 아래는 매일 UTC 23:00 = 한국시간(KST) 08:00.
+  #    ★ 처음엔 주석 처리(#)되어 있습니다. 수동 실행이 성공하는 걸 확인한 뒤
+  #      아래 두 줄 맨 앞의 '# ' 을 지워서 활성화하세요. (내일_할일.md 7번)
+  # schedule:
+  #   - cron: "0 23 * * *"
+
+# 로그/대시보드 데이터를 repo 에 커밋하려면 쓰기 권한이 필요합니다.
+permissions:
+  contents: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      # 1) 체크아웃 — repo 코드 가져오기
+      - name: 체크아웃
+        uses: actions/checkout@v4
+
+      # 2) Python 설치
+      - name: Python 설치
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # 3) 의존성 설치
+      - name: 라이브러리 설치
+        run: pip install -r requirements.txt
+
+      # 4) 메인 실행 — Secrets 를 환경변수로 주입
+      - name: 모니터링 실행
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: python main.py
+
+      # 5) 로그 + 대시보드 데이터 커밋 (충돌 방지: rebase 후 push, [skip ci]로 재실행 루프 차단)
+      - name: 결과 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add logs docs/data
+          if git diff --cached --quiet; then
+            echo "변경 사항 없음 — 커밋 생략"
+          else
+            git commit -m "auto: 시장 신호등 갱신 [skip ci]"
+            git pull --rebase origin ${{ github.ref_name }}
+            git push
+          fi
+
+      # 7) ★ 실패 시 슬랙 에러 알림 (위 스텝 중 하나라도 실패하면 실행)
+      - name: 실패 알림 (Slack)
+        if: failure()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: python -c "import notify; notify.send_failure_alert('GitHub Actions 실행 실패 — 로그 확인')"
