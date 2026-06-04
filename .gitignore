@@ -21,3 +21,6 @@ env/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# ▼ 개인 메모 (공개 저장소에 올릴 필요 없음)
+내일_할일.md
