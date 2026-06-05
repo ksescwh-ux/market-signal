@@ -1,3 +1,755 @@
-﻿날짜,데이터기준날짜,종합판정,Tier1점등수,Tier2점등수,Tier3점등수,결측수,하이일드 스프레드_값,하이일드 스프레드_신호등,투자등급 스프레드_값,투자등급 스프레드_신호등,하이일드 ETF (HYG)_값,하이일드 ETF (HYG)_신호등,지역은행 ETF (KRE)_값,지역은행 ETF (KRE)_신호등,근원 CPI(전년비)_값,근원 CPI(전년비)_신호등,근원 PCE(전년비)_값,근원 PCE(전년비)_신호등,실업률_값,실업률_신호등,수익률곡선 2s10s_값,수익률곡선 2s10s_신호등,VIX 공포지수_값,VIX 공포지수_신호등,WTI 유가_값,WTI 유가_신호등,미 10년물 금리_값,미 10년물 금리_신호등
-2026-06-04,2026-06-03,🟠 위험 — 2차 방어,1,0,0,0,2.71,green,0.74,green,79.68,yellow,67.88,orange,335.423,yellow,129.63,yellow,4.3,green,0.41,green,15.77,green,95.96,yellow,4.46,yellow
-2026-06-05,2026-06-04,🟢 평상시 — 유지,0,0,0,0,2.75,green,0.74,green,79.83,yellow,69.98,green,335.423,yellow,129.63,yellow,4.3,green,0.42,green,16.06,green,95.96,yellow,4.49,yellow
+﻿날짜,데이터기준날짜,종합판정,등급,Tier1점등수,Tier2점등수,Tier3점등수,결측수,하이일드 스프레드_값,하이일드 스프레드_신호등,투자등급 스프레드_값,투자등급 스프레드_신호등,하이일드 ETF (HYG)_값,하이일드 ETF (HYG)_신호등,지역은행 ETF (KRE)_값,지역은행 ETF (KRE)_신호등,근원 CPI(전년비)_값,근원 CPI(전년비)_신호등,근원 PCE(전년비)_값,근원 PCE(전년비)_신호등,실업률_값,실업률_신호등,수익률곡선 2s10s_값,수익률곡선 2s10s_신호등,VIX 공포지수_값,VIX 공포지수_신호등,WTI 유가_값,WTI 유가_신호등,미 10년물 금리_값,미 10년물 금리_신호등
+2023-06-05,2023-06-05,🟢 평상시 — 유지,green,0,1,0,3,4.39,yellow,1.39,green,62.37,yellow,37.67,yellow,308.322,,119.39,,3.6,,-0.77,red,14.73,green,72.14,green,3.69,green
+2023-06-06,2023-06-06,🟢 평상시 — 유지,green,0,1,0,3,4.39,yellow,1.39,green,62.47,yellow,39.54,green,308.322,,119.39,,3.6,,-0.81,red,13.96,green,71.71,green,3.7,green
+2023-06-07,2023-06-07,🟢 평상시 — 유지,green,0,1,0,3,4.33,yellow,1.39,green,62.13,yellow,40.85,green,308.322,,119.39,,3.6,,-0.77,red,13.94,green,72.52,green,3.79,green
+2023-06-08,2023-06-08,🟢 평상시 — 유지,green,0,1,0,3,4.39,yellow,1.4,green,62.52,yellow,40.37,green,308.322,,119.39,,3.6,,-0.79,red,13.65,green,71.28,green,3.73,green
+2023-06-09,2023-06-09,🟢 평상시 — 유지,green,0,1,0,3,4.29,yellow,1.4,green,62.54,yellow,39.82,yellow,308.322,,119.39,,3.6,,-0.84,red,13.83,green,70.16,green,3.75,green
+2023-06-12,2023-06-12,🟢 평상시 — 유지,green,0,1,0,3,4.34,yellow,1.41,green,62.47,yellow,39.52,yellow,308.322,,119.39,,3.6,,-0.82,red,15.01,green,67.08,green,3.73,green
+2023-06-13,2023-06-13,🟢 평상시 — 유지,green,0,1,0,3,4.18,yellow,1.39,green,62.55,yellow,40.44,green,308.322,,119.39,,3.6,,-0.83,red,14.61,green,69.39,green,3.84,green
+2023-06-14,2023-06-14,🟢 평상시 — 유지,green,0,1,0,3,4.18,yellow,1.38,green,62.57,yellow,39.26,orange,308.322,,119.39,,3.6,,-0.91,red,13.88,green,68.22,green,3.83,green
+2023-06-15,2023-06-15,🟢 평상시 — 유지,green,0,1,0,3,4.21,yellow,1.37,green,62.87,yellow,40.01,yellow,308.322,,119.39,,3.6,,-0.9,red,14.5,green,70.61,green,3.72,green
+2023-06-16,2023-06-16,🟢 평상시 — 유지,green,0,1,0,3,4.15,yellow,1.35,green,62.72,yellow,39.46,yellow,308.322,,119.39,,3.6,,-0.93,red,13.54,green,71.81,green,3.77,green
+2023-06-20,2023-06-20,🟢 평상시 — 유지,green,0,1,0,3,4.22,yellow,1.35,green,62.55,yellow,38.95,orange,308.322,,119.39,,3.6,,-0.94,red,13.88,green,70.94,green,3.74,green
+2023-06-21,2023-06-21,🔴 최악 진입 — 전면 방어,red,1,1,0,3,4.32,yellow,1.35,green,62.39,yellow,38.35,orange,308.322,,119.39,,3.6,,-0.96,red,13.2,green,72.55,green,3.72,green
+2023-06-22,2023-06-22,🔴 최악 진입 — 전면 방어,red,1,1,0,3,4.3,yellow,1.34,green,62.21,yellow,37.14,orange,308.322,,119.39,,3.6,,-0.97,red,12.91,green,69.22,green,3.8,green
+2023-06-23,2023-06-23,🔴 최악 진입 — 전면 방어,red,1,1,0,3,4.4,yellow,1.35,green,62.1,yellow,36.6,orange,308.322,,119.39,,3.6,,-0.97,red,13.44,green,68.91,green,3.74,green
+2023-06-26,2023-06-26,🔴 최악 진입 — 전면 방어,red,1,1,0,3,4.45,yellow,1.36,green,62.13,yellow,37.06,orange,308.322,,119.39,,3.6,,-0.93,red,14.25,green,69.09,green,3.72,green
+2023-06-27,2023-06-27,🔴 최악 진입 — 전면 방어,red,1,1,0,3,4.3,yellow,1.34,green,62.34,yellow,37.69,orange,308.322,,119.39,,3.6,,-0.97,red,13.74,green,67.68,green,3.77,green
+2023-06-28,2023-06-28,🔴 최악 진입 — 전면 방어,red,1,1,0,3,4.27,yellow,1.34,green,62.7,yellow,37.49,orange,308.322,,119.39,,3.6,,-1.0,red,13.43,green,69.54,green,3.71,green
+2023-06-29,2023-06-29,🔴 최악 진입 — 전면 방어,red,1,1,0,3,4.14,yellow,1.31,green,62.53,yellow,38.19,orange,308.322,,119.39,,3.6,,-1.02,red,13.54,green,69.85,green,3.85,green
+2023-06-30,2023-06-30,🔴 최악 진입 — 전면 방어,red,1,1,0,3,4.05,yellow,1.3,green,62.83,yellow,37.76,orange,308.322,,119.39,,3.6,,-1.06,red,13.59,green,70.66,green,3.81,green
+2023-07-03,2023-07-03,🟢 평상시 — 유지,green,0,1,0,0,3.99,green,1.29,green,62.73,yellow,38.63,yellow,308.96,yellow,119.556,yellow,3.5,green,-1.08,red,13.57,green,69.71,green,3.86,green
+2023-07-05,2023-07-05,🟢 평상시 — 유지,green,0,1,0,0,4.01,yellow,1.28,green,62.54,yellow,38.12,orange,308.96,yellow,119.556,yellow,3.5,green,-0.99,red,14.18,green,71.78,green,3.95,green
+2023-07-06,2023-07-06,🔴 최악 진입 — 전면 방어,red,1,1,0,0,4.1,yellow,1.29,green,62.09,yellow,37.54,orange,308.96,yellow,119.556,yellow,3.5,green,-0.94,red,15.44,green,71.76,green,4.05,green
+2023-07-07,2023-07-07,🟢 평상시 — 유지,green,0,1,0,0,4.08,yellow,1.28,green,62.15,yellow,38.35,yellow,308.96,yellow,119.556,yellow,3.5,green,-0.88,red,14.83,green,73.91,green,4.06,green
+2023-07-10,2023-07-10,🟢 평상시 — 유지,green,0,1,0,0,4.13,yellow,1.29,green,62.46,yellow,38.65,yellow,308.96,yellow,119.556,yellow,3.5,green,-0.84,red,15.07,green,73.05,green,4.01,green
+2023-07-11,2023-07-11,🟢 평상시 — 유지,green,0,1,0,0,4.05,yellow,1.28,green,62.79,yellow,39.17,green,308.96,yellow,119.556,yellow,3.5,green,-0.89,red,14.84,green,74.87,green,3.99,green
+2023-07-12,2023-07-12,🟢 평상시 — 유지,green,0,1,0,0,3.95,green,1.27,green,63.28,green,39.96,green,308.96,yellow,119.556,yellow,3.5,green,-0.86,red,13.54,green,75.77,green,3.86,green
+2023-07-13,2023-07-13,🟢 평상시 — 유지,green,0,1,0,0,3.97,green,1.27,green,63.66,green,40.64,green,308.96,yellow,119.556,yellow,3.5,green,-0.83,red,13.61,green,76.86,green,3.76,green
+2023-07-14,2023-07-14,🟢 평상시 — 유지,green,0,1,0,0,3.9,green,1.28,green,63.2,yellow,39.88,green,308.96,yellow,119.556,yellow,3.5,green,-0.91,red,13.34,green,75.44,green,3.83,green
+2023-07-17,2023-07-17,🟢 평상시 — 유지,green,0,1,0,0,3.97,green,1.29,green,63.32,green,40.58,green,308.96,yellow,119.556,yellow,3.5,green,-0.93,red,13.48,green,74.17,green,3.81,green
+2023-07-18,2023-07-18,🟢 평상시 — 유지,green,0,1,0,0,3.9,green,1.28,green,63.49,green,42.29,green,308.96,yellow,119.556,yellow,3.5,green,-0.94,red,13.3,green,75.76,green,3.8,green
+2023-07-19,2023-07-19,🟢 평상시 — 유지,green,0,1,0,0,3.89,green,1.28,green,63.54,green,43.6,green,308.96,yellow,119.556,yellow,3.5,green,-0.99,red,13.76,green,75.4,green,3.75,green
+2023-07-20,2023-07-20,🟢 평상시 — 유지,green,0,1,0,0,3.9,green,1.27,green,63.26,yellow,43.44,green,308.96,yellow,119.556,yellow,3.5,green,-0.95,red,13.99,green,75.65,green,3.85,green
+2023-07-21,2023-07-21,🟢 평상시 — 유지,green,0,1,0,0,3.89,green,1.26,green,63.42,yellow,42.89,green,308.96,yellow,119.556,yellow,3.5,green,-0.98,red,13.6,green,77.06,green,3.84,green
+2023-07-24,2023-07-24,🟢 평상시 — 유지,green,0,1,0,0,3.82,green,1.25,green,63.32,yellow,43.97,green,308.96,yellow,119.556,yellow,3.5,green,-0.95,red,13.91,green,78.81,green,3.86,green
+2023-07-25,2023-07-25,🟢 평상시 — 유지,green,0,1,0,0,3.84,green,1.24,green,63.27,yellow,43.14,green,308.96,yellow,119.556,yellow,3.5,green,-0.94,red,13.86,green,79.76,green,3.91,green
+2023-07-26,2023-07-26,🟢 평상시 — 유지,green,0,1,0,0,3.91,green,1.23,green,63.53,yellow,45.18,green,308.96,yellow,119.556,yellow,3.5,green,-0.96,red,13.19,green,79.11,green,3.86,green
+2023-07-27,2023-07-27,🟢 평상시 — 유지,green,0,1,0,0,3.78,green,1.2,green,63.02,yellow,44.42,green,308.96,yellow,119.556,yellow,3.5,green,-0.9,red,14.41,green,80.17,green,4.01,green
+2023-07-28,2023-07-28,🟢 평상시 — 유지,green,0,1,0,0,3.82,green,1.19,green,63.38,yellow,45.05,green,308.96,yellow,119.556,yellow,3.5,green,-0.91,red,13.33,green,80.55,green,3.96,green
+2023-07-31,2023-07-31,🟢 평상시 — 유지,green,0,1,0,0,3.79,green,1.19,green,63.53,yellow,45.03,green,308.96,yellow,119.556,yellow,3.5,green,-0.91,red,13.63,green,81.8,green,3.97,green
+2023-08-01,2023-08-01,🟢 평상시 — 유지,green,0,1,0,0,3.82,green,1.19,green,63.22,yellow,44.55,green,309.58,yellow,119.689,yellow,3.7,yellow,-0.87,red,13.93,green,81.37,green,4.05,green
+2023-08-02,2023-08-02,🟢 평상시 — 유지,green,0,1,0,0,3.96,green,1.21,green,62.95,yellow,44.34,green,309.58,yellow,119.689,yellow,3.7,yellow,-0.8,red,16.09,green,79.5,green,4.08,green
+2023-08-03,2023-08-03,🟢 평상시 — 유지,green,0,1,0,0,3.98,green,1.22,green,62.75,yellow,44.73,green,309.58,yellow,119.689,yellow,3.7,yellow,-0.7,red,15.92,green,81.56,green,4.2,green
+2023-08-04,2023-08-04,🟢 평상시 — 유지,green,0,1,0,0,4.01,yellow,1.22,green,63.12,yellow,44.91,green,309.58,yellow,119.689,yellow,3.7,yellow,-0.73,red,17.1,green,82.76,green,4.05,green
+2023-08-07,2023-08-07,🟢 평상시 — 유지,green,0,1,0,0,3.97,green,1.22,green,63.24,yellow,45.35,green,309.58,yellow,119.689,yellow,3.7,yellow,-0.67,red,15.77,green,81.94,green,4.09,green
+2023-08-08,2023-08-08,🟢 평상시 — 유지,green,0,1,0,0,4.0,yellow,1.23,green,63.37,yellow,44.77,green,309.58,yellow,119.689,yellow,3.7,yellow,-0.72,red,15.99,green,82.94,green,4.02,green
+2023-08-09,2023-08-09,🟢 평상시 — 유지,green,0,1,0,0,3.94,green,1.23,green,63.38,yellow,44.12,green,309.58,yellow,119.689,yellow,3.7,yellow,-0.79,red,15.96,green,84.35,green,4.0,green
+2023-08-10,2023-08-10,🟢 평상시 — 유지,green,0,1,0,0,3.83,green,1.22,green,63.36,yellow,44.08,yellow,309.58,yellow,119.689,yellow,3.7,yellow,-0.73,red,15.85,green,82.81,green,4.09,green
+2023-08-11,2023-08-11,🟢 평상시 — 유지,green,0,1,0,0,3.83,green,1.22,green,63.27,yellow,44.19,yellow,309.58,yellow,119.689,yellow,3.7,yellow,-0.73,red,14.84,green,83.17,green,4.16,green
+2023-08-14,2023-08-14,🟢 평상시 — 유지,green,0,1,0,0,3.79,green,1.22,green,63.26,yellow,43.33,orange,309.58,yellow,119.689,yellow,3.7,yellow,-0.77,red,14.82,green,82.5,green,4.19,green
+2023-08-15,2023-08-15,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.85,green,1.23,green,63.06,yellow,41.89,orange,309.58,yellow,119.689,yellow,3.7,yellow,-0.71,red,16.46,green,81.06,green,4.21,green
+2023-08-16,2023-08-16,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.81,green,1.25,green,62.86,yellow,41.42,orange,309.58,yellow,119.689,yellow,3.7,yellow,-0.69,red,16.78,green,79.4,green,4.28,green
+2023-08-17,2023-08-17,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.95,green,1.26,green,62.6,yellow,41.42,orange,309.58,yellow,119.689,yellow,3.7,yellow,-0.64,red,17.89,green,80.43,green,4.3,yellow
+2023-08-18,2023-08-18,🔴 최악 진입 — 전면 방어,red,1,1,0,0,4.02,yellow,1.27,green,62.64,yellow,41.38,orange,309.58,yellow,119.689,yellow,3.7,yellow,-0.66,red,17.3,green,81.25,green,4.26,green
+2023-08-21,2023-08-21,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.97,green,1.26,green,62.63,yellow,41.11,orange,309.58,yellow,119.689,yellow,3.7,yellow,-0.63,red,17.13,green,80.71,green,4.34,yellow
+2023-08-22,2023-08-22,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.93,green,1.25,green,62.66,yellow,39.93,orange,309.58,yellow,119.689,yellow,3.7,yellow,-0.68,red,16.97,green,80.25,green,4.34,yellow
+2023-08-23,2023-08-23,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.92,green,1.25,green,63.17,yellow,40.45,orange,309.58,yellow,119.689,yellow,3.7,yellow,-0.76,red,15.98,green,78.91,green,4.19,green
+2023-08-24,2023-08-24,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.91,green,1.23,green,62.82,yellow,40.63,orange,309.58,yellow,119.689,yellow,3.7,yellow,-0.75,red,17.2,green,79.52,green,4.23,green
+2023-08-25,2023-08-25,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.9,green,1.23,green,63.08,yellow,40.35,orange,309.58,yellow,119.689,yellow,3.7,yellow,-0.78,red,15.68,green,80.47,green,4.25,green
+2023-08-28,2023-08-28,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.86,green,1.22,green,63.32,yellow,40.93,orange,309.58,yellow,119.689,yellow,3.7,yellow,-0.78,red,15.08,green,80.65,green,4.2,green
+2023-08-29,2023-08-29,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.87,green,1.22,green,63.72,green,41.32,orange,309.58,yellow,119.689,yellow,3.7,yellow,-0.75,red,14.45,green,81.14,green,4.12,green
+2023-08-30,2023-08-30,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.8,green,1.22,green,63.69,yellow,41.01,orange,309.58,yellow,119.689,yellow,3.7,yellow,-0.78,red,13.88,green,81.64,green,4.12,green
+2023-08-31,2023-08-31,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.85,green,1.22,green,63.65,yellow,41.21,orange,309.58,yellow,119.689,yellow,3.7,yellow,-0.76,red,13.57,green,83.55,green,4.09,green
+2023-09-01,2023-09-01,🟢 평상시 — 유지,green,0,1,0,0,3.81,green,1.22,green,63.77,yellow,42.19,yellow,310.539,yellow,120.058,yellow,3.7,green,-0.69,red,13.09,green,85.52,yellow,4.18,green
+2023-09-05,2023-09-05,🟢 평상시 — 유지,green,0,1,0,0,3.83,green,1.22,green,63.35,yellow,41.23,orange,310.539,yellow,120.058,yellow,3.7,green,-0.67,red,14.01,green,86.74,yellow,4.27,green
+2023-09-06,2023-09-06,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.86,green,1.23,green,63.2,yellow,40.28,orange,310.539,yellow,120.058,yellow,3.7,green,-0.71,red,14.45,green,87.55,yellow,4.3,yellow
+2023-09-07,2023-09-07,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.9,green,1.23,green,63.41,yellow,39.74,orange,310.539,yellow,120.058,yellow,3.7,green,-0.67,red,14.4,green,86.87,yellow,4.27,green
+2023-09-08,2023-09-08,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.85,green,1.23,green,63.39,yellow,40.1,orange,310.539,yellow,120.058,yellow,3.7,green,-0.72,red,13.84,green,87.51,yellow,4.26,green
+2023-09-11,2023-09-11,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.82,green,1.23,green,63.5,yellow,40.02,orange,310.539,yellow,120.058,yellow,3.7,green,-0.68,red,13.8,green,87.3,yellow,4.29,green
+2023-09-12,2023-09-12,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.84,green,1.23,green,63.4,yellow,40.36,orange,310.539,yellow,120.058,yellow,3.7,green,-0.71,red,14.23,green,88.87,yellow,4.27,green
+2023-09-13,2023-09-13,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.85,green,1.24,green,63.57,yellow,39.87,orange,310.539,yellow,120.058,yellow,3.7,green,-0.71,red,13.48,green,88.59,yellow,4.25,green
+2023-09-14,2023-09-14,🟢 평상시 — 유지,green,0,1,0,0,3.78,green,1.23,green,63.64,yellow,40.65,yellow,310.539,yellow,120.058,yellow,3.7,green,-0.71,red,12.82,green,90.13,yellow,4.29,green
+2023-09-15,2023-09-15,🟢 평상시 — 유지,green,0,1,0,0,3.79,green,1.22,green,63.41,yellow,40.42,yellow,310.539,yellow,120.058,yellow,3.7,green,-0.69,red,13.79,green,90.83,yellow,4.33,yellow
+2023-09-18,2023-09-18,🟢 평상시 — 유지,green,0,1,0,0,3.82,green,1.22,green,63.45,yellow,39.65,orange,310.539,yellow,120.058,yellow,3.7,green,-0.73,red,14.0,green,91.47,yellow,4.32,yellow
+2023-09-19,2023-09-19,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.82,green,1.21,green,63.25,yellow,39.56,orange,310.539,yellow,120.058,yellow,3.7,green,-0.71,red,14.11,green,91.16,yellow,4.37,yellow
+2023-09-20,2023-09-20,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.77,green,1.2,green,63.2,yellow,39.21,orange,310.539,yellow,120.058,yellow,3.7,green,-0.77,red,15.14,green,89.2,yellow,4.35,yellow
+2023-09-21,2023-09-21,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.89,green,1.2,green,62.75,yellow,38.64,orange,310.539,yellow,120.058,yellow,3.7,green,-0.63,red,17.54,green,89.56,yellow,4.49,yellow
+2023-09-22,2023-09-22,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.93,green,1.2,green,62.86,yellow,38.39,orange,310.539,yellow,120.058,yellow,3.7,green,-0.66,red,17.2,green,90.0,yellow,4.44,yellow
+2023-09-25,2023-09-25,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.97,green,1.19,green,62.78,yellow,38.94,orange,310.539,yellow,120.058,yellow,3.7,green,-0.54,red,16.9,green,89.68,yellow,4.55,yellow
+2023-09-26,2023-09-26,🔴 최악 진입 — 전면 방어,red,1,1,0,0,4.04,yellow,1.2,green,62.5,orange,38.34,orange,310.539,yellow,120.058,yellow,3.7,green,-0.48,red,18.94,yellow,91.43,yellow,4.56,yellow
+2023-09-27,2023-09-27,🔴 최악 진입 — 전면 방어,red,2,1,0,0,4.03,yellow,1.21,green,62.42,orange,38.13,orange,310.539,yellow,120.058,yellow,3.7,green,-0.49,red,18.22,yellow,93.67,yellow,4.61,yellow
+2023-09-28,2023-09-28,🔴 최악 진입 — 전면 방어,red,1,1,0,0,4.09,yellow,1.23,green,62.72,yellow,38.51,orange,310.539,yellow,120.058,yellow,3.7,green,-0.45,red,17.34,green,91.65,yellow,4.59,yellow
+2023-09-29,2023-09-29,🔴 최악 진입 — 전면 방어,red,1,1,0,0,4.03,yellow,1.24,green,62.62,yellow,38.96,orange,310.539,yellow,120.058,yellow,3.7,green,-0.44,red,17.52,green,90.77,yellow,4.59,yellow
+2023-10-02,2023-10-02,🔴 최악 진입 — 전면 방어,red,1,1,0,0,4.11,yellow,1.26,green,62.24,orange,37.99,orange,311.457,yellow,120.241,yellow,3.9,yellow,-0.43,red,17.61,green,88.81,yellow,4.69,yellow
+2023-10-03,2023-10-03,🔴 최악 진입 — 전면 방어,red,2,1,0,0,4.26,yellow,1.28,green,61.61,orange,37.24,orange,311.457,yellow,120.241,yellow,3.9,yellow,-0.34,red,19.78,yellow,89.26,yellow,4.81,orange
+2023-10-04,2023-10-04,🔴 최악 진입 — 전면 방어,red,2,1,1,0,4.37,yellow,1.29,green,61.93,orange,37.6,orange,311.457,yellow,120.241,yellow,3.9,yellow,-0.32,red,18.58,yellow,84.32,green,4.73,orange
+2023-10-05,2023-10-05,🔴 최악 진입 — 전면 방어,red,2,1,1,0,4.38,yellow,1.29,green,61.99,orange,38.22,orange,311.457,yellow,120.241,yellow,3.9,yellow,-0.31,red,18.49,yellow,82.3,green,4.72,orange
+2023-10-06,2023-10-06,🔴 최악 진입 — 전면 방어,red,2,1,1,0,4.33,yellow,1.29,green,62.07,orange,38.33,orange,311.457,yellow,120.241,yellow,3.9,yellow,-0.3,red,17.45,green,82.83,green,4.78,orange
+2023-10-09,2023-10-09,🔴 최악 진입 — 전면 방어,red,1,1,1,0,4.34,yellow,1.29,green,62.53,yellow,38.31,orange,311.457,yellow,120.241,yellow,3.9,yellow,-0.3,red,17.7,green,82.83,green,4.78,orange
+2023-10-10,2023-10-10,🟢 평상시 — 유지,green,0,1,0,0,4.26,yellow,1.29,green,62.52,yellow,38.91,yellow,311.457,yellow,120.241,yellow,3.9,yellow,-0.3,red,17.03,green,85.89,yellow,4.66,yellow
+2023-10-11,2023-10-11,🟢 평상시 — 유지,green,0,1,0,0,4.25,yellow,1.27,green,62.51,yellow,38.93,yellow,311.457,yellow,120.241,yellow,3.9,yellow,-0.41,red,16.09,green,83.7,green,4.58,yellow
+2023-10-12,2023-10-12,🟢 평상시 — 유지,green,0,1,0,0,4.25,yellow,1.26,green,62.18,yellow,38.46,yellow,311.457,yellow,120.241,yellow,3.9,yellow,-0.36,red,16.69,green,82.87,green,4.7,orange
+2023-10-13,2023-10-13,🟢 평상시 — 유지,green,0,1,0,0,4.3,yellow,1.27,green,62.12,yellow,37.7,orange,311.457,yellow,120.241,yellow,3.9,yellow,-0.41,red,19.32,yellow,87.67,yellow,4.63,yellow
+2023-10-16,2023-10-16,🟢 평상시 — 유지,green,0,1,0,0,4.27,yellow,1.27,green,62.11,yellow,38.66,yellow,311.457,yellow,120.241,yellow,3.9,yellow,-0.38,red,17.21,green,86.65,yellow,4.71,orange
+2023-10-17,2023-10-17,🟡 경계 — 1차 방어,yellow,0,1,1,0,4.25,yellow,1.27,green,61.82,yellow,39.48,green,311.457,yellow,120.241,yellow,3.9,yellow,-0.36,red,17.88,green,86.66,yellow,4.83,orange
+2023-10-18,2023-10-18,🟡 경계 — 1차 방어,yellow,0,1,1,0,4.32,yellow,1.29,green,61.52,orange,38.41,yellow,311.457,yellow,120.241,yellow,3.9,yellow,-0.28,red,19.22,yellow,88.35,yellow,4.91,orange
+2023-10-19,2023-10-19,🔴 최악 진입 — 전면 방어,red,1,1,1,0,4.37,yellow,1.31,green,61.3,orange,37.99,orange,311.457,yellow,120.241,yellow,3.9,yellow,-0.16,red,21.4,yellow,89.35,yellow,4.98,orange
+2023-10-20,2023-10-20,🔴 최악 진입 — 전면 방어,red,2,1,1,0,4.52,yellow,1.33,green,61.42,orange,36.47,orange,311.457,yellow,120.241,yellow,3.9,yellow,-0.14,red,21.71,yellow,89.12,yellow,4.93,orange
+2023-10-23,2023-10-23,🔴 최악 진입 — 전면 방어,red,1,1,1,0,4.51,yellow,1.33,green,61.67,yellow,36.33,orange,311.457,yellow,120.241,yellow,3.9,yellow,-0.19,red,20.37,yellow,85.49,yellow,4.86,orange
+2023-10-24,2023-10-24,🔴 최악 진입 — 전면 방어,red,1,1,1,0,4.41,yellow,1.31,green,61.99,yellow,36.11,orange,311.457,yellow,120.241,yellow,3.9,yellow,-0.19,red,18.97,yellow,84.58,green,4.83,orange
+2023-10-25,2023-10-25,🔴 최악 진입 — 전면 방어,red,1,1,1,0,4.37,yellow,1.3,green,61.65,yellow,35.98,orange,311.457,yellow,120.241,yellow,3.9,yellow,-0.13,red,20.19,yellow,86.07,yellow,4.95,orange
+2023-10-26,2023-10-26,🔴 최악 진입 — 전면 방어,red,1,1,1,0,4.5,yellow,1.3,green,61.87,yellow,37.05,orange,311.457,yellow,120.241,yellow,3.9,yellow,-0.16,red,20.68,yellow,83.8,green,4.86,orange
+2023-10-27,2023-10-27,🔴 최악 진입 — 전면 방어,red,1,1,1,0,4.53,yellow,1.31,green,61.79,yellow,36.26,orange,311.457,yellow,120.241,yellow,3.9,yellow,-0.15,red,21.27,yellow,86.04,yellow,4.84,orange
+2023-10-30,2023-10-30,🔴 최악 진입 — 전면 방어,red,1,1,1,0,4.5,yellow,1.32,green,61.81,yellow,36.8,orange,311.457,yellow,120.241,yellow,3.9,yellow,-0.15,red,19.75,yellow,83.03,green,4.88,orange
+2023-10-31,2023-10-31,🔴 최악 진입 — 전면 방어,red,1,1,1,0,4.42,yellow,1.32,green,61.97,yellow,37.0,orange,311.457,yellow,120.241,yellow,3.9,yellow,-0.19,red,18.14,yellow,81.64,green,4.88,orange
+2023-11-01,2023-11-01,🔴 최악 진입 — 전면 방어,red,1,1,1,0,4.47,yellow,1.33,green,62.56,yellow,37.15,orange,312.392,yellow,120.374,yellow,3.7,green,-0.18,red,16.87,green,81.05,green,4.77,orange
+2023-11-02,2023-11-02,🟢 평상시 — 유지,green,0,1,0,0,4.15,yellow,1.29,green,63.26,green,39.26,green,312.392,yellow,120.374,yellow,3.7,green,-0.31,red,15.66,green,83.04,green,4.67,yellow
+2023-11-03,2023-11-03,🟢 평상시 — 유지,green,0,1,0,0,4.04,yellow,1.29,green,63.88,green,40.69,green,312.392,yellow,120.374,yellow,3.7,green,-0.26,red,14.91,green,81.19,green,4.57,yellow
+2023-11-06,2023-11-06,🟢 평상시 — 유지,green,0,1,0,0,4.0,yellow,1.28,green,63.63,green,40.11,green,312.392,yellow,120.374,yellow,3.7,green,-0.26,red,14.89,green,81.54,green,4.67,yellow
+2023-11-07,2023-11-07,🟢 평상시 — 유지,green,0,1,0,0,4.08,yellow,1.29,green,63.63,green,39.72,green,312.392,yellow,120.374,yellow,3.7,green,-0.33,red,14.81,green,77.96,green,4.58,yellow
+2023-11-08,2023-11-08,🟢 평상시 — 유지,green,0,1,0,0,4.08,yellow,1.28,green,63.67,green,39.19,green,312.392,yellow,120.374,yellow,3.7,green,-0.44,red,14.45,green,75.85,green,4.49,yellow
+2023-11-09,2023-11-09,🟢 평상시 — 유지,green,0,1,0,0,4.04,yellow,1.27,green,63.27,green,38.37,green,312.392,yellow,120.374,yellow,3.7,green,-0.41,red,15.29,green,76.34,green,4.62,yellow
+2023-11-10,2023-11-10,🟢 평상시 — 유지,green,0,1,0,0,4.03,yellow,1.26,green,63.58,green,38.59,green,312.392,yellow,120.374,yellow,3.7,green,-0.43,red,14.17,green,76.34,green,4.61,yellow
+2023-11-13,2023-11-13,🟢 평상시 — 유지,green,0,1,0,0,4.03,yellow,1.25,green,63.52,green,38.65,green,312.392,yellow,120.374,yellow,3.7,green,-0.39,red,14.76,green,78.86,green,4.63,yellow
+2023-11-14,2023-11-14,🟢 평상시 — 유지,green,0,1,0,0,3.92,green,1.23,green,64.17,green,41.5,green,312.392,yellow,120.374,yellow,3.7,green,-0.36,red,14.16,green,78.9,green,4.44,yellow
+2023-11-15,2023-11-15,🟢 평상시 — 유지,green,0,1,0,0,3.89,green,1.22,green,63.96,green,42.07,green,312.392,yellow,120.374,yellow,3.7,green,-0.37,red,14.18,green,77.15,green,4.53,yellow
+2023-11-16,2023-11-16,🟢 평상시 — 유지,green,0,1,0,0,4.02,yellow,1.21,green,64.05,green,41.54,green,312.392,yellow,120.374,yellow,3.7,green,-0.38,red,14.32,green,73.5,green,4.45,yellow
+2023-11-17,2023-11-17,🟢 평상시 — 유지,green,0,1,0,0,3.99,green,1.2,green,64.19,green,42.17,green,312.392,yellow,120.374,yellow,3.7,green,-0.44,red,13.8,green,76.47,green,4.44,yellow
+2023-11-20,2023-11-20,🟢 평상시 — 유지,green,0,1,0,0,3.92,green,1.18,green,64.26,green,42.12,green,312.392,yellow,120.374,yellow,3.7,green,-0.47,red,13.41,green,78.1,green,4.42,yellow
+2023-11-21,2023-11-21,🟢 평상시 — 유지,green,0,1,0,0,3.95,green,1.17,green,64.35,green,41.18,green,312.392,yellow,120.374,yellow,3.7,green,-0.45,red,13.35,green,78.35,green,4.41,yellow
+2023-11-22,2023-11-22,🟢 평상시 — 유지,green,0,1,0,0,3.9,green,1.15,green,64.46,green,41.36,green,312.392,yellow,120.374,yellow,3.7,green,-0.47,red,12.85,green,76.8,green,4.42,yellow
+2023-11-24,2023-11-24,🟢 평상시 — 유지,green,0,1,0,0,3.85,green,1.14,green,64.39,green,41.41,green,312.392,yellow,120.374,yellow,3.7,green,-0.45,red,12.46,green,74.83,green,4.47,yellow
+2023-11-27,2023-11-27,🟢 평상시 — 유지,green,0,1,0,0,3.89,green,1.14,green,64.48,green,41.15,green,312.392,yellow,120.374,yellow,3.7,green,-0.45,red,12.69,green,74.46,green,4.39,yellow
+2023-11-28,2023-11-28,🟢 평상시 — 유지,green,0,1,0,0,3.9,green,1.14,green,64.77,green,41.14,green,312.392,yellow,120.374,yellow,3.7,green,-0.39,red,12.69,green,76.09,green,4.34,yellow
+2023-11-29,2023-11-29,🟢 평상시 — 유지,green,0,1,0,0,3.8,green,1.11,green,65.12,green,42.0,green,312.392,yellow,120.374,yellow,3.7,green,-0.37,red,12.98,green,77.56,green,4.27,green
+2023-11-30,2023-11-30,🟢 평상시 — 유지,green,0,1,0,0,3.84,green,1.11,green,65.0,green,42.09,green,312.392,yellow,120.374,yellow,3.7,green,-0.36,red,12.92,green,75.66,green,4.37,yellow
+2023-12-01,2023-12-01,🟢 평상시 — 유지,green,0,1,0,0,3.87,green,1.11,green,65.54,green,44.27,green,313.195,yellow,120.592,yellow,3.8,yellow,-0.34,red,12.63,green,73.7,green,4.22,green
+2023-12-04,2023-12-04,🟢 평상시 — 유지,green,0,1,0,0,3.8,green,1.1,green,65.37,green,44.88,green,313.195,yellow,120.592,yellow,3.8,yellow,-0.36,red,13.08,green,72.73,green,4.28,green
+2023-12-05,2023-12-05,🟢 평상시 — 유지,green,0,1,0,0,3.8,green,1.11,green,65.43,green,44.32,green,313.195,yellow,120.592,yellow,3.8,yellow,-0.39,red,12.85,green,71.95,green,4.18,green
+2023-12-06,2023-12-06,🟢 평상시 — 유지,green,0,1,0,0,3.79,green,1.12,green,65.44,green,44.34,green,313.195,yellow,120.592,yellow,3.8,yellow,-0.48,red,12.97,green,68.98,green,4.12,green
+2023-12-07,2023-12-07,🟢 평상시 — 유지,green,0,1,0,0,3.77,green,1.11,green,65.55,green,45.2,green,313.195,yellow,120.592,yellow,3.8,yellow,-0.44,red,13.06,green,69.0,green,4.14,green
+2023-12-08,2023-12-08,🟢 평상시 — 유지,green,0,1,0,0,3.75,green,1.1,green,65.43,green,45.7,green,313.195,yellow,120.592,yellow,3.8,yellow,-0.48,red,12.35,green,70.87,green,4.23,green
+2023-12-11,2023-12-11,🟢 평상시 — 유지,green,0,1,0,0,3.79,green,1.1,green,65.38,yellow,45.59,green,313.195,yellow,120.592,yellow,3.8,yellow,-0.48,red,12.63,green,70.95,green,4.23,green
+2023-12-12,2023-12-12,🟢 평상시 — 유지,green,0,1,0,0,3.76,green,1.09,green,65.53,green,45.24,green,313.195,yellow,120.592,yellow,3.8,yellow,-0.53,red,12.07,green,68.27,green,4.2,green
+2023-12-13,2023-12-13,🟢 평상시 — 유지,green,0,1,0,0,3.79,green,1.08,green,66.53,green,47.89,green,313.195,yellow,120.592,yellow,3.8,yellow,-0.42,red,12.19,green,69.09,green,4.04,green
+2023-12-14,2023-12-14,🟢 평상시 — 유지,green,0,1,0,0,3.47,green,1.04,green,66.82,green,50.2,green,313.195,yellow,120.592,yellow,3.8,yellow,-0.45,red,12.48,green,71.21,green,3.92,green
+2023-12-15,2023-12-15,🟢 평상시 — 유지,green,0,1,0,0,3.51,green,1.04,green,66.68,green,49.4,green,313.195,yellow,120.592,yellow,3.8,yellow,-0.53,red,12.28,green,71.05,green,3.91,green
+2023-12-18,2023-12-18,🟢 평상시 — 유지,green,0,1,0,0,3.51,green,1.05,green,66.72,green,48.88,green,313.195,yellow,120.592,yellow,3.8,yellow,-0.48,red,12.56,green,72.16,green,3.95,green
+2023-12-19,2023-12-19,🟢 평상시 — 유지,green,0,1,0,0,3.46,green,1.05,green,66.91,green,49.61,green,313.195,yellow,120.592,yellow,3.8,yellow,-0.48,red,12.53,green,73.23,green,3.93,green
+2023-12-20,2023-12-20,🟢 평상시 — 유지,green,0,1,0,0,3.43,green,1.06,green,66.92,green,48.45,green,313.195,yellow,120.592,yellow,3.8,yellow,-0.48,red,13.67,green,73.87,green,3.86,green
+2023-12-21,2023-12-21,🟢 평상시 — 유지,green,0,1,0,0,3.41,green,1.07,green,67.22,green,48.98,green,313.195,yellow,120.592,yellow,3.8,yellow,-0.44,red,13.65,green,73.59,green,3.89,green
+2023-12-22,2023-12-22,🟢 평상시 — 유지,green,0,1,0,0,3.39,green,1.07,green,67.14,green,49.29,green,313.195,yellow,120.592,yellow,3.8,yellow,-0.41,red,13.03,green,73.29,green,3.9,green
+2023-12-26,2023-12-26,🟢 평상시 — 유지,green,0,1,0,0,3.37,green,1.06,green,67.27,green,50.05,green,313.195,yellow,120.592,yellow,3.8,yellow,-0.37,red,12.99,green,75.84,green,3.89,green
+2023-12-27,2023-12-27,🟢 평상시 — 유지,green,0,1,0,0,3.34,green,1.05,green,67.55,green,49.96,green,313.195,yellow,120.592,yellow,3.8,yellow,-0.41,red,12.43,green,74.31,green,3.79,green
+2023-12-28,2023-12-28,🟢 평상시 — 유지,green,0,1,0,0,3.32,green,1.04,green,67.33,green,50.09,green,313.195,yellow,120.592,yellow,3.8,yellow,-0.42,red,12.47,green,72.02,green,3.84,green
+2023-12-29,2023-12-29,🟢 평상시 — 유지,green,0,1,0,0,3.34,green,1.04,green,67.07,green,49.31,green,313.195,yellow,120.592,yellow,3.8,yellow,-0.35,red,12.45,green,71.89,green,3.88,green
+2024-01-02,2024-01-02,🟢 평상시 — 유지,green,0,1,0,0,3.54,green,1.06,green,66.85,yellow,49.47,green,314.319,yellow,121.217,yellow,3.7,green,-0.38,red,13.2,green,70.62,green,3.95,green
+2024-01-03,2024-01-03,🟢 평상시 — 유지,green,0,1,0,0,3.71,green,1.09,green,66.67,yellow,47.84,yellow,314.319,yellow,121.217,yellow,3.7,green,-0.42,red,14.04,green,72.97,green,3.91,green
+2024-01-04,2024-01-04,🟢 평상시 — 유지,green,0,1,0,0,3.69,green,1.09,green,66.41,yellow,48.07,yellow,314.319,yellow,121.217,yellow,3.7,green,-0.39,red,14.13,green,72.38,green,3.99,green
+2024-01-05,2024-01-05,🟢 평상시 — 유지,green,0,1,0,0,3.68,green,1.09,green,66.46,yellow,48.65,yellow,314.319,yellow,121.217,yellow,3.7,green,-0.35,red,13.35,green,74.0,green,4.05,green
+2024-01-08,2024-01-08,🟢 평상시 — 유지,green,0,1,0,0,3.63,green,1.08,green,66.83,yellow,49.1,green,314.319,yellow,121.217,yellow,3.7,green,-0.35,red,13.08,green,71.06,green,4.01,green
+2024-01-09,2024-01-09,🟢 평상시 — 유지,green,0,1,0,0,3.59,green,1.06,green,66.94,yellow,48.54,yellow,314.319,yellow,121.217,yellow,3.7,green,-0.34,red,12.76,green,72.43,green,4.02,green
+2024-01-10,2024-01-10,🟢 평상시 — 유지,green,0,1,0,0,3.5,green,1.04,green,67.06,yellow,48.66,yellow,314.319,yellow,121.217,yellow,3.7,green,-0.33,red,12.69,green,71.57,green,4.04,green
+2024-01-11,2024-01-11,🟢 평상시 — 유지,green,0,1,0,0,3.55,green,1.03,green,67.27,yellow,48.02,orange,314.319,yellow,121.217,yellow,3.7,green,-0.28,red,12.44,green,72.15,green,3.98,green
+2024-01-12,2024-01-12,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.56,green,1.02,green,67.34,yellow,47.39,orange,314.319,yellow,121.217,yellow,3.7,green,-0.18,red,12.7,green,72.94,green,3.96,green
+2024-01-16,2024-01-16,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.58,green,1.02,green,66.92,yellow,46.59,orange,314.319,yellow,121.217,yellow,3.7,green,-0.15,red,13.84,green,72.63,green,4.07,green
+2024-01-17,2024-01-17,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.62,green,1.02,green,66.63,yellow,46.39,orange,314.319,yellow,121.217,yellow,3.7,green,-0.24,red,14.79,green,72.79,green,4.1,green
+2024-01-18,2024-01-18,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.58,green,1.01,green,66.77,yellow,46.8,orange,314.319,yellow,121.217,yellow,3.7,green,-0.2,red,14.13,green,74.32,green,4.14,green
+2024-01-19,2024-01-19,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.54,green,1.01,green,66.88,yellow,47.99,orange,314.319,yellow,121.217,yellow,3.7,green,-0.24,red,13.3,green,73.69,green,4.15,green
+2024-01-22,2024-01-22,🟢 평상시 — 유지,green,0,1,0,0,3.49,green,1.01,green,66.94,yellow,49.05,green,314.319,yellow,121.217,yellow,3.7,green,-0.26,red,13.19,green,75.26,green,4.11,green
+2024-01-23,2024-01-23,🟢 평상시 — 유지,green,0,1,0,0,3.51,green,1.01,green,66.86,yellow,48.58,yellow,314.319,yellow,121.217,yellow,3.7,green,-0.17,red,12.55,green,74.72,green,4.14,green
+2024-01-24,2024-01-24,🟢 평상시 — 유지,green,0,1,0,0,3.44,green,0.99,green,66.82,yellow,49.15,green,314.319,yellow,121.217,yellow,3.7,green,-0.16,red,13.14,green,75.48,green,4.18,green
+2024-01-25,2024-01-25,🟢 평상시 — 유지,green,0,1,0,0,3.45,green,0.98,green,67.33,yellow,48.84,yellow,314.319,yellow,121.217,yellow,3.7,green,-0.14,red,13.45,green,77.91,green,4.14,green
+2024-01-26,2024-01-26,🟢 평상시 — 유지,green,0,1,0,0,3.39,green,0.97,green,67.28,yellow,49.02,green,314.319,yellow,121.217,yellow,3.7,green,-0.19,red,13.26,green,78.45,green,4.15,green
+2024-01-29,2024-01-29,🟢 평상시 — 유지,green,0,1,0,0,3.41,green,0.98,green,67.43,yellow,49.84,green,314.319,yellow,121.217,yellow,3.7,green,-0.21,red,13.6,green,77.25,green,4.08,green
+2024-01-30,2024-01-30,🟢 평상시 — 유지,green,0,1,0,0,3.42,green,1.0,green,67.34,yellow,49.64,green,314.319,yellow,121.217,yellow,3.7,green,-0.3,red,13.31,green,78.3,green,4.06,green
+2024-01-31,2024-01-31,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.59,green,1.02,green,67.15,yellow,46.74,red,314.319,yellow,121.217,yellow,3.7,green,-0.28,red,14.35,green,76.28,green,3.99,green
+2024-02-01,2024-02-01,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.56,green,1.04,green,67.54,yellow,45.28,orange,315.564,yellow,121.537,yellow,3.9,yellow,-0.33,red,13.88,green,74.36,green,3.87,green
+2024-02-02,2024-02-02,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.47,green,1.02,green,67.23,yellow,45.49,orange,315.564,yellow,121.537,yellow,3.9,yellow,-0.33,red,13.85,green,72.72,green,4.03,green
+2024-02-05,2024-02-05,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.5,green,1.0,green,66.92,yellow,44.74,orange,315.564,yellow,121.537,yellow,3.9,yellow,-0.29,red,13.67,green,73.21,green,4.17,green
+2024-02-06,2024-02-06,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.52,green,1.0,green,67.16,yellow,44.17,orange,315.564,yellow,121.537,yellow,3.9,yellow,-0.3,red,13.06,green,73.83,green,4.09,green
+2024-02-07,2024-02-07,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.43,green,1.0,green,67.28,yellow,44.06,orange,315.564,yellow,121.537,yellow,3.9,yellow,-0.32,red,12.83,green,74.26,green,4.09,green
+2024-02-08,2024-02-08,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.38,green,0.99,green,67.24,yellow,44.24,orange,315.564,yellow,121.537,yellow,3.9,yellow,-0.31,red,12.79,green,76.67,green,4.15,green
+2024-02-09,2024-02-09,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.33,green,1.0,green,67.38,yellow,45.02,orange,315.564,yellow,121.537,yellow,3.9,yellow,-0.31,red,12.93,green,77.26,green,4.17,green
+2024-02-12,2024-02-12,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.35,green,1.0,green,67.23,yellow,45.99,orange,315.564,yellow,121.537,yellow,3.9,yellow,-0.29,red,13.93,green,77.34,green,4.17,green
+2024-02-13,2024-02-13,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.36,green,0.99,green,66.69,yellow,44.04,orange,315.564,yellow,121.537,yellow,3.9,yellow,-0.33,red,15.85,green,78.28,green,4.31,yellow
+2024-02-14,2024-02-14,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.38,green,0.98,green,66.96,yellow,44.86,orange,315.564,yellow,121.537,yellow,3.9,yellow,-0.29,red,14.38,green,77.09,green,4.27,green
+2024-02-15,2024-02-15,🟢 평상시 — 유지,green,0,1,0,0,3.35,green,0.97,green,67.19,yellow,46.29,yellow,315.564,yellow,121.537,yellow,3.9,yellow,-0.32,red,14.01,green,78.47,green,4.24,green
+2024-02-16,2024-02-16,🟢 평상시 — 유지,green,0,1,0,0,3.34,green,0.96,green,66.99,yellow,45.81,orange,315.564,yellow,121.537,yellow,3.9,yellow,-0.34,red,14.24,green,79.65,green,4.3,yellow
+2024-02-20,2024-02-20,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.37,green,0.96,green,67.13,yellow,45.45,orange,315.564,yellow,121.537,yellow,3.9,yellow,-0.32,red,15.42,green,78.72,green,4.27,green
+2024-02-21,2024-02-21,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.34,green,0.94,green,67.01,yellow,45.15,orange,315.564,yellow,121.537,yellow,3.9,yellow,-0.32,red,15.34,green,78.89,green,4.32,yellow
+2024-02-22,2024-02-22,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.22,green,0.93,green,67.33,yellow,45.11,orange,315.564,yellow,121.537,yellow,3.9,yellow,-0.36,red,14.54,green,79.64,green,4.33,yellow
+2024-02-23,2024-02-23,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.23,green,0.95,green,67.37,yellow,45.02,orange,315.564,yellow,121.537,yellow,3.9,yellow,-0.41,red,13.75,green,77.6,green,4.26,green
+2024-02-26,2024-02-26,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.23,green,0.96,green,67.16,yellow,44.59,orange,315.564,yellow,121.537,yellow,3.9,yellow,-0.41,red,13.74,green,78.53,green,4.28,green
+2024-02-27,2024-02-27,🟢 평상시 — 유지,green,0,1,0,0,3.26,green,0.96,green,67.24,yellow,45.15,yellow,315.564,yellow,121.537,yellow,3.9,yellow,-0.39,red,13.43,green,79.8,green,4.31,yellow
+2024-02-28,2024-02-28,🟢 평상시 — 유지,green,0,1,0,0,3.31,green,0.98,green,67.23,yellow,44.66,yellow,315.564,yellow,121.537,yellow,3.9,yellow,-0.37,red,13.84,green,79.44,green,4.27,green
+2024-02-29,2024-02-29,🟢 평상시 — 유지,green,0,1,0,0,3.29,green,1.0,green,67.36,yellow,45.27,yellow,315.564,yellow,121.537,yellow,3.9,yellow,-0.39,red,13.4,green,79.22,green,4.25,green
+2024-03-01,2024-03-01,🟢 평상시 — 유지,green,0,1,0,0,3.32,green,1.01,green,67.61,yellow,44.77,yellow,316.792,yellow,122.009,yellow,3.9,green,-0.35,red,13.11,green,80.9,green,4.19,green
+2024-03-04,2024-03-04,🟢 평상시 — 유지,green,0,1,0,0,3.26,green,1.0,green,67.59,yellow,44.76,yellow,316.792,yellow,122.009,yellow,3.9,green,-0.39,red,13.49,green,79.67,green,4.22,green
+2024-03-05,2024-03-05,🟢 평상시 — 유지,green,0,1,0,0,3.31,green,1.01,green,67.54,yellow,46.57,green,316.792,yellow,122.009,yellow,3.9,green,-0.41,red,14.46,green,79.11,green,4.13,green
+2024-03-06,2024-03-06,🟢 평상시 — 유지,green,0,1,0,0,3.27,green,1.01,green,67.7,yellow,46.51,green,316.792,yellow,122.009,yellow,3.9,green,-0.44,red,14.5,green,80.08,green,4.11,green
+2024-03-07,2024-03-07,🟢 평상시 — 유지,green,0,1,0,0,3.27,green,1.0,green,67.78,yellow,46.58,green,316.792,yellow,122.009,yellow,3.9,green,-0.41,red,14.44,green,79.81,green,4.09,green
+2024-03-08,2024-03-08,🟢 평상시 — 유지,green,0,1,0,0,3.26,green,0.99,green,67.8,yellow,46.62,green,316.792,yellow,122.009,yellow,3.9,green,-0.39,red,14.74,green,78.96,green,4.09,green
+2024-03-11,2024-03-11,🟢 평상시 — 유지,green,0,1,0,0,3.26,green,0.98,green,67.79,yellow,46.38,green,316.792,yellow,122.009,yellow,3.9,green,-0.41,red,15.22,green,78.87,green,4.1,green
+2024-03-12,2024-03-12,🟢 평상시 — 유지,green,0,1,0,0,3.2,green,0.97,green,67.85,yellow,45.92,yellow,316.792,yellow,122.009,yellow,3.9,green,-0.42,red,13.84,green,78.51,green,4.16,green
+2024-03-13,2024-03-13,🟢 평상시 — 유지,green,0,1,0,0,3.15,green,0.95,green,67.88,yellow,45.97,yellow,316.792,yellow,122.009,yellow,3.9,green,-0.42,red,13.75,green,80.67,green,4.19,green
+2024-03-14,2024-03-14,🟢 평상시 — 유지,green,0,1,0,0,3.15,green,0.94,green,67.56,yellow,44.77,orange,316.792,yellow,122.009,yellow,3.9,green,-0.39,red,14.4,green,82.16,green,4.29,green
+2024-03-15,2024-03-15,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.16,green,0.93,green,67.51,yellow,45.01,orange,316.792,yellow,122.009,yellow,3.9,green,-0.41,red,14.41,green,81.94,green,4.31,yellow
+2024-03-18,2024-03-18,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.13,green,0.92,green,67.67,yellow,44.72,orange,316.792,yellow,122.009,yellow,3.9,green,-0.39,red,14.33,green,83.68,green,4.34,yellow
+2024-03-19,2024-03-19,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.1,green,0.92,green,67.94,yellow,44.87,orange,316.792,yellow,122.009,yellow,3.9,green,-0.38,red,13.82,green,84.39,green,4.3,yellow
+2024-03-20,2024-03-20,🟢 평상시 — 유지,green,0,1,0,0,3.14,green,0.92,green,68.17,yellow,46.28,green,316.792,yellow,122.009,yellow,3.9,green,-0.32,red,13.04,green,82.79,green,4.27,green
+2024-03-21,2024-03-21,🟢 평상시 — 유지,green,0,1,0,0,3.05,green,0.91,green,68.13,yellow,46.96,green,316.792,yellow,122.009,yellow,3.9,green,-0.35,red,12.92,green,81.99,green,4.27,green
+2024-03-22,2024-03-22,🟢 평상시 — 유지,green,0,1,0,0,3.08,green,0.92,green,68.06,yellow,45.95,yellow,316.792,yellow,122.009,yellow,3.9,green,-0.37,red,13.06,green,81.1,green,4.22,green
+2024-03-25,2024-03-25,🟢 평상시 — 유지,green,0,1,0,0,3.11,green,0.92,green,67.96,yellow,46.01,yellow,316.792,yellow,122.009,yellow,3.9,green,-0.29,red,13.19,green,82.41,green,4.25,green
+2024-03-26,2024-03-26,🟢 평상시 — 유지,green,0,1,0,0,3.15,green,0.93,green,67.88,yellow,45.73,yellow,316.792,yellow,122.009,yellow,3.9,green,-0.32,red,13.24,green,82.41,green,4.24,green
+2024-03-27,2024-03-27,🟢 평상시 — 유지,green,0,1,0,0,3.15,green,0.94,green,68.24,yellow,47.41,green,316.792,yellow,122.009,yellow,3.9,green,-0.34,red,12.78,green,82.15,green,4.2,green
+2024-03-28,2024-03-28,🟢 평상시 — 유지,green,0,1,0,0,3.12,green,0.93,green,68.09,yellow,47.66,green,316.792,yellow,122.009,yellow,3.9,green,-0.39,red,13.01,green,83.96,green,4.2,green
+2024-04-01,2024-04-01,🟢 평상시 — 유지,green,0,1,0,0,3.12,green,0.93,green,67.81,yellow,46.72,green,317.649,yellow,122.304,yellow,3.9,green,-0.39,red,13.65,green,84.54,green,4.33,yellow
+2024-04-02,2024-04-02,🟢 평상시 — 유지,green,0,1,0,0,3.23,green,0.93,green,67.7,yellow,45.86,yellow,317.649,yellow,122.304,yellow,3.9,green,-0.34,red,14.61,green,85.95,yellow,4.36,yellow
+2024-04-03,2024-04-03,🟢 평상시 — 유지,green,0,1,0,0,3.23,green,0.92,green,67.75,yellow,45.77,yellow,317.649,yellow,122.304,yellow,3.9,green,-0.32,red,14.33,green,86.22,yellow,4.36,yellow
+2024-04-04,2024-04-04,🟢 평상시 — 유지,green,0,1,0,0,3.24,green,0.92,green,67.7,yellow,45.67,yellow,317.649,yellow,122.304,yellow,3.9,green,-0.34,red,16.35,green,87.37,yellow,4.31,yellow
+2024-04-05,2024-04-05,🟢 평상시 — 유지,green,0,1,0,0,3.18,green,0.92,green,67.64,yellow,45.7,yellow,317.649,yellow,122.304,yellow,3.9,green,-0.34,red,16.03,green,87.69,yellow,4.39,yellow
+2024-04-08,2024-04-08,🟢 평상시 — 유지,green,0,1,0,0,3.15,green,0.91,green,67.8,yellow,46.48,green,317.649,yellow,122.304,yellow,3.9,green,-0.36,red,15.19,green,87.24,yellow,4.42,yellow
+2024-04-09,2024-04-09,🟢 평상시 — 유지,green,0,1,0,0,3.14,green,0.91,green,67.94,yellow,46.78,green,317.649,yellow,122.304,yellow,3.9,green,-0.38,red,14.98,green,86.04,yellow,4.36,yellow
+2024-04-10,2024-04-10,🟢 평상시 — 유지,green,0,1,0,0,3.1,green,0.89,green,67.34,yellow,44.46,orange,317.649,yellow,122.304,yellow,3.9,green,-0.42,red,15.8,green,86.98,yellow,4.55,yellow
+2024-04-11,2024-04-11,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.16,green,0.89,green,67.28,yellow,44.49,orange,317.649,yellow,122.304,yellow,3.9,green,-0.37,red,14.91,green,85.79,yellow,4.56,yellow
+2024-04-12,2024-04-12,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.25,green,0.92,green,67.24,yellow,44.1,orange,317.649,yellow,122.304,yellow,3.9,green,-0.38,red,17.31,green,86.46,yellow,4.5,yellow
+2024-04-15,2024-04-15,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.28,green,0.92,green,66.85,orange,43.93,orange,317.649,yellow,122.304,yellow,3.9,green,-0.3,red,19.23,yellow,86.21,yellow,4.63,yellow
+2024-04-16,2024-04-16,🔴 최악 진입 — 전면 방어,red,2,1,0,0,3.36,green,0.95,green,66.63,orange,43.37,orange,317.649,yellow,122.304,yellow,3.9,green,-0.3,red,18.4,yellow,86.15,yellow,4.67,yellow
+2024-04-17,2024-04-17,🔴 최악 진입 — 전면 방어,red,2,1,0,0,3.42,green,0.95,green,66.72,orange,43.44,orange,317.649,yellow,122.304,yellow,3.9,green,-0.34,red,18.21,yellow,83.58,green,4.59,yellow
+2024-04-18,2024-04-18,🔴 최악 진입 — 전면 방어,red,2,1,0,0,3.39,green,0.94,green,66.77,orange,43.71,orange,317.649,yellow,122.304,yellow,3.9,green,-0.34,red,18.0,yellow,83.5,green,4.64,yellow
+2024-04-19,2024-04-19,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.37,green,0.94,green,66.9,yellow,44.86,orange,317.649,yellow,122.304,yellow,3.9,green,-0.35,red,18.71,yellow,83.79,green,4.62,yellow
+2024-04-22,2024-04-22,🟢 평상시 — 유지,green,0,1,0,0,3.29,green,0.93,green,67.27,yellow,45.67,yellow,317.649,yellow,122.304,yellow,3.9,green,-0.35,red,16.94,green,83.82,green,4.62,yellow
+2024-04-23,2024-04-23,🟢 평상시 — 유지,green,0,1,0,0,3.2,green,0.92,green,67.54,yellow,46.19,green,317.649,yellow,122.304,yellow,3.9,green,-0.25,red,15.69,green,84.17,green,4.61,yellow
+2024-04-24,2024-04-24,🟢 평상시 — 유지,green,0,1,0,0,3.19,green,0.92,green,67.39,yellow,46.46,green,317.649,yellow,122.304,yellow,3.9,green,-0.24,red,15.97,green,84.09,green,4.65,yellow
+2024-04-25,2024-04-25,🟢 평상시 — 유지,green,0,1,0,0,3.24,green,0.92,green,67.25,yellow,45.95,green,317.649,yellow,122.304,yellow,3.9,green,-0.26,red,15.37,green,84.92,green,4.7,orange
+2024-04-26,2024-04-26,🟢 평상시 — 유지,green,0,1,0,0,3.16,green,0.9,green,67.46,yellow,45.68,yellow,317.649,yellow,122.304,yellow,3.9,green,-0.29,red,15.03,green,85.38,yellow,4.67,yellow
+2024-04-29,2024-04-29,🟢 평상시 — 유지,green,0,1,0,0,3.12,green,0.9,green,67.66,yellow,45.28,yellow,317.649,yellow,122.304,yellow,3.9,green,-0.34,red,14.67,green,84.26,green,4.63,yellow
+2024-04-30,2024-04-30,🟢 평상시 — 유지,green,0,1,0,0,3.18,green,0.91,green,67.17,yellow,44.57,orange,317.649,yellow,122.304,yellow,3.9,green,-0.35,red,15.65,green,83.49,green,4.69,yellow
+2024-05-01,2024-05-01,🟢 평상시 — 유지,green,0,1,0,0,3.21,green,0.91,green,67.52,yellow,45.72,green,318.095,yellow,122.383,yellow,3.9,green,-0.33,red,15.39,green,80.7,green,4.63,yellow
+2024-05-02,2024-05-02,🟢 평상시 — 유지,green,0,1,0,0,3.16,green,0.9,green,67.94,yellow,46.47,green,318.095,yellow,122.383,yellow,3.9,green,-0.29,red,14.68,green,80.59,green,4.58,yellow
+2024-05-03,2024-05-03,🟢 평상시 — 유지,green,0,1,0,0,3.08,green,0.89,green,68.22,green,47.06,green,318.095,yellow,122.383,yellow,3.9,green,-0.31,red,13.49,green,79.65,green,4.5,yellow
+2024-05-06,2024-05-06,🟢 평상시 — 유지,green,0,1,0,0,3.03,green,0.88,green,68.3,green,47.43,green,318.095,yellow,122.383,yellow,3.9,green,-0.33,red,13.49,green,80.1,green,4.49,yellow
+2024-05-07,2024-05-07,🟢 평상시 — 유지,green,0,1,0,0,3.06,green,0.88,green,68.31,green,47.28,green,318.095,yellow,122.383,yellow,3.9,green,-0.35,red,13.23,green,79.97,green,4.47,yellow
+2024-05-08,2024-05-08,🟢 평상시 — 유지,green,0,1,0,0,3.1,green,0.89,green,68.15,green,47.56,green,318.095,yellow,122.383,yellow,3.9,green,-0.36,red,13.0,green,80.57,green,4.48,yellow
+2024-05-09,2024-05-09,🟢 평상시 — 유지,green,0,1,0,0,3.14,green,0.89,green,68.17,green,47.78,green,318.095,yellow,122.383,yellow,3.9,green,-0.35,red,12.69,green,80.86,green,4.45,yellow
+2024-05-10,2024-05-10,🟢 평상시 — 유지,green,0,1,0,0,3.12,green,0.89,green,68.06,yellow,47.73,green,318.095,yellow,122.383,yellow,3.9,green,-0.37,red,12.55,green,79.81,green,4.5,yellow
+2024-05-13,2024-05-13,🟢 평상시 — 유지,green,0,1,0,0,3.14,green,0.9,green,68.05,yellow,47.68,green,318.095,yellow,122.383,yellow,3.9,green,-0.37,red,13.6,green,80.71,green,4.48,yellow
+2024-05-14,2024-05-14,🟢 평상시 — 유지,green,0,1,0,0,3.14,green,0.9,green,68.15,yellow,48.24,green,318.095,yellow,122.383,yellow,3.9,green,-0.36,red,13.42,green,79.62,green,4.45,yellow
+2024-05-15,2024-05-15,🟢 평상시 — 유지,green,0,1,0,0,3.13,green,0.9,green,68.55,green,48.41,green,318.095,yellow,122.383,yellow,3.9,green,-0.37,red,12.45,green,80.23,green,4.36,yellow
+2024-05-16,2024-05-16,🟢 평상시 — 유지,green,0,1,0,0,3.08,green,0.89,green,68.39,yellow,48.2,green,318.095,yellow,122.383,yellow,3.9,green,-0.4,red,12.42,green,80.85,green,4.38,yellow
+2024-05-17,2024-05-17,🟢 평상시 — 유지,green,0,1,0,0,3.09,green,0.89,green,68.4,yellow,48.52,green,318.095,yellow,122.383,yellow,3.9,green,-0.41,red,11.99,green,81.66,green,4.42,yellow
+2024-05-20,2024-05-20,🟢 평상시 — 유지,green,0,1,0,0,3.07,green,0.88,green,68.44,yellow,47.82,green,318.095,yellow,122.383,yellow,3.9,green,-0.38,red,12.15,green,81.39,green,4.44,yellow
+2024-05-21,2024-05-21,🟢 평상시 — 유지,green,0,1,0,0,3.07,green,0.89,green,68.38,yellow,47.89,green,318.095,yellow,122.383,yellow,3.9,green,-0.41,red,11.86,green,80.66,green,4.41,yellow
+2024-05-22,2024-05-22,🟢 평상시 — 유지,green,0,1,0,0,3.11,green,0.89,green,68.23,yellow,47.31,yellow,318.095,yellow,122.383,yellow,3.9,green,-0.43,red,12.29,green,79.15,green,4.43,yellow
+2024-05-23,2024-05-23,🟢 평상시 — 유지,green,0,1,0,0,3.1,green,0.89,green,67.99,yellow,46.17,orange,318.095,yellow,122.383,yellow,3.9,green,-0.44,red,12.77,green,77.47,green,4.47,yellow
+2024-05-24,2024-05-24,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.11,green,0.89,green,68.23,yellow,46.37,orange,318.095,yellow,122.383,yellow,3.9,green,-0.47,red,11.93,green,78.48,green,4.46,yellow
+2024-05-28,2024-05-28,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.09,green,0.88,green,67.96,yellow,45.98,orange,318.095,yellow,122.383,yellow,3.9,green,-0.4,red,12.92,green,80.9,green,4.54,yellow
+2024-05-29,2024-05-29,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.15,green,0.88,green,67.75,yellow,44.87,orange,318.095,yellow,122.383,yellow,3.9,green,-0.35,red,14.28,green,80.24,green,4.61,yellow
+2024-05-30,2024-05-30,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.19,green,0.88,green,68.03,yellow,45.66,orange,318.095,yellow,122.383,yellow,3.9,green,-0.37,red,14.47,green,78.96,green,4.55,yellow
+2024-05-31,2024-05-31,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.2,green,0.88,green,68.27,yellow,46.31,orange,318.095,yellow,122.383,yellow,3.9,green,-0.38,red,12.92,green,77.97,green,4.51,yellow
+2024-06-03,2024-06-03,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.17,green,0.88,green,68.48,yellow,45.5,orange,318.39,yellow,122.677,yellow,4.1,yellow,-0.41,red,13.11,green,75.26,green,4.41,yellow
+2024-06-04,2024-06-04,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.22,green,0.9,green,68.44,yellow,44.69,orange,318.39,yellow,122.677,yellow,4.1,yellow,-0.44,red,13.16,green,74.27,green,4.33,yellow
+2024-06-05,2024-06-05,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.2,green,0.91,green,68.67,yellow,44.84,orange,318.39,yellow,122.677,yellow,4.1,yellow,-0.43,red,12.63,green,75.08,green,4.29,green
+2024-06-06,2024-06-06,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.2,green,0.92,green,68.55,yellow,44.95,orange,318.39,yellow,122.677,yellow,4.1,yellow,-0.44,red,12.58,green,76.52,green,4.28,green
+2024-06-07,2024-06-07,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.15,green,0.9,green,68.37,yellow,44.75,orange,318.39,yellow,122.677,yellow,4.1,yellow,-0.44,red,12.22,green,76.53,green,4.43,yellow
+2024-06-10,2024-06-10,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.15,green,0.9,green,68.43,yellow,44.06,orange,318.39,yellow,122.677,yellow,4.1,yellow,-0.4,red,12.74,green,78.75,green,4.47,yellow
+2024-06-11,2024-06-11,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.19,green,0.91,green,68.52,yellow,43.9,orange,318.39,yellow,122.677,yellow,4.1,yellow,-0.42,red,12.85,green,78.88,green,4.39,yellow
+2024-06-12,2024-06-12,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.09,green,0.9,green,68.8,yellow,44.99,orange,318.39,yellow,122.677,yellow,4.1,yellow,-0.44,red,12.04,green,79.56,green,4.31,yellow
+2024-06-13,2024-06-13,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.2,green,0.92,green,68.79,yellow,44.28,orange,318.39,yellow,122.677,yellow,4.1,yellow,-0.44,red,11.94,green,79.61,green,4.24,green
+2024-06-14,2024-06-14,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.29,green,0.95,green,68.52,yellow,43.72,orange,318.39,yellow,122.677,yellow,4.1,yellow,-0.47,red,12.66,green,79.41,green,4.2,green
+2024-06-17,2024-06-17,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.26,green,0.95,green,68.57,yellow,44.46,orange,318.39,yellow,122.677,yellow,4.1,yellow,-0.47,red,12.75,green,81.33,green,4.28,green
+2024-06-18,2024-06-18,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.24,green,0.96,green,68.78,yellow,44.57,orange,318.39,yellow,122.677,yellow,4.1,yellow,-0.47,red,12.3,green,82.67,green,4.22,green
+2024-06-20,2024-06-20,🟢 평상시 — 유지,green,0,1,0,0,3.23,green,0.96,green,68.74,yellow,44.65,yellow,318.39,yellow,122.677,yellow,4.1,yellow,-0.45,red,13.28,green,83.34,green,4.25,green
+2024-06-21,2024-06-21,🟢 평상시 — 유지,green,0,1,0,0,3.21,green,0.96,green,68.82,yellow,44.56,yellow,318.39,yellow,122.677,yellow,4.1,yellow,-0.45,red,13.2,green,81.71,green,4.25,green
+2024-06-24,2024-06-24,🟢 평상시 — 유지,green,0,1,0,0,3.19,green,0.96,green,68.75,yellow,45.48,green,318.39,yellow,122.677,yellow,4.1,yellow,-0.46,red,13.33,green,82.63,green,4.25,green
+2024-06-25,2024-06-25,🟢 평상시 — 유지,green,0,1,0,0,3.19,green,0.96,green,68.83,yellow,44.86,yellow,318.39,yellow,122.677,yellow,4.1,yellow,-0.42,red,12.84,green,81.97,green,4.23,green
+2024-06-26,2024-06-26,🟢 평상시 — 유지,green,0,1,0,0,3.18,green,0.97,green,68.68,yellow,45.05,yellow,318.39,yellow,122.677,yellow,4.1,yellow,-0.39,red,12.55,green,82.19,green,4.32,yellow
+2024-06-27,2024-06-27,🟢 평상시 — 유지,green,0,1,0,0,3.21,green,0.96,green,68.76,yellow,45.53,green,318.39,yellow,122.677,yellow,4.1,yellow,-0.41,red,12.24,green,83.04,green,4.29,green
+2024-06-28,2024-06-28,🟢 평상시 — 유지,green,0,1,0,0,3.18,green,0.96,green,68.59,yellow,46.93,green,318.39,yellow,122.677,yellow,4.1,yellow,-0.35,red,12.44,green,82.83,green,4.36,yellow
+2024-07-01,2024-07-01,🟢 평상시 — 유지,green,0,1,0,0,3.21,green,0.94,green,68.58,yellow,46.71,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.29,red,12.22,green,84.7,green,4.48,yellow
+2024-07-02,2024-07-02,🟢 평상시 — 유지,green,0,1,0,0,3.23,green,0.93,green,68.77,yellow,47.27,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.31,red,12.03,green,84.09,green,4.43,yellow
+2024-07-03,2024-07-03,🟢 평상시 — 유지,green,0,1,0,0,3.25,green,0.93,green,69.01,yellow,46.5,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.35,red,12.09,green,85.19,yellow,4.36,yellow
+2024-07-05,2024-07-05,🟢 평상시 — 유지,green,0,1,0,0,3.27,green,0.92,green,69.22,yellow,45.82,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.32,red,12.48,green,84.44,green,4.28,green
+2024-07-08,2024-07-08,🟢 평상시 — 유지,green,0,1,0,0,3.2,green,0.92,green,69.2,yellow,45.83,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.34,red,12.37,green,83.63,green,4.28,green
+2024-07-09,2024-07-09,🟢 평상시 — 유지,green,0,1,0,0,3.21,green,0.92,green,69.12,yellow,46.66,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.32,red,12.51,green,82.78,green,4.3,yellow
+2024-07-10,2024-07-10,🟢 평상시 — 유지,green,0,1,0,0,3.17,green,0.92,green,69.28,yellow,47.67,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.34,red,12.85,green,83.39,green,4.28,green
+2024-07-11,2024-07-11,🟢 평상시 — 유지,green,0,1,0,0,3.18,green,0.93,green,69.53,yellow,49.68,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.3,red,12.92,green,83.92,green,4.2,green
+2024-07-12,2024-07-12,🟢 평상시 — 유지,green,0,1,0,0,3.19,green,0.92,green,69.71,green,49.79,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.27,red,12.46,green,83.49,green,4.18,green
+2024-07-15,2024-07-15,🟢 평상시 — 유지,green,0,1,0,0,3.13,green,0.92,green,69.72,green,51.24,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.21,red,13.12,green,83.22,green,4.23,green
+2024-07-16,2024-07-16,🟢 평상시 — 유지,green,0,1,0,0,3.08,green,0.92,green,69.98,green,53.59,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.26,red,13.19,green,81.92,green,4.17,green
+2024-07-17,2024-07-17,🟢 평상시 — 유지,green,0,1,0,0,3.09,green,0.93,green,69.9,green,54.24,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.26,red,14.48,green,84.16,green,4.16,green
+2024-07-18,2024-07-18,🟢 평상시 — 유지,green,0,1,0,0,3.09,green,0.93,green,69.76,yellow,53.25,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.26,red,15.93,green,84.17,green,4.2,green
+2024-07-19,2024-07-19,🟢 평상시 — 유지,green,0,1,0,0,3.09,green,0.93,green,69.71,yellow,53.52,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.24,red,16.52,green,81.43,green,4.25,green
+2024-07-22,2024-07-22,🟢 평상시 — 유지,green,0,1,0,0,3.05,green,0.93,green,69.97,green,54.42,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.24,red,14.91,green,81.25,green,4.26,green
+2024-07-23,2024-07-23,🟢 평상시 — 유지,green,0,1,0,0,3.02,green,0.93,green,69.98,yellow,55.27,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.15,red,14.72,green,78.24,green,4.25,green
+2024-07-24,2024-07-24,🟢 평상시 — 유지,green,0,1,0,0,3.1,green,0.96,green,69.75,yellow,54.26,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.09,red,18.04,yellow,78.78,green,4.28,green
+2024-07-25,2024-07-25,🟢 평상시 — 유지,green,0,1,0,0,3.08,green,0.95,green,69.76,yellow,55.65,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.14,red,18.46,yellow,79.43,green,4.27,green
+2024-07-26,2024-07-26,🟢 평상시 — 유지,green,0,1,0,0,3.1,green,0.95,green,69.98,yellow,56.62,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.16,red,16.39,green,78.58,green,4.2,green
+2024-07-29,2024-07-29,🟢 평상시 — 유지,green,0,1,0,0,3.13,green,0.95,green,69.92,yellow,55.41,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.19,red,16.6,green,77.27,green,4.17,green
+2024-07-30,2024-07-30,🟢 평상시 — 유지,green,0,1,0,0,3.2,green,0.96,green,69.96,yellow,55.94,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.2,red,17.69,green,76.17,green,4.15,green
+2024-07-31,2024-07-31,🟢 평상시 — 유지,green,0,1,0,0,3.25,green,0.97,green,70.21,yellow,55.71,green,318.94,yellow,122.911,yellow,4.2,yellow,-0.2,red,16.36,green,79.36,green,4.09,green
+2024-08-01,2024-08-01,🟢 평상시 — 유지,green,0,1,0,0,3.35,green,1.0,green,70.05,yellow,53.21,green,319.75,yellow,123.128,yellow,4.2,green,-0.17,red,18.59,yellow,77.74,green,3.99,green
+2024-08-02,2024-08-02,🟢 평상시 — 유지,green,0,1,0,0,3.72,green,1.06,green,69.82,yellow,51.46,orange,319.75,yellow,123.128,yellow,4.2,green,-0.08,red,23.39,yellow,74.99,green,3.8,green
+2024-08-05,2024-08-05,🔴 최악 진입 — 전면 방어,red,1,1,1,0,3.93,green,1.12,green,69.39,yellow,50.04,orange,319.75,yellow,123.128,yellow,4.2,green,-0.11,red,38.57,red,74.46,green,3.78,green
+2024-08-06,2024-08-06,🔴 최악 진입 — 전면 방어,red,1,1,1,0,3.67,green,1.08,green,69.65,yellow,50.16,orange,319.75,yellow,123.128,yellow,4.2,green,-0.09,red,27.71,orange,74.6,green,3.9,green
+2024-08-07,2024-08-07,🔴 최악 진입 — 전면 방어,red,1,1,1,0,3.57,green,1.07,green,69.79,yellow,49.84,orange,319.75,yellow,123.128,yellow,4.2,green,-0.04,red,27.85,orange,76.68,green,3.96,green
+2024-08-08,2024-08-08,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.48,green,1.05,green,70.07,yellow,50.73,orange,319.75,yellow,123.128,yellow,4.2,green,-0.05,red,23.79,yellow,77.64,green,3.99,green
+2024-08-09,2024-08-09,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.49,green,1.05,green,70.06,yellow,50.48,orange,319.75,yellow,123.128,yellow,4.2,green,-0.11,red,20.37,yellow,78.28,green,3.94,green
+2024-08-12,2024-08-12,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.52,green,1.05,green,70.11,yellow,49.95,orange,319.75,yellow,123.128,yellow,4.2,green,-0.11,red,20.71,yellow,81.45,green,3.9,green
+2024-08-13,2024-08-13,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.54,green,1.04,green,70.43,yellow,50.57,orange,319.75,yellow,123.128,yellow,4.2,green,-0.08,red,18.12,yellow,79.81,green,3.85,green
+2024-08-14,2024-08-14,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.46,green,1.02,green,70.56,yellow,50.45,orange,319.75,yellow,123.128,yellow,4.2,green,-0.11,red,16.19,green,78.47,green,3.83,green
+2024-08-15,2024-08-15,🔴 최악 진입 — 전면 방어,red,1,1,0,0,3.31,green,0.98,green,70.62,yellow,51.61,orange,319.75,yellow,123.128,yellow,4.2,green,-0.16,red,15.23,green,79.66,green,3.92,green
+2024-08-16,2024-08-16,🟢 평상시 — 유지,green,0,1,0,0,3.29,green,0.98,green,70.85,green,52.45,yellow,319.75,yellow,123.128,yellow,4.2,green,-0.17,red,14.8,green,78.05,green,3.89,green
+2024-08-19,2024-08-19,🟢 평상시 — 유지,green,0,1,0,0,3.21,green,0.97,green,70.96,green,53.05,yellow,319.75,yellow,123.128,yellow,4.2,green,-0.2,red,14.65,green,75.82,green,3.86,green
+2024-08-20,2024-08-20,🟢 평상시 — 유지,green,0,1,0,0,3.25,green,0.98,green,70.9,green,52.06,yellow,319.75,yellow,123.128,yellow,4.2,green,-0.17,red,15.88,green,75.27,green,3.82,green
+2024-08-21,2024-08-21,🟢 평상시 — 유지,green,0,1,0,0,3.27,green,0.98,green,71.06,green,52.36,yellow,319.75,yellow,123.128,yellow,4.2,green,-0.13,red,16.27,green,72.76,green,3.79,green
+2024-08-22,2024-08-22,🟢 평상시 — 유지,green,0,1,0,0,3.21,green,0.97,green,70.97,yellow,52.52,yellow,319.75,yellow,123.128,yellow,4.2,green,-0.13,red,17.55,green,73.72,green,3.86,green
+2024-08-23,2024-08-23,🟢 평상시 — 유지,green,0,1,0,0,3.19,green,0.96,green,71.35,green,55.18,green,319.75,yellow,123.128,yellow,4.2,green,-0.09,red,15.86,green,75.82,green,3.81,green
+2024-08-26,2024-08-26,🟢 평상시 — 유지,green,0,1,0,0,3.15,green,0.96,green,71.2,green,54.77,green,319.75,yellow,123.128,yellow,4.2,green,-0.09,red,16.15,green,78.4,green,3.82,green
+2024-08-27,2024-08-27,🟢 평상시 — 유지,green,0,0,0,0,3.17,green,0.96,green,71.25,green,54.25,green,319.75,yellow,123.128,yellow,4.2,green,0.0,yellow,15.43,green,76.5,green,3.83,green
+2024-08-28,2024-08-28,🟢 평상시 — 유지,green,0,0,0,0,3.19,green,0.96,green,71.21,yellow,54.71,green,319.75,yellow,123.128,yellow,4.2,green,0.01,yellow,17.11,green,75.49,green,3.84,green
+2024-08-29,2024-08-29,🟢 평상시 — 유지,green,0,0,0,0,3.15,green,0.96,green,71.29,green,54.87,green,319.75,yellow,123.128,yellow,4.2,green,0.0,yellow,15.65,green,76.9,green,3.87,green
+2024-08-30,2024-08-30,🟢 평상시 — 유지,green,0,0,0,0,3.13,green,0.95,green,71.29,yellow,55.28,green,319.75,yellow,123.128,yellow,4.2,green,0.0,yellow,15.0,green,74.52,green,3.91,green
+2024-09-03,2024-09-03,🟢 평상시 — 유지,green,0,1,0,0,3.31,green,0.98,green,71.04,yellow,54.57,green,320.732,yellow,123.466,yellow,4.1,green,-0.04,red,20.72,yellow,71.28,green,3.84,green
+2024-09-04,2024-09-04,🟢 평상시 — 유지,green,0,0,0,0,3.35,green,0.99,green,71.3,yellow,53.91,green,320.732,yellow,123.466,yellow,4.1,green,0.01,yellow,21.32,yellow,70.11,green,3.77,green
+2024-09-05,2024-09-05,🟢 평상시 — 유지,green,0,1,0,0,3.29,green,0.99,green,71.55,yellow,53.39,green,320.732,yellow,123.466,yellow,4.1,green,-0.02,red,19.9,yellow,70.09,green,3.73,green
+2024-09-06,2024-09-06,🟢 평상시 — 유지,green,0,0,0,0,3.39,green,0.99,green,71.46,yellow,52.42,yellow,320.732,yellow,123.466,yellow,4.1,green,0.06,yellow,22.38,yellow,68.58,green,3.72,green
+2024-09-09,2024-09-09,🟢 평상시 — 유지,green,0,0,0,0,3.36,green,0.99,green,71.63,yellow,52.83,yellow,320.732,yellow,123.466,yellow,4.1,green,0.02,yellow,19.45,yellow,69.65,green,3.7,green
+2024-09-10,2024-09-10,🟢 평상시 — 유지,green,0,0,0,0,3.46,green,1.01,green,71.49,yellow,52.37,orange,320.732,yellow,123.466,yellow,4.1,green,0.06,yellow,19.08,yellow,66.73,green,3.65,green
+2024-09-11,2024-09-11,🟠 위험 — 2차 방어,orange,1,0,0,0,3.44,green,1.01,green,71.6,yellow,51.76,orange,320.732,yellow,123.466,yellow,4.1,green,0.03,yellow,17.69,green,68.25,green,3.65,green
+2024-09-12,2024-09-12,🟠 위험 — 2차 방어,orange,1,0,0,0,3.39,green,0.99,green,71.7,yellow,51.96,orange,320.732,yellow,123.466,yellow,4.1,green,0.04,yellow,17.07,green,69.89,green,3.68,green
+2024-09-13,2024-09-13,🟢 평상시 — 유지,green,0,0,0,0,3.37,green,0.99,green,71.9,yellow,53.36,yellow,320.732,yellow,123.466,yellow,4.1,green,0.09,yellow,16.56,green,69.59,green,3.66,green
+2024-09-16,2024-09-16,🟢 평상시 — 유지,green,0,0,0,0,3.32,green,0.98,green,72.08,green,54.05,green,320.732,yellow,123.466,yellow,4.1,green,0.07,yellow,17.14,green,71.1,green,3.63,green
+2024-09-17,2024-09-17,🟢 평상시 — 유지,green,0,0,0,0,3.25,green,0.97,green,72.1,yellow,54.49,green,320.732,yellow,123.466,yellow,4.1,green,0.06,yellow,17.61,green,72.16,green,3.65,green
+2024-09-18,2024-09-18,🟢 평상시 — 유지,green,0,0,0,0,3.21,green,0.95,green,72.16,yellow,54.73,green,320.732,yellow,123.466,yellow,4.1,green,0.09,yellow,18.23,yellow,71.87,green,3.7,green
+2024-09-19,2024-09-19,🟢 평상시 — 유지,green,0,0,0,0,3.1,green,0.93,green,72.38,green,56.28,green,320.732,yellow,123.466,yellow,4.1,green,0.14,yellow,16.33,green,72.86,green,3.73,green
+2024-09-20,2024-09-20,🟢 평상시 — 유지,green,0,0,0,0,3.15,green,0.93,green,72.47,green,55.14,green,320.732,yellow,123.466,yellow,4.1,green,0.18,yellow,16.15,green,72.72,green,3.73,green
+2024-09-23,2024-09-23,🟢 평상시 — 유지,green,0,0,0,0,3.15,green,0.92,green,72.33,yellow,54.7,green,320.732,yellow,123.466,yellow,4.1,green,0.18,yellow,15.89,green,71.33,green,3.75,green
+2024-09-24,2024-09-24,🟢 평상시 — 유지,green,0,0,0,0,3.21,green,0.92,green,72.34,yellow,53.96,yellow,320.732,yellow,123.466,yellow,4.1,green,0.25,green,15.39,green,72.34,green,3.74,green
+2024-09-25,2024-09-25,🟢 평상시 — 유지,green,0,0,0,0,3.19,green,0.92,green,72.26,yellow,53.15,orange,320.732,yellow,123.466,yellow,4.1,green,0.26,green,15.41,green,70.42,green,3.79,green
+2024-09-26,2024-09-26,🟢 평상시 — 유지,green,0,0,0,0,3.14,green,0.92,green,72.38,yellow,53.74,yellow,320.732,yellow,123.466,yellow,4.1,green,0.19,yellow,15.37,green,68.28,green,3.79,green
+2024-09-27,2024-09-27,🟢 평상시 — 유지,green,0,0,0,0,3.14,green,0.92,green,72.56,yellow,53.81,yellow,320.732,yellow,123.466,yellow,4.1,green,0.2,yellow,16.96,green,68.72,green,3.75,green
+2024-09-30,2024-09-30,🟢 평상시 — 유지,green,0,0,0,0,3.03,green,0.92,green,72.5,yellow,54.46,green,320.732,yellow,123.466,yellow,4.1,green,0.15,yellow,16.73,green,68.75,green,3.81,green
+2024-10-01,2024-10-01,🟢 평상시 — 유지,green,0,0,0,0,3.07,green,0.92,green,72.47,yellow,52.64,orange,321.731,yellow,123.832,yellow,4.1,green,0.13,yellow,19.26,yellow,70.41,green,3.74,green
+2024-10-02,2024-10-02,🟠 위험 — 2차 방어,orange,1,0,0,0,3.06,green,0.91,green,72.48,yellow,52.53,orange,321.731,yellow,123.832,yellow,4.1,green,0.16,yellow,18.9,yellow,70.74,green,3.79,green
+2024-10-03,2024-10-03,🟠 위험 — 2차 방어,orange,1,0,0,0,3.04,green,0.9,green,72.31,yellow,52.65,orange,321.731,yellow,123.832,yellow,4.1,green,0.15,yellow,20.49,yellow,74.33,green,3.85,green
+2024-10-04,2024-10-04,🟢 평상시 — 유지,green,0,0,0,0,2.89,green,0.87,green,72.22,yellow,53.73,yellow,321.731,yellow,123.832,yellow,4.1,green,0.05,yellow,19.21,yellow,74.93,green,3.98,green
+2024-10-07,2024-10-07,🟢 평상시 — 유지,green,0,0,0,0,2.95,green,0.86,green,71.91,yellow,53.49,yellow,321.731,yellow,123.832,yellow,4.1,green,0.04,yellow,22.64,yellow,77.76,green,4.03,green
+2024-10-08,2024-10-08,🟢 평상시 — 유지,green,0,0,0,0,2.99,green,0.87,green,72.09,yellow,53.33,yellow,321.731,yellow,123.832,yellow,4.1,green,0.06,yellow,21.42,yellow,74.26,green,4.04,green
+2024-10-09,2024-10-09,🟢 평상시 — 유지,green,0,0,0,0,2.94,green,0.85,green,72.04,yellow,54.02,yellow,321.731,yellow,123.832,yellow,4.1,green,0.07,yellow,20.86,yellow,73.85,green,4.06,green
+2024-10-10,2024-10-10,🟢 평상시 — 유지,green,0,0,0,0,2.99,green,0.84,green,72.01,yellow,53.97,yellow,321.731,yellow,123.832,yellow,4.1,green,0.11,yellow,20.93,yellow,76.46,green,4.09,green
+2024-10-11,2024-10-11,🟢 평상시 — 유지,green,0,0,0,0,2.98,green,0.84,green,72.2,yellow,55.84,green,321.731,yellow,123.832,yellow,4.1,green,0.13,yellow,20.46,yellow,76.11,green,4.08,green
+2024-10-14,2024-10-14,🟢 평상시 — 유지,green,0,0,0,0,2.97,green,0.84,green,72.23,yellow,56.28,green,321.731,yellow,123.832,yellow,4.1,green,0.13,yellow,19.7,yellow,76.11,green,4.08,green
+2024-10-15,2024-10-15,🟢 평상시 — 유지,green,0,0,0,0,2.93,green,0.83,green,72.21,yellow,56.9,green,321.731,yellow,123.832,yellow,4.1,green,0.08,yellow,20.64,yellow,71.22,green,4.03,green
+2024-10-16,2024-10-16,🟢 평상시 — 유지,green,0,0,0,0,2.9,green,0.83,green,72.34,yellow,57.68,green,321.731,yellow,123.832,yellow,4.1,green,0.09,yellow,19.58,yellow,70.97,green,4.02,green
+2024-10-17,2024-10-17,🟢 평상시 — 유지,green,0,0,0,0,2.89,green,0.83,green,72.23,yellow,58.18,green,321.731,yellow,123.832,yellow,4.1,green,0.13,yellow,19.11,yellow,71.26,green,4.09,green
+2024-10-18,2024-10-18,🟢 평상시 — 유지,green,0,0,0,0,2.88,green,0.83,green,72.4,yellow,57.39,green,321.731,yellow,123.832,yellow,4.1,green,0.13,yellow,18.03,yellow,69.78,green,4.08,green
+2024-10-21,2024-10-21,🟢 평상시 — 유지,green,0,0,0,0,2.88,green,0.85,green,72.11,yellow,55.7,green,321.731,yellow,123.832,yellow,4.1,green,0.17,yellow,18.37,yellow,71.16,green,4.19,green
+2024-10-22,2024-10-22,🟢 평상시 — 유지,green,0,0,0,0,2.92,green,0.85,green,72.01,yellow,56.41,green,321.731,yellow,123.832,yellow,4.1,green,0.17,yellow,18.2,yellow,72.84,green,4.2,green
+2024-10-23,2024-10-23,🟢 평상시 — 유지,green,0,0,0,0,2.95,green,0.86,green,71.8,yellow,56.45,green,321.731,yellow,123.832,yellow,4.1,green,0.17,yellow,19.24,yellow,71.37,green,4.24,green
+2024-10-24,2024-10-24,🟢 평상시 — 유지,green,0,0,0,0,2.93,green,0.86,green,72.01,yellow,56.73,green,321.731,yellow,123.832,yellow,4.1,green,0.14,yellow,19.08,yellow,70.58,green,4.21,green
+2024-10-25,2024-10-25,🟢 평상시 — 유지,green,0,0,0,0,2.89,green,0.85,green,71.93,yellow,55.71,yellow,321.731,yellow,123.832,yellow,4.1,green,0.14,yellow,20.33,yellow,72.02,green,4.25,green
+2024-10-28,2024-10-28,🟢 평상시 — 유지,green,0,0,0,0,2.82,green,0.84,green,72.11,yellow,57.31,green,321.731,yellow,123.832,yellow,4.1,green,0.16,yellow,19.8,yellow,67.65,green,4.28,green
+2024-10-29,2024-10-29,🟢 평상시 — 유지,green,0,0,0,0,2.85,green,0.84,green,72.13,yellow,56.98,green,321.731,yellow,123.832,yellow,4.1,green,0.17,yellow,19.34,yellow,67.48,green,4.28,green
+2024-10-30,2024-10-30,🟢 평상시 — 유지,green,0,0,0,0,2.8,green,0.84,green,72.01,yellow,57.55,green,321.731,yellow,123.832,yellow,4.1,green,0.14,yellow,20.35,yellow,68.91,green,4.29,green
+2024-10-31,2024-10-31,🟢 평상시 — 유지,green,0,0,0,0,2.88,green,0.86,green,71.81,yellow,56.72,green,321.731,yellow,123.832,yellow,4.1,green,0.12,yellow,23.16,yellow,69.58,green,4.28,green
+2024-11-01,2024-11-01,🟢 평상시 — 유지,green,0,0,0,0,2.83,green,0.86,green,71.81,yellow,56.43,yellow,322.657,yellow,123.962,yellow,4.2,yellow,0.16,yellow,21.88,yellow,69.81,green,4.37,yellow
+2024-11-04,2024-11-04,🟢 평상시 — 유지,green,0,0,0,0,2.87,green,0.86,green,72.01,yellow,55.94,yellow,322.657,yellow,123.962,yellow,4.2,yellow,0.14,yellow,21.98,yellow,71.83,green,4.31,yellow
+2024-11-05,2024-11-05,🟢 평상시 — 유지,green,0,0,0,0,2.86,green,0.84,green,72.21,yellow,56.9,yellow,322.657,yellow,123.962,yellow,4.2,yellow,0.07,yellow,20.49,yellow,72.26,green,4.26,green
+2024-11-06,2024-11-06,🟢 평상시 — 유지,green,0,0,0,0,2.74,green,0.8,green,72.34,yellow,64.53,green,322.657,yellow,123.962,yellow,4.2,yellow,0.15,yellow,16.27,green,71.98,green,4.42,yellow
+2024-11-07,2024-11-07,🟢 평상시 — 유지,green,0,0,0,0,2.73,green,0.78,green,72.65,yellow,62.19,green,322.657,yellow,123.962,yellow,4.2,yellow,0.1,yellow,15.2,green,72.69,green,4.31,yellow
+2024-11-08,2024-11-08,🟢 평상시 — 유지,green,0,0,0,0,2.63,green,0.77,green,72.77,yellow,62.53,green,322.657,yellow,123.962,yellow,4.2,yellow,0.04,yellow,14.94,green,70.69,green,4.3,yellow
+2024-11-11,2024-11-11,🟢 평상시 — 유지,green,0,0,0,0,2.63,green,0.77,green,72.69,yellow,64.46,green,322.657,yellow,123.962,yellow,4.2,yellow,0.04,yellow,14.97,green,70.69,green,4.3,yellow
+2024-11-12,2024-11-12,🟢 평상시 — 유지,green,0,0,0,0,2.61,green,0.77,green,72.39,yellow,64.09,green,322.657,yellow,123.962,yellow,4.2,yellow,0.09,yellow,14.71,green,68.43,green,4.43,yellow
+2024-11-13,2024-11-13,🟢 평상시 — 유지,green,0,0,0,0,2.64,green,0.78,green,72.41,yellow,63.69,green,322.657,yellow,123.962,yellow,4.2,yellow,0.17,yellow,14.02,green,68.76,green,4.44,yellow
+2024-11-14,2024-11-14,🟢 평상시 — 유지,green,0,0,0,0,2.6,green,0.8,green,72.26,yellow,63.35,green,322.657,yellow,123.962,yellow,4.2,yellow,0.09,yellow,14.31,green,68.99,green,4.43,yellow
+2024-11-15,2024-11-15,🟢 평상시 — 유지,green,0,0,0,0,2.72,green,0.8,green,72.25,yellow,63.35,green,322.657,yellow,123.962,yellow,4.2,yellow,0.12,yellow,16.14,green,67.33,green,4.43,yellow
+2024-11-18,2024-11-18,🟢 평상시 — 유지,green,0,0,0,0,2.72,green,0.8,green,72.39,yellow,63.24,green,322.657,yellow,123.962,yellow,4.2,yellow,0.13,yellow,15.58,green,69.46,green,4.42,yellow
+2024-11-19,2024-11-19,🟢 평상시 — 유지,green,0,0,0,0,2.69,green,0.8,green,72.49,yellow,62.87,green,322.657,yellow,123.962,yellow,4.2,yellow,0.12,yellow,16.35,green,69.75,green,4.39,yellow
+2024-11-20,2024-11-20,🟢 평상시 — 유지,green,0,0,0,0,2.67,green,0.81,green,72.48,yellow,62.7,green,322.657,yellow,123.962,yellow,4.2,yellow,0.1,yellow,17.16,green,69.25,green,4.41,yellow
+2024-11-21,2024-11-21,🟢 평상시 — 유지,green,0,0,0,0,2.61,green,0.81,green,72.5,yellow,63.63,green,322.657,yellow,123.962,yellow,4.2,yellow,0.09,yellow,16.87,green,70.39,green,4.43,yellow
+2024-11-22,2024-11-22,🟢 평상시 — 유지,green,0,0,0,0,2.61,green,0.8,green,72.49,yellow,65.23,green,322.657,yellow,123.962,yellow,4.2,yellow,0.04,yellow,15.24,green,71.68,green,4.41,yellow
+2024-11-25,2024-11-25,🟢 평상시 — 유지,green,0,0,0,0,2.64,green,0.8,green,72.76,yellow,66.3,green,322.657,yellow,123.962,yellow,4.2,yellow,0.06,yellow,14.6,green,69.41,green,4.27,green
+2024-11-26,2024-11-26,🟢 평상시 — 유지,green,0,0,0,0,2.68,green,0.81,green,72.62,yellow,65.59,green,322.657,yellow,123.962,yellow,4.2,yellow,0.09,yellow,14.1,green,69.05,green,4.3,yellow
+2024-11-27,2024-11-27,🟢 평상시 — 유지,green,0,0,0,0,2.69,green,0.82,green,72.84,yellow,65.38,green,322.657,yellow,123.962,yellow,4.2,yellow,0.06,yellow,14.1,green,69.03,green,4.25,green
+2024-11-29,2024-11-29,🟢 평상시 — 유지,green,0,0,0,0,2.72,green,0.82,green,72.99,yellow,65.17,green,322.657,yellow,123.962,yellow,4.2,yellow,0.05,yellow,13.51,green,68.26,green,4.18,green
+2024-12-02,2024-12-02,🟢 평상시 — 유지,green,0,0,0,0,2.68,green,0.81,green,72.96,yellow,64.56,green,323.259,yellow,124.196,yellow,4.1,green,0.02,yellow,13.34,green,68.35,green,4.19,green
+2024-12-03,2024-12-03,🟢 평상시 — 유지,green,0,0,0,0,2.66,green,0.8,green,72.96,yellow,63.99,yellow,323.259,yellow,124.196,yellow,4.1,green,0.06,yellow,13.3,green,70.15,green,4.23,green
+2024-12-04,2024-12-04,🟢 평상시 — 유지,green,0,0,0,0,2.66,green,0.8,green,73.13,yellow,64.19,yellow,323.259,yellow,124.196,yellow,4.1,green,0.06,yellow,13.45,green,68.81,green,4.19,green
+2024-12-05,2024-12-05,🟢 평상시 — 유지,green,0,0,0,0,2.66,green,0.81,green,73.07,yellow,63.86,yellow,323.259,yellow,124.196,yellow,4.1,green,0.02,yellow,13.54,green,68.58,green,4.17,green
+2024-12-06,2024-12-06,🟢 평상시 — 유지,green,0,0,0,0,2.67,green,0.81,green,73.19,yellow,64.05,yellow,323.259,yellow,124.196,yellow,4.1,green,0.05,yellow,12.77,green,68.58,green,4.15,green
+2024-12-09,2024-12-09,🟢 평상시 — 유지,green,0,0,0,0,2.67,green,0.81,green,73.1,yellow,63.01,orange,323.259,yellow,124.196,yellow,4.1,green,0.07,yellow,14.19,green,68.65,green,4.2,green
+2024-12-10,2024-12-10,🟠 위험 — 2차 방어,orange,1,0,0,0,2.67,green,0.8,green,73.13,yellow,63.0,orange,323.259,yellow,124.196,yellow,4.1,green,0.07,yellow,14.18,green,68.85,green,4.22,green
+2024-12-11,2024-12-11,🟠 위험 — 2차 방어,orange,1,0,0,0,2.64,green,0.78,green,73.15,yellow,63.33,orange,323.259,yellow,124.196,yellow,4.1,green,0.11,yellow,13.58,green,70.57,green,4.26,green
+2024-12-12,2024-12-12,🟠 위험 — 2차 방어,orange,1,0,0,0,2.66,green,0.79,green,72.95,yellow,62.56,orange,323.259,yellow,124.196,yellow,4.1,green,0.14,yellow,13.92,green,70.25,green,4.32,yellow
+2024-12-13,2024-12-13,🟠 위험 — 2차 방어,orange,1,0,0,0,2.68,green,0.78,green,72.74,yellow,62.33,orange,323.259,yellow,124.196,yellow,4.1,green,0.15,yellow,13.81,green,71.54,green,4.4,yellow
+2024-12-16,2024-12-16,🟠 위험 — 2차 방어,orange,1,0,0,0,2.69,green,0.78,green,72.88,yellow,62.63,orange,323.259,yellow,124.196,yellow,4.1,green,0.14,yellow,14.69,green,71.03,green,4.39,yellow
+2024-12-17,2024-12-17,🟠 위험 — 2차 방어,orange,1,0,0,0,2.75,green,0.79,green,72.72,yellow,61.16,orange,323.259,yellow,124.196,yellow,4.1,green,0.15,yellow,15.87,green,70.31,green,4.4,yellow
+2024-12-18,2024-12-18,🟠 위험 — 2차 방어,orange,1,0,0,0,2.73,green,0.79,green,71.98,orange,57.99,red,323.259,yellow,124.196,yellow,4.1,green,0.15,yellow,27.62,orange,70.8,green,4.5,yellow
+2024-12-19,2024-12-19,🟠 위험 — 2차 방어,orange,2,0,0,0,2.91,green,0.82,green,71.9,orange,57.48,orange,323.259,yellow,124.196,yellow,4.1,green,0.25,green,24.09,yellow,70.1,green,4.57,yellow
+2024-12-20,2024-12-20,🟠 위험 — 2차 방어,orange,1,0,0,0,2.86,green,0.82,green,72.35,yellow,58.51,orange,323.259,yellow,124.196,yellow,4.1,green,0.22,green,18.36,yellow,69.71,green,4.52,yellow
+2024-12-23,2024-12-23,🟠 위험 — 2차 방어,orange,1,0,0,0,2.85,green,0.82,green,72.16,yellow,58.71,orange,323.259,yellow,124.196,yellow,4.1,green,0.29,green,16.78,green,69.5,green,4.59,yellow
+2024-12-24,2024-12-24,🟠 위험 — 2차 방어,orange,1,0,0,0,2.86,green,0.82,green,72.39,yellow,59.14,orange,323.259,yellow,124.196,yellow,4.1,green,0.3,green,14.27,green,70.87,green,4.59,yellow
+2024-12-26,2024-12-26,🟠 위험 — 2차 방어,orange,1,0,0,0,2.86,green,0.81,green,72.57,yellow,59.42,orange,323.259,yellow,124.196,yellow,4.1,green,0.28,green,14.73,green,70.38,green,4.58,yellow
+2024-12-27,2024-12-27,🟠 위험 — 2차 방어,orange,1,0,0,0,2.84,green,0.81,green,72.33,yellow,58.68,orange,323.259,yellow,124.196,yellow,4.1,green,0.31,green,15.95,green,71.28,green,4.62,yellow
+2024-12-30,2024-12-30,🟠 위험 — 2차 방어,orange,1,0,0,0,2.94,green,0.82,green,72.43,yellow,58.54,orange,323.259,yellow,124.196,yellow,4.1,green,0.31,green,17.4,green,71.73,green,4.55,yellow
+2024-12-31,2024-12-31,🟠 위험 — 2차 방어,orange,1,0,0,0,2.92,green,0.82,green,72.42,yellow,58.47,orange,323.259,yellow,124.196,yellow,4.1,green,0.33,green,17.35,green,72.44,green,4.58,yellow
+2025-01-02,2025-01-02,🟠 위험 — 2차 방어,orange,1,0,0,0,2.88,green,0.83,green,72.59,yellow,57.82,orange,324.638,yellow,124.587,yellow,4.0,green,0.32,green,17.93,green,73.79,green,4.57,yellow
+2025-01-03,2025-01-03,🟠 위험 — 2차 방어,orange,1,0,0,0,2.81,green,0.83,green,72.7,yellow,58.66,orange,324.638,yellow,124.587,yellow,4.0,green,0.32,green,16.13,green,74.64,green,4.6,yellow
+2025-01-06,2025-01-06,🟠 위험 — 2차 방어,orange,1,0,0,0,2.76,green,0.84,green,72.83,yellow,58.79,orange,324.638,yellow,124.587,yellow,4.0,green,0.34,green,16.04,green,74.31,green,4.62,yellow
+2025-01-07,2025-01-07,🟠 위험 — 2차 방어,orange,1,0,0,0,2.79,green,0.84,green,72.59,yellow,58.24,orange,324.638,yellow,124.587,yellow,4.0,green,0.37,green,17.82,green,74.99,green,4.67,yellow
+2025-01-08,2025-01-08,🟠 위험 — 2차 방어,orange,1,0,0,0,2.84,green,0.83,green,72.68,yellow,58.22,orange,324.638,yellow,124.587,yellow,4.0,green,0.39,green,17.7,green,73.99,green,4.67,yellow
+2025-01-10,2025-01-10,🟠 위험 — 2차 방어,orange,1,0,0,0,2.81,green,0.83,green,72.31,yellow,56.49,orange,324.638,yellow,124.587,yellow,4.0,green,0.37,green,19.54,yellow,77.27,green,4.77,orange
+2025-01-13,2025-01-13,🟠 위험 — 2차 방어,orange,1,0,1,0,2.85,green,0.84,green,72.29,yellow,57.33,orange,324.638,yellow,124.587,yellow,4.0,green,0.39,green,19.19,yellow,79.57,green,4.79,orange
+2025-01-14,2025-01-14,🟢 평상시 — 유지,green,0,0,1,0,2.8,green,0.84,green,72.38,yellow,59.28,yellow,324.638,yellow,124.587,yellow,4.0,green,0.41,green,18.71,yellow,78.2,green,4.78,orange
+2025-01-15,2025-01-15,🟢 평상시 — 유지,green,0,0,0,0,2.72,green,0.83,green,73.02,yellow,60.77,green,324.638,yellow,124.587,yellow,4.0,green,0.39,green,16.12,green,80.73,green,4.66,yellow
+2025-01-16,2025-01-16,🟢 평상시 — 유지,green,0,0,0,0,2.73,green,0.83,green,73.1,yellow,60.2,green,324.638,yellow,124.587,yellow,4.0,green,0.38,green,16.6,green,79.35,green,4.61,yellow
+2025-01-17,2025-01-17,🟢 평상시 — 유지,green,0,0,0,0,2.64,green,0.82,green,73.16,yellow,61.1,green,324.638,yellow,124.587,yellow,4.0,green,0.34,green,15.97,green,78.56,green,4.61,yellow
+2025-01-21,2025-01-21,🟢 평상시 — 유지,green,0,0,0,0,2.61,green,0.82,green,73.36,green,61.86,green,324.638,yellow,124.587,yellow,4.0,green,0.28,green,15.06,green,76.79,green,4.57,yellow
+2025-01-22,2025-01-22,🟢 평상시 — 유지,green,0,0,0,0,2.59,green,0.81,green,73.26,yellow,61.12,green,324.638,yellow,124.587,yellow,4.0,green,0.31,green,15.1,green,76.12,green,4.6,yellow
+2025-01-23,2025-01-23,🟢 평상시 — 유지,green,0,0,0,0,2.61,green,0.8,green,73.35,yellow,60.9,green,324.638,yellow,124.587,yellow,4.0,green,0.36,green,15.02,green,75.03,green,4.65,yellow
+2025-01-24,2025-01-24,🟢 평상시 — 유지,green,0,0,0,0,2.6,green,0.8,green,73.43,yellow,61.36,green,324.638,yellow,124.587,yellow,4.0,green,0.36,green,14.85,green,74.97,green,4.63,yellow
+2025-01-27,2025-01-27,🟢 평상시 — 유지,green,0,0,0,0,2.66,green,0.81,green,73.49,yellow,62.0,green,324.638,yellow,124.587,yellow,4.0,green,0.36,green,17.9,green,73.51,green,4.53,yellow
+2025-01-28,2025-01-28,🟢 평상시 — 유지,green,0,0,0,0,2.66,green,0.81,green,73.46,yellow,61.69,green,324.638,yellow,124.587,yellow,4.0,green,0.36,green,16.41,green,74.15,green,4.55,yellow
+2025-01-29,2025-01-29,🟢 평상시 — 유지,green,0,0,0,0,2.68,green,0.81,green,73.41,yellow,61.63,green,324.638,yellow,124.587,yellow,4.0,green,0.34,green,16.56,green,72.94,green,4.55,yellow
+2025-01-30,2025-01-30,🟢 평상시 — 유지,green,0,0,0,0,2.67,green,0.81,green,73.55,yellow,62.31,green,324.638,yellow,124.587,yellow,4.0,green,0.34,green,15.84,green,73.1,green,4.52,yellow
+2025-01-31,2025-01-31,🟢 평상시 — 유지,green,0,0,0,0,2.68,green,0.82,green,73.4,yellow,62.16,green,324.638,yellow,124.587,yellow,4.0,green,0.36,green,16.43,green,72.84,green,4.58,yellow
+2025-02-03,2025-02-03,🟢 평상시 — 유지,green,0,0,0,0,2.73,green,0.83,green,73.31,yellow,60.87,green,325.465,yellow,125.145,yellow,4.2,yellow,0.28,green,18.62,yellow,73.52,green,4.54,yellow
+2025-02-04,2025-02-04,🟢 평상시 — 유지,green,0,0,0,0,2.71,green,0.82,green,73.54,yellow,62.05,green,325.465,yellow,125.145,yellow,4.2,yellow,0.31,green,17.21,green,73.04,green,4.52,yellow
+2025-02-05,2025-02-05,🟢 평상시 — 유지,green,0,0,0,0,2.69,green,0.83,green,73.74,yellow,62.73,green,325.465,yellow,125.145,yellow,4.2,yellow,0.26,green,15.77,green,71.39,green,4.43,yellow
+2025-02-06,2025-02-06,🟢 평상시 — 유지,green,0,0,0,0,2.66,green,0.84,green,73.62,yellow,63.46,green,325.465,yellow,125.145,yellow,4.2,yellow,0.24,green,15.5,green,70.97,green,4.45,yellow
+2025-02-07,2025-02-07,🟢 평상시 — 유지,green,0,0,0,0,2.67,green,0.84,green,73.39,yellow,62.61,green,325.465,yellow,125.145,yellow,4.2,yellow,0.2,yellow,16.54,green,71.32,green,4.49,yellow
+2025-02-10,2025-02-10,🟢 평상시 — 유지,green,0,0,0,0,2.66,green,0.84,green,73.54,yellow,61.89,yellow,325.465,yellow,125.145,yellow,4.2,yellow,0.23,green,15.81,green,72.73,green,4.51,yellow
+2025-02-11,2025-02-11,🟢 평상시 — 유지,green,0,0,0,0,2.66,green,0.83,green,73.51,yellow,62.91,green,325.465,yellow,125.145,yellow,4.2,yellow,0.25,green,16.02,green,73.67,green,4.54,yellow
+2025-02-12,2025-02-12,🟢 평상시 — 유지,green,0,0,0,0,2.65,green,0.81,green,73.36,yellow,61.43,yellow,325.465,yellow,125.145,yellow,4.2,yellow,0.26,green,15.89,green,71.72,green,4.62,yellow
+2025-02-13,2025-02-13,🟢 평상시 — 유지,green,0,0,0,0,2.65,green,0.81,green,73.69,yellow,61.7,yellow,325.465,yellow,125.145,yellow,4.2,yellow,0.21,green,15.1,green,71.66,green,4.52,yellow
+2025-02-14,2025-02-14,🟢 평상시 — 유지,green,0,0,0,0,2.62,green,0.8,green,73.77,yellow,61.9,yellow,325.465,yellow,125.145,yellow,4.2,yellow,0.21,green,14.77,green,71.05,green,4.47,yellow
+2025-02-18,2025-02-18,🟢 평상시 — 유지,green,0,0,0,0,2.62,green,0.79,green,73.71,yellow,62.45,yellow,325.465,yellow,125.145,yellow,4.2,yellow,0.26,green,15.35,green,72.21,green,4.55,yellow
+2025-02-19,2025-02-19,🟢 평상시 — 유지,green,0,0,0,0,2.68,green,0.79,green,73.76,yellow,62.22,yellow,325.465,yellow,125.145,yellow,4.2,yellow,0.25,green,15.27,green,72.58,green,4.53,yellow
+2025-02-20,2025-02-20,🟢 평상시 — 유지,green,0,0,0,0,2.66,green,0.8,green,73.81,yellow,61.09,orange,325.465,yellow,125.145,yellow,4.2,yellow,0.22,green,15.66,green,72.88,green,4.5,yellow
+2025-02-21,2025-02-21,🟠 위험 — 2차 방어,orange,1,0,0,0,2.78,green,0.81,green,73.67,yellow,59.5,orange,325.465,yellow,125.145,yellow,4.2,yellow,0.23,green,18.21,yellow,70.72,green,4.42,yellow
+2025-02-24,2025-02-24,🟠 위험 — 2차 방어,orange,1,0,0,0,2.78,green,0.81,green,73.76,yellow,59.07,orange,325.465,yellow,125.145,yellow,4.2,yellow,0.27,green,18.98,yellow,71.06,green,4.4,yellow
+2025-02-25,2025-02-25,🟠 위험 — 2차 방어,orange,1,0,0,0,2.84,green,0.84,green,73.95,yellow,59.11,orange,325.465,yellow,125.145,yellow,4.2,yellow,0.23,green,19.43,yellow,69.15,green,4.3,yellow
+2025-02-26,2025-02-26,🟠 위험 — 2차 방어,orange,1,0,0,0,2.81,green,0.84,green,74.05,yellow,59.26,orange,325.465,yellow,125.145,yellow,4.2,yellow,0.2,yellow,19.1,yellow,68.87,green,4.25,green
+2025-02-27,2025-02-27,🟠 위험 — 2차 방어,orange,1,0,0,0,2.81,green,0.85,green,73.91,yellow,59.35,orange,325.465,yellow,125.145,yellow,4.2,yellow,0.22,green,21.13,yellow,70.62,green,4.29,green
+2025-02-28,2025-02-28,🟠 위험 — 2차 방어,orange,1,0,0,0,2.87,green,0.88,green,74.11,yellow,60.13,orange,325.465,yellow,125.145,yellow,4.2,yellow,0.25,green,19.63,yellow,69.97,green,4.24,green
+2025-03-03,2025-03-03,🟠 위험 — 2차 방어,orange,1,0,0,0,2.94,green,0.89,green,73.96,yellow,59.27,orange,325.69,yellow,125.267,yellow,4.2,green,0.2,yellow,22.78,yellow,68.63,green,4.16,green
+2025-03-04,2025-03-04,🟠 위험 — 2차 방어,orange,1,0,0,0,2.99,green,0.89,green,73.95,yellow,57.2,orange,325.69,yellow,125.267,yellow,4.2,green,0.26,green,23.51,yellow,68.47,green,4.22,green
+2025-03-05,2025-03-05,🟠 위험 — 2차 방어,orange,1,0,0,0,2.88,green,0.87,green,73.99,yellow,56.88,orange,325.69,yellow,125.267,yellow,4.2,green,0.29,green,21.93,yellow,66.58,green,4.28,green
+2025-03-06,2025-03-06,🟠 위험 — 2차 방어,orange,1,0,0,0,2.99,green,0.88,green,73.71,yellow,55.96,orange,325.69,yellow,125.267,yellow,4.2,green,0.33,green,24.87,yellow,66.62,green,4.29,green
+2025-03-07,2025-03-07,🟠 위험 — 2차 방어,orange,1,0,0,0,2.97,green,0.89,green,73.83,yellow,55.89,orange,325.69,yellow,125.267,yellow,4.2,green,0.33,green,23.37,yellow,67.29,green,4.32,yellow
+2025-03-10,2025-03-10,🟠 위험 — 2차 방어,orange,1,0,0,0,3.16,green,0.91,green,73.55,yellow,53.68,orange,325.69,yellow,125.267,yellow,4.2,green,0.33,green,27.86,orange,66.31,green,4.22,green
+2025-03-11,2025-03-11,🟠 위험 — 2차 방어,orange,1,0,1,0,3.22,green,0.94,green,73.29,yellow,53.39,orange,325.69,yellow,125.267,yellow,4.2,green,0.34,green,26.92,orange,66.52,green,4.28,green
+2025-03-12,2025-03-12,🟠 위험 — 2차 방어,orange,1,0,0,0,3.2,green,0.96,green,73.38,yellow,54.01,orange,325.69,yellow,125.267,yellow,4.2,green,0.31,green,24.23,yellow,67.65,green,4.32,yellow
+2025-03-13,2025-03-13,🟠 위험 — 2차 방어,orange,1,0,0,0,3.4,green,0.97,green,72.97,orange,53.41,orange,325.69,yellow,125.267,yellow,4.2,green,0.33,green,24.66,yellow,66.82,green,4.27,green
+2025-03-14,2025-03-14,🟠 위험 — 2차 방어,orange,1,0,0,0,3.25,green,0.94,green,73.3,yellow,54.99,orange,325.69,yellow,125.267,yellow,4.2,green,0.29,green,21.77,yellow,67.43,green,4.31,yellow
+2025-03-17,2025-03-17,🟠 위험 — 2차 방어,orange,1,0,0,0,3.18,green,0.93,green,73.48,yellow,55.35,orange,325.69,yellow,125.267,yellow,4.2,green,0.25,green,20.51,yellow,67.84,green,4.31,yellow
+2025-03-18,2025-03-18,🟠 위험 — 2차 방어,orange,1,0,0,0,3.23,green,0.93,green,73.35,yellow,55.19,orange,325.69,yellow,125.267,yellow,4.2,green,0.25,green,21.7,yellow,67.49,green,4.29,green
+2025-03-19,2025-03-19,🟠 위험 — 2차 방어,orange,1,0,0,0,3.19,green,0.91,green,73.83,yellow,55.88,orange,325.69,yellow,125.267,yellow,4.2,green,0.26,green,19.9,yellow,67.4,green,4.25,green
+2025-03-20,2025-03-20,🟠 위험 — 2차 방어,orange,1,0,0,0,3.17,green,0.91,green,73.73,yellow,55.5,orange,325.69,yellow,125.267,yellow,4.2,green,0.29,green,19.8,yellow,68.55,green,4.24,green
+2025-03-21,2025-03-21,🟠 위험 — 2차 방어,orange,1,0,0,0,3.21,green,0.92,green,73.62,yellow,55.47,orange,325.69,yellow,125.267,yellow,4.2,green,0.31,green,19.28,yellow,68.52,green,4.25,green
+2025-03-24,2025-03-24,🟢 평상시 — 유지,green,0,0,0,0,3.05,green,0.9,green,73.83,yellow,56.98,green,325.69,yellow,125.267,yellow,4.2,green,0.3,green,17.48,green,69.46,green,4.34,yellow
+2025-03-25,2025-03-25,🟢 평상시 — 유지,green,0,0,0,0,3.09,green,0.9,green,73.79,yellow,56.81,green,325.69,yellow,125.267,yellow,4.2,green,0.35,green,17.15,green,69.48,green,4.31,yellow
+2025-03-26,2025-03-26,🟢 평상시 — 유지,green,0,0,0,0,3.19,green,0.91,green,73.5,yellow,56.57,yellow,325.69,yellow,125.267,yellow,4.2,green,0.37,green,18.33,yellow,70.05,green,4.35,yellow
+2025-03-27,2025-03-27,🟢 평상시 — 유지,green,0,0,0,0,3.27,green,0.91,green,73.36,yellow,56.13,yellow,325.69,yellow,125.267,yellow,4.2,green,0.41,green,18.69,yellow,70.3,green,4.38,yellow
+2025-03-28,2025-03-28,🟢 평상시 — 유지,green,0,0,0,0,3.47,green,0.94,green,73.23,yellow,55.01,orange,325.69,yellow,125.267,yellow,4.2,green,0.38,green,21.65,yellow,69.74,green,4.27,green
+2025-03-31,2025-03-31,🟢 평상시 — 유지,green,0,0,0,0,3.55,green,0.97,green,73.31,yellow,55.44,yellow,325.69,yellow,125.267,yellow,4.2,green,0.34,green,22.28,yellow,71.87,green,4.23,green
+2025-04-01,2025-04-01,🟢 평상시 — 유지,green,0,0,0,0,3.5,green,0.98,green,73.48,yellow,55.02,yellow,326.467,yellow,125.502,yellow,4.2,green,0.3,green,21.77,yellow,71.61,green,4.17,green
+2025-04-02,2025-04-02,🟢 평상시 — 유지,green,0,0,0,0,3.42,green,0.96,green,73.63,yellow,55.8,yellow,326.467,yellow,125.502,yellow,4.2,green,0.29,green,21.51,yellow,72.12,green,4.2,green
+2025-04-03,2025-04-03,🟠 위험 — 2차 방어,orange,1,0,1,0,4.01,yellow,1.06,green,72.71,orange,50.04,red,326.467,yellow,125.502,yellow,4.2,green,0.35,green,30.02,red,67.43,green,4.06,green
+2025-04-04,2025-04-04,🟠 위험 — 2차 방어,orange,2,0,1,0,4.45,yellow,1.14,green,71.68,orange,48.04,orange,326.467,yellow,125.502,yellow,4.2,green,0.33,green,45.31,red,62.42,green,4.01,green
+2025-04-07,2025-04-07,🟠 위험 — 2차 방어,orange,2,0,1,0,4.61,yellow,1.2,green,71.06,orange,48.05,orange,326.467,yellow,125.502,yellow,4.2,green,0.42,green,46.98,red,61.05,green,4.15,green
+2025-04-08,2025-04-08,🟠 위험 — 2차 방어,orange,2,0,1,0,4.57,yellow,1.18,green,70.73,orange,47.6,orange,326.467,yellow,125.502,yellow,4.2,green,0.55,green,52.33,red,60.04,green,4.26,green
+2025-04-09,2025-04-09,🟠 위험 — 2차 방어,orange,1,0,1,0,4.37,yellow,1.21,green,72.63,yellow,51.33,orange,326.467,yellow,125.502,yellow,4.2,green,0.43,green,33.62,red,62.63,green,4.34,yellow
+2025-04-10,2025-04-10,🟠 위험 — 2차 방어,orange,1,0,1,0,4.42,yellow,1.18,green,71.44,orange,48.18,red,326.467,yellow,125.502,yellow,4.2,green,0.56,green,40.72,red,60.57,green,4.4,yellow
+2025-04-11,2025-04-11,🟠 위험 — 2차 방어,orange,2,0,1,0,4.26,yellow,1.18,green,71.66,orange,48.04,orange,326.467,yellow,125.502,yellow,4.2,green,0.52,green,37.56,red,61.91,green,4.48,yellow
+2025-04-14,2025-04-14,🟠 위험 — 2차 방어,orange,2,0,1,0,4.14,yellow,1.15,green,72.01,orange,48.88,orange,326.467,yellow,125.502,yellow,4.2,green,0.54,green,30.89,red,61.99,green,4.38,yellow
+2025-04-15,2025-04-15,🟠 위험 — 2차 방어,orange,1,0,1,0,4.09,yellow,1.14,green,72.21,yellow,49.71,orange,326.467,yellow,125.502,yellow,4.2,green,0.51,green,30.12,red,61.74,green,4.35,yellow
+2025-04-16,2025-04-16,🟠 위험 — 2차 방어,orange,1,0,1,0,4.16,yellow,1.13,green,72.2,yellow,49.7,orange,326.467,yellow,125.502,yellow,4.2,green,0.52,green,32.64,red,62.88,green,4.29,green
+2025-04-17,2025-04-17,🟠 위험 — 2차 방어,orange,1,0,1,0,4.02,yellow,1.11,green,72.62,yellow,50.15,orange,326.467,yellow,125.502,yellow,4.2,green,0.53,green,29.65,orange,65.07,green,4.34,yellow
+2025-04-21,2025-04-21,🟠 위험 — 2차 방어,orange,1,0,1,0,4.16,yellow,1.12,green,72.19,yellow,49.48,orange,326.467,yellow,125.502,yellow,4.2,green,0.67,green,33.82,red,63.48,green,4.42,yellow
+2025-04-22,2025-04-22,🟢 평상시 — 유지,green,0,0,1,0,3.99,green,1.11,green,72.47,yellow,51.07,yellow,326.467,yellow,125.502,yellow,4.2,green,0.65,green,30.57,red,64.6,green,4.41,yellow
+2025-04-23,2025-04-23,🟢 평상시 — 유지,green,0,0,1,0,3.75,green,1.08,green,72.84,yellow,52.22,green,326.467,yellow,125.502,yellow,4.2,green,0.59,green,28.45,orange,62.64,green,4.4,yellow
+2025-04-24,2025-04-24,🟢 평상시 — 유지,green,0,0,1,0,3.73,green,1.06,green,73.49,green,53.1,green,326.467,yellow,125.502,yellow,4.2,green,0.55,green,26.47,orange,63.55,green,4.32,yellow
+2025-04-25,2025-04-25,🟢 평상시 — 유지,green,0,0,0,0,3.67,green,1.04,green,73.55,green,52.62,green,326.467,yellow,125.502,yellow,4.2,green,0.55,green,24.84,yellow,63.85,green,4.29,green
+2025-04-28,2025-04-28,🟢 평상시 — 유지,green,0,0,0,0,3.73,green,1.04,green,73.59,green,52.93,green,326.467,yellow,125.502,yellow,4.2,green,0.56,green,25.15,orange,63.3,green,4.23,green
+2025-04-29,2025-04-29,🟢 평상시 — 유지,green,0,0,0,0,3.74,green,1.06,green,73.79,green,53.4,green,326.467,yellow,125.502,yellow,4.2,green,0.54,green,24.17,yellow,61.84,green,4.19,green
+2025-04-30,2025-04-30,🟢 평상시 — 유지,green,0,0,0,0,3.94,green,1.09,green,73.4,green,52.79,green,326.467,yellow,125.502,yellow,4.2,green,0.57,green,24.7,yellow,59.55,green,4.17,green
+2025-05-01,2025-05-01,🟢 평상시 — 유지,green,0,0,0,0,3.78,green,1.09,green,73.49,green,53.38,green,326.893,yellow,125.79,yellow,4.3,yellow,0.55,green,24.6,yellow,60.59,green,4.25,green
+2025-05-02,2025-05-02,🟢 평상시 — 유지,green,0,0,0,0,3.6,green,1.06,green,73.72,green,54.85,green,326.893,yellow,125.79,yellow,4.3,yellow,0.5,green,22.68,yellow,59.67,green,4.33,yellow
+2025-05-05,2025-05-05,🟢 평상시 — 유지,green,0,0,0,0,3.6,green,1.05,green,73.69,green,54.65,green,326.893,yellow,125.79,yellow,4.3,yellow,0.53,green,23.64,yellow,58.5,green,4.36,yellow
+2025-05-06,2025-05-06,🟢 평상시 — 유지,green,0,0,0,0,3.66,green,1.05,green,73.63,green,54.09,green,326.893,yellow,125.79,yellow,4.3,yellow,0.52,green,24.76,yellow,60.42,green,4.3,yellow
+2025-05-07,2025-05-07,🟢 평상시 — 유지,green,0,0,0,0,3.67,green,1.05,green,73.7,green,54.14,green,326.893,yellow,125.79,yellow,4.3,yellow,0.48,green,23.55,yellow,59.42,green,4.26,green
+2025-05-08,2025-05-08,🟢 평상시 — 유지,green,0,0,0,0,3.51,green,1.02,green,73.68,yellow,55.44,green,326.893,yellow,125.79,yellow,4.3,yellow,0.47,green,22.48,yellow,61.25,green,4.37,yellow
+2025-05-09,2025-05-09,🟢 평상시 — 유지,green,0,0,0,0,3.53,green,1.02,green,73.73,yellow,55.18,green,326.893,yellow,125.79,yellow,4.3,yellow,0.49,green,21.9,yellow,62.37,green,4.37,yellow
+2025-05-12,2025-05-12,🟢 평상시 — 유지,green,0,0,0,0,3.15,green,0.97,green,74.46,green,57.72,green,326.893,yellow,125.79,yellow,4.3,yellow,0.47,green,18.39,yellow,63.32,green,4.45,yellow
+2025-05-13,2025-05-13,🟢 평상시 — 유지,green,0,0,0,0,3.09,green,0.94,green,74.59,green,57.99,green,326.893,yellow,125.79,yellow,4.3,yellow,0.47,green,18.22,yellow,65.04,green,4.49,yellow
+2025-05-14,2025-05-14,🟢 평상시 — 유지,green,0,0,0,0,3.1,green,0.93,green,74.32,green,57.73,green,326.893,yellow,125.79,yellow,4.3,yellow,0.48,green,18.62,yellow,64.48,green,4.53,yellow
+2025-05-15,2025-05-15,🟢 평상시 — 유지,green,0,0,0,0,3.2,green,0.94,green,74.46,green,57.78,green,326.893,yellow,125.79,yellow,4.3,yellow,0.49,green,17.83,green,63.03,green,4.45,yellow
+2025-05-16,2025-05-16,🟢 평상시 — 유지,green,0,0,0,0,3.16,green,0.93,green,74.54,green,57.77,green,326.893,yellow,125.79,yellow,4.3,yellow,0.45,green,17.24,green,63.84,green,4.43,yellow
+2025-05-19,2025-05-19,🟢 평상시 — 유지,green,0,0,0,0,3.21,green,0.92,green,74.5,yellow,57.54,green,326.893,yellow,125.79,yellow,4.3,yellow,0.49,green,18.14,yellow,63.98,green,4.46,yellow
+2025-05-20,2025-05-20,🟢 평상시 — 유지,green,0,0,0,0,3.2,green,0.9,green,74.47,yellow,57.28,green,326.893,yellow,125.79,yellow,4.3,yellow,0.51,green,18.09,yellow,63.97,green,4.48,yellow
+2025-05-21,2025-05-21,🟢 평상시 — 유지,green,0,0,0,0,3.25,green,0.91,green,73.97,yellow,55.25,yellow,326.893,yellow,125.79,yellow,4.3,yellow,0.58,green,20.87,yellow,62.93,green,4.58,yellow
+2025-05-22,2025-05-22,🟢 평상시 — 유지,green,0,0,0,0,3.32,green,0.92,green,74.12,yellow,55.25,yellow,326.893,yellow,125.79,yellow,4.3,yellow,0.54,green,20.28,yellow,62.55,green,4.54,yellow
+2025-05-23,2025-05-23,🟢 평상시 — 유지,green,0,0,0,0,3.4,green,0.93,green,74.1,yellow,55.0,yellow,326.893,yellow,125.79,yellow,4.3,yellow,0.51,green,22.29,yellow,62.89,green,4.51,yellow
+2025-05-27,2025-05-27,🟢 평상시 — 유지,green,0,0,0,0,3.24,green,0.91,green,74.55,yellow,56.31,green,326.893,yellow,125.79,yellow,4.3,yellow,0.51,green,18.96,yellow,61.61,green,4.43,yellow
+2025-05-28,2025-05-28,🟢 평상시 — 유지,green,0,0,0,0,3.23,green,0.9,green,74.5,yellow,55.39,yellow,326.893,yellow,125.79,yellow,4.3,yellow,0.51,green,19.31,yellow,62.54,green,4.47,yellow
+2025-05-29,2025-05-29,🟢 평상시 — 유지,green,0,0,0,0,3.22,green,0.9,green,74.62,yellow,55.87,yellow,326.893,yellow,125.79,yellow,4.3,yellow,0.51,green,19.18,yellow,61.66,green,4.43,yellow
+2025-05-30,2025-05-30,🟢 평상시 — 유지,green,0,0,0,0,3.31,green,0.91,green,74.68,yellow,55.47,orange,326.893,yellow,125.79,yellow,4.3,yellow,0.52,green,18.57,yellow,61.46,green,4.41,yellow
+2025-06-02,2025-06-02,🟠 위험 — 2차 방어,orange,1,0,0,0,3.27,green,0.91,green,74.67,yellow,55.06,orange,327.658,yellow,126.121,yellow,4.1,green,0.52,green,18.36,yellow,63.27,green,4.46,yellow
+2025-06-03,2025-06-03,🟢 평상시 — 유지,green,0,0,0,0,3.19,green,0.89,green,74.81,yellow,55.93,yellow,327.658,yellow,126.121,yellow,4.1,green,0.5,green,17.69,green,64.1,green,4.46,yellow
+2025-06-04,2025-06-04,🟢 평상시 — 유지,green,0,0,0,0,3.23,green,0.89,green,74.95,yellow,55.24,orange,327.658,yellow,126.121,yellow,4.1,green,0.5,green,17.61,green,63.57,green,4.37,yellow
+2025-06-05,2025-06-05,🟠 위험 — 2차 방어,orange,1,0,0,0,3.18,green,0.89,green,74.79,yellow,55.2,orange,327.658,yellow,126.121,yellow,4.1,green,0.48,green,18.48,yellow,64.06,green,4.4,yellow
+2025-06-06,2025-06-06,🟢 평상시 — 유지,green,0,0,0,0,3.09,green,0.87,green,74.78,yellow,56.58,yellow,327.658,yellow,126.121,yellow,4.1,green,0.47,green,16.77,green,65.3,green,4.51,yellow
+2025-06-09,2025-06-09,🟢 평상시 — 유지,green,0,0,0,0,3.12,green,0.87,green,74.82,yellow,56.87,yellow,327.658,yellow,126.121,yellow,4.1,green,0.48,green,17.16,green,65.99,green,4.49,yellow
+2025-06-10,2025-06-10,🟢 평상시 — 유지,green,0,0,0,0,3.12,green,0.87,green,75.0,yellow,57.47,green,327.658,yellow,126.121,yellow,4.1,green,0.46,green,16.95,green,65.66,green,4.47,yellow
+2025-06-11,2025-06-11,🟢 평상시 — 유지,green,0,0,0,0,3.12,green,0.87,green,74.98,yellow,56.69,yellow,327.658,yellow,126.121,yellow,4.1,green,0.47,green,17.26,green,68.91,green,4.41,yellow
+2025-06-12,2025-06-12,🟢 평상시 — 유지,green,0,0,0,0,3.17,green,0.88,green,75.07,yellow,56.35,yellow,327.658,yellow,126.121,yellow,4.1,green,0.46,green,18.02,yellow,68.73,green,4.36,yellow
+2025-06-13,2025-06-13,🟢 평상시 — 유지,green,0,0,0,0,3.18,green,0.88,green,74.84,yellow,54.84,orange,327.658,yellow,126.121,yellow,4.1,green,0.45,green,20.82,yellow,73.84,green,4.41,yellow
+2025-06-16,2025-06-16,🟠 위험 — 2차 방어,orange,1,0,0,0,3.1,green,0.87,green,74.99,yellow,55.09,orange,327.658,yellow,126.121,yellow,4.1,green,0.49,green,19.11,yellow,72.53,green,4.46,yellow
+2025-06-17,2025-06-17,🟠 위험 — 2차 방어,orange,1,0,0,0,3.17,green,0.88,green,74.91,yellow,54.41,orange,327.658,yellow,126.121,yellow,4.1,green,0.45,green,21.6,yellow,75.62,green,4.39,yellow
+2025-06-18,2025-06-18,🟢 평상시 — 유지,green,0,0,0,0,3.16,green,0.88,green,75.02,yellow,55.13,yellow,327.658,yellow,126.121,yellow,4.1,green,0.44,green,20.14,yellow,75.89,green,4.38,yellow
+2025-06-20,2025-06-20,🟢 평상시 — 유지,green,0,0,0,0,3.13,green,0.88,green,75.25,yellow,55.55,yellow,327.658,yellow,126.121,yellow,4.1,green,0.48,green,20.62,yellow,75.72,green,4.38,yellow
+2025-06-23,2025-06-23,🟢 평상시 — 유지,green,0,0,0,0,3.12,green,0.89,green,75.4,yellow,56.83,green,327.658,yellow,126.121,yellow,4.1,green,0.5,green,19.83,yellow,69.36,green,4.34,yellow
+2025-06-24,2025-06-24,🟢 평상시 — 유지,green,0,0,0,0,3.06,green,0.88,green,75.6,yellow,57.37,green,327.658,yellow,126.121,yellow,4.1,green,0.55,green,17.48,green,65.45,green,4.3,yellow
+2025-06-25,2025-06-25,🟢 평상시 — 유지,green,0,0,0,0,3.04,green,0.88,green,75.58,yellow,57.09,green,327.658,yellow,126.121,yellow,4.1,green,0.55,green,16.76,green,65.98,green,4.29,green
+2025-06-26,2025-06-26,🟢 평상시 — 유지,green,0,0,0,0,3.04,green,0.89,green,75.8,green,58.41,green,327.658,yellow,126.121,yellow,4.1,green,0.56,green,16.59,green,66.44,green,4.26,green
+2025-06-27,2025-06-27,🟢 평상시 — 유지,green,0,0,0,0,3.02,green,0.88,green,75.76,yellow,58.38,green,327.658,yellow,126.121,yellow,4.1,green,0.56,green,16.32,green,66.66,green,4.29,green
+2025-06-30,2025-06-30,🟢 평상시 — 유지,green,0,0,0,0,2.96,green,0.86,green,76.06,green,58.32,green,327.658,yellow,126.121,yellow,4.1,green,0.52,green,16.73,green,66.3,green,4.24,green
+2025-07-01,2025-07-01,🟢 평상시 — 유지,green,0,0,0,0,2.91,green,0.84,green,75.96,yellow,60.31,green,328.682,yellow,126.43,yellow,4.3,yellow,0.48,green,16.83,green,66.64,green,4.26,green
+2025-07-02,2025-07-02,🟢 평상시 — 유지,green,0,0,0,0,2.88,green,0.83,green,76.1,green,61.38,green,328.682,yellow,126.43,yellow,4.3,yellow,0.52,green,16.64,green,68.66,green,4.3,yellow
+2025-07-03,2025-07-03,🟢 평상시 — 유지,green,0,0,0,0,2.8,green,0.8,green,76.15,green,62.09,green,328.682,yellow,126.43,yellow,4.3,yellow,0.47,green,16.38,green,68.13,green,4.35,yellow
+2025-07-07,2025-07-07,🟢 평상시 — 유지,green,0,0,0,0,2.86,green,0.81,green,75.89,yellow,61.45,green,328.682,yellow,126.43,yellow,4.3,yellow,0.5,green,17.79,green,69.16,green,4.4,yellow
+2025-07-08,2025-07-08,🟢 평상시 — 유지,green,0,0,0,0,2.92,green,0.82,green,75.79,yellow,62.01,green,328.682,yellow,126.43,yellow,4.3,yellow,0.52,green,16.81,green,69.55,green,4.42,yellow
+2025-07-09,2025-07-09,🟢 평상시 — 유지,green,0,0,0,0,2.94,green,0.83,green,76.0,yellow,61.98,green,328.682,yellow,126.43,yellow,4.3,yellow,0.48,green,15.94,green,69.61,green,4.34,yellow
+2025-07-10,2025-07-10,🟢 평상시 — 유지,green,0,0,0,0,2.92,green,0.83,green,75.92,yellow,62.43,green,328.682,yellow,126.43,yellow,4.3,yellow,0.49,green,15.78,green,67.78,green,4.35,yellow
+2025-07-11,2025-07-11,🟢 평상시 — 유지,green,0,0,0,0,2.97,green,0.83,green,75.83,yellow,61.76,green,328.682,yellow,126.43,yellow,4.3,yellow,0.53,green,16.4,green,69.63,green,4.43,yellow
+2025-07-14,2025-07-14,🟢 평상시 — 유지,green,0,0,0,0,2.95,green,0.82,green,75.88,yellow,62.45,green,328.682,yellow,126.43,yellow,4.3,yellow,0.53,green,17.2,green,68.19,green,4.43,yellow
+2025-07-15,2025-07-15,🟢 평상시 — 유지,green,0,0,0,0,2.95,green,0.81,green,75.66,yellow,60.27,green,328.682,yellow,126.43,yellow,4.3,yellow,0.55,green,17.38,green,67.76,green,4.5,yellow
+2025-07-16,2025-07-16,🟢 평상시 — 유지,green,0,0,0,0,3.0,green,0.81,green,75.86,yellow,60.8,green,328.682,yellow,126.43,yellow,4.3,yellow,0.58,green,17.16,green,67.13,green,4.46,yellow
+2025-07-17,2025-07-17,🟢 평상시 — 유지,green,0,0,0,0,2.91,green,0.8,green,75.93,yellow,62.03,green,328.682,yellow,126.43,yellow,4.3,yellow,0.56,green,16.52,green,68.76,green,4.47,yellow
+2025-07-18,2025-07-18,🟢 평상시 — 유지,green,0,0,0,0,2.93,green,0.8,green,76.04,yellow,62.13,green,328.682,yellow,126.43,yellow,4.3,yellow,0.56,green,16.41,green,68.53,green,4.44,yellow
+2025-07-21,2025-07-21,🟢 평상시 — 유지,green,0,0,0,0,2.89,green,0.8,green,76.14,yellow,61.93,green,328.682,yellow,126.43,yellow,4.3,yellow,0.53,green,16.65,green,68.39,green,4.38,yellow
+2025-07-22,2025-07-22,🟢 평상시 — 유지,green,0,0,0,0,2.9,green,0.81,green,76.27,yellow,62.22,green,328.682,yellow,126.43,yellow,4.3,yellow,0.52,green,16.5,green,67.56,green,4.35,yellow
+2025-07-23,2025-07-23,🟢 평상시 — 유지,green,0,0,0,0,2.83,green,0.79,green,76.31,yellow,62.22,green,328.682,yellow,126.43,yellow,4.3,yellow,0.52,green,15.37,green,66.05,green,4.4,yellow
+2025-07-24,2025-07-24,🟢 평상시 — 유지,green,0,0,0,0,2.82,green,0.79,green,76.22,yellow,61.06,yellow,328.682,yellow,126.43,yellow,4.3,yellow,0.52,green,15.39,green,67.16,green,4.43,yellow
+2025-07-25,2025-07-25,🟢 평상시 — 유지,green,0,0,0,0,2.84,green,0.78,green,76.26,yellow,60.82,yellow,328.682,yellow,126.43,yellow,4.3,yellow,0.49,green,14.93,green,66.38,green,4.4,yellow
+2025-07-28,2025-07-28,🟢 평상시 — 유지,green,0,0,0,0,2.82,green,0.78,green,76.23,yellow,60.77,orange,328.682,yellow,126.43,yellow,4.3,yellow,0.51,green,15.03,green,67.81,green,4.42,yellow
+2025-07-29,2025-07-29,🟠 위험 — 2차 방어,orange,1,0,0,0,2.86,green,0.79,green,76.27,yellow,60.47,orange,328.682,yellow,126.43,yellow,4.3,yellow,0.48,green,15.98,green,70.27,green,4.34,yellow
+2025-07-30,2025-07-30,🟠 위험 — 2차 방어,orange,1,0,0,0,2.89,green,0.78,green,76.11,yellow,59.7,orange,328.682,yellow,126.43,yellow,4.3,yellow,0.44,green,15.48,green,71.09,green,4.38,yellow
+2025-07-31,2025-07-31,🟠 위험 — 2차 방어,orange,1,0,0,0,2.86,green,0.79,green,76.16,yellow,58.98,orange,328.682,yellow,126.43,yellow,4.3,yellow,0.43,green,16.72,green,70.36,green,4.37,yellow
+2025-08-01,2025-08-01,🟠 위험 — 2차 방어,orange,1,0,0,0,3.13,green,0.82,green,76.16,yellow,57.76,orange,329.7,yellow,126.714,yellow,4.3,green,0.54,green,20.38,yellow,68.39,green,4.23,green
+2025-08-04,2025-08-04,🟠 위험 — 2차 방어,orange,1,0,0,0,3.02,green,0.82,green,76.42,yellow,58.58,orange,329.7,yellow,126.714,yellow,4.3,green,0.53,green,17.52,green,67.33,green,4.22,green
+2025-08-05,2025-08-05,🟠 위험 — 2차 방어,orange,1,0,0,0,2.98,green,0.82,green,76.38,yellow,58.77,orange,329.7,yellow,126.714,yellow,4.3,green,0.5,green,17.85,green,66.2,green,4.22,green
+2025-08-06,2025-08-06,🟠 위험 — 2차 방어,orange,1,0,0,0,2.98,green,0.81,green,76.46,yellow,58.3,orange,329.7,yellow,126.714,yellow,4.3,green,0.53,green,16.77,green,65.38,green,4.22,green
+2025-08-07,2025-08-07,🟠 위험 — 2차 방어,orange,1,0,0,0,2.95,green,0.8,green,76.38,yellow,57.79,orange,329.7,yellow,126.714,yellow,4.3,green,0.51,green,16.57,green,64.9,green,4.23,green
+2025-08-08,2025-08-08,🟠 위험 — 2차 방어,orange,1,0,0,0,2.94,green,0.8,green,76.39,yellow,58.49,orange,329.7,yellow,126.714,yellow,4.3,green,0.51,green,15.15,green,64.94,green,4.27,green
+2025-08-11,2025-08-11,🟠 위험 — 2차 방어,orange,1,0,0,0,2.94,green,0.8,green,76.39,yellow,58.33,orange,329.7,yellow,126.714,yellow,4.3,green,0.51,green,16.25,green,65.03,green,4.27,green
+2025-08-12,2025-08-12,🟢 평상시 — 유지,green,0,0,0,0,2.93,green,0.79,green,76.56,yellow,60.43,yellow,329.7,yellow,126.714,yellow,4.3,green,0.57,green,14.73,green,64.22,green,4.29,green
+2025-08-13,2025-08-13,🟢 평상시 — 유지,green,0,0,0,0,2.9,green,0.78,green,76.76,yellow,61.51,green,329.7,yellow,126.714,yellow,4.3,green,0.57,green,14.49,green,63.68,green,4.24,green
+2025-08-14,2025-08-14,🟢 평상시 — 유지,green,0,0,0,0,2.89,green,0.77,green,76.56,yellow,61.47,green,329.7,yellow,126.714,yellow,4.3,green,0.55,green,14.83,green,64.99,green,4.29,green
+2025-08-15,2025-08-15,🟢 평상시 — 유지,green,0,0,0,0,2.88,green,0.75,green,76.62,yellow,60.48,yellow,329.7,yellow,126.714,yellow,4.3,green,0.58,green,15.09,green,63.78,green,4.33,yellow
+2025-08-18,2025-08-18,🟢 평상시 — 유지,green,0,0,0,0,2.88,green,0.75,green,76.56,yellow,60.82,green,329.7,yellow,126.714,yellow,4.3,green,0.57,green,14.99,green,64.51,green,4.34,yellow
+2025-08-19,2025-08-19,🟢 평상시 — 유지,green,0,0,0,0,2.9,green,0.76,green,76.54,yellow,60.71,green,329.7,yellow,126.714,yellow,4.3,green,0.55,green,15.57,green,63.38,green,4.3,yellow
+2025-08-20,2025-08-20,🟢 평상시 — 유지,green,0,0,0,0,2.94,green,0.77,green,76.52,yellow,60.92,green,329.7,yellow,126.714,yellow,4.3,green,0.55,green,15.69,green,64.19,green,4.29,green
+2025-08-21,2025-08-21,🟢 평상시 — 유지,green,0,0,0,0,2.95,green,0.77,green,76.37,yellow,60.68,green,329.7,yellow,126.714,yellow,4.3,green,0.54,green,16.6,green,64.56,green,4.33,yellow
+2025-08-22,2025-08-22,🟢 평상시 — 유지,green,0,0,0,0,2.88,green,0.77,green,76.99,yellow,63.67,green,329.7,yellow,126.714,yellow,4.3,green,0.58,green,14.22,green,64.08,green,4.26,green
+2025-08-25,2025-08-25,🟢 평상시 — 유지,green,0,0,0,0,2.8,green,0.76,green,76.84,yellow,63.33,green,329.7,yellow,126.714,yellow,4.3,green,0.55,green,14.79,green,65.18,green,4.28,green
+2025-08-26,2025-08-26,🟢 평상시 — 유지,green,0,0,0,0,2.78,green,0.78,green,77.01,yellow,64.06,green,329.7,yellow,126.714,yellow,4.3,green,0.65,green,14.62,green,63.6,green,4.26,green
+2025-08-27,2025-08-27,🟢 평상시 — 유지,green,0,0,0,0,2.78,green,0.78,green,77.11,yellow,64.57,green,329.7,yellow,126.714,yellow,4.3,green,0.65,green,14.85,green,64.49,green,4.24,green
+2025-08-28,2025-08-28,🟢 평상시 — 유지,green,0,0,0,0,2.75,green,0.79,green,77.14,yellow,64.34,green,329.7,yellow,126.714,yellow,4.3,green,0.6,green,14.43,green,64.96,green,4.22,green
+2025-08-29,2025-08-29,🟢 평상시 — 유지,green,0,0,0,0,2.82,green,0.8,green,77.0,yellow,64.33,green,329.7,yellow,126.714,yellow,4.3,green,0.64,green,15.36,green,64.36,green,4.23,green
+2025-09-02,2025-09-02,🟢 평상시 — 유지,green,0,0,0,0,2.92,green,0.82,green,76.92,yellow,63.91,green,330.418,yellow,126.954,yellow,4.4,yellow,0.62,green,17.17,green,65.95,green,4.28,green
+2025-09-03,2025-09-03,🟢 평상시 — 유지,green,0,0,0,0,2.88,green,0.81,green,77.13,yellow,64.0,green,330.418,yellow,126.954,yellow,4.4,yellow,0.61,green,16.35,green,64.36,green,4.22,green
+2025-09-04,2025-09-04,🟢 평상시 — 유지,green,0,0,0,0,2.84,green,0.79,green,77.34,yellow,64.94,green,330.418,yellow,126.954,yellow,4.4,yellow,0.58,green,15.3,green,63.81,green,4.17,green
+2025-09-05,2025-09-05,🟢 평상시 — 유지,green,0,0,0,0,2.83,green,0.79,green,77.38,yellow,64.27,green,330.418,yellow,126.954,yellow,4.4,yellow,0.59,green,15.18,green,62.22,green,4.1,green
+2025-09-08,2025-09-08,🟢 평상시 — 유지,green,0,0,0,0,2.84,green,0.8,green,77.38,yellow,64.34,green,330.418,yellow,126.954,yellow,4.4,yellow,0.56,green,15.11,green,62.6,green,4.05,green
+2025-09-09,2025-09-09,🟢 평상시 — 유지,green,0,0,0,0,2.87,green,0.8,green,77.29,yellow,63.68,green,330.418,yellow,126.954,yellow,4.4,yellow,0.54,green,15.04,green,62.97,green,4.08,green
+2025-09-10,2025-09-10,🟢 평상시 — 유지,green,0,0,0,0,2.84,green,0.79,green,77.35,yellow,63.75,green,330.418,yellow,126.954,yellow,4.4,yellow,0.5,green,15.35,green,64.01,green,4.04,green
+2025-09-11,2025-09-11,🟢 평상시 — 유지,green,0,0,0,0,2.78,green,0.78,green,77.54,yellow,64.04,green,330.418,yellow,126.954,yellow,4.4,yellow,0.49,green,14.71,green,62.71,green,4.01,green
+2025-09-12,2025-09-12,🟢 평상시 — 유지,green,0,0,0,0,2.79,green,0.77,green,77.46,yellow,63.82,yellow,330.418,yellow,126.954,yellow,4.4,yellow,0.5,green,14.76,green,63.02,green,4.06,green
+2025-09-15,2025-09-15,🟢 평상시 — 유지,green,0,0,0,0,2.75,green,0.75,green,77.68,yellow,63.2,yellow,330.418,yellow,126.954,yellow,4.4,yellow,0.51,green,15.69,green,63.66,green,4.05,green
+2025-09-16,2025-09-16,🟢 평상시 — 유지,green,0,0,0,0,2.79,green,0.76,green,77.63,yellow,62.54,orange,330.418,yellow,126.954,yellow,4.4,yellow,0.53,green,16.36,green,64.89,green,4.04,green
+2025-09-17,2025-09-17,🟢 평상시 — 유지,green,0,0,0,0,2.79,green,0.76,green,77.55,yellow,63.29,yellow,330.418,yellow,126.954,yellow,4.4,yellow,0.54,green,15.72,green,64.41,green,4.06,green
+2025-09-18,2025-09-18,🟢 평상시 — 유지,green,0,0,0,0,2.71,green,0.75,green,77.72,yellow,64.98,green,330.418,yellow,126.954,yellow,4.4,yellow,0.54,green,15.7,green,63.91,green,4.11,green
+2025-09-19,2025-09-19,🟢 평상시 — 유지,green,0,0,0,0,2.72,green,0.74,green,77.75,yellow,64.16,yellow,330.418,yellow,126.954,yellow,4.4,yellow,0.57,green,15.45,green,63.02,green,4.14,green
+2025-09-22,2025-09-22,🟢 평상시 — 유지,green,0,0,0,0,2.69,green,0.74,green,77.81,yellow,63.37,yellow,330.418,yellow,126.954,yellow,4.4,yellow,0.54,green,16.1,green,62.99,green,4.15,green
+2025-09-23,2025-09-23,🟢 평상시 — 유지,green,0,0,0,0,2.71,green,0.75,green,77.75,yellow,63.29,orange,330.418,yellow,126.954,yellow,4.4,yellow,0.59,green,16.64,green,63.76,green,4.12,green
+2025-09-24,2025-09-24,🟠 위험 — 2차 방어,orange,1,0,0,0,2.7,green,0.75,green,77.64,yellow,63.17,orange,330.418,yellow,126.954,yellow,4.4,yellow,0.59,green,16.18,green,65.4,green,4.16,green
+2025-09-25,2025-09-25,🟠 위험 — 2차 방어,orange,1,0,0,0,2.76,green,0.76,green,77.42,yellow,63.13,orange,330.418,yellow,126.954,yellow,4.4,yellow,0.54,green,16.74,green,65.51,green,4.18,green
+2025-09-26,2025-09-26,🟢 평상시 — 유지,green,0,0,0,0,2.75,green,0.75,green,77.58,yellow,63.42,yellow,330.418,yellow,126.954,yellow,4.4,yellow,0.57,green,15.29,green,66.5,green,4.2,green
+2025-09-29,2025-09-29,🟢 평상시 — 유지,green,0,0,0,0,2.74,green,0.75,green,77.71,yellow,62.81,orange,330.418,yellow,126.954,yellow,4.4,yellow,0.52,green,16.12,green,64.27,green,4.15,green
+2025-09-30,2025-09-30,🟠 위험 — 2차 방어,orange,1,0,0,0,2.8,green,0.76,green,77.68,yellow,62.54,orange,330.418,yellow,126.954,yellow,4.4,yellow,0.56,green,16.28,green,63.17,green,4.16,green
+2025-10-01,2025-10-01,🟠 위험 — 2차 방어,orange,1,0,0,0,2.81,green,0.76,green,77.83,yellow,62.22,orange,330.418,yellow,127.243,yellow,4.4,yellow,0.57,green,16.29,green,62.59,green,4.12,green
+2025-10-02,2025-10-02,🟠 위험 — 2차 방어,orange,1,0,0,0,2.81,green,0.75,green,77.8,yellow,62.07,orange,330.418,yellow,127.243,yellow,4.4,yellow,0.55,green,16.63,green,61.28,green,4.1,green
+2025-10-03,2025-10-03,🟠 위험 — 2차 방어,orange,1,0,0,0,2.8,green,0.75,green,77.71,yellow,62.69,orange,330.418,yellow,127.243,yellow,4.4,yellow,0.55,green,16.65,green,61.65,green,4.13,green
+2025-10-06,2025-10-06,🟢 평상시 — 유지,green,0,0,0,0,2.76,green,0.74,green,77.73,yellow,63.32,yellow,330.418,yellow,127.243,yellow,4.4,yellow,0.58,green,16.37,green,62.49,green,4.18,green
+2025-10-07,2025-10-07,🟢 평상시 — 유지,green,0,0,0,0,2.82,green,0.75,green,77.65,yellow,62.87,yellow,330.418,yellow,127.243,yellow,4.4,yellow,0.57,green,17.24,green,62.52,green,4.14,green
+2025-10-08,2025-10-08,🟢 평상시 — 유지,green,0,0,0,0,2.84,green,0.75,green,77.53,yellow,62.48,orange,330.418,yellow,127.243,yellow,4.4,yellow,0.55,green,16.3,green,63.37,green,4.13,green
+2025-10-09,2025-10-09,🟠 위험 — 2차 방어,orange,1,0,0,0,2.95,green,0.77,green,77.31,yellow,62.2,orange,330.418,yellow,127.243,yellow,4.4,yellow,0.54,green,16.43,green,62.36,green,4.14,green
+2025-10-10,2025-10-10,🟠 위험 — 2차 방어,orange,1,0,0,0,3.18,green,0.81,green,76.86,yellow,59.47,orange,330.418,yellow,127.243,yellow,4.4,yellow,0.53,green,21.66,yellow,59.75,green,4.05,green
+2025-10-13,2025-10-13,🟠 위험 — 2차 방어,orange,1,0,0,0,3.18,green,0.81,green,77.34,yellow,60.77,orange,330.418,yellow,127.243,yellow,4.4,yellow,0.53,green,19.03,yellow,59.75,green,4.05,green
+2025-10-14,2025-10-14,🟢 평상시 — 유지,green,0,0,0,0,3.11,green,0.81,green,77.42,yellow,62.65,yellow,330.418,yellow,127.243,yellow,4.4,yellow,0.55,green,20.81,yellow,59.52,green,4.03,green
+2025-10-15,2025-10-15,🟢 평상시 — 유지,green,0,0,0,0,2.95,green,0.78,green,77.67,yellow,61.24,orange,330.418,yellow,127.243,yellow,4.4,yellow,0.55,green,20.64,yellow,59.08,green,4.05,green
+2025-10-16,2025-10-16,🟠 위험 — 2차 방어,orange,1,0,0,0,3.04,green,0.8,green,77.4,yellow,57.44,red,330.418,yellow,127.243,yellow,4.4,yellow,0.58,green,25.31,orange,58.29,green,3.99,green
+2025-10-17,2025-10-17,🟠 위험 — 2차 방어,orange,1,0,0,0,3.04,green,0.8,green,77.6,yellow,58.36,orange,330.418,yellow,127.243,yellow,4.4,yellow,0.56,green,20.78,yellow,58.3,green,4.02,green
+2025-10-20,2025-10-20,🟠 위험 — 2차 방어,orange,1,0,0,0,2.99,green,0.79,green,77.75,yellow,59.82,orange,330.418,yellow,127.243,yellow,4.4,yellow,0.54,green,18.23,yellow,58.34,green,4.0,green
+2025-10-21,2025-10-21,🟠 위험 — 2차 방어,orange,1,0,0,0,2.97,green,0.79,green,77.64,yellow,59.91,orange,330.418,yellow,127.243,yellow,4.4,yellow,0.53,green,17.87,green,58.66,green,3.98,green
+2025-10-22,2025-10-22,🟠 위험 — 2차 방어,orange,1,0,0,0,3.01,green,0.8,green,77.56,yellow,59.72,orange,330.418,yellow,127.243,yellow,4.4,yellow,0.52,green,18.6,yellow,59.3,green,3.97,green
+2025-10-23,2025-10-23,🟠 위험 — 2차 방어,orange,1,0,0,0,2.96,green,0.78,green,77.73,yellow,59.46,orange,330.418,yellow,127.243,yellow,4.4,yellow,0.53,green,17.3,green,62.44,green,4.01,green
+2025-10-24,2025-10-24,🟠 위험 — 2차 방어,orange,1,0,0,0,2.88,green,0.77,green,77.94,yellow,60.49,orange,330.418,yellow,127.243,yellow,4.4,yellow,0.54,green,16.37,green,62.27,green,4.02,green
+2025-10-27,2025-10-27,🟢 평상시 — 유지,green,0,0,0,0,2.8,green,0.76,green,78.14,yellow,60.44,yellow,330.418,yellow,127.243,yellow,4.4,yellow,0.53,green,15.79,green,62.13,green,4.01,green
+2025-10-28,2025-10-28,🟢 평상시 — 유지,green,0,0,0,0,2.82,green,0.76,green,78.06,yellow,60.19,orange,330.418,yellow,127.243,yellow,4.4,yellow,0.52,green,16.42,green,60.97,green,3.99,green
+2025-10-29,2025-10-29,🟠 위험 — 2차 방어,orange,1,0,0,0,2.76,green,0.75,green,77.82,yellow,59.09,orange,330.418,yellow,127.243,yellow,4.4,yellow,0.49,green,16.92,green,61.26,green,4.08,green
+2025-10-30,2025-10-30,🟠 위험 — 2차 방어,orange,1,0,0,0,2.85,green,0.77,green,77.67,yellow,59.14,orange,330.418,yellow,127.243,yellow,4.4,yellow,0.5,green,16.91,green,61.36,green,4.11,green
+2025-10-31,2025-10-31,🟠 위험 — 2차 방어,orange,1,0,0,0,2.94,green,0.8,green,77.67,yellow,59.28,orange,330.418,yellow,127.243,yellow,4.4,yellow,0.51,green,17.44,green,61.75,green,4.11,green
+2025-11-03,2025-11-03,🟠 위험 — 2차 방어,orange,1,0,0,0,3.04,green,0.83,green,77.43,yellow,59.42,orange,331.043,yellow,127.469,yellow,4.5,yellow,0.53,green,17.17,green,61.79,green,4.13,green
+2025-11-04,2025-11-04,🟠 위험 — 2차 방어,orange,1,0,0,0,3.13,green,0.83,green,77.44,yellow,59.1,orange,331.043,yellow,127.469,yellow,4.5,yellow,0.52,green,19.0,yellow,61.38,green,4.1,green
+2025-11-05,2025-11-05,🟢 평상시 — 유지,green,0,0,0,0,3.05,green,0.81,green,77.52,yellow,59.84,yellow,331.043,yellow,127.469,yellow,4.5,yellow,0.54,green,18.01,yellow,60.4,green,4.17,green
+2025-11-06,2025-11-06,🟢 평상시 — 유지,green,0,0,0,0,3.13,green,0.82,green,77.55,yellow,59.44,yellow,331.043,yellow,127.469,yellow,4.5,yellow,0.54,green,19.5,yellow,60.24,green,4.11,green
+2025-11-07,2025-11-07,🟢 평상시 — 유지,green,0,0,0,0,3.15,green,0.84,green,77.62,yellow,60.28,yellow,331.043,yellow,127.469,yellow,4.5,yellow,0.56,green,19.08,yellow,60.54,green,4.11,green
+2025-11-10,2025-11-10,🟢 평상시 — 유지,green,0,0,0,0,3.02,green,0.82,green,77.88,yellow,60.6,green,331.043,yellow,127.469,yellow,4.5,yellow,0.55,green,17.6,green,60.94,green,4.13,green
+2025-11-11,2025-11-11,🟢 평상시 — 유지,green,0,0,0,0,3.02,green,0.82,green,77.96,yellow,60.72,green,331.043,yellow,127.469,yellow,4.5,yellow,0.55,green,17.28,green,60.94,green,4.13,green
+2025-11-12,2025-11-12,🟢 평상시 — 유지,green,0,0,0,0,3.02,green,0.83,green,77.81,yellow,60.79,green,331.043,yellow,127.469,yellow,4.5,yellow,0.52,green,17.51,green,59.3,green,4.08,green
+2025-11-13,2025-11-13,🟢 평상시 — 유지,green,0,0,0,0,3.09,green,0.84,green,77.49,yellow,60.06,yellow,331.043,yellow,127.469,yellow,4.5,yellow,0.53,green,20.0,yellow,59.54,green,4.11,green
+2025-11-14,2025-11-14,🟢 평상시 — 유지,green,0,0,0,0,3.07,green,0.83,green,77.51,yellow,60.19,yellow,331.043,yellow,127.469,yellow,4.5,yellow,0.52,green,19.83,yellow,60.87,green,4.14,green
+2025-11-17,2025-11-17,🟢 평상시 — 유지,green,0,0,0,0,3.13,green,0.84,green,77.38,yellow,57.93,orange,331.043,yellow,127.469,yellow,4.5,yellow,0.53,green,22.38,yellow,60.66,green,4.13,green
+2025-11-18,2025-11-18,🟠 위험 — 2차 방어,orange,1,0,0,0,3.2,green,0.85,green,77.4,yellow,58.45,orange,331.043,yellow,127.469,yellow,4.5,yellow,0.54,green,24.69,yellow,61.51,green,4.12,green
+2025-11-19,2025-11-19,🟠 위험 — 2차 방어,orange,1,0,0,0,3.17,green,0.84,green,77.44,yellow,59.08,orange,331.043,yellow,127.469,yellow,4.5,yellow,0.55,green,23.66,yellow,60.27,green,4.13,green
+2025-11-20,2025-11-20,🟠 위험 — 2차 방어,orange,1,0,0,0,3.17,green,0.85,green,77.39,yellow,58.88,orange,331.043,yellow,127.469,yellow,4.5,yellow,0.55,green,26.42,orange,60.07,green,4.1,green
+2025-11-21,2025-11-21,🟢 평상시 — 유지,green,0,0,0,0,3.19,green,0.86,green,77.66,yellow,60.87,green,331.043,yellow,127.469,yellow,4.5,yellow,0.55,green,23.43,yellow,58.86,green,4.06,green
+2025-11-24,2025-11-24,🟢 평상시 — 유지,green,0,0,0,0,3.15,green,0.85,green,77.87,yellow,60.92,green,331.043,yellow,127.469,yellow,4.5,yellow,0.58,green,20.52,yellow,59.11,green,4.04,green
+2025-11-25,2025-11-25,🟢 평상시 — 유지,green,0,0,0,0,3.1,green,0.84,green,78.14,yellow,62.65,green,331.043,yellow,127.469,yellow,4.5,yellow,0.58,green,18.56,yellow,58.25,green,4.01,green
+2025-11-26,2025-11-26,🟢 평상시 — 유지,green,0,0,0,0,3.0,green,0.82,green,78.22,yellow,62.41,green,331.043,yellow,127.469,yellow,4.5,yellow,0.55,green,17.19,green,58.81,green,4.0,green
+2025-11-28,2025-11-28,🟢 평상시 — 유지,green,0,0,0,0,2.95,green,0.82,green,78.25,yellow,62.24,green,331.043,yellow,127.469,yellow,4.5,yellow,0.55,green,16.35,green,58.58,green,4.02,green
+2025-12-01,2025-12-01,🟢 평상시 — 유지,green,0,0,0,0,2.94,green,0.82,green,78.11,yellow,62.92,green,331.814,yellow,127.886,yellow,4.4,green,0.55,green,17.24,green,59.47,green,4.09,green
+2025-12-02,2025-12-02,🟢 평상시 — 유지,green,0,0,0,0,2.92,green,0.81,green,78.26,yellow,62.57,green,331.814,yellow,127.886,yellow,4.4,green,0.58,green,16.59,green,58.81,green,4.09,green
+2025-12-03,2025-12-03,🟢 평상시 — 유지,green,0,0,0,0,2.89,green,0.81,green,78.33,yellow,63.88,green,331.814,yellow,127.886,yellow,4.4,green,0.57,green,16.08,green,59.09,green,4.06,green
+2025-12-04,2025-12-04,🟢 평상시 — 유지,green,0,0,0,0,2.88,green,0.8,green,78.39,yellow,64.09,green,331.814,yellow,127.886,yellow,4.4,green,0.59,green,15.78,green,59.82,green,4.11,green
+2025-12-05,2025-12-05,🟢 평상시 — 유지,green,0,0,0,0,2.85,green,0.79,green,78.39,yellow,63.95,green,331.814,yellow,127.886,yellow,4.4,green,0.58,green,15.41,green,60.23,green,4.14,green
+2025-12-08,2025-12-08,🟢 평상시 — 유지,green,0,0,0,0,2.89,green,0.78,green,78.19,yellow,64.16,green,331.814,yellow,127.886,yellow,4.4,green,0.6,green,16.66,green,59.04,green,4.17,green
+2025-12-09,2025-12-09,🟢 평상시 — 유지,green,0,0,0,0,2.89,green,0.79,green,78.1,yellow,64.04,green,331.814,yellow,127.886,yellow,4.4,green,0.57,green,16.93,green,58.4,green,4.18,green
+2025-12-10,2025-12-10,🟢 평상시 — 유지,green,0,0,0,0,2.91,green,0.78,green,78.37,yellow,66.25,green,331.814,yellow,127.886,yellow,4.4,green,0.59,green,15.77,green,58.67,green,4.13,green
+2025-12-11,2025-12-11,🟢 평상시 — 유지,green,0,0,0,0,2.88,green,0.78,green,78.36,yellow,66.59,green,331.814,yellow,127.886,yellow,4.4,green,0.62,green,14.85,green,57.76,green,4.14,green
+2025-12-12,2025-12-12,🟢 평상시 — 유지,green,0,0,0,0,2.91,green,0.8,green,78.21,yellow,66.28,green,331.814,yellow,127.886,yellow,4.4,green,0.67,green,15.74,green,57.61,green,4.19,green
+2025-12-15,2025-12-15,🟢 평상시 — 유지,green,0,0,0,0,2.91,green,0.8,green,78.25,yellow,66.46,green,331.814,yellow,127.886,yellow,4.4,green,0.67,green,16.5,green,56.97,green,4.18,green
+2025-12-16,2025-12-16,🟢 평상시 — 유지,green,0,0,0,0,2.98,green,0.81,green,78.3,yellow,66.2,green,331.814,yellow,127.886,yellow,4.4,green,0.67,green,16.48,green,55.44,green,4.15,green
+2025-12-17,2025-12-17,🟢 평상시 — 유지,green,0,0,0,0,2.99,green,0.81,green,78.2,yellow,66.49,green,331.814,yellow,127.886,yellow,4.4,green,0.67,green,17.62,green,56.07,green,4.16,green
+2025-12-18,2025-12-18,🟢 평상시 — 유지,green,0,0,0,0,2.95,green,0.81,green,78.41,yellow,66.67,green,331.814,yellow,127.886,yellow,4.4,green,0.66,green,16.87,green,56.22,green,4.12,green
+2025-12-19,2025-12-19,🟢 평상시 — 유지,green,0,0,0,0,2.9,green,0.8,green,78.38,yellow,66.44,green,331.814,yellow,127.886,yellow,4.4,green,0.68,green,14.91,green,56.8,green,4.16,green
+2025-12-22,2025-12-22,🟢 평상시 — 유지,green,0,0,0,0,2.88,green,0.8,green,78.44,yellow,66.76,green,331.814,yellow,127.886,yellow,4.4,green,0.73,green,14.08,green,58.18,green,4.17,green
+2025-12-23,2025-12-23,🟢 평상시 — 유지,green,0,0,0,0,2.83,green,0.79,green,78.5,yellow,66.29,green,331.814,yellow,127.886,yellow,4.4,green,0.7,green,14.0,green,58.55,green,4.18,green
+2025-12-24,2025-12-24,🟢 평상시 — 유지,green,0,0,0,0,2.84,green,0.79,green,78.65,yellow,66.34,green,331.814,yellow,127.886,yellow,4.4,green,0.68,green,13.47,green,58.72,green,4.15,green
+2025-12-26,2025-12-26,🟢 평상시 — 유지,green,0,0,0,0,2.86,green,0.79,green,78.61,yellow,66.14,green,331.814,yellow,127.886,yellow,4.4,green,0.68,green,13.6,green,56.6,green,4.14,green
+2025-12-29,2025-12-29,🟢 평상시 — 유지,green,0,0,0,0,2.87,green,0.79,green,78.64,yellow,65.56,yellow,331.814,yellow,127.886,yellow,4.4,green,0.67,green,14.2,green,57.89,green,4.12,green
+2025-12-30,2025-12-30,🟢 평상시 — 유지,green,0,0,0,0,2.84,green,0.79,green,78.72,yellow,65.06,yellow,331.814,yellow,127.886,yellow,4.4,green,0.69,green,14.33,green,57.79,green,4.14,green
+2025-12-31,2025-12-31,🟢 평상시 — 유지,green,0,0,0,0,2.81,green,0.79,green,78.64,yellow,64.44,orange,331.814,yellow,127.886,yellow,4.4,green,0.71,green,14.95,green,57.26,green,4.18,green
+2026-01-02,2026-01-02,🟠 위험 — 2차 방어,orange,1,0,0,0,2.83,green,0.79,green,78.68,yellow,64.86,orange,332.793,yellow,128.432,yellow,4.3,green,0.72,green,14.51,green,57.21,green,4.19,green
+2026-01-05,2026-01-05,🟢 평상시 — 유지,green,0,0,0,0,2.81,green,0.79,green,78.88,yellow,66.18,yellow,332.793,yellow,128.432,yellow,4.3,green,0.71,green,14.9,green,58.1,green,4.17,green
+2026-01-06,2026-01-06,🟢 평상시 — 유지,green,0,0,0,0,2.79,green,0.79,green,78.9,yellow,66.84,green,332.793,yellow,128.432,yellow,4.3,green,0.71,green,14.75,green,56.97,green,4.18,green
+2026-01-07,2026-01-07,🟢 평상시 — 유지,green,0,0,0,0,2.79,green,0.79,green,78.88,yellow,66.36,yellow,332.793,yellow,128.432,yellow,4.3,green,0.68,green,15.38,green,56.01,green,4.15,green
+2026-01-08,2026-01-08,🟢 평상시 — 유지,green,0,0,0,0,2.76,green,0.79,green,78.94,yellow,67.69,green,332.793,yellow,128.432,yellow,4.3,green,0.7,green,15.45,green,57.74,green,4.19,green
+2026-01-09,2026-01-09,🟢 평상시 — 유지,green,0,0,0,0,2.74,green,0.78,green,79.0,yellow,67.09,green,332.793,yellow,128.432,yellow,4.3,green,0.64,green,14.49,green,58.96,green,4.18,green
+2026-01-12,2026-01-12,🟢 평상시 — 유지,green,0,0,0,0,2.74,green,0.78,green,79.04,yellow,66.29,yellow,332.793,yellow,128.432,yellow,4.3,green,0.65,green,15.12,green,59.39,green,4.19,green
+2026-01-13,2026-01-13,🟢 평상시 — 유지,green,0,0,0,0,2.75,green,0.77,green,79.04,yellow,65.86,yellow,332.793,yellow,128.432,yellow,4.3,green,0.65,green,15.98,green,60.85,green,4.18,green
+2026-01-14,2026-01-14,🟢 평상시 — 유지,green,0,0,0,0,2.76,green,0.77,green,79.04,yellow,66.59,yellow,332.793,yellow,128.432,yellow,4.3,green,0.64,green,16.75,green,61.84,green,4.15,green
+2026-01-15,2026-01-15,🟢 평상시 — 유지,green,0,0,0,0,2.71,green,0.76,green,79.04,yellow,67.85,green,332.793,yellow,128.432,yellow,4.3,green,0.61,green,15.84,green,59.13,green,4.17,green
+2026-01-16,2026-01-16,🟢 평상시 — 유지,green,0,0,0,0,2.65,green,0.75,green,79.09,yellow,67.46,green,332.793,yellow,128.432,yellow,4.3,green,0.65,green,15.86,green,59.4,green,4.24,green
+2026-01-20,2026-01-20,🟢 평상시 — 유지,green,0,0,0,0,2.73,green,0.75,green,78.88,yellow,66.57,yellow,332.793,yellow,128.432,yellow,4.3,green,0.7,green,20.09,yellow,60.3,green,4.3,yellow
+2026-01-21,2026-01-21,🟢 평상시 — 유지,green,0,0,0,0,2.69,green,0.74,green,79.12,yellow,69.68,green,332.793,yellow,128.432,yellow,4.3,green,0.66,green,16.9,green,60.38,green,4.26,green
+2026-01-22,2026-01-22,🟢 평상시 — 유지,green,0,0,0,0,2.64,green,0.73,green,79.18,yellow,69.53,green,332.793,yellow,128.432,yellow,4.3,green,0.65,green,15.64,green,59.24,green,4.26,green
+2026-01-23,2026-01-23,🟢 평상시 — 유지,green,0,0,0,0,2.68,green,0.73,green,79.14,yellow,67.22,yellow,332.793,yellow,128.432,yellow,4.3,green,0.64,green,16.09,green,60.7,green,4.24,green
+2026-01-26,2026-01-26,🟢 평상시 — 유지,green,0,0,0,0,2.69,green,0.74,green,79.18,yellow,67.54,green,332.793,yellow,128.432,yellow,4.3,green,0.66,green,16.15,green,60.46,green,4.22,green
+2026-01-27,2026-01-27,🟢 평상시 — 유지,green,0,0,0,0,2.71,green,0.73,green,79.17,yellow,67.87,green,332.793,yellow,128.432,yellow,4.3,green,0.71,green,16.35,green,62.04,green,4.24,green
+2026-01-28,2026-01-28,🟢 평상시 — 유지,green,0,0,0,0,2.72,green,0.73,green,79.04,yellow,67.39,yellow,332.793,yellow,128.432,yellow,4.3,green,0.7,green,16.35,green,62.75,green,4.26,green
+2026-01-29,2026-01-29,🟢 평상시 — 유지,green,0,0,0,0,2.77,green,0.74,green,79.03,yellow,68.63,green,332.793,yellow,128.432,yellow,4.3,green,0.71,green,16.88,green,64.77,green,4.24,green
+2026-01-30,2026-01-30,🟢 평상시 — 유지,green,0,0,0,0,2.8,green,0.74,green,79.12,yellow,68.41,green,332.793,yellow,128.432,yellow,4.3,green,0.74,green,17.44,green,64.5,green,4.26,green
+2026-02-02,2026-02-02,🟢 평상시 — 유지,green,0,0,0,0,2.81,green,0.74,green,79.17,yellow,69.64,green,333.512,yellow,128.94,yellow,4.4,yellow,0.72,green,16.34,green,61.6,green,4.29,green
+2026-02-03,2026-02-03,🟢 평상시 — 유지,green,0,0,0,0,2.85,green,0.74,green,79.12,yellow,70.83,green,333.512,yellow,128.94,yellow,4.4,yellow,0.71,green,18.0,yellow,62.62,green,4.28,green
+2026-02-04,2026-02-04,🟢 평상시 — 유지,green,0,0,0,0,2.86,green,0.75,green,79.02,yellow,71.93,green,333.512,yellow,128.94,yellow,4.4,yellow,0.72,green,18.64,yellow,64.56,green,4.29,green
+2026-02-05,2026-02-05,🟢 평상시 — 유지,green,0,0,0,0,2.97,green,0.76,green,78.93,yellow,71.88,green,333.512,yellow,128.94,yellow,4.4,yellow,0.74,green,21.77,yellow,62.9,green,4.21,green
+2026-02-06,2026-02-06,🟢 평상시 — 유지,green,0,0,0,0,2.87,green,0.76,green,79.2,yellow,73.2,green,333.512,yellow,128.94,yellow,4.4,yellow,0.72,green,17.76,green,63.77,green,4.22,green
+2026-02-09,2026-02-09,🟢 평상시 — 유지,green,0,0,0,0,2.84,green,0.76,green,79.31,yellow,73.0,green,333.512,yellow,128.94,yellow,4.4,yellow,0.74,green,17.36,green,64.53,green,4.22,green
+2026-02-10,2026-02-10,🟢 평상시 — 유지,green,0,0,0,0,2.86,green,0.77,green,79.23,yellow,72.22,green,333.512,yellow,128.94,yellow,4.4,yellow,0.71,green,17.79,green,64.2,green,4.16,green
+2026-02-11,2026-02-11,🟢 평상시 — 유지,green,0,0,0,0,2.84,green,0.77,green,79.22,yellow,71.4,green,333.512,yellow,128.94,yellow,4.4,yellow,0.66,green,17.65,green,64.8,green,4.18,green
+2026-02-12,2026-02-12,🟢 평상시 — 유지,green,0,0,0,0,2.92,green,0.78,green,79.19,yellow,70.29,yellow,333.512,yellow,128.94,yellow,4.4,yellow,0.62,green,20.82,yellow,63.08,green,4.09,green
+2026-02-13,2026-02-13,🟢 평상시 — 유지,green,0,0,0,0,2.95,green,0.79,green,79.24,yellow,70.87,green,333.512,yellow,128.94,yellow,4.4,yellow,0.64,green,20.6,yellow,63.05,green,4.04,green
+2026-02-17,2026-02-17,🟢 평상시 — 유지,green,0,0,0,0,2.94,green,0.8,green,79.2,yellow,71.12,green,333.512,yellow,128.94,yellow,4.4,yellow,0.62,green,20.29,yellow,62.53,green,4.05,green
+2026-02-18,2026-02-18,🟢 평상시 — 유지,green,0,0,0,0,2.86,green,0.78,green,79.3,yellow,70.97,green,333.512,yellow,128.94,yellow,4.4,yellow,0.62,green,19.62,yellow,65.33,green,4.09,green
+2026-02-19,2026-02-19,🟢 평상시 — 유지,green,0,0,0,0,2.88,green,0.79,green,79.33,yellow,70.58,yellow,333.512,yellow,128.94,yellow,4.4,yellow,0.61,green,20.23,yellow,66.66,green,4.08,green
+2026-02-20,2026-02-20,🟢 평상시 — 유지,green,0,0,0,0,2.86,green,0.78,green,79.39,yellow,71.48,green,333.512,yellow,128.94,yellow,4.4,yellow,0.6,green,19.09,yellow,66.69,green,4.08,green
+2026-02-23,2026-02-23,🟢 평상시 — 유지,green,0,0,0,0,2.95,green,0.8,green,79.26,yellow,68.34,orange,333.512,yellow,128.94,yellow,4.4,yellow,0.6,green,21.01,yellow,66.36,green,4.03,green
+2026-02-24,2026-02-24,🟠 위험 — 2차 방어,orange,1,0,0,0,2.97,green,0.81,green,79.2,yellow,68.27,orange,333.512,yellow,128.94,yellow,4.4,yellow,0.61,green,19.55,yellow,65.62,green,4.04,green
+2026-02-25,2026-02-25,🟠 위험 — 2차 방어,orange,1,0,0,0,2.94,green,0.8,green,79.31,yellow,69.47,orange,333.512,yellow,128.94,yellow,4.4,yellow,0.6,green,17.93,green,65.3,green,4.05,green
+2026-02-26,2026-02-26,🟢 평상시 — 유지,green,0,0,0,0,2.98,green,0.82,green,79.24,yellow,69.98,yellow,333.512,yellow,128.94,yellow,4.4,yellow,0.6,green,18.63,yellow,65.1,green,4.02,green
+2026-02-27,2026-02-27,🟠 위험 — 2차 방어,orange,1,0,0,0,3.1,green,0.85,green,79.12,yellow,66.38,red,333.512,yellow,128.94,yellow,4.4,yellow,0.59,green,19.86,yellow,66.96,green,3.97,green
+2026-03-02,2026-03-02,🟠 위험 — 2차 방어,orange,1,0,0,0,3.03,green,0.85,green,79.07,yellow,67.37,orange,334.165,yellow,129.321,yellow,4.3,green,0.58,green,21.44,yellow,71.13,green,4.05,green
+2026-03-03,2026-03-03,🟠 위험 — 2차 방어,orange,1,0,0,0,3.08,green,0.84,green,78.91,yellow,66.91,orange,334.165,yellow,129.321,yellow,4.3,green,0.55,green,23.57,yellow,74.48,green,4.06,green
+2026-03-04,2026-03-04,🟠 위험 — 2차 방어,orange,1,0,0,0,2.97,green,0.82,green,79.19,yellow,67.11,orange,334.165,yellow,129.321,yellow,4.3,green,0.55,green,21.15,yellow,74.58,green,4.09,green
+2026-03-05,2026-03-05,🟠 위험 — 2차 방어,orange,1,0,0,0,3.0,green,0.82,green,78.87,yellow,66.22,orange,334.165,yellow,129.321,yellow,4.3,green,0.56,green,23.75,yellow,80.88,green,4.13,green
+2026-03-06,2026-03-06,🟠 위험 — 2차 방어,orange,1,0,0,0,3.13,green,0.84,green,78.49,yellow,64.54,orange,334.165,yellow,129.321,yellow,4.3,green,0.59,green,29.49,orange,90.77,yellow,4.15,green
+2026-03-09,2026-03-09,🟠 위험 — 2차 방어,orange,1,0,1,0,3.19,green,0.85,green,78.96,yellow,64.38,orange,334.165,yellow,129.321,yellow,4.3,green,0.56,green,25.5,orange,94.65,yellow,4.12,green
+2026-03-10,2026-03-10,🟠 위험 — 2차 방어,orange,1,0,0,0,3.06,green,0.84,green,78.83,yellow,64.35,orange,334.165,yellow,129.321,yellow,4.3,green,0.58,green,24.93,yellow,83.71,green,4.15,green
+2026-03-11,2026-03-11,🟠 위험 — 2차 방어,orange,1,0,0,0,3.09,green,0.88,green,78.66,yellow,63.61,orange,334.165,yellow,129.321,yellow,4.3,green,0.57,green,24.23,yellow,86.8,yellow,4.21,green
+2026-03-12,2026-03-12,🟠 위험 — 2차 방어,orange,1,0,0,0,3.17,green,0.91,green,78.16,orange,63.09,orange,334.165,yellow,129.321,yellow,4.3,green,0.51,green,27.29,orange,95.61,yellow,4.27,green
+2026-03-13,2026-03-13,🟠 위험 — 2차 방어,orange,2,0,1,0,3.28,green,0.93,green,78.01,orange,62.75,orange,334.165,yellow,129.321,yellow,4.3,green,0.55,green,27.19,orange,98.48,yellow,4.28,green
+2026-03-16,2026-03-16,🟠 위험 — 2차 방어,orange,1,0,0,0,3.27,green,0.94,green,78.25,yellow,63.09,orange,334.165,yellow,129.321,yellow,4.3,green,0.55,green,23.51,yellow,93.39,yellow,4.23,green
+2026-03-17,2026-03-17,🟠 위험 — 2차 방어,orange,1,0,0,0,3.22,green,0.92,green,78.61,yellow,63.08,orange,334.165,yellow,129.321,yellow,4.3,green,0.52,green,22.37,yellow,96.01,yellow,4.2,green
+2026-03-18,2026-03-18,🟠 위험 — 2차 방어,orange,1,0,0,0,3.2,green,0.91,green,78.2,yellow,62.26,orange,334.165,yellow,129.321,yellow,4.3,green,0.5,green,25.09,orange,96.12,yellow,4.26,green
+2026-03-19,2026-03-19,🟠 위험 — 2차 방어,orange,1,0,0,0,3.27,green,0.9,green,78.46,yellow,62.83,orange,334.165,yellow,129.321,yellow,4.3,green,0.46,green,24.06,yellow,96.11,yellow,4.25,green
+2026-03-20,2026-03-20,🟠 위험 — 2차 방어,orange,1,0,0,0,3.24,green,0.88,green,77.73,orange,62.68,orange,334.165,yellow,129.321,yellow,4.3,green,0.51,green,26.78,orange,98.71,yellow,4.39,yellow
+2026-03-23,2026-03-23,🟠 위험 — 2차 방어,orange,1,0,1,0,3.19,green,0.88,green,78.24,yellow,63.81,orange,334.165,yellow,129.321,yellow,4.3,green,0.51,green,26.15,orange,89.33,yellow,4.34,yellow
+2026-03-24,2026-03-24,🟢 평상시 — 유지,green,0,0,1,0,3.19,green,0.87,green,77.98,yellow,64.34,yellow,334.165,yellow,129.321,yellow,4.3,green,0.49,green,26.95,orange,93.18,yellow,4.39,yellow
+2026-03-25,2026-03-25,🟢 평상시 — 유지,green,0,0,1,0,3.17,green,0.87,green,78.22,yellow,64.57,yellow,334.165,yellow,129.321,yellow,4.3,green,0.49,green,25.33,orange,91.51,yellow,4.33,yellow
+2026-03-26,2026-03-26,🟢 평상시 — 유지,green,0,0,1,0,3.21,green,0.88,green,77.73,yellow,64.47,yellow,334.165,yellow,129.321,yellow,4.3,green,0.46,green,27.44,orange,96.18,yellow,4.42,yellow
+2026-03-27,2026-03-27,🟢 평상시 — 유지,green,0,0,1,0,3.42,green,0.91,green,77.53,orange,63.37,orange,334.165,yellow,129.321,yellow,4.3,green,0.56,green,31.05,red,101.26,orange,4.44,yellow
+2026-03-30,2026-03-30,🟡 경계 — 1차 방어,yellow,0,0,2,0,3.46,green,0.93,green,77.62,yellow,63.61,yellow,334.165,yellow,129.321,yellow,4.3,green,0.53,green,30.61,red,104.69,orange,4.35,yellow
+2026-03-31,2026-03-31,🟡 경계 — 1차 방어,yellow,0,0,2,0,3.28,green,0.9,green,78.36,yellow,65.15,green,334.165,yellow,129.321,yellow,4.3,green,0.51,green,25.25,orange,102.86,orange,4.3,yellow
+2026-04-01,2026-04-01,🟢 평상시 — 유지,green,0,0,1,0,3.16,green,0.87,green,78.55,yellow,65.85,green,335.423,yellow,129.63,yellow,4.3,green,0.52,green,24.54,yellow,101.9,orange,4.33,yellow
+2026-04-02,2026-04-02,🟢 평상시 — 유지,green,0,0,1,0,3.17,green,0.86,green,78.74,yellow,66.0,green,335.423,yellow,129.63,yellow,4.3,green,0.52,green,23.87,yellow,113.23,red,4.31,yellow
+2026-04-06,2026-04-06,🟢 평상시 — 유지,green,0,0,1,0,3.05,green,0.85,green,78.88,yellow,66.64,green,335.423,yellow,129.63,yellow,4.3,green,0.5,green,24.17,yellow,114.01,red,4.34,yellow
+2026-04-07,2026-04-07,🟢 평상시 — 유지,green,0,0,1,0,3.12,green,0.86,green,78.9,yellow,66.75,green,335.423,yellow,129.63,yellow,4.3,green,0.52,green,25.78,orange,114.58,red,4.33,yellow
+2026-04-08,2026-04-08,🟢 평상시 — 유지,green,0,0,0,0,2.94,green,0.83,green,79.37,green,68.69,green,335.423,yellow,129.63,yellow,4.3,green,0.5,green,21.04,yellow,96.17,yellow,4.29,green
+2026-04-09,2026-04-09,🟢 평상시 — 유지,green,0,0,0,0,2.9,green,0.83,green,79.45,green,69.85,green,335.423,yellow,129.63,yellow,4.3,green,0.51,green,19.49,yellow,99.62,yellow,4.29,green
+2026-04-10,2026-04-10,🟢 평상시 — 유지,green,0,0,0,0,2.94,green,0.82,green,79.14,yellow,68.94,green,335.423,yellow,129.63,yellow,4.3,green,0.5,green,19.23,yellow,98.34,yellow,4.31,yellow
+2026-04-13,2026-04-13,🟢 평상시 — 유지,green,0,0,0,0,2.95,green,0.82,green,79.44,green,69.39,green,335.423,yellow,129.63,yellow,4.3,green,0.52,green,19.12,yellow,100.72,orange,4.3,yellow
+2026-04-14,2026-04-14,🟢 평상시 — 유지,green,0,0,0,0,2.84,green,0.81,green,79.67,green,69.29,green,335.423,yellow,129.63,yellow,4.3,green,0.5,green,18.36,yellow,93.07,yellow,4.26,green
+2026-04-15,2026-04-15,🟢 평상시 — 유지,green,0,0,0,0,2.85,green,0.8,green,79.63,green,69.17,green,335.423,yellow,129.63,yellow,4.3,green,0.53,green,18.17,yellow,93.04,yellow,4.29,green
+2026-04-16,2026-04-16,🟢 평상시 — 유지,green,0,0,0,0,2.86,green,0.81,green,79.52,green,68.83,green,335.423,yellow,129.63,yellow,4.3,green,0.54,green,17.94,green,96.46,yellow,4.32,yellow
+2026-04-17,2026-04-17,🟢 평상시 — 유지,green,0,0,0,0,2.83,green,0.8,green,79.82,green,70.37,green,335.423,yellow,129.63,yellow,4.3,green,0.55,green,17.48,green,85.91,yellow,4.26,green
+2026-04-20,2026-04-20,🟢 평상시 — 유지,green,0,0,0,0,2.87,green,0.81,green,79.75,green,70.64,green,335.423,yellow,129.63,yellow,4.3,green,0.54,green,18.87,yellow,91.06,yellow,4.26,green
+2026-04-21,2026-04-21,🟢 평상시 — 유지,green,0,0,0,0,2.85,green,0.8,green,79.54,yellow,69.63,green,335.423,yellow,129.63,yellow,4.3,green,0.52,green,19.5,yellow,93.64,yellow,4.3,yellow
+2026-04-22,2026-04-22,🟢 평상시 — 유지,green,0,0,0,0,2.84,green,0.79,green,79.67,yellow,69.25,green,335.423,yellow,129.63,yellow,4.3,green,0.51,green,18.92,yellow,94.76,yellow,4.3,yellow
+2026-04-23,2026-04-23,🟢 평상시 — 유지,green,0,0,0,0,2.86,green,0.8,green,79.54,yellow,70.0,green,335.423,yellow,129.63,yellow,4.3,green,0.51,green,19.31,yellow,99.27,yellow,4.34,yellow
+2026-04-24,2026-04-24,🟢 평상시 — 유지,green,0,0,0,0,2.86,green,0.8,green,79.65,yellow,68.89,green,335.423,yellow,129.63,yellow,4.3,green,0.53,green,18.71,yellow,98.42,yellow,4.31,yellow
+2026-04-27,2026-04-27,🟢 평상시 — 유지,green,0,0,0,0,2.84,green,0.81,green,79.68,yellow,70.07,green,335.423,yellow,129.63,yellow,4.3,green,0.57,green,18.02,yellow,99.89,yellow,4.35,yellow
+2026-04-28,2026-04-28,🟢 평상시 — 유지,green,0,0,0,0,2.85,green,0.81,green,79.57,yellow,70.37,green,335.423,yellow,129.63,yellow,4.3,green,0.52,green,17.83,green,103.45,orange,4.36,yellow
+2026-04-29,2026-04-29,🟢 평상시 — 유지,green,0,0,1,0,2.82,green,0.81,green,79.31,yellow,69.03,yellow,335.423,yellow,129.63,yellow,4.3,green,0.5,green,18.81,yellow,110.47,red,4.42,yellow
+2026-04-30,2026-04-30,🟢 평상시 — 유지,green,0,0,1,0,2.83,green,0.81,green,79.55,yellow,69.85,green,335.423,yellow,129.63,yellow,4.3,green,0.52,green,16.89,green,108.64,orange,4.4,yellow
+2026-05-01,2026-05-01,🟢 평상시 — 유지,green,0,0,1,0,2.77,green,0.81,green,79.65,yellow,69.82,yellow,335.423,yellow,129.63,yellow,4.3,green,0.51,green,16.99,green,105.38,orange,4.39,yellow
+2026-05-04,2026-05-04,🟢 평상시 — 유지,green,0,0,1,0,2.78,green,0.8,green,79.39,yellow,68.99,yellow,335.423,yellow,129.63,yellow,4.3,green,0.5,green,18.29,yellow,109.76,orange,4.45,yellow
+2026-05-05,2026-05-05,🟢 평상시 — 유지,green,0,0,1,0,2.77,green,0.79,green,79.51,yellow,69.92,yellow,335.423,yellow,129.63,yellow,4.3,green,0.5,green,17.38,green,105.66,orange,4.43,yellow
+2026-05-06,2026-05-06,🟢 평상시 — 유지,green,0,0,0,0,2.75,green,0.78,green,79.75,yellow,70.71,green,335.423,yellow,129.63,yellow,4.3,green,0.49,green,17.39,green,98.75,yellow,4.36,yellow
+2026-05-07,2026-05-07,🟢 평상시 — 유지,green,0,0,0,0,2.79,green,0.79,green,79.45,yellow,69.95,yellow,335.423,yellow,129.63,yellow,4.3,green,0.49,green,17.08,green,98.38,yellow,4.41,yellow
+2026-05-08,2026-05-08,🟢 평상시 — 유지,green,0,0,0,0,2.81,green,0.79,green,79.73,yellow,69.85,yellow,335.423,yellow,129.63,yellow,4.3,green,0.48,green,17.19,green,98.87,yellow,4.38,yellow
+2026-05-11,2026-05-11,🟢 평상시 — 유지,green,0,0,0,0,2.79,green,0.78,green,79.57,yellow,68.55,orange,335.423,yellow,129.63,yellow,4.3,green,0.47,green,18.38,yellow,101.56,orange,4.42,yellow
+2026-05-12,2026-05-12,🟠 위험 — 2차 방어,orange,1,0,1,0,2.82,green,0.77,green,79.46,yellow,68.23,orange,335.423,yellow,129.63,yellow,4.3,green,0.46,green,17.99,green,105.78,orange,4.46,yellow
+2026-05-13,2026-05-13,🟠 위험 — 2차 방어,orange,1,0,1,0,2.82,green,0.76,green,79.5,yellow,67.14,orange,335.423,yellow,129.63,yellow,4.3,green,0.48,green,17.87,green,104.52,orange,4.46,yellow
+2026-05-14,2026-05-14,🟠 위험 — 2차 방어,orange,1,0,1,0,2.76,green,0.76,green,79.44,yellow,67.74,orange,335.423,yellow,129.63,yellow,4.3,green,0.47,green,17.26,green,104.66,orange,4.47,yellow
+2026-05-15,2026-05-15,🟠 위험 — 2차 방어,orange,1,0,1,0,2.8,green,0.75,green,79.06,yellow,66.97,orange,335.423,yellow,129.63,yellow,4.3,green,0.5,green,18.43,yellow,108.99,orange,4.59,yellow
+2026-05-18,2026-05-18,🟠 위험 — 2차 방어,orange,1,0,1,0,2.83,green,0.75,green,79.13,yellow,67.92,orange,335.423,yellow,129.63,yellow,4.3,green,0.54,green,17.82,green,112.25,red,4.61,yellow
+2026-05-19,2026-05-19,🟠 위험 — 2차 방어,orange,1,0,1,0,2.86,green,0.76,green,78.95,yellow,67.56,orange,335.423,yellow,129.63,yellow,4.3,green,0.54,green,18.06,yellow,112.09,red,4.67,yellow
+2026-05-20,2026-05-20,🟢 평상시 — 유지,green,0,0,1,0,2.8,green,0.75,green,79.45,yellow,69.17,yellow,335.423,yellow,129.63,yellow,4.3,green,0.53,green,17.44,green,101.69,orange,4.57,yellow
+2026-05-21,2026-05-21,🟢 평상시 — 유지,green,0,0,1,0,2.78,green,0.75,green,79.49,yellow,69.21,yellow,335.423,yellow,129.63,yellow,4.3,green,0.49,green,16.76,green,100.2,orange,4.57,yellow
+2026-05-22,2026-05-22,🟢 평상시 — 유지,green,0,0,1,0,2.74,green,0.74,green,79.5,yellow,69.37,yellow,335.423,yellow,129.63,yellow,4.3,green,0.43,green,16.7,green,100.35,orange,4.56,yellow
+2026-05-26,2026-05-26,🟢 평상시 — 유지,green,0,0,0,0,2.72,green,0.74,green,79.77,yellow,70.3,green,335.423,yellow,129.63,yellow,4.3,green,0.49,green,17.01,green,97.63,yellow,4.5,yellow
+2026-05-27,2026-05-27,🟢 평상시 — 유지,green,0,0,0,0,2.71,green,0.74,green,79.72,yellow,69.58,yellow,335.423,yellow,129.63,yellow,4.3,green,0.48,green,16.29,green,92.35,yellow,4.48,yellow
+2026-05-28,2026-05-28,🟢 평상시 — 유지,green,0,0,0,0,2.72,green,0.73,green,79.82,yellow,69.55,yellow,335.423,yellow,129.63,yellow,4.3,green,0.46,green,15.74,green,92.65,yellow,4.45,yellow
+2026-05-29,2026-05-29,🟢 평상시 — 유지,green,0,0,0,0,2.72,green,0.73,green,79.9,yellow,69.61,yellow,335.423,yellow,129.63,yellow,4.3,green,0.47,green,15.32,green,91.16,yellow,4.45,yellow
+2026-06-01,2026-06-01,🟢 평상시 — 유지,green,0,0,0,0,2.72,green,0.73,green,79.84,yellow,68.31,yellow,335.423,yellow,129.63,yellow,4.3,green,0.42,green,16.05,green,95.96,yellow,4.47,yellow
+2026-06-02,2026-06-02,🟢 평상시 — 유지,green,0,0,0,0,2.71,green,0.74,green,79.9,yellow,69.54,yellow,335.423,yellow,129.63,yellow,4.3,green,0.41,green,15.77,green,95.96,yellow,4.46,yellow
+2026-06-03,2026-06-03,🟢 평상시 — 유지,green,0,0,0,0,2.75,green,0.74,green,79.68,yellow,67.88,orange,335.423,yellow,129.63,yellow,4.3,green,0.41,green,16.06,green,95.96,yellow,4.49,yellow
+2026-06-04,2026-06-04,🟢 평상시 — 유지,green,0,0,0,0,2.75,green,0.74,green,79.83,yellow,69.98,green,335.423,yellow,129.63,yellow,4.3,green,0.42,green,16.06,green,95.96,yellow,4.49,yellow
+2026-06-05,2026-06-04,🟢 평상시 — 유지,green,0,0,0,0,2.75,green,0.74,green,79.83,yellow,69.98,green,335.423,yellow,129.63,yellow,4.3,green,0.42,green,16.06,green,95.96,yellow,4.49,yellow

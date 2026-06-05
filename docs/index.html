@@ -3,343 +3,295 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🚦 시장 신호등</title>
-  <!-- 추이 차트 라이브러리 (CDN 한 줄, 빌드 불필요) -->
+  <title>시장 신호등</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     :root {
-      --green: #2e7d32; --yellow: #f9a825; --orange: #ef6c00;
-      --red: #c62828; --gray: #757575;
-      --bg: #0f1115; --card: #1a1d24; --text: #e6e6e6; --muted: #9aa0a6;
+      --green:#22c55e; --yellow:#eab308; --orange:#f97316; --red:#ef4444; --gray:#64748b;
+      --bg:#0a0d14; --bg2:#0e131c; --card:#141a26; --card2:#1a2230;
+      --line:#222b3a; --text:#e8edf5; --muted:#8b97a8; --accent:#3b82f6;
+      --radius:16px; --shadow:0 1px 3px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.25);
     }
-    * { box-sizing: border-box; }
+    * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+    html,body { margin:0; }
     body {
-      margin: 0; background: var(--bg); color: var(--text);
-      font-family: -apple-system, "Segoe UI", "Malgun Gothic", sans-serif;
-      padding: 16px; max-width: 880px; margin: 0 auto;
+      background:radial-gradient(1200px 600px at 50% -10%, #121a2b 0%, var(--bg) 55%) fixed, var(--bg);
+      color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+      line-height:1.5; padding:20px 16px 48px; max-width:760px; margin:0 auto;
+      -webkit-font-smoothing:antialiased;
     }
-    h1 { font-size: 1.3rem; margin: 8px 0 4px; }
-    .muted { color: var(--muted); font-size: 0.85rem; }
-    /* 큰 신호등 */
-    .verdict {
-      border-radius: 16px; padding: 24px; margin: 16px 0; text-align: center;
-      color: #fff; transition: background 0.3s;
-    }
-    .verdict .emoji { font-size: 3rem; }
-    .verdict .title { font-size: 1.5rem; font-weight: 700; margin-top: 4px; }
-    .verdict .date { opacity: 0.85; font-size: 0.85rem; margin-top: 6px; }
-    .bg-green { background: var(--green); } .bg-yellow { background: var(--yellow); }
-    .bg-orange { background: var(--orange); } .bg-red { background: var(--red); }
-    .bg-gray { background: var(--gray); }
+    a { color:var(--accent); }
+
+    /* 헤더 */
+    .head { display:flex; align-items:baseline; justify-content:space-between; gap:8px; margin-bottom:4px; flex-wrap:wrap; }
+    .head h1 { font-size:1.15rem; font-weight:700; letter-spacing:-.01em; margin:0; }
+    .head .updated { font-size:.74rem; color:var(--muted); }
+    .subhead { font-size:.78rem; color:var(--muted); margin-bottom:16px; }
+
+    /* 섹션 라벨 */
+    .label { font-size:.72rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:24px 4px 10px; }
+
+    /* 카드 공통 */
+    .card { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); }
+
+    /* 히어로(종합 판정) */
+    .hero { padding:22px; position:relative; overflow:hidden; }
+    .hero::before { content:""; position:absolute; inset:0; opacity:.14; background:radial-gradient(420px 220px at 0% 0%, var(--accent2,#64748b), transparent 70%); pointer-events:none; }
+    .hero .row1 { display:flex; align-items:center; gap:14px; }
+    .hero .dot { width:54px; height:54px; border-radius:50%; flex:none; display:flex; align-items:center; justify-content:center; font-size:1.7rem; box-shadow:0 0 0 6px rgba(255,255,255,.04); }
+    .hero .title { font-size:1.35rem; font-weight:800; letter-spacing:-.02em; }
+    .hero .plain { font-size:.92rem; color:var(--text); opacity:.92; margin-top:12px; }
+    .chips { display:flex; flex-wrap:wrap; gap:7px; margin-top:14px; }
+    .chip { font-size:.74rem; font-weight:600; padding:5px 11px; border-radius:999px; background:var(--card2); border:1px solid var(--line); color:var(--muted); }
+    .chip.up { color:#fda4a4; border-color:#5b2330; background:#2a151a; }
+    .chip.down { color:#9ae6b4; border-color:#1f4d35; background:#13241b; }
+    .hero .foot { font-size:.74rem; color:var(--muted); margin-top:14px; display:flex; gap:12px; flex-wrap:wrap; }
+
     /* 행동 가이드 */
-    .actions { background: var(--card); border-radius: 12px; padding: 14px 18px; margin: 12px 0; }
-    .actions h3 { margin: 0 0 8px; font-size: 1rem; }
-    .actions ul { margin: 0; padding-left: 18px; }
-    .actions li { margin: 4px 0; }
-    .warn { color: var(--yellow); margin: 6px 0; }
-    /* 지표 카드 */
-    .tier-title { margin: 18px 0 8px; font-size: 1rem; color: var(--muted); }
-    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
-    .card {
-      background: var(--card); border-radius: 12px; padding: 12px;
-      border-left: 6px solid var(--gray);
-    }
-    .card.green { border-color: var(--green); } .card.yellow { border-color: var(--yellow); }
-    .card.orange { border-color: var(--orange); } .card.red { border-color: var(--red); }
-    .card .name { font-size: 0.85rem; color: var(--muted); }
-    .card .value { font-size: 1.3rem; font-weight: 700; margin: 4px 0; }
-    .card .meta { font-size: 0.72rem; color: var(--muted); }
-    .flag { font-size: 0.7rem; padding: 1px 6px; border-radius: 6px; background: #333; margin-left: 4px; }
-    /* 펼쳐보기(쉬운 설명) */
-    details { margin-top: 6px; }
-    details summary { cursor: pointer; font-size: 0.72rem; color: #6db3f2; list-style: none; }
-    details summary::-webkit-details-marker { display: none; }
-    .explain { font-size: 0.78rem; color: var(--text); margin-top: 6px; line-height: 1.5; }
-    .explain .meaning { font-weight: 700; }
-    .explain .why { color: var(--muted); }
-    /* 온보딩 */
-    .onboarding { background: var(--card); border-radius: 12px; padding: 6px 18px; margin: 12px 0; }
-    .onboarding summary { font-size: 0.95rem; color: var(--text); font-weight: 600; padding: 10px 0; }
-    .onboarding ul { margin: 0 0 12px; padding-left: 18px; }
-    .onboarding li { margin: 6px 0; font-size: 0.85rem; line-height: 1.5; }
-    .v-plain { font-size: 1rem; margin-top: 10px; opacity: 0.95; line-height: 1.4; }
-    .v-extra { font-size: 0.9rem; margin-top: 8px; opacity: 0.95; }
-    .watch-box { background: var(--card); border: 1px solid #4a3f1a; border-radius: 12px; padding: 12px 18px; margin: 12px 0; }
-    .watch-box h3 { margin: 0 0 8px; font-size: 0.95rem; color: var(--yellow); }
-    .watch-box ul { margin: 0 0 8px; padding-left: 18px; }
-    .watch-box li { margin: 3px 0; font-size: 0.88rem; }
-    .watch-note { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
-    .arrow-up { color: #ff6b6b; font-weight: 700; }
-    .arrow-down { color: #51cf66; font-weight: 700; }
-    /* 차트/기타 */
-    .chart-box { background: var(--card); border-radius: 12px; padding: 14px; margin: 16px 0; }
-    /* 신호등 타임라인 */
-    .tl-label { font-size: 0.82rem; color: var(--muted); margin: 6px 0 4px; }
-    .timeline { display: flex; flex-wrap: wrap; gap: 2px; margin-bottom: 4px; }
-    .tl-cell { width: 11px; height: 20px; border-radius: 2px; }
-    .tl-green { background: var(--green); } .tl-yellow { background: var(--yellow); }
-    .tl-orange { background: var(--orange); } .tl-red { background: var(--red); }
-    .tl-gray, .tl- { background: #444; }
-    .tl-legend { font-size: 0.72rem; color: var(--muted); margin-bottom: 8px; }
-    /* 지표별 미니 차트 */
-    .mini { margin: 16px 0; }
-    .mini h4 { margin: 0 0 4px; font-size: 0.85rem; color: var(--text); }
-    .mini .sub { font-size: 0.72rem; color: var(--muted); margin-bottom: 4px; }
-    .manual { background: var(--card); border-radius: 12px; padding: 14px 18px; margin: 16px 0; }
-    .manual h3 { margin: 0 0 8px; font-size: 1rem; }
-    footer { color: var(--muted); font-size: 0.75rem; margin: 24px 0; line-height: 1.5; border-top: 1px solid #2a2d34; padding-top: 14px; }
-    #error { color: var(--red); padding: 16px; display: none; }
+    .actions { padding:16px 20px; margin-top:12px; }
+    .actions ul { margin:8px 0 0; padding-left:18px; }
+    .actions li { margin:5px 0; font-size:.9rem; }
+    .actions .warn { font-size:.82rem; color:var(--yellow); margin:4px 0; }
+
+    /* 관찰 중 */
+    .watch { padding:14px 18px; margin-top:12px; border-color:#4a3f1a; background:#191710; }
+    .watch h3 { margin:0 0 6px; font-size:.86rem; color:var(--yellow); font-weight:700; }
+    .watch ul { margin:0 0 6px; padding-left:18px; }
+    .watch li { font-size:.85rem; margin:3px 0; }
+    .watch .note { font-size:.76rem; color:var(--muted); }
+
+    /* 지표 카드 그리드 */
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(155px,1fr)); gap:10px; }
+    .metric { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:13px 14px; transition:border-color .15s, transform .15s; }
+    .metric:hover { border-color:#33415a; }
+    .metric .top { display:flex; align-items:center; gap:6px; }
+    .metric .sigdot { width:9px; height:9px; border-radius:50%; flex:none; }
+    .metric .nm { font-size:.78rem; color:var(--muted); font-weight:500; line-height:1.3; }
+    .metric .val { font-size:1.45rem; font-weight:750; letter-spacing:-.02em; margin:7px 0 2px; display:flex; align-items:baseline; gap:6px; }
+    .metric .arw { font-size:.85rem; font-weight:700; }
+    .arw.up { color:var(--red); } .arw.down { color:var(--green); }
+    .metric .meta { font-size:.7rem; color:var(--muted); }
+    .pill { font-size:.62rem; padding:1px 6px; border-radius:6px; background:#2a3344; color:#aab6c8; margin-left:5px; }
+    details.exp { margin-top:9px; border-top:1px solid var(--line); padding-top:8px; }
+    details.exp summary { cursor:pointer; font-size:.72rem; color:var(--accent); list-style:none; }
+    details.exp summary::-webkit-details-marker { display:none; }
+    details.exp .body { font-size:.78rem; margin-top:7px; line-height:1.55; }
+    details.exp .mn { font-weight:700; margin-bottom:3px; }
+    details.exp .why { color:var(--muted); margin-top:3px; }
+
+    /* 타임라인 */
+    .tl-cap { font-size:.74rem; color:var(--muted); margin:0 2px 8px; display:flex; justify-content:space-between; }
+    .timeline { display:flex; height:30px; border-radius:8px; overflow:hidden; border:1px solid var(--line); }
+    .tl-cell { flex:1 1 0; min-width:0; }
+    .tl-green{background:var(--green)} .tl-yellow{background:var(--yellow)}
+    .tl-orange{background:var(--orange)} .tl-red{background:var(--red)} .tl-gray,.tl-{background:#2a3344}
+    .legend { display:flex; gap:12px; flex-wrap:wrap; font-size:.72rem; color:var(--muted); margin-top:9px; }
+    .legend span { display:inline-flex; align-items:center; gap:5px; }
+    .legend i { width:10px; height:10px; border-radius:3px; display:inline-block; }
+
+    /* 미니 차트 */
+    .chartcard { padding:14px 14px 8px; margin-bottom:12px; }
+    .chartcard .ch-head { display:flex; align-items:baseline; justify-content:space-between; gap:8px; }
+    .chartcard h4 { margin:0; font-size:.9rem; font-weight:700; }
+    .chartcard .now { font-size:.82rem; font-weight:700; }
+    .chartcard .hint { font-size:.68rem; color:var(--muted); margin:2px 0 6px; }
+
+    /* 온보딩 / 수동확인 / 푸터 */
+    details.box { padding:0 18px; margin:12px 0; }
+    details.box > summary { cursor:pointer; font-size:.9rem; font-weight:600; padding:14px 0; list-style:none; display:flex; justify-content:space-between; }
+    details.box > summary::-webkit-details-marker { display:none; }
+    details.box > summary::after { content:"▾"; color:var(--muted); }
+    details.box ul { margin:0 0 14px; padding-left:18px; }
+    details.box li { font-size:.84rem; margin:6px 0; }
+    .manual { padding:16px 18px; }
+    .manual h3 { margin:0 0 8px; font-size:.86rem; }
+    .manual ul { margin:0; padding-left:18px; } .manual li { font-size:.85rem; margin:4px 0; }
+    footer { color:var(--muted); font-size:.74rem; margin-top:28px; line-height:1.6; border-top:1px solid var(--line); padding-top:16px; }
+    #error { display:none; color:var(--red); background:#1d1014; border:1px solid #5b2330; padding:14px 16px; border-radius:12px; margin:16px 0; font-size:.86rem; }
   </style>
 </head>
 <body>
-  <h1>🚦 시장 신호등</h1>
-  <div class="muted" id="updated">데이터 불러오는 중…</div>
+  <div class="head">
+    <h1>🚦 시장 신호등</h1>
+    <div class="updated" id="updated">불러오는 중…</div>
+  </div>
+  <div class="subhead">미국 증시 위험을 11개 지표로 자동 점검하는 참고용 온도계</div>
 
-  <!-- 🔰 이 신호등이 뭐예요? (사용법) -->
-  <details class="onboarding" id="onboarding-box">
-    <summary>🔰 이 신호등이 뭐예요? (처음이면 눌러보세요)</summary>
-    <ul id="onboarding"></ul>
-  </details>
+  <div id="error">데이터를 불러오지 못했습니다. 자동 실행이 한 번 이상 완료돼야 데이터가 생깁니다.</div>
 
-  <div id="error">
-    데이터(latest.json)를 불러오지 못했습니다. GitHub Actions가 한 번 이상 실행되어야 데이터가 생깁니다.
+  <!-- 종합 판정 (히어로) -->
+  <div class="card hero" id="hero">
+    <div class="row1">
+      <div class="dot" id="v-dot">⚪</div>
+      <div>
+        <div class="title" id="v-title">불러오는 중</div>
+        <div class="foot" id="v-foot"></div>
+      </div>
+    </div>
+    <div class="plain" id="v-plain"></div>
+    <div class="chips" id="v-chips"></div>
   </div>
 
-  <!-- 큰 신호등 -->
-  <div id="verdict" class="verdict bg-gray">
-    <div class="emoji" id="v-emoji">⚪</div>
-    <div class="title" id="v-title">불러오는 중</div>
-    <div class="v-plain" id="v-plain"></div>
-    <div class="v-extra" id="v-extra"></div>
-    <div class="date" id="v-date"></div>
-  </div>
-
-  <!-- 👀 관찰 중 (하루만 깜빡인 미확정 위험) -->
-  <div class="watch-box" id="watch-box" style="display:none;">
-    <h3>👀 관찰 중 (어제는 정상이라 아직 위험으로 안 셈)</h3>
+  <!-- 관찰 중 -->
+  <div class="card watch" id="watch-box" style="display:none;">
+    <h3>👀 관찰 중 — 어제는 정상이라 아직 위험으로 안 셈</h3>
     <ul id="watch"></ul>
-    <div class="watch-note">하루만 흔들린 신호예요. <b>이틀 연속</b>이면 그때 위험으로 올라가요. (성급한 매매 방지)</div>
+    <div class="note">하루만 흔들린 신호예요. <b>이틀 연속</b>이면 그때 위험으로 올라가요.</div>
   </div>
 
   <!-- 행동 가이드 -->
-  <div class="actions">
-    <h3>행동 가이드</h3>
+  <div class="label">행동 가이드</div>
+  <div class="card actions">
     <div id="warnings"></div>
     <ul id="actions"></ul>
   </div>
 
-  <!-- 지표 카드 (Tier별) -->
+  <!-- 지표 -->
+  <div class="label">지표 현황</div>
   <div id="tiers"></div>
 
   <!-- 추이 -->
-  <div class="chart-box">
-    <h3 style="margin:0 0 8px; font-size:1rem;">과거 추이</h3>
-    <div class="muted" id="chart-note"></div>
-
-    <!-- 신호등 색 타임라인 -->
-    <div id="timeline-wrap" style="display:none;">
-      <div class="tl-label">📅 종합 신호등 타임라인 (왼쪽=과거, 오른쪽=오늘)</div>
-      <div id="timeline" class="timeline"></div>
-      <div class="tl-legend">🟢평상시 🟡경계 🟠위험 🔴최악 ⚪보류</div>
+  <div class="label">과거 추이</div>
+  <div id="trend">
+    <div class="tl-cap"><span id="tl-range"></span><span id="tl-note"></span></div>
+    <div class="timeline" id="timeline"></div>
+    <div class="legend">
+      <span><i style="background:var(--green)"></i>평상시</span>
+      <span><i style="background:var(--yellow)"></i>경계</span>
+      <span><i style="background:var(--orange)"></i>위험</span>
+      <span><i style="background:var(--red)"></i>최악</span>
     </div>
-
-    <!-- 지표별 미니 차트들 (위험 기준선 포함) -->
-    <div id="mini-charts"></div>
+    <div id="mini-charts" style="margin-top:16px;"></div>
   </div>
 
-  <!-- 수동 확인 필요 -->
-  <div class="manual">
-    <h3>🔍 수동 확인 필요 (자동화 안 됨)</h3>
-    <ul id="manual"></ul>
-  </div>
+  <!-- 사용법 -->
+  <details class="card box" id="onboarding-box">
+    <summary>🔰 이 신호등이 뭐예요?</summary>
+    <ul id="onboarding"></ul>
+  </details>
+
+  <!-- 수동 확인 -->
+  <div class="label">수동 확인 필요 (자동화 안 됨)</div>
+  <div class="card manual"><ul id="manual"></ul></div>
 
   <footer id="disclaimer"></footer>
 
   <script>
-    // 신호등 색 → CSS 클래스 / 이모지
-    const SIGNAL_EMOJI = { green: "🟢", yellow: "🟡", orange: "🟠", red: "🔴", null: "⚪" };
-    const GRADE_BG = { green: "bg-green", yellow: "bg-yellow", orange: "bg-orange", red: "bg-red", gray: "bg-gray" };
+    const SIG = {
+      green:{c:"var(--green)",e:"🟢"}, yellow:{c:"var(--yellow)",e:"🟡"},
+      orange:{c:"var(--orange)",e:"🟠"}, red:{c:"var(--red)",e:"🔴"}, null:{c:"var(--gray)",e:"⚪"}
+    };
+    const GRADE_KO = { green:"평상시", yellow:"경계", orange:"위험", red:"최악", gray:"보류" };
+    const TIER_NM = { 1:"Tier 1 · 신용시장", 2:"Tier 2 · 매크로", 3:"Tier 3 · 시장·심리" };
+    const LINE_COLORS = ["#f97316","#3b82f6","#a855f7","#14b8a6"];
 
     async function load() {
-      let latest, history;
+      let latest, history=null;
       try {
-        // 캐시 방지를 위해 시각을 쿼리로 붙임
-        const bust = "?t=" + Date.now();
-        latest = await (await fetch("data/latest.json" + bust)).json();
-        try { history = await (await fetch("data/history.json" + bust)).json(); } catch (e) { history = null; }
-      } catch (e) {
-        document.getElementById("error").style.display = "block";
-        document.getElementById("updated").textContent = "";
-        return;
+        const b = "?t=" + Date.now();
+        latest = await (await fetch("data/latest.json"+b)).json();
+        try { history = await (await fetch("data/history.json"+b)).json(); } catch(e){}
+      } catch(e) {
+        document.getElementById("error").style.display="block";
+        document.getElementById("updated").textContent=""; return;
       }
-      render(latest, history);
+      render(latest); drawTrend(history);
     }
 
-    function render(d, history) {
-      const c = d.composite;
-      // 큰 신호등
-      const v = document.getElementById("verdict");
-      v.className = "verdict " + (GRADE_BG[c.grade] || "bg-gray");
-      document.getElementById("v-emoji").textContent = c.emoji;
+    function render(d) {
+      const c = d.composite, g = c.grade;
+      const col = (SIG[g]||SIG.null).c;
+      document.documentElement.style.setProperty("--accent2", col);
+      const hero = document.getElementById("hero");
+      hero.style.borderColor = col;
+      const dot = document.getElementById("v-dot");
+      dot.textContent = c.emoji; dot.style.background = "color-mix(in srgb,"+col+" 22%, transparent)";
       document.getElementById("v-title").textContent = c.title;
-      document.getElementById("v-plain").textContent = c.plain || "";  // 주린이 한 줄
-      document.getElementById("v-date").textContent = "데이터 기준일: " + (d.data_date || "-");
+      document.getElementById("v-plain").textContent = c.plain || "";
 
-      // 방향(어제 대비) + 확신도
-      let extra = "";
+      // chips: 방향 + 확신도
+      const chips = [];
       if (c.direction && c.direction.arrow) {
-        extra += c.direction.arrow + " " + c.direction.text;
+        const cls = c.direction.state==="worse"?"up":(c.direction.state==="better"?"down":"");
+        chips.push('<span class="chip '+cls+'">'+c.direction.arrow+" "+c.direction.text+"</span>");
       }
-      if (c.confidence && c.confidence !== "-") {
-        extra += (extra ? " · " : "") + "확신도: " + c.confidence;
-      }
-      document.getElementById("v-extra").textContent = extra;
+      if (c.confidence && c.confidence!=="-") chips.push('<span class="chip">확신도 '+c.confidence+"</span>");
+      document.getElementById("v-chips").innerHTML = chips.join("");
 
-      // 👀 관찰 중 (미확정 위험)
-      const watchBox = document.getElementById("watch-box");
-      const watch = c.watch || [];
-      if (watch.length) {
-        watchBox.style.display = "block";
-        document.getElementById("watch").innerHTML = watch.map(w =>
-          "<li>" + (SIGNAL_EMOJI[w.signal] || "⚪") + " " + w.name +
-          ": " + w.value + (w.unit || "") + "</li>").join("");
-      } else {
-        watchBox.style.display = "none";
-      }
+      document.getElementById("v-foot").innerHTML =
+        "데이터 기준일 "+(d.data_date||"-") +
+        " · 위험 T1:"+c.tier_danger["1"]+" T2:"+c.tier_danger["2"]+" T3:"+c.tier_danger["3"] +
+        " · 결측 "+c.missing+"/"+c.active;
+      document.getElementById("updated").textContent = "업데이트 "+d.updated_kst;
 
-      // 온보딩(사용법)
-      document.getElementById("onboarding").innerHTML =
-        (d.onboarding || []).map(t => "<li>" + t + "</li>").join("");
-      document.getElementById("updated").textContent =
-        "마지막 업데이트: " + d.updated_kst + " · 위험 점등 T1:" + c.tier_danger["1"] +
-        " T2:" + c.tier_danger["2"] + " T3:" + c.tier_danger["3"] + " · 결측 " + c.missing + "/" + c.active;
+      // 관찰 중
+      const wb = document.getElementById("watch-box"), w = c.watch||[];
+      if (w.length) { wb.style.display="block";
+        document.getElementById("watch").innerHTML = w.map(x=>"<li>"+(SIG[x.signal]||SIG.null).e+" "+x.name+": "+x.value+(x.unit||"")+"</li>").join("");
+      } else wb.style.display="none";
 
-      // 보조경고 + 행동
-      const warns = document.getElementById("warnings");
-      warns.innerHTML = (c.warnings || []).map(w => '<div class="warn">' + w + "</div>").join("");
-      document.getElementById("actions").innerHTML =
-        (c.actions || []).map(a => "<li>" + a + "</li>").join("");
+      // 행동
+      document.getElementById("warnings").innerHTML = (c.warnings||[]).map(x=>'<div class="warn">'+x+"</div>").join("");
+      document.getElementById("actions").innerHTML = (c.actions||[]).map(a=>"<li>"+a+"</li>").join("");
 
-      // 지표 카드 (Tier별)
-      const tiers = document.getElementById("tiers");
-      tiers.innerHTML = "";
-      [1, 2, 3].forEach(tier => {
-        const items = d.indicators.filter(i => i.tier === tier);
-        if (!items.length) return;
-        const title = document.createElement("div");
-        title.className = "tier-title";
-        title.textContent = "Tier " + tier + (tier === 1 ? " · 신용시장" : tier === 2 ? " · 매크로" : " · 시장·심리");
-        tiers.appendChild(title);
-        const grid = document.createElement("div");
-        grid.className = "cards";
-        items.forEach(i => {
-          const sig = i.signal || "gray";
-          const cls = i.signal ? i.signal : "";
-          let valText = i.missing ? "결측" : (i.value + (i.unit || ""));
-          let flag = "";
-          if (i.skipped) flag = '<span class="flag">미수집</span>';
-          else if (i.missing) flag = '<span class="flag">결측</span>';
-          else if (i.stale) flag = '<span class="flag">오래됨</span>';
-          // 주린이용 쉬운 설명 (펼쳐보기)
-          let explain = "";
-          if (i.what || i.why) {
-            explain =
-              '<details><summary>ⓘ 쉬운 설명</summary>' +
-                '<div class="explain">' +
-                  (i.meaning ? '<div class="meaning">' + (SIGNAL_EMOJI[i.signal] || "⚪") + " " + i.meaning + "</div>" : "") +
-                  (i.what ? "<div>" + i.what + "</div>" : "") +
-                  (i.why ? '<div class="why">' + i.why + "</div>" : "") +
-                "</div>" +
-              "</details>";
-          }
-          // 방향 화살표 (↑ 나빠짐=빨강 / ↓ 나아짐=초록)
-          let arrowHtml = "";
-          if (i.arrow === "↑") arrowHtml = ' <span class="arrow-up">↑</span>';
-          else if (i.arrow === "↓") arrowHtml = ' <span class="arrow-down">↓</span>';
-          grid.innerHTML +=
-            '<div class="card ' + cls + '">' +
-              '<div class="name">' + (SIGNAL_EMOJI[i.signal] || "⚪") + " " + i.name + "</div>" +
-              '<div class="value">' + valText + arrowHtml + "</div>" +
-              '<div class="meta">' + (i.date || "-") + flag + "</div>" +
-              explain +
-            "</div>";
+      // 지표 카드
+      const tiers = document.getElementById("tiers"); tiers.innerHTML="";
+      [1,2,3].forEach(t=>{
+        const items = d.indicators.filter(i=>i.tier===t); if(!items.length) return;
+        const lab = document.createElement("div"); lab.className="label"; lab.style.margin="14px 4px 8px"; lab.textContent=TIER_NM[t];
+        const grid = document.createElement("div"); grid.className="grid";
+        items.forEach(i=>{
+          const s = SIG[i.signal]||SIG.null;
+          const val = i.missing?"결측":(i.value+(i.unit||""));
+          let arw=""; if(i.arrow==="↑")arw='<span class="arw up">↑</span>'; else if(i.arrow==="↓")arw='<span class="arw down">↓</span>';
+          let pill=""; if(i.skipped)pill='<span class="pill">미수집</span>'; else if(i.missing)pill='<span class="pill">결측</span>'; else if(i.stale)pill='<span class="pill">옛데이터</span>';
+          let exp=""; if(i.what||i.why){ exp='<details class="exp"><summary>ⓘ 쉬운 설명</summary><div class="body">'+
+            (i.meaning?'<div class="mn">'+s.e+" "+i.meaning+"</div>":"")+(i.what?"<div>"+i.what+"</div>":"")+(i.why?'<div class="why">'+i.why+"</div>":"")+"</div></details>"; }
+          grid.innerHTML += '<div class="metric">'+
+            '<div class="top"><span class="sigdot" style="background:'+s.c+'"></span><span class="nm">'+i.name+"</span></div>"+
+            '<div class="val">'+val+arw+"</div>"+
+            '<div class="meta">'+(i.date||"-")+pill+"</div>"+exp+"</div>";
         });
-        tiers.appendChild(grid);
+        tiers.appendChild(lab); tiers.appendChild(grid);
       });
 
-      // 수동 확인 필요
-      document.getElementById("manual").innerHTML =
-        (d.manual_check || []).map(m => "<li>" + m + "</li>").join("");
-
-      // 면책
-      document.getElementById("disclaimer").textContent = "⚠️ " + (d.disclaimer || "");
-
-      // 추이 차트
-      drawChart(history);
+      document.getElementById("onboarding").innerHTML=(d.onboarding||[]).map(t=>"<li>"+t+"</li>").join("");
+      document.getElementById("manual").innerHTML=(d.manual_check||[]).map(m=>"<li>"+m+"</li>").join("");
+      document.getElementById("disclaimer").textContent="⚠️ "+(d.disclaimer||"");
     }
 
-    const GRADE_KO = { green: "평상시", yellow: "경계", orange: "위험", red: "최악", gray: "보류" };
-    const LINE_COLORS = ["#ef6c00", "#42a5f5", "#ab47bc", "#26a69a"];
-
-    function drawChart(history) {
-      const note = document.getElementById("chart-note");
-      if (!history || !history.dates || history.dates.length < 2) {
-        note.textContent = "추이 데이터 누적 중… (이틀 이상 쌓이면 그래프가 그려집니다)";
-        return;
-      }
-      note.textContent = "최근 " + history.dates.length + "일";
-
-      // ① 신호등 타임라인 (날짜별 색 칸)
-      const tlWrap = document.getElementById("timeline-wrap");
-      const tl = document.getElementById("timeline");
-      tlWrap.style.display = "block";
-      tl.innerHTML = history.dates.map((d, i) => {
-        const g = history.grades[i] || "gray";
-        return '<div class="tl-cell tl-' + g + '" title="' + d + " · " + (GRADE_KO[g] || "?") + '"></div>';
+    function drawTrend(h) {
+      const note=document.getElementById("tl-note");
+      if(!h||!h.dates||h.dates.length<2){ note.textContent="추이 누적 중…"; return; }
+      // 타임라인 (연속 색 막대)
+      document.getElementById("tl-range").textContent = h.dates[0]+" ~ "+h.dates[h.dates.length-1];
+      note.textContent = "최근 "+h.dates.length+"일";
+      document.getElementById("timeline").innerHTML = h.dates.map((d,i)=>{
+        const g=h.grades[i]||"gray"; return '<div class="tl-cell tl-'+g+'" title="'+d+" · "+(GRADE_KO[g]||"?")+'"></div>';
       }).join("");
 
-      // ② 지표별 미니 차트 (각자 스케일 + 위험 기준선)
-      const wrap = document.getElementById("mini-charts");
-      wrap.innerHTML = "";
-      Object.keys(history.series).forEach((name, idx) => {
-        const block = document.createElement("div");
-        block.className = "mini";
-        const cid = "mini-" + idx;
-        block.innerHTML = '<h4>' + name + '</h4>' +
-          '<div class="sub">점선 = 위험 기준선 (🟡주의 / 🔴위험)</div>' +
-          '<canvas id="' + cid + '" height="120"></canvas>';
-        wrap.appendChild(block);
-
-        const t = history.thresholds[name] || {};
-        const n = history.dates.length;
-        const line = (val, color) => ({
-          label: "", data: Array(n).fill(val), borderColor: color,
-          borderDash: [5, 4], borderWidth: 1, pointRadius: 0, fill: false,
-        });
-        const datasets = [{
-          label: name, data: history.series[name],
-          borderColor: LINE_COLORS[idx % LINE_COLORS.length],
-          backgroundColor: "transparent", spanGaps: true, tension: 0.25, pointRadius: 2,
-        }];
-        // 위험 기준선: high_bad 면 yellow(주의)·red(위험), low_bad 면 red(역전선)
-        if (t.yellow != null) datasets.push(line(t.yellow, "#f9a825"));
-        if (t.red != null) datasets.push(line(t.red, "#c62828"));
-
-        new Chart(document.getElementById(cid), {
-          type: "line",
-          data: { labels: history.dates, datasets },
-          options: {
-            responsive: true,
-            plugins: { legend: { display: false } },
-            scales: {
-              x: { ticks: { color: "#9aa0a6", maxTicksLimit: 6, autoSkip: true }, grid: { color: "#2a2d34" } },
-              y: { ticks: { color: "#9aa0a6" }, grid: { color: "#2a2d34" } },
-            },
-          },
-        });
+      // 지표별 미니 차트
+      const wrap=document.getElementById("mini-charts"); wrap.innerHTML="";
+      const many = h.dates.length>120;
+      Object.keys(h.series).forEach((name,idx)=>{
+        const cid="mini-"+idx, vals=h.series[name];
+        const last=[...vals].reverse().find(v=>v!=null);
+        const card=document.createElement("div"); card.className="card chartcard";
+        card.innerHTML='<div class="ch-head"><h4>'+name+'</h4><span class="now" style="color:'+LINE_COLORS[idx%4]+'">'+(last!=null?last:"-")+'</span></div>'+
+          '<div class="hint">점선 = 위험 기준선 (🟡주의 · 🔴위험)</div><canvas id="'+cid+'" height="110"></canvas>';
+        wrap.appendChild(card);
+        const t=h.thresholds[name]||{}, n=h.dates.length;
+        const hline=(v,c)=>({data:Array(n).fill(v),borderColor:c,borderDash:[5,4],borderWidth:1,pointRadius:0,fill:false});
+        const ds=[{label:name,data:vals,borderColor:LINE_COLORS[idx%4],backgroundColor:"transparent",spanGaps:true,tension:.25,pointRadius:many?0:2,borderWidth:2}];
+        if(t.yellow!=null)ds.push(hline(t.yellow,"#eab308"));
+        if(t.red!=null)ds.push(hline(t.red,"#ef4444"));
+        new Chart(document.getElementById(cid),{type:"line",data:{labels:h.dates,datasets:ds},
+          options:{responsive:true,animation:false,plugins:{legend:{display:false}},
+            scales:{x:{ticks:{color:"#8b97a8",maxTicksLimit:6,autoSkip:true,font:{size:10}},grid:{display:false}},
+                    y:{ticks:{color:"#8b97a8",font:{size:10}},grid:{color:"#1a2230"}}}}});
       });
     }
-
     load();
   </script>
 </body>

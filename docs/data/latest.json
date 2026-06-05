@@ -1,6 +1,6 @@
 {
-  "updated_kst": "2026-06-05 11:04 KST",
-  "updated_iso": "2026-06-05T11:04:50.337435+09:00",
+  "updated_kst": "2026-06-05 11:15 KST",
+  "updated_iso": "2026-06-05T11:15:10.272542+09:00",
   "data_date": "2026-06-04",
   "composite": {
     "grade": "green",
@@ -18,9 +18,9 @@
     "watch": [],
     "confidence": "-",
     "direction": {
-      "state": "na",
-      "text": "",
-      "arrow": ""
+      "state": "same",
+      "text": "어제와 같아요",
+      "arrow": "➖"
     },
     "missing": 0,
     "active": 11,
@@ -97,7 +97,7 @@
       "what": "미국 지역은행들을 모아둔 ETF 가격이에요.",
       "why": "지역은행이 흔들리면 금융위기 불씨가 되곤 해요(2023년 SVB 사태처럼).",
       "meaning": "지금은 안정적이에요",
-      "arrow": "↓"
+      "arrow": ""
     },
     {
       "name": "근원 CPI(전년비)",
