@@ -190,6 +190,7 @@ def build_latest_dict(judged: list, composite: dict, run_dt, prev: dict = None) 
             "lit": composite["lit"],
         },
         "indicators": indicators,
+        "news": composite.get("news", []),          # ★ 뉴스 헤드라인(RSS)
         "calendar": composite.get("calendar", []),  # ★ 다가오는 경제지표 발표
         "onboarding": config.ONBOARDING,           # ★ 사용법 안내
         "manual_check": config.MANUAL_CHECK_ITEMS,

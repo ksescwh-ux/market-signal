@@ -1,6 +1,6 @@
 {
-  "updated_kst": "2026-06-05 13:50 KST",
-  "updated_iso": "2026-06-05T13:50:40.501687+09:00",
+  "updated_kst": "2026-06-05 14:56 KST",
+  "updated_iso": "2026-06-05T14:56:48.600130+09:00",
   "data_date": "2026-06-04",
   "composite": {
     "grade": "green",
@@ -293,6 +293,92 @@
       "why": "급등하면 = 주식의 상대 매력이 떨어지고, 특히 성장주에 타격.",
       "meaning": "약간 주의가 필요해요",
       "arrow": ""
+    }
+  ],
+  "news": [
+    {
+      "title": "India's cenbank cuts growth outlook, raises inflation forecast as it keeps rates steady at 5.25%",
+      "link": "https://www.cnbc.com/2026/06/05/india-rbi-rate-gdp-inflation.html",
+      "source": "CNBC",
+      "time": "06/05 14:38",
+      "risk": true,
+      "matched": [
+        "inflation"
+      ]
+    },
+    {
+      "title": "Tracking website, food watch: South Korea is obsessing over Nvidia CEO Jensen Huang's visit",
+      "link": "https://www.cnbc.com/2026/06/05/south-korea-is-obsessing-over-nvidia-ceo-jensen-huangs-visit.html",
+      "source": "CNBC",
+      "time": "06/05 13:40",
+      "risk": false,
+      "matched": []
+    },
+    {
+      "title": "South Korea stocks fall 5% as tech heavyweights follow plunge in Wall Street's AI-linked names",
+      "link": "https://www.cnbc.com/2026/06/05/asia-markets-today-nikkei-225-kospi-hang-seng-index-csi-300-nifty50.html",
+      "source": "CNBC",
+      "time": "06/05 13:13",
+      "risk": true,
+      "matched": [
+        "plunge"
+      ]
+    },
+    {
+      "title": "In ‘wild’ twist, SpaceX won’t be allowed early entry to the S&P 500 after all",
+      "link": "https://www.marketwatch.com/story/in-wild-twist-spacex-wont-be-allowed-early-entry-to-the-s-p-500-after-all-2c1b8205?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "time": "06/05 11:11",
+      "risk": false,
+      "matched": []
+    },
+    {
+      "title": "Asia tech stocks drop after Broadcom rattles AI trade and drags Wall Street names lower",
+      "link": "https://www.cnbc.com/2026/06/05/asian-technology-stocks-sk-hynix-samsung-tsmc-advantest.html",
+      "source": "CNBC",
+      "time": "06/05 10:40",
+      "risk": false,
+      "matched": []
+    },
+    {
+      "title": "Warren invites Nvidia CEO Jensen Huang to Senate hearing on China AI chip sales",
+      "link": "https://www.cnbc.com/2026/06/04/nvidia-ceo-jensen-huang-warren-senate-hearing-china-ai-chips.html",
+      "source": "CNBC",
+      "time": "06/05 09:58",
+      "risk": false,
+      "matched": []
+    },
+    {
+      "title": "Lululemon cuts annual outlook, citing 'negative' media commentary and disappointing product launches",
+      "link": "https://www.cnbc.com/2026/06/04/lululemon-lulu-earnings-q1-2026.html",
+      "source": "CNBC",
+      "time": "06/05 08:09",
+      "risk": false,
+      "matched": []
+    },
+    {
+      "title": "This investing strategy digs deeper to find hidden stocks riding the AI wave",
+      "link": "https://www.marketwatch.com/story/this-investing-strategy-digs-deeper-to-find-hidden-stocks-riding-the-ai-wave-2cfcccd9?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "time": "06/05 07:56",
+      "risk": false,
+      "matched": []
+    },
+    {
+      "title": "I’m 55, married and want a $1.5 million long-term care policy. Do I get a traditional or hybrid?",
+      "link": "https://www.marketwatch.com/story/im-55-married-and-want-a-1-5-million-long-term-care-policy-do-i-get-a-traditional-or-hybrid-f4338fc5?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "time": "06/05 07:51",
+      "risk": false,
+      "matched": []
+    },
+    {
+      "title": "Marvell looks poised to finally get a spot in the S&P 500 after explosive stock surge",
+      "link": "https://www.marketwatch.com/story/marvell-looks-poised-to-finally-get-a-spot-in-the-s-p-500-after-explosive-stock-surge-02d952c6?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "time": "06/05 07:50",
+      "risk": false,
+      "matched": []
     }
   ],
   "calendar": [

@@ -24,6 +24,7 @@ import notify
 import insight
 import econ_calendar
 import commentary
+import news
 
 log = util.get_logger()
 
@@ -63,6 +64,13 @@ def run() -> int:
     except Exception as e:
         log.warning(f"경제 캘린더 조회 실패(무시): {e}")
         composite["calendar"] = []
+
+    # 2-3) 뉴스 헤드라인(RSS). 실패해도 전체엔 영향 없음.
+    try:
+        composite["news"] = news.fetch_news()
+    except Exception as e:
+        log.warning(f"뉴스 조회 실패(무시): {e}")
+        composite["news"] = []
 
     # 3) 콘솔 출력
     signals.print_signals(judged, composite)

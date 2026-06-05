@@ -198,6 +198,25 @@ HISTORY_DAYS = 800
 # backfill.py 가 과거를 몇 년치 채울지 (1회성 도구 기본값)
 BACKFILL_YEARS = 3
 
+# ─────────────────────────────────────────────────────────────
+# 뉴스 헤드라인 (RSS) — 판정엔 안 섞고 '참고 맥락'으로만 표시
+# ─────────────────────────────────────────────────────────────
+NEWS_FEEDS = [
+    {"name": "CNBC", "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html"},
+    {"name": "CNBC 경제", "url": "https://www.cnbc.com/id/20910258/device/rss/rss.html"},
+    {"name": "MarketWatch", "url": "http://feeds.marketwatch.com/marketwatch/topstories/"},
+    {"name": "Yahoo Finance", "url": "https://finance.yahoo.com/news/rssindex"},
+]
+NEWS_MAX = 10   # 대시보드에 보여줄 헤드라인 최대 개수
+
+# 위험 신호로 강조할 키워드(영문 헤드라인 기준). 잡히면 ⚠️ 표시.
+RISK_KEYWORDS = [
+    "fed", "rate hike", "rate cut", "inflation", "recession", "layoff", "unemployment",
+    "default", "bankrupt", "crash", "sell-off", "selloff", "plunge", "tumble", "slump",
+    "war", "iran", "israel", "middle east", "tariff", "sanction", "crisis",
+    "downgrade", "credit", "yield", "bank failure", "svb", "shutdown",
+]
+
 
 # ─────────────────────────────────────────────────────────────
 # 종합 판정별 표시(이모지·제목)와 '행동 가이드' 문구
