@@ -50,6 +50,19 @@
     .card .value { font-size: 1.3rem; font-weight: 700; margin: 4px 0; }
     .card .meta { font-size: 0.72rem; color: var(--muted); }
     .flag { font-size: 0.7rem; padding: 1px 6px; border-radius: 6px; background: #333; margin-left: 4px; }
+    /* 펼쳐보기(쉬운 설명) */
+    details { margin-top: 6px; }
+    details summary { cursor: pointer; font-size: 0.72rem; color: #6db3f2; list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+    .explain { font-size: 0.78rem; color: var(--text); margin-top: 6px; line-height: 1.5; }
+    .explain .meaning { font-weight: 700; }
+    .explain .why { color: var(--muted); }
+    /* 온보딩 */
+    .onboarding { background: var(--card); border-radius: 12px; padding: 6px 18px; margin: 12px 0; }
+    .onboarding summary { font-size: 0.95rem; color: var(--text); font-weight: 600; padding: 10px 0; }
+    .onboarding ul { margin: 0 0 12px; padding-left: 18px; }
+    .onboarding li { margin: 6px 0; font-size: 0.85rem; line-height: 1.5; }
+    .v-plain { font-size: 1rem; margin-top: 10px; opacity: 0.95; line-height: 1.4; }
     /* 차트/기타 */
     .chart-box { background: var(--card); border-radius: 12px; padding: 14px; margin: 16px 0; }
     .manual { background: var(--card); border-radius: 12px; padding: 14px 18px; margin: 16px 0; }
@@ -62,6 +75,12 @@
   <h1>🚦 시장 신호등</h1>
   <div class="muted" id="updated">데이터 불러오는 중…</div>
 
+  <!-- 🔰 이 신호등이 뭐예요? (사용법) -->
+  <details class="onboarding" id="onboarding-box">
+    <summary>🔰 이 신호등이 뭐예요? (처음이면 눌러보세요)</summary>
+    <ul id="onboarding"></ul>
+  </details>
+
   <div id="error">
     데이터(latest.json)를 불러오지 못했습니다. GitHub Actions가 한 번 이상 실행되어야 데이터가 생깁니다.
   </div>
@@ -70,6 +89,7 @@
   <div id="verdict" class="verdict bg-gray">
     <div class="emoji" id="v-emoji">⚪</div>
     <div class="title" id="v-title">불러오는 중</div>
+    <div class="v-plain" id="v-plain"></div>
     <div class="date" id="v-date"></div>
   </div>
 
@@ -125,7 +145,12 @@
       v.className = "verdict " + (GRADE_BG[c.grade] || "bg-gray");
       document.getElementById("v-emoji").textContent = c.emoji;
       document.getElementById("v-title").textContent = c.title;
+      document.getElementById("v-plain").textContent = c.plain || "";  // 주린이 한 줄
       document.getElementById("v-date").textContent = "데이터 기준일: " + (d.data_date || "-");
+
+      // 온보딩(사용법)
+      document.getElementById("onboarding").innerHTML =
+        (d.onboarding || []).map(t => "<li>" + t + "</li>").join("");
       document.getElementById("updated").textContent =
         "마지막 업데이트: " + d.updated_kst + " · 위험 점등 T1:" + c.tier_danger["1"] +
         " T2:" + c.tier_danger["2"] + " T3:" + c.tier_danger["3"] + " · 결측 " + c.missing + "/" + c.active;
@@ -156,11 +181,24 @@
           if (i.skipped) flag = '<span class="flag">미수집</span>';
           else if (i.missing) flag = '<span class="flag">결측</span>';
           else if (i.stale) flag = '<span class="flag">오래됨</span>';
+          // 주린이용 쉬운 설명 (펼쳐보기)
+          let explain = "";
+          if (i.what || i.why) {
+            explain =
+              '<details><summary>ⓘ 쉬운 설명</summary>' +
+                '<div class="explain">' +
+                  (i.meaning ? '<div class="meaning">' + (SIGNAL_EMOJI[i.signal] || "⚪") + " " + i.meaning + "</div>" : "") +
+                  (i.what ? "<div>" + i.what + "</div>" : "") +
+                  (i.why ? '<div class="why">' + i.why + "</div>" : "") +
+                "</div>" +
+              "</details>";
+          }
           grid.innerHTML +=
             '<div class="card ' + cls + '">' +
               '<div class="name">' + (SIGNAL_EMOJI[i.signal] || "⚪") + " " + i.name + "</div>" +
               '<div class="value">' + valText + "</div>" +
               '<div class="meta">' + (i.date || "-") + flag + "</div>" +
+              explain +
             "</div>";
         });
         tiers.appendChild(grid);

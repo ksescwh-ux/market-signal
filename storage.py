@@ -107,6 +107,7 @@ def build_latest_dict(judged: list, composite: dict, run_dt) -> dict:
     """
     indicators = []
     for r in judged:
+        plain = config.PLAIN.get(r["code"], {})  # 주린이용 쉬운 설명
         indicators.append({
             "name": r["name"],
             "tier": r["tier"],
@@ -119,6 +120,10 @@ def build_latest_dict(judged: list, composite: dict, run_dt) -> dict:
             "stale": r.get("stale", False),  # 오래된 데이터 플래그
             "missing": r["missing"],
             "skipped": r.get("skipped", False),
+            # ★ 주린이용 쉬운 설명 (고도화 1단계)
+            "what": plain.get("what", ""),
+            "why": plain.get("why", ""),
+            "meaning": config.SIGNAL_MEANING.get(r["signal"], ""),
         })
 
     return {
@@ -129,6 +134,7 @@ def build_latest_dict(judged: list, composite: dict, run_dt) -> dict:
             "grade": composite["grade"],
             "emoji": composite["emoji"],
             "title": composite["title"],
+            "plain": config.VERDICT_PLAIN.get(composite["grade"], ""),  # ★ 주린이 한 줄
             "actions": composite["actions"],
             "tier_danger": composite["tier_danger"],
             "missing": composite["missing"],
@@ -138,7 +144,8 @@ def build_latest_dict(judged: list, composite: dict, run_dt) -> dict:
             "lit": composite["lit"],
         },
         "indicators": indicators,
-        "manual_check": __import__("config").MANUAL_CHECK_ITEMS,
+        "onboarding": config.ONBOARDING,           # ★ 사용법 안내
+        "manual_check": config.MANUAL_CHECK_ITEMS,
         "disclaimer": (
             "이 시스템은 투자 판단을 돕는 보조 모니터링 도구이며, 투자 조언이나 "
             "매매 신호가 아닙니다. 모든 투자 결정과 결과의 책임은 사용자 본인에게 있습니다."

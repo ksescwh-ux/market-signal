@@ -1,11 +1,12 @@
 {
-  "updated_kst": "2026-06-05 10:06 KST",
-  "updated_iso": "2026-06-05T10:06:50.767890+09:00",
+  "updated_kst": "2026-06-05 10:41 KST",
+  "updated_iso": "2026-06-05T10:41:00.220284+09:00",
   "data_date": "2026-06-04",
   "composite": {
     "grade": "green",
     "emoji": "🟢",
     "title": "평상시 — 유지",
+    "plain": "지금은 평소처럼 투자해도 무난한 구간이에요. 큰 위험 신호는 안 보여요.",
     "actions": [
       "정상 보유 / 현금 10~20%"
     ],
@@ -34,7 +35,10 @@
       "signal": "green",
       "stale": false,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "신용도 낮은 기업이 돈 빌릴 때 무는 '위험 가산 이자폭'이에요.",
+      "why": "이 값이 치솟으면 = 시장이 '기업들이 빚 못 갚을라'며 겁먹는다는 뜻. 폭락보다 먼저 움직이는 대표 선행지표예요.",
+      "meaning": "지금은 안정적이에요"
     },
     {
       "name": "투자등급 스프레드",
@@ -47,7 +51,10 @@
       "signal": "green",
       "stale": false,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "우량(투자등급) 기업이 돈 빌릴 때 무는 위험 가산폭이에요.",
+      "why": "우량 기업 이자까지 오르면 = 신용 경색이 넓게 번지는 신호.",
+      "meaning": "지금은 안정적이에요"
     },
     {
       "name": "하이일드 ETF (HYG)",
@@ -60,7 +67,10 @@
       "signal": "yellow",
       "stale": false,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "위험한 회사채를 모아둔 ETF(상장펀드) 가격이에요.",
+      "why": "20일 평균선 아래로 빠지면 = 위험한 채권을 사람들이 던지는 중이라는 뜻.",
+      "meaning": "약간 주의가 필요해요"
     },
     {
       "name": "지역은행 ETF (KRE)",
@@ -73,7 +83,10 @@
       "signal": "green",
       "stale": false,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "미국 지역은행들을 모아둔 ETF 가격이에요.",
+      "why": "지역은행이 흔들리면 금융위기 불씨가 되곤 해요(2023년 SVB 사태처럼).",
+      "meaning": "지금은 안정적이에요"
     },
     {
       "name": "근원 CPI(전년비)",
@@ -86,7 +99,10 @@
       "signal": "yellow",
       "stale": true,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "변동 큰 항목(식품·에너지)을 뺀 '진짜 물가(근원 CPI)'예요.",
+      "why": "물가가 다시 오르면 = 금리 인하가 늦어져 증시에 부담.",
+      "meaning": "약간 주의가 필요해요"
     },
     {
       "name": "근원 PCE(전년비)",
@@ -99,7 +115,10 @@
       "signal": "yellow",
       "stale": true,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "미국 중앙은행(연준)이 가장 중시하는 물가 지표(근원 PCE)예요.",
+      "why": "이게 재가속하면 = 연준이 긴축을 더 오래 끌어 증시를 누름.",
+      "meaning": "약간 주의가 필요해요"
     },
     {
       "name": "실업률",
@@ -112,7 +131,10 @@
       "signal": "green",
       "stale": true,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "일자리 없는 사람의 비율(실업률)이에요.",
+      "why": "갑자기 급등하면 = 경기 침체가 다가온다는 신호.",
+      "meaning": "지금은 안정적이에요"
     },
     {
       "name": "수익률곡선 2s10s",
@@ -125,7 +147,10 @@
       "signal": "green",
       "stale": false,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "장기금리(10년) − 단기금리(2년) 차이예요(수익률곡선).",
+      "why": "마이너스(역전)가 되면 = 역사적으로 경기침체 1~2년 전 경고였어요.",
+      "meaning": "지금은 안정적이에요"
     },
     {
       "name": "VIX 공포지수",
@@ -138,7 +163,10 @@
       "signal": "green",
       "stale": false,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "시장의 '공포 온도계'(VIX)예요.",
+      "why": "치솟으면 = 투자자들이 급히 보험을 산다는 뜻 = 패닉 분위기.",
+      "meaning": "지금은 안정적이에요"
     },
     {
       "name": "WTI 유가",
@@ -151,7 +179,10 @@
       "signal": "yellow",
       "stale": false,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "국제 원유(기름) 가격(WTI)이에요.",
+      "why": "급등하면 = 물가·기업 비용이 올라 증시에 부담. 지정학 위기 신호이기도.",
+      "meaning": "약간 주의가 필요해요"
     },
     {
       "name": "미 10년물 금리",
@@ -164,8 +195,17 @@
       "signal": "yellow",
       "stale": false,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "미국 국채 10년물의 이자율이에요.",
+      "why": "급등하면 = 주식의 상대 매력이 떨어지고, 특히 성장주에 타격.",
+      "meaning": "약간 주의가 필요해요"
     }
+  ],
+  "onboarding": [
+    "이 신호등은 미국 증시가 '폭락·조정 위험'에 가까운지를 11개 지표로 자동 점검해요.",
+    "🟢평상시 → 🟡경계 → 🟠위험 → 🔴최악 순으로 위험이 커져요. ⚪는 '데이터 부족(판단 보류)'.",
+    "각 지표 카드의 'ⓘ 쉬운 설명'을 누르면 그게 무슨 뜻인지 풀어서 보여줘요.",
+    "⚠️ 이건 투자 '조언'이 아니라 '참고용 온도계'예요. 최종 판단·책임은 본인에게 있어요."
   ],
   "manual_check": [
     "트럼프 내러티브 톤 / 발언",
