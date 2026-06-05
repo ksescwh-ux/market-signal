@@ -4,8 +4,8 @@
     "2026-06-05"
   ],
   "grades": [
-    "🟠 위험 — 2차 방어",
-    "🟢 평상시 — 유지"
+    "orange",
+    "green"
   ],
   "series": {
     "하이일드 스프레드": [
@@ -20,5 +20,27 @@
       95.96,
       95.96
     ]
+  },
+  "thresholds": {
+    "하이일드 스프레드": {
+      "yellow": 4.0,
+      "orange": 5.0,
+      "red": 6.0
+    },
+    "VIX 공포지수": {
+      "yellow": 18,
+      "orange": 25,
+      "red": 30
+    },
+    "WTI 유가": {
+      "yellow": 85,
+      "orange": 100,
+      "red": 110
+    }
+  },
+  "directions": {
+    "하이일드 스프레드": "high_bad",
+    "VIX 공포지수": "high_bad",
+    "WTI 유가": "high_bad"
   }
 }

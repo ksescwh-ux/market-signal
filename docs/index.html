@@ -73,6 +73,18 @@
     .arrow-down { color: #51cf66; font-weight: 700; }
     /* 차트/기타 */
     .chart-box { background: var(--card); border-radius: 12px; padding: 14px; margin: 16px 0; }
+    /* 신호등 타임라인 */
+    .tl-label { font-size: 0.82rem; color: var(--muted); margin: 6px 0 4px; }
+    .timeline { display: flex; flex-wrap: wrap; gap: 2px; margin-bottom: 4px; }
+    .tl-cell { width: 11px; height: 20px; border-radius: 2px; }
+    .tl-green { background: var(--green); } .tl-yellow { background: var(--yellow); }
+    .tl-orange { background: var(--orange); } .tl-red { background: var(--red); }
+    .tl-gray, .tl- { background: #444; }
+    .tl-legend { font-size: 0.72rem; color: var(--muted); margin-bottom: 8px; }
+    /* 지표별 미니 차트 */
+    .mini { margin: 16px 0; }
+    .mini h4 { margin: 0 0 4px; font-size: 0.85rem; color: var(--text); }
+    .mini .sub { font-size: 0.72rem; color: var(--muted); margin-bottom: 4px; }
     .manual { background: var(--card); border-radius: 12px; padding: 14px 18px; margin: 16px 0; }
     .manual h3 { margin: 0 0 8px; font-size: 1rem; }
     footer { color: var(--muted); font-size: 0.75rem; margin: 24px 0; line-height: 1.5; border-top: 1px solid #2a2d34; padding-top: 14px; }
@@ -119,11 +131,20 @@
   <!-- 지표 카드 (Tier별) -->
   <div id="tiers"></div>
 
-  <!-- 추이 차트 -->
+  <!-- 추이 -->
   <div class="chart-box">
     <h3 style="margin:0 0 8px; font-size:1rem;">과거 추이</h3>
     <div class="muted" id="chart-note"></div>
-    <canvas id="chart" height="160"></canvas>
+
+    <!-- 신호등 색 타임라인 -->
+    <div id="timeline-wrap" style="display:none;">
+      <div class="tl-label">📅 종합 신호등 타임라인 (왼쪽=과거, 오른쪽=오늘)</div>
+      <div id="timeline" class="timeline"></div>
+      <div class="tl-legend">🟢평상시 🟡경계 🟠위험 🔴최악 ⚪보류</div>
+    </div>
+
+    <!-- 지표별 미니 차트들 (위험 기준선 포함) -->
+    <div id="mini-charts"></div>
   </div>
 
   <!-- 수동 확인 필요 -->
@@ -257,32 +278,65 @@
       drawChart(history);
     }
 
+    const GRADE_KO = { green: "평상시", yellow: "경계", orange: "위험", red: "최악", gray: "보류" };
+    const LINE_COLORS = ["#ef6c00", "#42a5f5", "#ab47bc", "#26a69a"];
+
     function drawChart(history) {
       const note = document.getElementById("chart-note");
       if (!history || !history.dates || history.dates.length < 2) {
         note.textContent = "추이 데이터 누적 중… (이틀 이상 쌓이면 그래프가 그려집니다)";
         return;
       }
-      note.textContent = "";
-      const colors = ["#ef6c00", "#42a5f5", "#ab47bc", "#26a69a"];
-      const datasets = Object.keys(history.series).map((name, idx) => ({
-        label: name,
-        data: history.series[name],
-        borderColor: colors[idx % colors.length],
-        backgroundColor: "transparent",
-        spanGaps: true, tension: 0.25, pointRadius: 2,
-      }));
-      new Chart(document.getElementById("chart"), {
-        type: "line",
-        data: { labels: history.dates, datasets },
-        options: {
-          responsive: true,
-          plugins: { legend: { labels: { color: "#e6e6e6" } } },
-          scales: {
-            x: { ticks: { color: "#9aa0a6" }, grid: { color: "#2a2d34" } },
-            y: { ticks: { color: "#9aa0a6" }, grid: { color: "#2a2d34" } },
+      note.textContent = "최근 " + history.dates.length + "일";
+
+      // ① 신호등 타임라인 (날짜별 색 칸)
+      const tlWrap = document.getElementById("timeline-wrap");
+      const tl = document.getElementById("timeline");
+      tlWrap.style.display = "block";
+      tl.innerHTML = history.dates.map((d, i) => {
+        const g = history.grades[i] || "gray";
+        return '<div class="tl-cell tl-' + g + '" title="' + d + " · " + (GRADE_KO[g] || "?") + '"></div>';
+      }).join("");
+
+      // ② 지표별 미니 차트 (각자 스케일 + 위험 기준선)
+      const wrap = document.getElementById("mini-charts");
+      wrap.innerHTML = "";
+      Object.keys(history.series).forEach((name, idx) => {
+        const block = document.createElement("div");
+        block.className = "mini";
+        const cid = "mini-" + idx;
+        block.innerHTML = '<h4>' + name + '</h4>' +
+          '<div class="sub">점선 = 위험 기준선 (🟡주의 / 🔴위험)</div>' +
+          '<canvas id="' + cid + '" height="120"></canvas>';
+        wrap.appendChild(block);
+
+        const t = history.thresholds[name] || {};
+        const n = history.dates.length;
+        const line = (val, color) => ({
+          label: "", data: Array(n).fill(val), borderColor: color,
+          borderDash: [5, 4], borderWidth: 1, pointRadius: 0, fill: false,
+        });
+        const datasets = [{
+          label: name, data: history.series[name],
+          borderColor: LINE_COLORS[idx % LINE_COLORS.length],
+          backgroundColor: "transparent", spanGaps: true, tension: 0.25, pointRadius: 2,
+        }];
+        // 위험 기준선: high_bad 면 yellow(주의)·red(위험), low_bad 면 red(역전선)
+        if (t.yellow != null) datasets.push(line(t.yellow, "#f9a825"));
+        if (t.red != null) datasets.push(line(t.red, "#c62828"));
+
+        new Chart(document.getElementById(cid), {
+          type: "line",
+          data: { labels: history.dates, datasets },
+          options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: {
+              x: { ticks: { color: "#9aa0a6", maxTicksLimit: 6, autoSkip: true }, grid: { color: "#2a2d34" } },
+              y: { ticks: { color: "#9aa0a6" }, grid: { color: "#2a2d34" } },
+            },
           },
-        },
+        });
       });
     }
 

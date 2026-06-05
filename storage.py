@@ -216,24 +216,64 @@ def _to_float(s):
         return None
 
 
+# 종합판정 텍스트(옛 기록)에서 등급을 역추출하기 위한 이모지 → 등급 매핑
+_EMOJI_TO_GRADE = {"🟢": "green", "🟡": "yellow", "🟠": "orange", "🔴": "red", "⚪": "gray"}
+
+
+def _grade_from_row(row: dict) -> str:
+    """'등급' 컬럼 우선. 없으면(옛 기록) 종합판정 텍스트의 이모지로 추정."""
+    g = row.get("등급")
+    if g:
+        return g
+    text = row.get("종합판정", "")
+    for emoji, grade in _EMOJI_TO_GRADE.items():
+        if emoji in text:
+            return grade
+    return ""
+
+
 def build_history() -> dict:
     """
     signal_log.csv 를 읽어 추이 차트용 history.json 데이터를 만듭니다.
-    config.CHART_INDICATORS 에 적힌 지표들의 날짜별 값을 모읍니다.
+
+    돌려주는 값:
+      dates       : 날짜 목록 (최근 config.HISTORY_DAYS 일만)
+      grades      : 날짜별 종합 등급 (green/yellow/orange/red/gray) — 타임라인용
+      series      : {지표명: [날짜별 값]} — 미니 차트용
+      thresholds  : {지표명: {yellow,orange,red...}} — 위험 기준선 그리기용
+      directions  : {지표명: high_bad/low_bad/trend} — 어느 방향이 위험인지
     """
     chart_names = config.CHART_INDICATORS
-    dates, grades = [], []
-    series = {name: [] for name in chart_names}
 
+    rows = []
     if os.path.exists(CSV_PATH):
         with open(CSV_PATH, "r", encoding="utf-8-sig", newline="") as f:
-            for row in csv.DictReader(f):
-                dates.append(row.get("날짜", ""))
-                grades.append(row.get("종합판정", ""))
-                for name in chart_names:
-                    series[name].append(_to_float(row.get(f"{name}_값")))
+            rows = list(csv.DictReader(f))
 
-    return {"dates": dates, "grades": grades, "series": series}
+    # 최근 N일만 (CSV 는 날짜순 정렬 저장이므로 뒤에서 자르면 최신)
+    n = getattr(config, "HISTORY_DAYS", 90)
+    rows = rows[-n:]
+
+    dates, grades = [], []
+    series = {name: [] for name in chart_names}
+    for row in rows:
+        dates.append(row.get("날짜", ""))
+        grades.append(_grade_from_row(row))
+        for name in chart_names:
+            series[name].append(_to_float(row.get(f"{name}_값")))
+
+    # 지표 메타데이터(임계값·방향)를 차트용으로 함께 내보냄
+    by_name = {ind["name"]: ind for ind in config.INDICATORS}
+    thresholds = {name: by_name.get(name, {}).get("thresholds", {}) for name in chart_names}
+    directions = {name: by_name.get(name, {}).get("direction", "") for name in chart_names}
+
+    return {
+        "dates": dates,
+        "grades": grades,
+        "series": series,
+        "thresholds": thresholds,
+        "directions": directions,
+    }
 
 
 def save_dashboard_data(judged: list, composite: dict, run_dt) -> None:
