@@ -117,6 +117,8 @@
     .news li:last-child { border-bottom:none; }
     .news a { color:var(--text); text-decoration:none; font-size:.9rem; line-height:1.45; }
     .news a:hover { color:var(--accent); }
+    .news .summary { font-size:.8rem; color:var(--muted); margin-top:4px; line-height:1.5; }
+    .news .orig { font-size:.7rem; color:#5b6678; margin-top:3px; }
     .news .meta { font-size:.7rem; color:var(--muted); margin-top:4px; }
     .news li.risk { border-left:3px solid var(--orange); padding-left:10px; margin-left:-13px; }
     .news .kw { font-size:.64rem; color:#fda4a4; background:#2a151a; border:1px solid #5b2330; border-radius:6px; padding:1px 6px; margin-left:6px; }
@@ -345,12 +347,15 @@
 
       // 주요 뉴스
       const news = d.news||[];
+      const esc = x => (x||"").replace(/</g,"&lt;");
       document.getElementById("news").innerHTML = news.length ? news.map(n=>{
-        const risk = n.risk ? " risk" : "";
+        const risk = n.risk ? "risk" : "";
         const kw = (n.matched&&n.matched.length) ? '<span class="kw">⚠️ '+n.matched.join(", ")+'</span>' : "";
-        const t = n.title.replace(/</g,"&lt;");
-        const a = n.link ? '<a href="'+n.link+'" target="_blank" rel="noopener">'+t+'</a>' : t;
-        return '<li class="'+risk.trim()+'">'+a+'<div class="meta">'+n.source+(n.time?" · "+n.time:"")+kw+'</div></li>';
+        const head = n.ko_title ? esc(n.ko_title) : esc(n.title);   // 번역 있으면 한국어
+        const a = n.link ? '<a href="'+n.link+'" target="_blank" rel="noopener">'+head+'</a>' : head;
+        const summary = n.summary ? '<div class="summary">'+esc(n.summary)+'</div>' : "";
+        const orig = n.ko_title ? '<div class="orig">'+esc(n.title)+'</div>' : "";   // 원문 영어 작게
+        return '<li class="'+risk+'">'+a+summary+orig+'<div class="meta">'+n.source+(n.time?" · "+n.time:"")+kw+'</div></li>';
       }).join("") : '<li class="meta">뉴스를 불러오지 못했어요 (피드 일시 차단일 수 있어요).</li>';
 
       document.getElementById("onboarding").innerHTML=(d.onboarding||[]).map(t=>"<li>"+t+"</li>").join("");

@@ -74,6 +74,75 @@ def _build_facts(analysis: dict, judged: list) -> str:
     )
 
 
+# ── 뉴스 번역·요약 ─────────────────────────────────────────────
+NEWS_SYSTEM = """\
+당신은 영어 금융 뉴스 헤드라인을 한국 개인투자자를 위해 한국어로 옮기는 편집자입니다.
+각 헤드라인마다 두 가지를 만드세요.
+1) ko_title: 자연스러운 한국어 번역 (직역투 금지, 신문 제목처럼 간결하게).
+2) summary: 그 헤드라인이 무슨 얘기인지 한 문장으로 쉽게 풀어쓴 설명.
+
+[규칙]
+- 오직 헤드라인에 담긴 내용만 쓰세요. 헤드라인에 없는 수치·사실·배경을 지어내지 마세요.
+- 미래 예측이나 매매 조언을 넣지 마세요.
+- 존댓말(~예요/~이에요)로, 쉽고 담백하게.
+- 입력 순서와 똑같은 순서로 결과를 돌려주세요.
+"""
+
+NEWS_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "items": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "ko_title": {"type": "string"},
+                    "summary": {"type": "string"},
+                },
+                "required": ["ko_title", "summary"],
+                "additionalProperties": False,
+            },
+        }
+    },
+    "required": ["items"],
+    "additionalProperties": False,
+}
+
+
+def translate_news(news_list: list) -> list:
+    """
+    뉴스 헤드라인들을 한국어 번역(ko_title) + 한 줄 요약(summary)으로 보강합니다.
+    키가 없거나 실패하면 원본(영어)을 그대로 돌려줍니다 — 시스템은 안 깨짐.
+    """
+    if not news_list:
+        return news_list
+    if not os.getenv("ANTHROPIC_API_KEY"):
+        return news_list  # 키 없으면 영어 헤드라인 유지
+
+    try:
+        import anthropic
+
+        client = anthropic.Anthropic()
+        lines = "\n".join(f"{i+1}. {n['title']}" for i, n in enumerate(news_list))
+        resp = client.messages.create(
+            model=MODEL,
+            max_tokens=2000,
+            system=[{"type": "text", "text": NEWS_SYSTEM, "cache_control": {"type": "ephemeral"}}],
+            messages=[{"role": "user", "content": "다음 영어 헤드라인들을 처리해줘:\n" + lines}],
+            output_config={"format": {"type": "json_schema", "schema": NEWS_SCHEMA}},
+        )
+        text = next((b.text for b in resp.content if b.type == "text"), "")
+        items = json.loads(text)["items"]
+        for n, it in zip(news_list, items):
+            n["ko_title"] = it.get("ko_title")
+            n["summary"] = it.get("summary")
+        log.info(f"뉴스 {len(items)}건 한국어 번역·요약 완료")
+        return news_list
+    except Exception as e:
+        log.warning(f"뉴스 번역 실패({e}) → 영어 헤드라인 유지")
+        return news_list
+
+
 def generate_commentary(analysis: dict, judged: list) -> dict:
     """
     AI 시황 해설을 생성합니다.
