@@ -19,7 +19,9 @@ import util
 
 log = util.get_logger()
 
-MODEL = "claude-opus-4-8"   # 하루 1회라 비용 미미
+# AI 모델 — 비용 절감을 위해 Haiku 사용 (사용자 지정). Opus 미사용.
+# 바꾸려면 이 한 줄만 수정: claude-haiku-4-5 / claude-sonnet-4-6 / claude-opus-4-8
+MODEL = "claude-haiku-4-5"
 
 DAILY_SYSTEM = """\
 당신은 한국 개인투자자(주린이)를 위한 시장 애널리스트입니다.
@@ -214,7 +216,9 @@ def geo_brief(judged: list) -> dict:
             resp = client.messages.create(
                 model=MODEL,
                 max_tokens=1600,
-                tools=[{"type": "web_search_20260209", "name": "web_search"}],
+                # allowed_callers=["direct"] : Haiku 등 PTC 미지원 모델에서도 웹검색 쓰게
+                tools=[{"type": "web_search_20260209", "name": "web_search",
+                        "allowed_callers": ["direct"]}],
                 system=[{"type": "text", "text": GEO_SYSTEM, "cache_control": {"type": "ephemeral"}}],
                 messages=messages,
             )

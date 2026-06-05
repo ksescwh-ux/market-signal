@@ -1,6 +1,6 @@
 {
-  "updated_kst": "2026-06-05 18:46 KST",
-  "updated_iso": "2026-06-05T18:46:40.717057+09:00",
+  "updated_kst": "2026-06-05 19:09 KST",
+  "updated_iso": "2026-06-05T19:09:07.625935+09:00",
   "data_date": "2026-06-04",
   "composite": {
     "grade": "green",
@@ -77,7 +77,7 @@
         "최근 13일째 '평상시'가 이어지고 있어요. 지난주보다 위험 점수는 4점 낮아졌어요."
       ],
       "commentary": {
-        "text": "오늘 위험점수는 14점으로 '매우 차분'한 상태예요. 다만 시선을 끄는 건 호르무즈 해협 긴장(헤드라인 8)과 2026년 유가 변동성 이슈(헤드라인 7)인데, 이런 지정학 변수는 곧바로 WTI 유가로 전달되고, 유가가 오르면 기업 비용과 물가(근원 CPI·PCE)로 번지는 경로예요. 지금 WTI는 95.96달러로 위험선(100달러)까지 4달러 남짓밖에 안 남았고(근접), 과거 1년 백분위로도 84%라 역사적으로 높은 위치라 '특히 민감한' 상태예요. 게다가 근원 CPI·근원 PCE가 이미 노란불이라, 유가가 더 오르면 물가 지표 쪽으로 압력이 겹칠 수 있는 구조예요. 반면 신용 쪽(하이일드 스프레드 백분위 13%)과 변동성(VIX 백분위 26%)은 낮아 시장 전반의 불안은 아직 잠잠해요. 지켜볼 트리거는 단 하나, WTI가 100달러 선을 넘어서는지인데, 이 경우 물가 노란불과 맞물려 신호가 무거워질 수 있어요.",
+        "text": "전반적으로 시장은 '매우 차분'한 상태(위험점수 14)를 유지하고 있지만, 세 가지 노란불이 켜져 있어 주의가 필요해요. 첫째, WTI 유가가 $95.96으로 $100 위험선까지 불과 4달러 남아 있는데, 중동 에너지 분쟁 뉴스(호르무즈 해협 긴장)가 이를 촉발할 수 있어요 — 유가는 기업 비용 상승 → 물가 압력으로 이어져 근원 CPI·PCE 노란불과도 연결됩니다. 둘째, 하이일드 ETF(HYG) 가격이 약세(노란불)지만 신용 스프레드는 여전히 낮아(2.75%p, 하위 13 백분위) 기업 부채 위험은 아직 낮은 상태예요. 셋째, 10년물 금리도 4.49%로 노란불이지만 역사적으로는 높은 위치(위험도 높음)라 하락 시 연쇄 반응 가능성이 있어요. 지켜봐야 할 것은 유가가 $100을 뚫고 올라가면서 물가 기대심리를 부추기는 움직임입니다.",
         "source": "ai"
       }
     },
@@ -279,10 +279,46 @@
     }
   ],
   "geo": {
-    "tone": "고조",
-    "text": "중동 정세가 시장의 핵심 변수입니다. \n이란이 호르무즈 해협의 상당 구간을 기뢰로 봉쇄했다고 미 국무장관 루비오가 상원 외교위 청문회에서 밝혔고\n, \n최근 미군이 호르무즈 해협 인근에서 이란 유조선을 타격해 기관실이 손상되는 등 미국과 이란 간 새로운 무력 충돌이 이어지고 있습니다.\n ★연결(메커니즘): 호르무즈는 세계 에너지 교역의 핵심 길목이라, 봉쇄·충돌이 심화되면 원유 공급 차질 우려로 WTI 유가를 직접 끌어올리는 경로가 작동합니다 — 실제로 \n네타냐후 총리가 필요시 이란을 다시 공격할 준비가 돼 있다고 밝힌 뒤 WTI는 2% 넘게 올라 96.02달러에 마감했습니다.\n ★민감도: 현재 우리 WTI 지표가 95.96달러로 이미 '주의(yellow)' 구간에 있어, 추가 악재에 특히 민감한 위치로 보입니다(위험선 코앞). 다만 \n전쟁이 이미 유가와 물가를 끌어올렸음에도 유가는 교전 초기 고점보다는 낮은 수준이며, 월가에는 미·이란이 결국 호르무즈 재개방 합의에 이를 것이라는 기대가 남아 있어\n VIX(16.06, green)와 하이일드 스프레드(2.75%p, green)는 아직 차분한 편입니다. ★지켜볼 트리거: \n이란이 호르무즈를 완전 봉쇄하고 바브엘만데브 등 다른 해협으로 전선을 확대하겠다고 위협한 만큼\n, 이 봉쇄 범위가 실제로 넓어지는지가 유가·VIX 동반 자극 여부의 핵심 분기점입니다. (※ 정성 판단에 기반한 참고용 브리핑이며, 매매 권유가 아닙니다.)\n\n출처: Iran has mined 'large segments' of Hormuz Strait, Rubio says - https://www.cnbc.com/2026/06/02/iran-war-strait-hormuz-marco-rubio-mine.html\n출처: Oil prices rise after Netanyahu says U.S., Israel prepared to attack Iran again - https://www.cnbc.com/2026/06/03/oil-prices-trump-pushes-back-on-reports-us-iran-talks-collapsed.html\n출처: Israel, Lebanon renew ceasefire as Iran attacks Kuwait airport - https://www.cbsnews.com/live-updates/trump-iran-war-attacks-kuwait-airport-israel-hezbollah-ceasefire/"
+    "tone": "혼재",
+    "text": "미 무역대표부가 강제노동 금지 미흡을 이유로 중국, EU, 일본 포함 60개 국가에 10~12.5% 관세 부과를 제안했다.\n 이번 제재는 광범위한 공급망을 건드리면서 시장 불확실성을 키우는 요인이다. 한편 \n이란 외교장관은 미국과의 협상에서 '실질적 진전이 없다'고 밝혔으나, 서방의 베이루트 공격 시 '전면 전쟁 재개'를 경고\n했으며, \n헤즈볼라는 이스라엘-레바논 휴전을 거부\n하면서 중동 긴장이 계속되고 있다.\n\n★연결(메커니즘): 관세 불확실성 → 미 10년물 금리(현재 4.49%, yellow) 변동성 확대, 위험자산 선호도 하락 → VIX 영향. 중동 분쟁 악화 가능성 → WTI 유가(95.96$, yellow) 상승 압력 가중.\n\n★민감도: WTI가 이미 yellow 수준으로 민감하며, 유가 100$ 근처가 위험선. 미 금리도 yellow 상태로 변동성에 민감한 상황. VIX와 하이일드 스프레드는 아직 완화(green)이나, 관세 협상 결과와 중동 정세 변화에 재빠르게 반응할 수 있음.\n\n★지켜볼 트리거: (1) 관세 comment period 진행 중 최종 부과 시점(조율 여부), (2) 중동 휴전 협상 재개 여부 또는 이스라엘의 베이루트 직접 공격 여부.\n\n출처: \n- US Proposes Fresh Tariffs on 60 Economies over Forced Labor Trade Practices - CNBC, https://www.cnbc.com/2026/06/03/us-tariffs-60-economies-dection-301-forced-labor-trade-practices-.html\n- Iran says \"no tangible progress\" made in talks; Hezbollah rejects ceasefire - CBS News, https://www.cbsnews.com/live-updates/iran-us-war-talks-no-progress-israel-lebanon-hezbollah/"
   },
   "news": [
+    {
+      "title": "OpenAI says it will comply with Trump's order requiring AI model reviews before release",
+      "link": "https://www.cnbc.com/2026/06/05/openai-trump-ai-model-review-order.html",
+      "source": "CNBC",
+      "time": "06/05 19:04",
+      "risk": false,
+      "matched": [],
+      "ko_title": "OpenAI, 트럼프 행정명령에 따라 모델 출시 전 검토 수행 약속",
+      "summary": "OpenAI가 트럼프 대통령의 AI 모델 출시 전 정부 검토 요구에 응하기로 합의했어요.",
+      "theme": "기타",
+      "important": false
+    },
+    {
+      "title": "I own a house with my sister, but the mortgage is in her name. Could this come back to bite me?",
+      "link": "https://www.marketwatch.com/story/my-older-sister-and-i-co-own-a-home-where-my-son-lives-what-happens-if-she-dies-2913b928?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "time": "06/05 18:55",
+      "risk": false,
+      "matched": [],
+      "ko_title": "자매와 공동 소유 집, 모기지가 자매 명의일 때 리스크는?",
+      "summary": "부동산 공동소유 시 금융 의무가 한 사람에게만 있을 때의 법적·금융적 위험에 관한 개인 상담이에요.",
+      "theme": "기타",
+      "important": false
+    },
+    {
+      "title": "What SpaceX is really worth, according to the professor called the dean of valuation",
+      "link": "https://www.marketwatch.com/story/what-spacex-is-really-worth-according-to-the-professor-called-the-dean-of-valuation-bab6cdd2?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "time": "06/05 18:44",
+      "risk": false,
+      "matched": [],
+      "ko_title": "SpaceX 가치 평가, '평가의 대가'가 본 진짜 가치",
+      "summary": "유명 금융학 교수가 SpaceX의 실제 기업 가치를 분석한 내용이에요.",
+      "theme": "기타",
+      "important": false
+    },
     {
       "title": "‘This would be a one-time event’: How can I take extra money from my 401(k) without triggering higher Medicare premiums?",
       "link": "https://www.marketwatch.com/story/this-would-be-a-one-time-event-how-can-i-take-extra-money-from-my-401-k-without-triggering-higher-medicare-premiums-fef1586d?mod=mw_rss_topstories",
@@ -290,8 +326,8 @@
       "time": "06/05 18:15",
       "risk": false,
       "matched": [],
-      "ko_title": "401(k)에서 추가 인출 시 메디케어 보험료 안 올리는 법",
-      "summary": "은퇴계좌에서 돈을 더 빼면서도 의료보험료 인상을 피하는 방법을 다룬 개인 재무 조언이에요.",
+      "ko_title": "401(k)에서 추가 자금을 인출할 때 메디케어 보험료 상승 피하는 방법",
+      "summary": "은퇴 계좌 인출 전략으로 사회보장 혜택에 미치는 영향을 최소화하는 방법을 다룬 개인 재정 상담이에요.",
       "theme": "기타",
       "important": false
     },
@@ -302,20 +338,8 @@
       "time": "06/05 18:02",
       "risk": false,
       "matched": [],
-      "ko_title": "배우 테이트 도노반, 가격 낮춰 텍사스 별장 매각",
-      "summary": "유명 배우의 부동산 매각 소식으로 시장과 무관한 가십이에요.",
-      "theme": "기타",
-      "important": false
-    },
-    {
-      "title": "OpenAI says it will comply with Trump's order requiring AI model reviews before release",
-      "link": "https://www.cnbc.com/2026/06/05/openai-trump-ai-model-review-order.html",
-      "source": "CNBC",
-      "time": "06/05 17:57",
-      "risk": false,
-      "matched": [],
-      "ko_title": "오픈AI, 출시 전 AI 모델 검토 요구한 트럼프 행정명령 준수키로",
-      "summary": "오픈AI가 AI 모델 공개 전 정부 검토를 받으라는 명령에 따르겠다고 밝혔어요.",
+      "ko_title": "배우 테이트 도노반, 텍사스 힐컨트리 주택 대폭 인하 후 매각",
+      "summary": "연예인의 부동산 거래 소식이에요.",
       "theme": "기타",
       "important": false
     },
@@ -326,8 +350,8 @@
       "time": "06/05 17:56",
       "risk": false,
       "matched": [],
-      "ko_title": "70대 부부의 고민: 외동딸에게 전 재산을 물려줄까",
-      "summary": "상속 계획을 둘러싼 개인 재무 상담 사연이에요.",
+      "ko_title": "70대 부부, 40세 외동녀에게 유산 상속할지 고민 — '까다로운 주제'",
+      "summary": "고령 부부의 유산 계획에 관한 개인 재정 상담이에요.",
       "theme": "기타",
       "important": false
     },
@@ -338,10 +362,10 @@
       "time": "06/05 17:44",
       "risk": false,
       "matched": [],
-      "ko_title": "인도, 외국인 채권 투자세 폐지…외자 유치·루피 방어",
-      "summary": "인도가 해외 채권 투자자에 대한 세금을 없애 외국 자본을 끌어들이려 해요.",
+      "ko_title": "인도, 해외 채권 투자자 세금 철폐로 외국 자본 유치 및 루피화 방어",
+      "summary": "인도 정부가 국제 채권 투자에 대한 세금을 폐지해 외화 유입과 통화 가치를 지탱하려고 해요.",
       "theme": "거시",
-      "important": false
+      "important": true
     },
     {
       "title": "The stock market is at its frothiest since the global financial crisis, proclaims Citi. Why dip buyers shouldn’t bail yet.",
@@ -352,9 +376,9 @@
       "matched": [
         "crisis"
       ],
-      "ko_title": "씨티 '금융위기 이후 가장 거품'…그래도 매수세 버텨야 하는 이유",
-      "summary": "씨티가 증시 과열을 경고했지만 저가 매수세는 아직 빠지지 말라는 분석이에요.",
-      "theme": "거시",
+      "ko_title": "주가, 글로벌 금융위기 이후 '가장 과열' 상태 — 시티 분석, 매수자는 물러날 필요 없어",
+      "summary": "시티 애널리스트가 현재 주식시장 밸류에이션이 역사적으로 매우 높다고 지적하면서도 추가 상승 여지가 있을 수 있다고 봐요.",
+      "theme": "실적",
       "important": true
     },
     {
@@ -364,10 +388,10 @@
       "time": "06/05 17:40",
       "risk": false,
       "matched": [],
-      "ko_title": "2026년 유가 변동성의 승자들…전략 변화 주목",
-      "summary": "앞으로 유가 변동성에서 이득을 본 주체들과 그들의 전략 변화를 다룬 기사예요.",
-      "theme": "지정학",
-      "important": true
+      "ko_title": "2026년 유가 변동성의 큰 수혜자들 — 전략 초점이 이동 중",
+      "summary": "유가 변동성 확대로 이익을 보는 투자 전략과 그들의 전환 움직임을 다룬 내용이에요.",
+      "theme": "거시",
+      "important": false
     },
     {
       "title": "How the Strait of Hormuz standoff flipped the energy security debate",
@@ -376,34 +400,10 @@
       "time": "06/05 17:39",
       "risk": false,
       "matched": [],
-      "ko_title": "호르무즈 해협 대치, 에너지 안보 논쟁을 뒤집다",
-      "summary": "호르무즈 해협 긴장이 에너지 안보 구도를 바꾸고 있다는 내용으로 유가에 직결돼요.",
+      "ko_title": "호르무즈 해협 교착 상태, 에너지 안보 논의 판 바꿨다",
+      "summary": "중동 분쟁이 글로벌 에너지 공급 안정성 논의를 근본적으로 바꾸고 있어요.",
       "theme": "지정학",
       "important": true
-    },
-    {
-      "title": "In ‘wild’ twist, SpaceX won’t be allowed early entry to the S&P 500 after all",
-      "link": "https://www.marketwatch.com/story/in-wild-twist-spacex-wont-be-allowed-early-entry-to-the-s-p-500-after-all-2c1b8205?mod=mw_rss_topstories",
-      "source": "MarketWatch",
-      "time": "06/05 17:23",
-      "risk": false,
-      "matched": [],
-      "ko_title": "스페이스X, 결국 S&P500 조기 편입 불가",
-      "summary": "스페이스X의 지수 조기 편입이 무산됐다는 개별 종목·지수 이슈예요.",
-      "theme": "기타",
-      "important": false
-    },
-    {
-      "title": "China poaches more AI talent from the U.S. as it eyes the next 'super-app'",
-      "link": "https://www.cnbc.com/2026/06/05/china-may-move-toward-us-path-on-ai-as-firms-poach-employees.html",
-      "source": "CNBC",
-      "time": "06/05 16:50",
-      "risk": false,
-      "matched": [],
-      "ko_title": "중국, 미국서 AI 인재 추가 영입…차세대 '슈퍼앱' 노려",
-      "summary": "중국이 미국 AI 인재를 데려가며 차세대 앱 시장을 겨냥하고 있어요.",
-      "theme": "기타",
-      "important": false
     }
   ],
   "calendar": [
