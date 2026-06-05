@@ -22,6 +22,7 @@ import signals
 import storage
 import notify
 import insight
+import econ_calendar
 
 log = util.get_logger()
 
@@ -49,6 +50,13 @@ def run() -> int:
 
     # 2-1) 인사이트 엔진: 위험점수·주도지표·과거대비·자동해설 등을 계산해 붙임
     composite["analysis"] = insight.build_analysis(judged, composite)
+
+    # 2-2) 다가오는 경제지표 발표 일정(한국시간). 실패해도 전체엔 영향 없음.
+    try:
+        composite["calendar"] = econ_calendar.upcoming_releases(api_key)
+    except Exception as e:
+        log.warning(f"경제 캘린더 조회 실패(무시): {e}")
+        composite["calendar"] = []
 
     # 3) 콘솔 출력
     signals.print_signals(judged, composite)

@@ -190,6 +190,7 @@ def build_latest_dict(judged: list, composite: dict, run_dt, prev: dict = None) 
             "lit": composite["lit"],
         },
         "indicators": indicators,
+        "calendar": composite.get("calendar", []),  # ★ 다가오는 경제지표 발표
         "onboarding": config.ONBOARDING,           # ★ 사용법 안내
         "manual_check": config.MANUAL_CHECK_ITEMS,
         "disclaimer": (
@@ -255,11 +256,14 @@ def build_history() -> dict:
     n = getattr(config, "HISTORY_DAYS", 90)
     rows = rows[-n:]
 
-    dates, grades = [], []
+    import insight  # 지연 import (순환 참조 방지) — 과거 점수 재계산용
+
+    dates, grades, scores = [], [], []
     series = {name: [] for name in chart_names}
     for row in rows:
         dates.append(row.get("날짜", ""))
         grades.append(_grade_from_row(row))
+        scores.append(insight._row_score(row))   # ★ 위험 점수 추이용
         for name in chart_names:
             series[name].append(_to_float(row.get(f"{name}_값")))
 
@@ -271,6 +275,7 @@ def build_history() -> dict:
     return {
         "dates": dates,
         "grades": grades,
+        "scores": scores,        # ★ 위험 점수(0~100) 추이
         "series": series,
         "thresholds": thresholds,
         "directions": directions,

@@ -104,6 +104,16 @@
     .legend span { display:inline-flex; align-items:center; gap:5px; }
     .legend i { width:10px; height:10px; border-radius:3px; display:inline-block; }
 
+    /* 발표 캘린더 */
+    .cal { padding:6px 18px 14px; }
+    .cal ul { list-style:none; margin:0; padding:0; }
+    .cal li { display:flex; align-items:center; gap:12px; padding:11px 0; border-bottom:1px solid var(--line); }
+    .cal li:last-child { border-bottom:none; }
+    .cal .dday { flex:none; width:46px; text-align:center; font-size:.74rem; font-weight:700; padding:5px 0; border-radius:8px; background:var(--card2); border:1px solid var(--line); }
+    .cal .dday.soon { color:#fda4a4; border-color:#5b2330; background:#2a151a; }
+    .cal .cnm { font-size:.88rem; font-weight:600; }
+    .cal .ctime { font-size:.74rem; color:var(--muted); }
+    .cal-note { font-size:.72rem; color:var(--muted); margin-top:10px; line-height:1.5; }
     /* 미니 차트 */
     .chartcard { padding:14px 14px 8px; margin-bottom:12px; }
     .chartcard .ch-head { display:flex; align-items:baseline; justify-content:space-between; gap:8px; }
@@ -159,6 +169,13 @@
     <div id="narrative"></div>
   </div>
 
+  <!-- 다가오는 경제지표 발표 -->
+  <div class="label">📅 다가오는 발표 (한국시간)</div>
+  <div class="card cal" id="cal-card">
+    <ul id="calendar"></ul>
+    <div class="cal-note">위는 월간 지표 발표 일정이에요. VIX·금리·유가·ETF 등 일별 시장지표는 미국장 마감 후 갱신되고, 이 시스템은 매일 <b>한국시간 오전 8시</b>에 자동 점검해요.</div>
+  </div>
+
   <!-- 관찰 중 -->
   <div class="card watch" id="watch-box" style="display:none;">
     <h3>👀 관찰 중 — 어제는 정상이라 아직 위험으로 안 셈</h3>
@@ -180,6 +197,13 @@
   <!-- 추이 -->
   <div class="label">과거 추이</div>
   <div id="trend">
+    <!-- 위험 점수 추이 (3년) -->
+    <div class="card chartcard" id="score-card" style="margin-bottom:14px; display:none;">
+      <div class="ch-head"><h4>📈 종합 위험 점수 추이</h4><span class="now" id="score-now"></span></div>
+      <div class="hint">0=안전 · 100=위기 · 점선 35(주의)/65(위험)</div>
+      <canvas id="score-chart" height="140"></canvas>
+    </div>
+
     <div class="tl-cap"><span id="tl-range"></span><span id="tl-note"></span></div>
     <div class="timeline" id="timeline"></div>
     <div class="legend">
@@ -285,6 +309,14 @@
         tiers.appendChild(lab); tiers.appendChild(grid);
       });
 
+      // 발표 캘린더
+      const cal = d.calendar||[];
+      document.getElementById("calendar").innerHTML = cal.length ? cal.map(r=>{
+        const soon = r.days_away<=1 ? " soon" : "";
+        const dd = r.days_away===0 ? "오늘" : "D-"+r.days_away;
+        return '<li><span class="dday'+soon+'">'+dd+'</span><div><div class="cnm">'+r.name+'</div><div class="ctime">'+r.kst+'</div></div></li>';
+      }).join("") : '<li class="ctime">예정된 발표 정보를 불러오지 못했어요.</li>';
+
       document.getElementById("onboarding").innerHTML=(d.onboarding||[]).map(t=>"<li>"+t+"</li>").join("");
       document.getElementById("manual").innerHTML=(d.manual_check||[]).map(m=>"<li>"+m+"</li>").join("");
       document.getElementById("disclaimer").textContent="⚠️ "+(d.disclaimer||"");
@@ -322,6 +354,22 @@
       // 타임라인 (연속 색 막대)
       document.getElementById("tl-range").textContent = h.dates[0]+" ~ "+h.dates[h.dates.length-1];
       note.textContent = "최근 "+h.dates.length+"일";
+
+      // 위험 점수 추이 차트 (3년)
+      if (h.scores && h.scores.length>1) {
+        document.getElementById("score-card").style.display="block";
+        document.getElementById("score-now").textContent = h.scores[h.scores.length-1]+" / 100";
+        const n=h.scores.length, many=n>120;
+        const hl=(v,c)=>({data:Array(n).fill(v),borderColor:c,borderDash:[5,4],borderWidth:1,pointRadius:0,fill:false});
+        new Chart(document.getElementById("score-chart"),{type:"line",
+          data:{labels:h.dates,datasets:[
+            {label:"위험점수",data:h.scores,borderColor:"#3b82f6",backgroundColor:"rgba(59,130,246,.12)",fill:true,spanGaps:true,tension:.25,pointRadius:many?0:2,borderWidth:2},
+            hl(35,"#eab308"), hl(65,"#ef4444")]},
+          options:{responsive:true,animation:false,plugins:{legend:{display:false}},
+            scales:{x:{ticks:{color:"#8b97a8",maxTicksLimit:7,autoSkip:true,font:{size:10}},grid:{display:false}},
+                    y:{min:0,max:100,ticks:{color:"#8b97a8",stepSize:25,font:{size:10}},grid:{color:"#1a2230"}}}}});
+      }
+
       document.getElementById("timeline").innerHTML = h.dates.map((d,i)=>{
         const g=h.grades[i]||"gray"; return '<div class="tl-cell tl-'+g+'" title="'+d+" · "+(GRADE_KO[g]||"?")+'"></div>';
       }).join("");

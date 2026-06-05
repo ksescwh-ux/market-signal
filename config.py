@@ -192,8 +192,8 @@ DASHBOARD_URL = ""
 # 대시보드 추이 차트에 그릴 지표 이름들 (config.INDICATORS 의 name 과 일치해야 함)
 CHART_INDICATORS = ["하이일드 스프레드", "VIX 공포지수", "WTI 유가"]
 
-# 추이에 보여줄 최근 일수 (이보다 오래된 기록은 차트/타임라인에서 생략)
-HISTORY_DAYS = 365
+# 추이에 보여줄 최근 일수 (약 3년치 거래일 ≈ 800). 백필 데이터를 다 보여줌.
+HISTORY_DAYS = 800
 
 # backfill.py 가 과거를 몇 년치 채울지 (1회성 도구 기본값)
 BACKFILL_YEARS = 3
