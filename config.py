@@ -89,7 +89,7 @@ INDICATORS = [
         "trend_type": "mom",    # 직전값 대비 상승/하락 (단순화)
         "thresholds": {},
         "unit": "지수",
-        "stale_days": 45,       # 월별 지표라 신선도 기준이 깁니다
+        "stale_days": 90,   # 월간 지표: 날짜가 '그 달 1일'로 찍히고 발표는 1~2달 늦어, 최신값도 60~85일 '옛날'로 보임 → 90일로 넉넉히
         "fallback": None,
     },
     {
@@ -101,7 +101,7 @@ INDICATORS = [
         "trend_type": "mom",
         "thresholds": {},
         "unit": "지수",
-        "stale_days": 45,
+        "stale_days": 90,   # 월간 지표: 날짜가 '그 달 1일'로 찍히고 발표는 1~2달 늦어, 최신값도 60~85일 '옛날'로 보임 → 90일로 넉넉히
         "fallback": None,
     },
     {
@@ -113,7 +113,7 @@ INDICATORS = [
         "trend_type": "mom",
         "thresholds": {},
         "unit": "%",
-        "stale_days": 45,
+        "stale_days": 90,   # 월간 지표: 날짜가 '그 달 1일'로 찍히고 발표는 1~2달 늦어, 최신값도 60~85일 '옛날'로 보임 → 90일로 넉넉히
         "fallback": None,
     },
     {
