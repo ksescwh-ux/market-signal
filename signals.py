@@ -143,39 +143,91 @@ def judge_all(results: list) -> list:
 # ─────────────────────────────────────────────────────────────
 # 2. 종합 판정
 # ─────────────────────────────────────────────────────────────
-def _count_danger_by_tier(judged: list, tier: int) -> int:
-    """특정 Tier 에서 '위험 점등(orange/red)' 개수."""
-    return sum(
-        1 for r in judged
-        if r["tier"] == tier and r["signal"] in DANGER_SIGNALS
-    )
+# 신호등 색의 '심각도 점수' (방향 비교·확정 판단용)
+SEVERITY = {GREEN: 0, YELLOW: 1, ORANGE: 2, RED: 3}
 
 
-def compute_composite(judged: list) -> dict:
+def _sev(signal) -> int:
+    """신호 심각도 점수. 모르는/결측이면 -1."""
+    return SEVERITY.get(signal, -1)
+
+
+def direction_arrow(today_sig, prev_sig) -> str:
+    """
+    오늘 신호 vs 어제 신호 비교.
+      나빠짐(위험↑) → "↑",  나아짐(위험↓) → "↓",  같거나 비교불가 → ""
+    """
+    if today_sig is None or prev_sig is None:
+        return ""
+    t, p = _sev(today_sig), _sev(prev_sig)
+    if t > p:
+        return "↑"
+    if t < p:
+        return "↓"
+    return ""
+
+
+def _is_confirmed_danger(r: dict, prev_signals: dict) -> bool:
+    """
+    이 지표의 위험(orange/red)을 '확정 위험'으로 카운트할지 판단.
+      - red          : 즉시 확정 (심각하므로 지연 없이 반영)
+      - orange       : CONFIRM 옵션이 켜져 있으면 '어제도 위험'이었을 때만 확정
+      - 그 외(green/yellow/None) : 위험 아님
+    """
+    sig = r["signal"]
+    if sig == RED:
+        return True
+    if sig == ORANGE:
+        if not config.CONFIRM.get("on", True):
+            return True  # 옵션 끄면 즉시 카운트 (기존 동작)
+        prev_sig = prev_signals.get(r["name"])
+        if prev_sig is None:
+            # 어제 신호 정보가 없으면(첫 실행·어제 결측) 확정/부정 불가 →
+            # 위험을 숨기지 않도록 일단 카운트(안전 우선).
+            return True
+        return _sev(prev_sig) >= 2  # 어제도 orange/red 였으면 확정
+    return False
+
+
+def compute_composite(judged: list, prev: dict = None) -> dict:
     """
     개별 신호등들을 조합해 종합 판정을 계산합니다.
+
+    prev : 어제 상태 {"grade": "...", "signals": {지표명: 신호}} (없으면 None)
+           → 거짓경보 감소(2일 연속 확인)와 방향(어제 대비) 계산에 사용.
 
     돌려주는 값(딕셔너리) 주요 키:
       grade      : gray/red/orange/yellow/green
       emoji,title,actions : config.VERDICTS 에서 가져온 표시·행동문구
-      tier_danger: {1: n, 2: n, 3: n}  각 Tier 위험 점등 수
-      missing    : 판정불가(결측/미구현) 지표 수
-      active     : 실제 판정에 쓰인(미구현 제외) 지표 수
-      yellow_count : yellow 총 개수
-      warnings   : 보조경고 문구 리스트 (YELLOW_WARN 등)
-      lit        : 점등(orange/red)된 지표들의 요약 리스트 (알림용)
+      tier_danger: {1: n, 2: n, 3: n}  각 Tier '확정 위험' 수
+      watch      : '관찰 중'(어제는 정상이라 아직 미확정) 위험 지표 리스트
+      confidence : 판정 확신도 ("높음"/"보통"/"-")
+      direction  : 어제 대비 방향 {"state","text","arrow"}
+      missing/active/yellow_count/warnings/lit : 기존과 동일
     """
+    prev = prev or {}
+    prev_signals = prev.get("signals", {})
+    prev_grade = prev.get("grade")
+
     # '미구현(skipped)'은 아직 없는 지표로 보고 판정 대상에서 제외.
-    # '결측(missing이지만 skipped 아님)'만 진짜 결측으로 셉니다.
     active = [r for r in judged if not r.get("skipped")]
     missing = [r for r in active if r["signal"] is None]
     active_count = len(active)
 
-    tier_danger = {
-        1: _count_danger_by_tier(judged, 1),
-        2: _count_danger_by_tier(judged, 2),
-        3: _count_danger_by_tier(judged, 3),
-    }
+    # ── 위험 신호를 '확정'과 '관찰 중(미확정)'으로 분리 ──────────
+    tier_danger = {1: 0, 2: 0, 3: 0}   # 확정 위험만 카운트
+    watch = []                          # 관찰 중(하루만 깜빡인 신호)
+    for r in active:
+        if r["signal"] not in DANGER_SIGNALS:
+            continue
+        if _is_confirmed_danger(r, prev_signals):
+            tier_danger[r["tier"]] += 1
+        else:
+            watch.append({
+                "name": r["name"], "tier": r["tier"], "signal": r["signal"],
+                "value": r["value"], "unit": r.get("unit", ""),
+            })
+
     yellow_count = sum(1 for r in active if r["signal"] == YELLOW)
     tier1_missing = sum(
         1 for r in active if r["tier"] == 1 and r["signal"] is None
@@ -210,9 +262,39 @@ def compute_composite(judged: list) -> dict:
     if yw.get("on") and yellow_count >= yw.get("threshold", 5):
         warnings.append(f"⚠️ 시장 전반 경계감 누적(yellow {yellow_count}개)")
 
+    # ── 관찰 중(미확정 위험) 안내 ─────────────────────────────
+    if watch:
+        names = ", ".join(w["name"] for w in watch)
+        warnings.append(
+            f"👀 관찰 중: {names} — 어제는 정상이라 아직 위험 등급엔 반영 안 함(하루 더 확인)"
+        )
+
     verdict = config.VERDICTS[grade]
 
-    # 점등(orange/red)된 지표 요약 (알림 메시지에 쓰임)
+    # ── 확신도 (확정 위험이 몇 개·얼마나 심각한가) ─────────────
+    confirmed_total = sum(tier_danger.values())
+    has_red = any(r["signal"] == RED and _is_confirmed_danger(r, prev_signals)
+                  for r in active)
+    if grade in ("green", "gray"):
+        confidence = "-"
+    elif has_red or confirmed_total >= 2:
+        confidence = "높음"
+    else:
+        confidence = "보통"
+
+    # ── 방향 (어제 등급 대비) ─────────────────────────────────
+    grade_sev = {"green": 0, "yellow": 1, "orange": 2, "red": 3}
+    direction = {"state": "na", "text": "", "arrow": ""}
+    if prev_grade in grade_sev and grade in grade_sev:
+        cur, pre = grade_sev[grade], grade_sev[prev_grade]
+        if cur > pre:
+            direction = {"state": "worse", "text": "어제보다 위험이 커졌어요", "arrow": "🔺"}
+        elif cur < pre:
+            direction = {"state": "better", "text": "어제보다 나아졌어요", "arrow": "🔻"}
+        else:
+            direction = {"state": "same", "text": "어제와 같아요", "arrow": "➖"}
+
+    # 점등(orange/red)된 지표 요약 (알림 메시지에 쓰임) — 확정/관찰 모두 포함
     lit = [
         {
             "name": r["name"],
@@ -230,6 +312,9 @@ def compute_composite(judged: list) -> dict:
         "title": verdict["title"],
         "actions": verdict["actions"],
         "tier_danger": tier_danger,
+        "watch": watch,
+        "confidence": confidence,
+        "direction": direction,
         "missing": len(missing),
         "active": active_count,
         "yellow_count": yellow_count,
@@ -258,11 +343,15 @@ def print_signals(judged: list, composite: dict) -> None:
 
     log.info("=" * 60)
     c = composite
-    log.info(f"종합 판정: {c['emoji']} {c['title']}")
+    dir_txt = ""
+    if c.get("direction", {}).get("arrow"):
+        dir_txt = f"  {c['direction']['arrow']} {c['direction']['text']}"
+    log.info(f"종합 판정: {c['emoji']} {c['title']}{dir_txt}")
+    conf = c.get("confidence", "-")
     log.info(
-        f"  위험 점등 — Tier1:{c['tier_danger'][1]} "
+        f"  확정 위험 — Tier1:{c['tier_danger'][1]} "
         f"Tier2:{c['tier_danger'][2]} Tier3:{c['tier_danger'][3]} "
-        f"| yellow:{c['yellow_count']} | 결측:{c['missing']}/{c['active']}"
+        f"| 확신도:{conf} | yellow:{c['yellow_count']} | 결측:{c['missing']}/{c['active']}"
     )
     for w in c["warnings"]:
         log.info(f"  {w}")

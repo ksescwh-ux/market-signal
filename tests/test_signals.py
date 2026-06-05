@@ -160,6 +160,56 @@ def test_composite_gray_when_tier1_missing():
     assert c["grade"] == "gray"
 
 
+def test_unconfirmed_orange_becomes_watch():
+    # 어제 정상(green)이던 지표가 오늘 orange → 하루짜리라 '관찰 중'(등급 안 올림)
+    judged = [
+        _ind(1, signals.ORANGE, name="KRE"),
+        _ind(1, signals.GREEN, name="HYG"),
+        _ind(2, signals.GREEN, name="실업"),
+        _ind(3, signals.GREEN, name="VIX"),
+    ]
+    prev = {"grade": "green", "signals": {"KRE": "green"}}
+    c = signals.compute_composite(judged, prev)
+    assert c["grade"] == "green"                 # 위험으로 안 올라감
+    assert c["tier_danger"][1] == 0              # 확정 위험 0
+    assert any(w["name"] == "KRE" for w in c["watch"])  # 관찰 중에 포함
+
+
+def test_confirmed_orange_counts():
+    # 어제도 orange 였던 지표가 오늘도 orange → 확정 위험 → 등급 상승
+    judged = [
+        _ind(1, signals.ORANGE, name="KRE"),
+        _ind(1, signals.GREEN, name="HYG"),
+        _ind(2, signals.GREEN, name="실업"),
+    ]
+    prev = {"grade": "orange", "signals": {"KRE": "orange"}}
+    c = signals.compute_composite(judged, prev)
+    assert c["grade"] == "orange"
+    assert c["tier_danger"][1] == 1
+
+
+def test_red_counts_immediately_without_prev():
+    # red(빨강)는 어제가 정상이어도 즉시 위험으로 카운트(심각하므로)
+    judged = [
+        _ind(1, signals.RED, name="하이일드"),
+        _ind(1, signals.GREEN, name="HYG"),
+        _ind(2, signals.GREEN, name="실업"),
+    ]
+    prev = {"grade": "green", "signals": {"하이일드": "green"}}
+    c = signals.compute_composite(judged, prev)
+    assert c["grade"] == "orange"      # Tier1 위험 1개 → 위험
+    assert c["tier_danger"][1] == 1
+    assert c["watch"] == []
+
+
+def test_direction_better_when_grade_improves():
+    # 어제 orange → 오늘 green 이면 방향이 '나아짐(better)'
+    judged = [_ind(1, signals.GREEN, name="x"), _ind(2, signals.GREEN, name="y")]
+    prev = {"grade": "orange", "signals": {}}
+    c = signals.compute_composite(judged, prev)
+    assert c["direction"]["state"] == "better"
+
+
 def test_composite_skipped_not_counted_as_missing():
     # 미구현(skipped) 지표는 결측으로 세지 않아야 함 (판정보류 오작동 방지)
     judged = [

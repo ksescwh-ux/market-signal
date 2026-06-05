@@ -111,6 +111,16 @@ def build_alert_message(composite: dict, judged: list, run_dt) -> str:
     )
     lines.append(f"{c['emoji']} {c['title']} (데이터 기준: {data_date})")
 
+    # 방향(어제 대비) + 확신도 한 줄
+    extra = []
+    d = c.get("direction", {})
+    if d.get("arrow"):
+        extra.append(f"{d['arrow']} {d['text']}")
+    if c.get("confidence") and c["confidence"] != "-":
+        extra.append(f"확신도: {c['confidence']}")
+    if extra:
+        lines.append(" · ".join(extra))
+
     # 점등 지표 (orange/red). judged 에서 thresholds 를 찾아 기준값도 표기.
     judged_by_name = {r["name"]: r for r in judged}
     if c["lit"]:

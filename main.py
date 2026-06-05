@@ -41,9 +41,10 @@ def run() -> int:
     # 1) 수집 (FRED + Yahoo + WTI 폴백)
     results = fetch.collect_all(api_key)
 
-    # 2) 판정
+    # 2) 판정 (어제 상태를 읽어 '거짓경보 감소·방향'에 활용)
+    prev = storage.get_previous_state(run_dt.strftime("%Y-%m-%d"))
     judged = signals.judge_all(results)
-    composite = signals.compute_composite(judged)
+    composite = signals.compute_composite(judged, prev)
 
     # 3) 콘솔 출력
     signals.print_signals(judged, composite)

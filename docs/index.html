@@ -63,6 +63,14 @@
     .onboarding ul { margin: 0 0 12px; padding-left: 18px; }
     .onboarding li { margin: 6px 0; font-size: 0.85rem; line-height: 1.5; }
     .v-plain { font-size: 1rem; margin-top: 10px; opacity: 0.95; line-height: 1.4; }
+    .v-extra { font-size: 0.9rem; margin-top: 8px; opacity: 0.95; }
+    .watch-box { background: var(--card); border: 1px solid #4a3f1a; border-radius: 12px; padding: 12px 18px; margin: 12px 0; }
+    .watch-box h3 { margin: 0 0 8px; font-size: 0.95rem; color: var(--yellow); }
+    .watch-box ul { margin: 0 0 8px; padding-left: 18px; }
+    .watch-box li { margin: 3px 0; font-size: 0.88rem; }
+    .watch-note { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+    .arrow-up { color: #ff6b6b; font-weight: 700; }
+    .arrow-down { color: #51cf66; font-weight: 700; }
     /* 차트/기타 */
     .chart-box { background: var(--card); border-radius: 12px; padding: 14px; margin: 16px 0; }
     .manual { background: var(--card); border-radius: 12px; padding: 14px 18px; margin: 16px 0; }
@@ -90,7 +98,15 @@
     <div class="emoji" id="v-emoji">⚪</div>
     <div class="title" id="v-title">불러오는 중</div>
     <div class="v-plain" id="v-plain"></div>
+    <div class="v-extra" id="v-extra"></div>
     <div class="date" id="v-date"></div>
+  </div>
+
+  <!-- 👀 관찰 중 (하루만 깜빡인 미확정 위험) -->
+  <div class="watch-box" id="watch-box" style="display:none;">
+    <h3>👀 관찰 중 (어제는 정상이라 아직 위험으로 안 셈)</h3>
+    <ul id="watch"></ul>
+    <div class="watch-note">하루만 흔들린 신호예요. <b>이틀 연속</b>이면 그때 위험으로 올라가요. (성급한 매매 방지)</div>
   </div>
 
   <!-- 행동 가이드 -->
@@ -148,6 +164,28 @@
       document.getElementById("v-plain").textContent = c.plain || "";  // 주린이 한 줄
       document.getElementById("v-date").textContent = "데이터 기준일: " + (d.data_date || "-");
 
+      // 방향(어제 대비) + 확신도
+      let extra = "";
+      if (c.direction && c.direction.arrow) {
+        extra += c.direction.arrow + " " + c.direction.text;
+      }
+      if (c.confidence && c.confidence !== "-") {
+        extra += (extra ? " · " : "") + "확신도: " + c.confidence;
+      }
+      document.getElementById("v-extra").textContent = extra;
+
+      // 👀 관찰 중 (미확정 위험)
+      const watchBox = document.getElementById("watch-box");
+      const watch = c.watch || [];
+      if (watch.length) {
+        watchBox.style.display = "block";
+        document.getElementById("watch").innerHTML = watch.map(w =>
+          "<li>" + (SIGNAL_EMOJI[w.signal] || "⚪") + " " + w.name +
+          ": " + w.value + (w.unit || "") + "</li>").join("");
+      } else {
+        watchBox.style.display = "none";
+      }
+
       // 온보딩(사용법)
       document.getElementById("onboarding").innerHTML =
         (d.onboarding || []).map(t => "<li>" + t + "</li>").join("");
@@ -193,10 +231,14 @@
                 "</div>" +
               "</details>";
           }
+          // 방향 화살표 (↑ 나빠짐=빨강 / ↓ 나아짐=초록)
+          let arrowHtml = "";
+          if (i.arrow === "↑") arrowHtml = ' <span class="arrow-up">↑</span>';
+          else if (i.arrow === "↓") arrowHtml = ' <span class="arrow-down">↓</span>';
           grid.innerHTML +=
             '<div class="card ' + cls + '">' +
               '<div class="name">' + (SIGNAL_EMOJI[i.signal] || "⚪") + " " + i.name + "</div>" +
-              '<div class="value">' + valText + "</div>" +
+              '<div class="value">' + valText + arrowHtml + "</div>" +
               '<div class="meta">' + (i.date || "-") + flag + "</div>" +
               explain +
             "</div>";

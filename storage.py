@@ -16,6 +16,7 @@ import json
 
 import config
 import util
+import signals
 
 log = util.get_logger()
 
@@ -32,7 +33,7 @@ DOCS_HISTORY_PATH = os.path.join(DOCS_DATA_DIR, "history.json")
 
 # CSV 고정 컬럼 (지표 컬럼은 뒤에 자동으로 붙음)
 _FIXED_COLUMNS = [
-    "날짜", "데이터기준날짜", "종합판정",
+    "날짜", "데이터기준날짜", "종합판정", "등급",
     "Tier1점등수", "Tier2점등수", "Tier3점등수", "결측수",
 ]
 
@@ -49,6 +50,7 @@ def _build_row(judged: list, composite: dict, run_date: str) -> dict:
         "날짜": run_date,
         "데이터기준날짜": _data_date(judged),
         "종합판정": f"{composite['emoji']} {composite['title']}",
+        "등급": composite["grade"],
         "Tier1점등수": composite["tier_danger"][1],
         "Tier2점등수": composite["tier_danger"][2],
         "Tier3점등수": composite["tier_danger"][3],
@@ -100,14 +102,52 @@ def save_to_csv(judged: list, composite: dict, run_date: str) -> str:
     return CSV_PATH
 
 
-def build_latest_dict(judged: list, composite: dict, run_dt) -> dict:
+def get_previous_state(today_date: str) -> dict:
+    """
+    signal_log.csv 에서 '오늘보다 이전 날짜'의 가장 최근 줄을 읽어
+    어제 상태를 돌려줍니다. (거짓경보 감소·방향 계산에 사용)
+
+    돌려주는 값:
+      {"grade": "green", "signals": {지표명: "green"/"orange"/None, ...}}
+      이전 기록이 없으면 None.
+    """
+    if not os.path.exists(CSV_PATH):
+        return None
+
+    prev_row = None
+    with open(CSV_PATH, "r", encoding="utf-8-sig", newline="") as f:
+        for row in csv.DictReader(f):
+            d = row.get("날짜", "")
+            if d and d < today_date:  # 오늘 이전 날짜만
+                if prev_row is None or d > prev_row.get("날짜", ""):
+                    prev_row = row
+
+    if prev_row is None:
+        return None
+
+    # 지표별 신호 컬럼("{지표명}_신호등")만 추려서 모음
+    signals_map = {}
+    for key, val in prev_row.items():
+        if key.endswith("_신호등"):
+            name = key[: -len("_신호등")]
+            signals_map[name] = val if val else None  # 빈칸이면 None
+
+    return {"grade": prev_row.get("등급") or None, "signals": signals_map}
+
+
+def build_latest_dict(judged: list, composite: dict, run_dt, prev: dict = None) -> dict:
     """
     latest.json / 대시보드가 읽을 딕셔너리를 만듭니다.
     run_dt : 실행 시각 (시간대 붙은 datetime)
+    prev   : 어제 상태(방향 화살표용). 없으면 CSV 에서 직접 조회.
     """
+    if prev is None:
+        prev = get_previous_state(run_dt.strftime("%Y-%m-%d")) or {}
+    prev_signals = prev.get("signals", {})
     indicators = []
     for r in judged:
         plain = config.PLAIN.get(r["code"], {})  # 주린이용 쉬운 설명
+        arrow = signals.direction_arrow(r["signal"], prev_signals.get(r["name"]))
         indicators.append({
             "name": r["name"],
             "tier": r["tier"],
@@ -124,6 +164,8 @@ def build_latest_dict(judged: list, composite: dict, run_dt) -> dict:
             "what": plain.get("what", ""),
             "why": plain.get("why", ""),
             "meaning": config.SIGNAL_MEANING.get(r["signal"], ""),
+            # ★ 방향 화살표: 어제보다 나빠짐 ↑ / 나아짐 ↓ (고도화 2단계)
+            "arrow": arrow,
         })
 
     return {
@@ -137,6 +179,9 @@ def build_latest_dict(judged: list, composite: dict, run_dt) -> dict:
             "plain": config.VERDICT_PLAIN.get(composite["grade"], ""),  # ★ 주린이 한 줄
             "actions": composite["actions"],
             "tier_danger": composite["tier_danger"],
+            "watch": composite.get("watch", []),            # ★ 관찰 중(미확정)
+            "confidence": composite.get("confidence", "-"),  # ★ 확신도
+            "direction": composite.get("direction", {}),     # ★ 어제 대비 방향
             "missing": composite["missing"],
             "active": composite["active"],
             "yellow_count": composite["yellow_count"],

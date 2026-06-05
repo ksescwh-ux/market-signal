@@ -172,6 +172,11 @@ INDICATORS = [
 MAX_MISSING = 0.30                       # 결측 비율 임계 (초과 시 '판정 보류 — 회색')
 YELLOW_WARN = {"on": True, "threshold": 5}   # yellow 5개 이상이면 보조경고 한 줄
 TIER3_PANIC = {"on": False}              # Tier3만 위험 2개일 때 경계로 격상 (기본 OFF)
+
+# ★ 거짓 경보 감소 (고도화 2단계)
+#  on=True 면, orange(주황) 위험 신호는 '어제도 위험이었을 때'만 위험 등급에 카운트.
+#  하루만 깜빡인 단발성 신호는 '관찰 중'으로만 표시(등급 안 올림). red(빨강)는 즉시 인정.
+CONFIRM = {"on": True}
 HEARTBEAT_MODE = "weekly"                # off | daily | weekly (정상작동 통지 주기)
 HEARTBEAT_WEEKDAY = 0                    # weekly 일 때 보낼 요일 (0=월요일 ... 6=일요일)
 
