@@ -23,6 +23,7 @@ import storage
 import notify
 import insight
 import econ_calendar
+import commentary
 
 log = util.get_logger()
 
@@ -50,6 +51,11 @@ def run() -> int:
 
     # 2-1) 인사이트 엔진: 위험점수·주도지표·과거대비·자동해설 등을 계산해 붙임
     composite["analysis"] = insight.build_analysis(judged, composite)
+
+    # 2-1b) AI 시황 코멘터리 (키 없으면 자동으로 엔진 해설로 폴백)
+    composite["analysis"]["commentary"] = commentary.generate_commentary(
+        composite["analysis"], judged
+    )
 
     # 2-2) 다가오는 경제지표 발표 일정(한국시간). 실패해도 전체엔 영향 없음.
     try:

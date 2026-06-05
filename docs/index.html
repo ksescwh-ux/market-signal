@@ -61,6 +61,12 @@
     .narrative p:last-child { margin-bottom:0; }
     .tierchips { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:12px; }
     .tierchip { font-size:.72rem; font-weight:600; padding:4px 11px; border-radius:999px; border:1px solid var(--line); color:var(--text); }
+    .ai-badge { display:inline-block; font-size:.66rem; font-weight:700; letter-spacing:.04em; padding:3px 9px; border-radius:999px; background:linear-gradient(90deg,#6366f1,#8b5cf6); color:#fff; margin-bottom:10px; }
+    .commentary { font-size:.96rem; line-height:1.75; margin-bottom:14px; }
+    details.ev { margin-top:6px; }
+    details.ev summary { cursor:pointer; font-size:.74rem; color:var(--muted); list-style:none; }
+    details.ev summary::-webkit-details-marker { display:none; }
+    details.ev #narrative p { font-size:.85rem; line-height:1.6; margin:6px 0 0; color:var(--muted); }
 
     /* 행동 가이드 */
     .actions { padding:16px 20px; margin-top:12px; }
@@ -165,8 +171,10 @@
   <!-- 오늘의 총평 (자동 해설) -->
   <div class="label">📌 오늘의 총평</div>
   <div class="card narrative" id="narrative-card">
+    <span class="ai-badge" id="ai-badge" style="display:none;">✨ AI 해설</span>
+    <div class="commentary" id="commentary" style="display:none;"></div>
     <div class="tierchips" id="tier-chips"></div>
-    <div id="narrative"></div>
+    <div id="narrative-wrap"></div>
   </div>
 
   <!-- 다가오는 경제지표 발표 -->
@@ -343,9 +351,23 @@
         const col = TIER_COLOR[tr[k]] || "var(--muted)";
         return '<span class="tierchip" style="border-color:'+col+';color:'+col+'">'+names[k]+" "+tr[k]+"</span>";
       }).join("");
-      // 자동 해설 문장들
-      document.getElementById("narrative").innerHTML =
-        (a.narrative || ["해설 준비 중…"]).map(p=>"<p>"+p+"</p>").join("");
+      // 해설: AI 코멘터리가 있으면 그것을 메인으로, 자동 분석은 '근거'로 접어둠
+      const com = a.commentary || {};
+      const bullets = (a.narrative || ["해설 준비 중…"]).map(p=>"<p>"+p+"</p>").join("");
+      const wrap = document.getElementById("narrative-wrap");
+      const badge = document.getElementById("ai-badge");
+      const comEl = document.getElementById("commentary");
+      if (com.source === "ai" && com.text) {
+        badge.style.display = "inline-block";
+        comEl.style.display = "block";
+        comEl.textContent = com.text;
+        wrap.innerHTML = '<details class="ev"><summary>핵심 근거 (자동 분석 수치)</summary><div id="narrative">'+bullets+'</div></details>';
+      } else {
+        // AI 없음 → 자동 분석 문장을 그대로 본문으로
+        badge.style.display = "none";
+        comEl.style.display = "none";
+        wrap.innerHTML = '<div id="narrative">'+bullets+'</div>';
+      }
     }
 
     function drawTrend(h) {
