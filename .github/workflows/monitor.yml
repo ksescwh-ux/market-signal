@@ -29,11 +29,11 @@ jobs:
     steps:
       # 1) 체크아웃 — repo 코드 가져오기
       - name: 체크아웃
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # 2) Python 설치
       - name: Python 설치
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
