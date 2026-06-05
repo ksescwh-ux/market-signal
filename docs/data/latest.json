@@ -1,6 +1,6 @@
 {
-  "updated_kst": "2026-06-05 15:21 KST",
-  "updated_iso": "2026-06-05T15:21:20.589390+09:00",
+  "updated_kst": "2026-06-05 16:04 KST",
+  "updated_iso": "2026-06-05T16:04:23.806006+09:00",
   "data_date": "2026-06-04",
   "composite": {
     "grade": "green",
@@ -15,15 +15,7 @@
       "2": 0,
       "3": 0
     },
-    "watch": [
-      {
-        "name": "지역은행 ETF (KRE)",
-        "tier": 1,
-        "signal": "orange",
-        "value": 67.88,
-        "unit": "$"
-      }
-    ],
+    "watch": [],
     "confidence": "-",
     "direction": {
       "state": "same",
@@ -31,22 +23,16 @@
       "arrow": "➖"
     },
     "analysis": {
-      "risk_score": 22,
-      "score_band": "차분",
-      "score_pct": 92,
+      "risk_score": 14,
+      "score_band": "매우 차분",
+      "score_pct": 46,
       "score_avg": 16,
-      "score_delta_5d": 4,
+      "score_delta_5d": -4,
       "drivers": [
-        {
-          "name": "지역은행 ETF (KRE)",
-          "signal": "orange",
-          "value": 67.88,
-          "unit": "$"
-        },
         {
           "name": "하이일드 ETF (HYG)",
           "signal": "yellow",
-          "value": 79.68,
+          "value": 79.83,
           "unit": "$"
         },
         {
@@ -54,10 +40,16 @@
           "signal": "yellow",
           "value": 335.423,
           "unit": "지수"
+        },
+        {
+          "name": "근원 PCE(전년비)",
+          "signal": "yellow",
+          "value": 129.63,
+          "unit": "지수"
         }
       ],
       "tier_reads": {
-        "1": "경계",
+        "1": "중립",
         "2": "중립",
         "3": "중립"
       },
@@ -78,14 +70,14 @@
       "streak_calm": 13,
       "days_since_danger": 13,
       "narrative": [
-        "지금 시장은 한마디로 '비교적 차분한' 상태예요. 위험 점수는 100점 만점에 22점이에요. 절대적으론 낮지만, 워낙 잠잠했던 지난 1년 기준으로 보면 92% 지점으로 살짝 올라온 편이고요.",
+        "지금 시장은 한마디로 '잔잔한' 상태예요. 위험 점수는 100점 만점에 14점으로, 지난 1년 평균(16점) 부근이에요.",
         "특히 시장이 가장 먼저 겁먹는 신용시장(하이일드 스프레드)이 지난 1년 중 하위 13% 수준이라, '기업이 빚을 못 갚을 걱정'은 거의 없는 편안한 자리예요.",
         "다만 체크포인트도 있어요 — WTI 유가가 95.96$로 심리적 분기점인 100선을 4.04 앞두고 있다는 점 — 게다가 1년 기준으로도 높은 축(상위 16%)이에요.",
-        "지역은행 ETF (KRE), 하이일드 ETF (HYG) 등에 '노란불'이 켜졌지만, 아직 투자심리 쪽으로는 번지지 않았어요.",
-        "최근 13일째 '평상시'가 이어지고 있어요. 지난주보다 위험 점수는 4점 올랐어요."
+        "하이일드 ETF (HYG), 근원 CPI(전년비) 등에 '노란불'이 켜졌지만, 아직 신용시장·투자심리 쪽으로는 번지지 않았어요.",
+        "최근 13일째 '평상시'가 이어지고 있어요. 지난주보다 위험 점수는 4점 낮아졌어요."
       ],
       "commentary": {
-        "text": "지금 시장의 위험점수는 22점으로 '차분' 등급에 속해 있어요. 다만 이 점수는 지난 1년 기준으로 보면 상위 92%에 해당하는 수준이라, 평소(1년 평균 16점)보다는 다소 높은 자리에 있는 상태예요. 세부적으로 보면 신용시장(돈을 빌려주는 시장)을 보여주는 하이일드·투자등급 스프레드와 VIX 공포지수(16.06)는 초록불로 안정적인데, 지역은행 ETF(주황불)와 하이일드 ETF(노랑불) 쪽에서 약간의 긴장 신호가 나오고 있어요. 또 WTI 유가가 95.96달러로, 경계선으로 보는 100달러까지 약 4달러(4%)만 남겨둔 상태라 가까이 붙어 있는 편이에요. 평온한 흐름이 13거래일째 이어지고 있는 상황이에요.",
+        "text": "오늘 시장은 위험점수 14점(매우 차분)으로 전반적으로 잔잔한 편이에요. 다만 노란불이 켜진 곳들이 눈에 띄는데, 하이일드 ETF(신용도 낮은 회사채 펀드)와 근원 물가(CPI·PCE), 그리고 WTI 유가가 그래요. 특히 WTI 유가는 95.96달러로 위험선 100달러까지 약 4달러밖에 안 남아 과거 1년 기준 상위권(백분위 84)에 있어요. 뉴스 쪽은 한국 증시가 월가의 AI 관련주 급락을 따라 5% 하락했다는 소식과 엔비디아 CEO 방한·청문회 초청 등 AI 관련 이슈가 많지만, 이는 대체로 개별 업종 흐름이라 거시 지표를 직접 흔드는 내용은 아니에요. 신용 쪽(하이일드·투자등급 스프레드)과 공포지수(VIX 16)는 초록불로 잠잠해서, 시장 전반의 불안은 아직 낮은 상태예요.",
         "source": "ai"
       }
     },
@@ -93,18 +85,9 @@
     "active": 11,
     "yellow_count": 5,
     "warnings": [
-      "⚠️ 시장 전반 경계감 누적(yellow 5개)",
-      "👀 관찰 중: 지역은행 ETF (KRE) — 어제는 정상이라 아직 위험 등급엔 반영 안 함(하루 더 확인)"
+      "⚠️ 시장 전반 경계감 누적(yellow 5개)"
     ],
-    "lit": [
-      {
-        "name": "지역은행 ETF (KRE)",
-        "signal": "orange",
-        "value": 67.88,
-        "unit": "$",
-        "date": "2026-06-03"
-      }
-    ]
+    "lit": []
   },
   "indicators": [
     {
@@ -146,9 +129,9 @@
       "tier": 1,
       "source": "yahoo",
       "code": "HYG",
-      "value": 79.68,
+      "value": 79.83,
       "unit": "$",
-      "date": "2026-06-03",
+      "date": "2026-06-04",
       "signal": "yellow",
       "stale": false,
       "missing": false,
@@ -163,17 +146,17 @@
       "tier": 1,
       "source": "yahoo",
       "code": "KRE",
-      "value": 67.88,
+      "value": 69.98,
       "unit": "$",
-      "date": "2026-06-03",
-      "signal": "orange",
+      "date": "2026-06-04",
+      "signal": "green",
       "stale": false,
       "missing": false,
       "skipped": false,
       "what": "미국 지역은행들을 모아둔 ETF 가격이에요.",
       "why": "지역은행이 흔들리면 금융위기 불씨가 되곤 해요(2023년 SVB 사태처럼).",
-      "meaning": "경고 구간이에요",
-      "arrow": "↑"
+      "meaning": "지금은 안정적이에요",
+      "arrow": ""
     },
     {
       "name": "근원 CPI(전년비)",
@@ -297,16 +280,30 @@
   ],
   "news": [
     {
+      "title": "China poaches more AI talent from the U.S. as it eyes the next 'super-app'",
+      "link": "https://www.cnbc.com/2026/06/05/china-may-move-toward-us-path-on-ai-as-firms-poach-employees.html",
+      "source": "CNBC",
+      "time": "06/05 15:44",
+      "risk": false,
+      "matched": [],
+      "ko_title": "중국, 미국서 AI 인재 빼가며 차세대 '슈퍼앱' 노린다",
+      "summary": "중국이 미국의 AI 인재를 더 많이 영입하며 차세대 슈퍼앱 개발을 노리고 있다는 소식이에요.",
+      "theme": "기타",
+      "important": false
+    },
+    {
       "title": "India's cenbank cuts growth outlook, raises inflation forecast as it keeps rates steady at 5.25%",
       "link": "https://www.cnbc.com/2026/06/05/india-rbi-rate-gdp-inflation.html",
       "source": "CNBC",
-      "time": "06/05 14:38",
+      "time": "06/05 15:22",
       "risk": true,
       "matched": [
         "inflation"
       ],
-      "ko_title": "인도 중앙은행, 금리 5.25% 동결…성장 전망 낮추고 물가 전망은 올려",
-      "summary": "인도 중앙은행이 기준금리를 5.25%로 그대로 두면서 경제 성장 전망은 내리고 물가 상승 전망은 높였다는 소식이에요."
+      "ko_title": "인도 중앙은행, 금리 5.25% 동결…성장 전망 낮추고 물가 전망 올려",
+      "summary": "인도 중앙은행이 기준금리를 동결하면서 성장률 전망은 내리고 물가 전망은 올렸어요.",
+      "theme": "거시",
+      "important": false
     },
     {
       "title": "Tracking website, food watch: South Korea is obsessing over Nvidia CEO Jensen Huang's visit",
@@ -315,8 +312,10 @@
       "time": "06/05 13:40",
       "risk": false,
       "matched": [],
-      "ko_title": "위치 추적에 식당까지…한국, 엔비디아 CEO 젠슨 황 방문에 들썩",
-      "summary": "엔비디아 CEO 젠슨 황의 한국 방문을 두고 한국에서 그의 동선과 먹은 음식까지 큰 관심을 받고 있다는 이야기예요."
+      "ko_title": "한국, 엔비디아 CEO 젠슨 황 방한에 들썩",
+      "summary": "한국이 엔비디아 CEO의 방문을 두고 동선 추적·식당까지 챙기며 큰 관심을 보이고 있다는 가십성 소식이에요.",
+      "theme": "기타",
+      "important": false
     },
     {
       "title": "South Korea stocks fall 5% as tech heavyweights follow plunge in Wall Street's AI-linked names",
@@ -327,8 +326,10 @@
       "matched": [
         "plunge"
       ],
-      "ko_title": "한국 증시 5% 급락…기술 대형주, 월가 AI 종목 폭락 따라가",
-      "summary": "미국 증시의 AI 관련 종목이 폭락하자 한국 기술 대형주도 따라 떨어지며 한국 증시가 5% 하락했다는 소식이에요."
+      "ko_title": "한국 증시 5% 급락…월가 AI 관련주 폭락 따라가",
+      "summary": "미국 AI 관련주 급락의 영향으로 한국의 대형 기술주가 따라 떨어지며 증시가 5% 하락했어요.",
+      "theme": "실적",
+      "important": true
     },
     {
       "title": "In ‘wild’ twist, SpaceX won’t be allowed early entry to the S&P 500 after all",
@@ -337,18 +338,10 @@
       "time": "06/05 11:11",
       "risk": false,
       "matched": [],
-      "ko_title": "반전…스페이스X, 결국 S&P500 조기 편입 못 한다",
-      "summary": "스페이스X가 S&P500 지수에 일찍 편입될 거란 예상과 달리 결국 허용되지 않았다는 내용이에요."
-    },
-    {
-      "title": "Asia tech stocks drop after Broadcom rattles AI trade and drags Wall Street names lower",
-      "link": "https://www.cnbc.com/2026/06/05/asian-technology-stocks-sk-hynix-samsung-tsmc-advantest.html",
-      "source": "CNBC",
-      "time": "06/05 10:40",
-      "risk": false,
-      "matched": [],
-      "ko_title": "아시아 기술주 하락…브로드컴이 AI 투자심리 흔들고 월가도 끌어내려",
-      "summary": "브로드컴 관련 소식이 AI 투자 분위기를 흔들면서 월가 종목과 아시아 기술주가 함께 떨어졌다는 이야기예요."
+      "ko_title": "반전…스페이스X, S&P500 조기 편입 불발",
+      "summary": "스페이스X가 결국 S&P500 지수에 조기 편입되지 못하게 됐다는 소식이에요.",
+      "theme": "기타",
+      "important": false
     },
     {
       "title": "Warren invites Nvidia CEO Jensen Huang to Senate hearing on China AI chip sales",
@@ -357,8 +350,10 @@
       "time": "06/05 09:58",
       "risk": false,
       "matched": [],
-      "ko_title": "워런 의원, 엔비디아 CEO 젠슨 황을 중국 AI 칩 판매 청문회에 소환",
-      "summary": "워런 상원의원이 중국에 대한 AI 칩 판매를 다루는 청문회에 엔비디아 CEO 젠슨 황을 초청했다는 소식이에요."
+      "ko_title": "워런 의원, 엔비디아 CEO를 중국 AI칩 판매 청문회에 초청",
+      "summary": "미 상원의원이 엔비디아 CEO를 중국 AI 칩 판매 관련 청문회에 불렀다는 소식이에요.",
+      "theme": "지정학",
+      "important": false
     },
     {
       "title": "Lululemon cuts annual outlook, citing 'negative' media commentary and disappointing product launches",
@@ -367,8 +362,10 @@
       "time": "06/05 08:09",
       "risk": false,
       "matched": [],
-      "ko_title": "룰루레몬, 연간 전망 하향…부정적 언론 평가·신제품 부진 탓",
-      "summary": "룰루레몬이 부정적인 언론 반응과 기대에 못 미친 신제품을 이유로 올해 실적 전망을 낮췄다는 내용이에요."
+      "ko_title": "룰루레몬, 연간 전망 하향…'부정적 언론 평가'와 신제품 부진 언급",
+      "summary": "의류업체 룰루레몬이 부정적 평가와 신제품 부진을 이유로 연간 실적 전망을 낮췄어요.",
+      "theme": "실적",
+      "important": false
     },
     {
       "title": "This investing strategy digs deeper to find hidden stocks riding the AI wave",
@@ -377,8 +374,10 @@
       "time": "06/05 07:56",
       "risk": false,
       "matched": [],
-      "ko_title": "AI 흐름 올라탄 숨은 종목 찾는 투자 전략",
-      "summary": "AI 상승세 속에서 잘 알려지지 않은 종목을 더 깊이 파고들어 찾아내는 투자 방법을 다룬 기사예요."
+      "ko_title": "AI 흐름 타는 숨은 종목 찾는 투자 전략",
+      "summary": "AI 흐름 속에서 잘 알려지지 않은 종목을 발굴하는 투자 전략을 다룬 기사예요.",
+      "theme": "기타",
+      "important": false
     },
     {
       "title": "I’m 55, married and want a $1.5 million long-term care policy. Do I get a traditional or hybrid?",
@@ -387,8 +386,10 @@
       "time": "06/05 07:51",
       "risk": false,
       "matched": [],
-      "ko_title": "55세 기혼인데 150만 달러 장기요양보험 들고 싶어요…전통형? 하이브리드형?",
-      "summary": "55세 기혼 독자가 150만 달러 규모 장기요양보험을 고민하며 전통형과 하이브리드형 중 어떤 걸 골라야 할지 묻는 상담성 기사예요."
+      "ko_title": "55세 기혼자, 150만 달러 장기요양 보험 고민…전통형 vs 하이브리드?",
+      "summary": "한 독자가 장기요양 보험 종류를 어떻게 고를지 묻는 개인 재무 상담 코너예요.",
+      "theme": "기타",
+      "important": false
     },
     {
       "title": "Marvell looks poised to finally get a spot in the S&P 500 after explosive stock surge",
@@ -397,8 +398,10 @@
       "time": "06/05 07:50",
       "risk": false,
       "matched": [],
-      "ko_title": "마벨, 주가 폭등에 힘입어 마침내 S&P500 편입 유력",
-      "summary": "마벨이 주가가 크게 오르면서 드디어 S&P500 지수에 들어갈 가능성이 높아졌다는 소식이에요."
+      "ko_title": "마벨, 주가 급등 후 S&P500 편입 유력",
+      "summary": "반도체 기업 마벨이 주가 급등에 힘입어 S&P500 지수 편입이 유력해 보인다는 소식이에요.",
+      "theme": "실적",
+      "important": false
     }
   ],
   "calendar": [

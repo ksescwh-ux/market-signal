@@ -121,7 +121,10 @@
     .news .orig { font-size:.7rem; color:#5b6678; margin-top:3px; }
     .news .meta { font-size:.7rem; color:var(--muted); margin-top:4px; }
     .news li.risk { border-left:3px solid var(--orange); padding-left:10px; margin-left:-13px; }
+    .news li.important { background:rgba(99,102,241,.06); border-radius:8px; padding-left:10px; padding-right:10px; margin-left:-10px; margin-right:-10px; }
     .news .kw { font-size:.64rem; color:#fda4a4; background:#2a151a; border:1px solid #5b2330; border-radius:6px; padding:1px 6px; margin-left:6px; }
+    .news .theme { font-size:.62rem; color:#a5b4fc; background:#1e1b3a; border:1px solid #3730a3; border-radius:6px; padding:1px 6px; margin-right:6px; }
+    .news .star { color:#a5b4fc; margin-right:4px; }
     .news-note { font-size:.72rem; color:var(--muted); margin-top:8px; line-height:1.5; }
     /* 발표 캘린더 */
     .cal { padding:6px 18px 14px; }
@@ -348,14 +351,19 @@
       // 주요 뉴스
       const news = d.news||[];
       const esc = x => (x||"").replace(/</g,"&lt;");
-      document.getElementById("news").innerHTML = news.length ? news.map(n=>{
-        const risk = n.risk ? "risk" : "";
+      // 중요 뉴스 먼저(원래 순서 유지)
+      const sorted = news.slice().sort((a,b)=>(b.important?1:0)-(a.important?1:0));
+      document.getElementById("news").innerHTML = sorted.length ? sorted.map(n=>{
+        const cls = (n.risk?"risk ":"") + (n.important?"important":"");
         const kw = (n.matched&&n.matched.length) ? '<span class="kw">⚠️ '+n.matched.join(", ")+'</span>' : "";
+        const theme = n.theme ? '<span class="theme">'+esc(n.theme)+'</span>' : "";
+        const star = n.important ? '<span class="star">★</span>' : "";
         const head = n.ko_title ? esc(n.ko_title) : esc(n.title);   // 번역 있으면 한국어
-        const a = n.link ? '<a href="'+n.link+'" target="_blank" rel="noopener">'+head+'</a>' : head;
+        const inner = star + head;
+        const a = n.link ? '<a href="'+n.link+'" target="_blank" rel="noopener">'+inner+'</a>' : inner;
         const summary = n.summary ? '<div class="summary">'+esc(n.summary)+'</div>' : "";
         const orig = n.ko_title ? '<div class="orig">'+esc(n.title)+'</div>' : "";   // 원문 영어 작게
-        return '<li class="'+risk+'">'+a+summary+orig+'<div class="meta">'+n.source+(n.time?" · "+n.time:"")+kw+'</div></li>';
+        return '<li class="'+cls.trim()+'">'+a+summary+orig+'<div class="meta">'+theme+n.source+(n.time?" · "+n.time:"")+kw+'</div></li>';
       }).join("") : '<li class="meta">뉴스를 불러오지 못했어요 (피드 일시 차단일 수 있어요).</li>';
 
       document.getElementById("onboarding").innerHTML=(d.onboarding||[]).map(t=>"<li>"+t+"</li>").join("");

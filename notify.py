@@ -111,6 +111,12 @@ def build_alert_message(composite: dict, judged: list, run_dt) -> str:
     )
     lines.append(f"{c['emoji']} {c['title']} (데이터 기준: {data_date})")
 
+    # ★ AI 브리핑을 머리글로 (지표+뉴스를 엮은 한 단락). 엔진 폴백이어도 사용.
+    brief = (c.get("analysis", {}) or {}).get("commentary", {}).get("text", "")
+    if brief:
+        lines.append("")
+        lines.append(brief)
+
     # 방향(어제 대비) + 확신도 한 줄
     extra = []
     d = c.get("direction", {})

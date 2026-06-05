@@ -53,11 +53,6 @@ def run() -> int:
     # 2-1) 인사이트 엔진: 위험점수·주도지표·과거대비·자동해설 등을 계산해 붙임
     composite["analysis"] = insight.build_analysis(judged, composite)
 
-    # 2-1b) AI 시황 코멘터리 (키 없으면 자동으로 엔진 해설로 폴백)
-    composite["analysis"]["commentary"] = commentary.generate_commentary(
-        composite["analysis"], judged
-    )
-
     # 2-2) 다가오는 경제지표 발표 일정(한국시간). 실패해도 전체엔 영향 없음.
     try:
         composite["calendar"] = econ_calendar.upcoming_releases(api_key)
@@ -65,12 +60,18 @@ def run() -> int:
         log.warning(f"경제 캘린더 조회 실패(무시): {e}")
         composite["calendar"] = []
 
-    # 2-3) 뉴스 헤드라인(RSS) + (키 있으면) 한국어 번역·요약. 실패해도 전체엔 영향 없음.
+    # 2-3) 뉴스 헤드라인(RSS) 수집
     try:
-        composite["news"] = commentary.translate_news(news.fetch_news())
+        news_list = news.fetch_news()
     except Exception as e:
         log.warning(f"뉴스 조회 실패(무시): {e}")
-        composite["news"] = []
+        news_list = []
+
+    # 2-4) AI 데일리: 브리핑(지표+뉴스 연결) + 뉴스 번역·큐레이션을 한 번에.
+    #      키 없으면 엔진 해설 + 영어 헤드라인으로 자동 폴백.
+    daily = commentary.ai_daily(composite["analysis"], judged, news_list)
+    composite["analysis"]["commentary"] = {"text": daily["briefing"], "source": daily["source"]}
+    composite["news"] = daily["news"]
 
     # 3) 콘솔 출력
     signals.print_signals(judged, composite)
