@@ -1,6 +1,6 @@
 {
-  "updated_kst": "2026-06-05 11:15 KST",
-  "updated_iso": "2026-06-05T11:15:10.272542+09:00",
+  "updated_kst": "2026-06-05 12:05 KST",
+  "updated_iso": "2026-06-05T12:05:06.200280+09:00",
   "data_date": "2026-06-04",
   "composite": {
     "grade": "green",
@@ -21,6 +21,61 @@
       "state": "same",
       "text": "어제와 같아요",
       "arrow": "➖"
+    },
+    "analysis": {
+      "risk_score": 14,
+      "score_band": "매우 차분",
+      "score_pct": 46,
+      "score_avg": 16,
+      "score_delta_5d": -4,
+      "drivers": [
+        {
+          "name": "하이일드 ETF (HYG)",
+          "signal": "yellow",
+          "value": 79.83,
+          "unit": "$"
+        },
+        {
+          "name": "근원 CPI(전년비)",
+          "signal": "yellow",
+          "value": 335.423,
+          "unit": "지수"
+        },
+        {
+          "name": "근원 PCE(전년비)",
+          "signal": "yellow",
+          "value": 129.63,
+          "unit": "지수"
+        }
+      ],
+      "tier_reads": {
+        "1": "중립",
+        "2": "중립",
+        "3": "중립"
+      },
+      "divergence": false,
+      "proximity": {
+        "name": "WTI 유가",
+        "value": 95.96,
+        "unit": "$",
+        "line": 100,
+        "gap": 4.04,
+        "rel": 0.04210087536473538
+      },
+      "percentile": {
+        "하이일드 스프레드": 13,
+        "VIX 공포지수": 26,
+        "WTI 유가": 84
+      },
+      "streak_calm": 13,
+      "days_since_danger": 13,
+      "narrative": [
+        "오늘 위험 점수는 14/100 — '매우 차분' 수준이에요. 지난 1년 중 46% 지점으로 중간 편이고요.",
+        "지금 읽기를 끌어올리는 건 하이일드 ETF (HYG)(79.83$), 근원 CPI(전년비)(335.423지수), 근원 PCE(전년비)(129.63지수)예요.",
+        "층위별로는 신용시장 중립 · 매크로 중립 · 심리 중립 상태예요.",
+        "특히 WTI 유가가 95.96$로 100선까지 4.04 남아 '한 끗' 거리예요.",
+        "지난주보다 위험이 -4점 내렸고 13일 연속 평상시예요."
+      ]
     },
     "missing": 0,
     "active": 11,

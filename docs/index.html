@@ -47,6 +47,20 @@
     .chip.up { color:#fda4a4; border-color:#5b2330; background:#2a151a; }
     .chip.down { color:#9ae6b4; border-color:#1f4d35; background:#13241b; }
     .hero .foot { font-size:.74rem; color:var(--muted); margin-top:14px; display:flex; gap:12px; flex-wrap:wrap; }
+    /* 위험 점수 게이지 */
+    .gauge-wrap { margin-top:16px; }
+    .gauge-top { display:flex; align-items:baseline; gap:8px; margin-bottom:7px; }
+    .gauge-score { font-size:1.5rem; font-weight:800; letter-spacing:-.02em; }
+    .gauge-band { font-size:.82rem; color:var(--muted); }
+    .gauge { position:relative; height:10px; border-radius:6px; background:linear-gradient(90deg,#22c55e 0%,#eab308 45%,#f97316 70%,#ef4444 100%); }
+    .gauge-marker { position:absolute; top:-4px; width:4px; height:18px; border-radius:2px; background:#fff; box-shadow:0 0 0 2px rgba(0,0,0,.45); transform:translateX(-2px); }
+    .gauge-cap { font-size:.74rem; color:var(--muted); margin-top:8px; }
+    /* 총평(자동 해설) */
+    .narrative { padding:16px 18px; }
+    .narrative p { margin:0 0 9px; font-size:.92rem; line-height:1.65; }
+    .narrative p:last-child { margin-bottom:0; }
+    .tierchips { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:12px; }
+    .tierchip { font-size:.72rem; font-weight:600; padding:4px 11px; border-radius:999px; border:1px solid var(--line); color:var(--text); }
 
     /* 행동 가이드 */
     .actions { padding:16px 20px; margin-top:12px; }
@@ -131,6 +145,18 @@
     </div>
     <div class="plain" id="v-plain"></div>
     <div class="chips" id="v-chips"></div>
+    <div class="gauge-wrap" id="gauge-wrap" style="display:none;">
+      <div class="gauge-top"><span class="gauge-score" id="gauge-score"></span><span class="gauge-band" id="gauge-band"></span></div>
+      <div class="gauge"><div class="gauge-marker" id="gauge-marker"></div></div>
+      <div class="gauge-cap" id="gauge-cap"></div>
+    </div>
+  </div>
+
+  <!-- 오늘의 총평 (자동 해설) -->
+  <div class="label">📌 오늘의 총평</div>
+  <div class="card narrative" id="narrative-card">
+    <div class="tierchips" id="tier-chips"></div>
+    <div id="narrative"></div>
   </div>
 
   <!-- 관찰 중 -->
@@ -219,6 +245,9 @@
       if (c.confidence && c.confidence!=="-") chips.push('<span class="chip">확신도 '+c.confidence+"</span>");
       document.getElementById("v-chips").innerHTML = chips.join("");
 
+      // 위험 점수 게이지 + 총평
+      renderInsight(c.analysis || {});
+
       document.getElementById("v-foot").innerHTML =
         "데이터 기준일 "+(d.data_date||"-") +
         " · 위험 T1:"+c.tier_danger["1"]+" T2:"+c.tier_danger["2"]+" T3:"+c.tier_danger["3"] +
@@ -259,6 +288,32 @@
       document.getElementById("onboarding").innerHTML=(d.onboarding||[]).map(t=>"<li>"+t+"</li>").join("");
       document.getElementById("manual").innerHTML=(d.manual_check||[]).map(m=>"<li>"+m+"</li>").join("");
       document.getElementById("disclaimer").textContent="⚠️ "+(d.disclaimer||"");
+    }
+
+    const TIER_COLOR = { "안정":"var(--green)", "중립":"var(--muted)", "경계":"var(--orange)", "경고":"var(--red)", "데이터부족":"var(--gray)" };
+    function renderInsight(a) {
+      const gw = document.getElementById("gauge-wrap");
+      if (a.risk_score == null) { gw.style.display = "none"; }
+      else {
+        gw.style.display = "block";
+        document.getElementById("gauge-score").textContent = a.risk_score + " / 100";
+        document.getElementById("gauge-band").textContent = a.score_band || "";
+        document.getElementById("gauge-marker").style.left = a.risk_score + "%";
+        let cap = "위험 점수 (0=안전 · 100=위기)";
+        if (a.score_pct != null) cap += " · 지난 1년 중 " + a.score_pct + "% 지점";
+        if (a.score_avg != null) cap += " (평균 " + a.score_avg + ")";
+        document.getElementById("gauge-cap").textContent = cap;
+      }
+      // Tier별 상태 칩
+      const tr = a.tier_reads || {};
+      const names = { "1":"신용시장", "2":"매크로", "3":"심리" };
+      document.getElementById("tier-chips").innerHTML = ["1","2","3"].filter(k=>tr[k]).map(k=>{
+        const col = TIER_COLOR[tr[k]] || "var(--muted)";
+        return '<span class="tierchip" style="border-color:'+col+';color:'+col+'">'+names[k]+" "+tr[k]+"</span>";
+      }).join("");
+      // 자동 해설 문장들
+      document.getElementById("narrative").innerHTML =
+        (a.narrative || ["해설 준비 중…"]).map(p=>"<p>"+p+"</p>").join("");
     }
 
     function drawTrend(h) {

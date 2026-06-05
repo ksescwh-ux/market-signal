@@ -182,6 +182,7 @@ def build_latest_dict(judged: list, composite: dict, run_dt, prev: dict = None) 
             "watch": composite.get("watch", []),            # ★ 관찰 중(미확정)
             "confidence": composite.get("confidence", "-"),  # ★ 확신도
             "direction": composite.get("direction", {}),     # ★ 어제 대비 방향
+            "analysis": composite.get("analysis", {}),       # ★ 인사이트 엔진 결과
             "missing": composite["missing"],
             "active": composite["active"],
             "yellow_count": composite["yellow_count"],

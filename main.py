@@ -21,6 +21,7 @@ import fetch
 import signals
 import storage
 import notify
+import insight
 
 log = util.get_logger()
 
@@ -45,6 +46,9 @@ def run() -> int:
     prev = storage.get_previous_state(run_dt.strftime("%Y-%m-%d"))
     judged = signals.judge_all(results)
     composite = signals.compute_composite(judged, prev)
+
+    # 2-1) 인사이트 엔진: 위험점수·주도지표·과거대비·자동해설 등을 계산해 붙임
+    composite["analysis"] = insight.build_analysis(judged, composite)
 
     # 3) 콘솔 출력
     signals.print_signals(judged, composite)
