@@ -153,6 +153,14 @@
     .manual { padding:16px 18px; }
     .manual h3 { margin:0 0 8px; font-size:.86rem; }
     .manual ul { margin:0; padding-left:18px; } .manual li { font-size:.85rem; margin:4px 0; }
+    /* 지정학 브리핑 */
+    .geo { padding:16px 18px; }
+    .geo-tone { display:inline-block; font-size:.7rem; font-weight:700; padding:3px 10px; border-radius:999px; margin-bottom:10px; }
+    .geo-tone.t-up { color:#fda4a4; background:#2a151a; border:1px solid #5b2330; }
+    .geo-tone.t-down { color:#9ae6b4; background:#13241b; border:1px solid #1f4d35; }
+    .geo-tone.t-mid { color:var(--muted); background:var(--card2); border:1px solid var(--line); }
+    .geo-text { font-size:.9rem; line-height:1.7; white-space:pre-wrap; word-break:break-word; }
+    .geo-text a { color:var(--accent); word-break:break-all; }
     footer { color:var(--muted); font-size:.74rem; margin-top:28px; line-height:1.6; border-top:1px solid var(--line); padding-top:16px; }
     #error { display:none; color:var(--red); background:#1d1014; border:1px solid #5b2330; padding:14px 16px; border-radius:12px; margin:16px 0; font-size:.86rem; }
   </style>
@@ -252,9 +260,13 @@
     <ul id="onboarding"></ul>
   </details>
 
-  <!-- 수동 확인 -->
-  <div class="label">수동 확인 필요 (자동화 안 됨)</div>
-  <div class="card manual"><ul id="manual"></ul></div>
+  <!-- 지정학·정책 (AI 웹검색 브리핑, 없으면 수동확인) -->
+  <div class="label" id="geo-label">🌍 지정학·정책 (참고)</div>
+  <div class="card geo" id="geo-card" style="display:none;">
+    <span class="geo-tone" id="geo-tone"></span>
+    <div class="geo-text" id="geo-text"></div>
+  </div>
+  <div class="card manual" id="manual-card"><ul id="manual"></ul></div>
 
   <footer id="disclaimer"></footer>
 
@@ -367,7 +379,27 @@
       }).join("") : '<li class="meta">뉴스를 불러오지 못했어요 (피드 일시 차단일 수 있어요).</li>';
 
       document.getElementById("onboarding").innerHTML=(d.onboarding||[]).map(t=>"<li>"+t+"</li>").join("");
-      document.getElementById("manual").innerHTML=(d.manual_check||[]).map(m=>"<li>"+m+"</li>").join("");
+      // 지정학 브리핑(있으면) vs 수동확인(없으면)
+      const geo = d.geo;
+      const geoCard = document.getElementById("geo-card");
+      const manualCard = document.getElementById("manual-card");
+      if (geo && geo.text) {
+        geoCard.style.display = "block";
+        manualCard.style.display = "none";
+        const tone = geo.tone || "";
+        const tcls = /고조/.test(tone) ? "t-up" : (/완화/.test(tone) ? "t-down" : "t-mid");
+        const tt = document.getElementById("geo-tone");
+        tt.className = "geo-tone " + tcls;
+        tt.textContent = "톤: " + (tone || "혼재");
+        // URL을 클릭 가능하게
+        const safe = geo.text.replace(/</g,"&lt;").replace(/(https?:\/\/[^\s]+)/g,'<a href="$1" target="_blank" rel="noopener">$1</a>');
+        document.getElementById("geo-text").innerHTML = safe;
+      } else {
+        geoCard.style.display = "none";
+        manualCard.style.display = "block";
+        document.getElementById("geo-label").textContent = "수동 확인 필요 (자동화 안 됨)";
+        document.getElementById("manual").innerHTML=(d.manual_check||[]).map(m=>"<li>"+m+"</li>").join("");
+      }
       document.getElementById("disclaimer").textContent="⚠️ "+(d.disclaimer||"");
     }
 

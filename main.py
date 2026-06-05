@@ -73,6 +73,13 @@ def run() -> int:
     composite["analysis"]["commentary"] = {"text": daily["briefing"], "source": daily["source"]}
     composite["news"] = daily["news"]
 
+    # 2-5) 지정학·정책 브리핑(웹검색). 키 없으면 None → 대시보드는 정적 '수동확인' 유지.
+    try:
+        composite["geo"] = commentary.geo_brief(judged)
+    except Exception as e:
+        log.warning(f"지정학 브리핑 실패(무시): {e}")
+        composite["geo"] = None
+
     # 3) 콘솔 출력
     signals.print_signals(judged, composite)
 

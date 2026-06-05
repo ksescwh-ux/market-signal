@@ -25,10 +25,14 @@ DAILY_SYSTEM = """\
 당신은 한국 개인투자자(주린이)를 위한 시장 애널리스트입니다.
 아래 [지표 데이터]와 [오늘의 뉴스 헤드라인]을 함께 보고 두 가지를 만드세요.
 
-1) briefing — 오늘의 시장을 한 편의 브리핑으로(4~6문장).
-   * 지표 상황과 뉴스를 '연결'해 설명하세요. (예: 어떤 지표가 노란불인데 관련 뉴스가 겹치는지,
-     반대로 잠잠한 곳은 어디인지.)
-   * 가장 중요한 것부터. 어려운 용어는 괄호로 짧게 풀어주세요.
+1) briefing — '인사이트 있는' 데일리 브리핑(4~6문장). 단순 요약·나열은 금지.
+   반드시 아래 셋을 엮으세요(이게 핵심입니다):
+   * 연결(메커니즘): 오늘 뉴스가 우리가 추적하는 지표(유가·VIX·하이일드 스프레드·금리·물가 등)
+     중 '무엇'을 '어떤 경로'로 건드리는지. (예: 중동 이슈 → 유가 → 물가·기업비용)
+   * 민감도: 그 지표가 지금 위험선에 가깝거나(제공된 '위험선_근접'), 역사적으로 높은
+     위치인지(제공된 '백분위')를 보고 '지금 특히 민감/둔감한지'.
+   * 지켜볼 트리거: 무엇이 더 진행되면 신호가 악화될지 한 가지.
+   가장 중요한 것부터. 어려운 용어는 괄호로 짧게. (단순히 "노란불 몇 개"만 세지 마세요.)
 
 2) news — 각 헤드라인마다:
    * ko_title : 자연스러운 한국어 번역(신문 제목처럼 간결).
@@ -150,6 +154,97 @@ def ai_daily(analysis: dict, judged: list, news_list: list) -> dict:
     except Exception as e:
         log.warning(f"AI 데일리 실패({e}) → 엔진 해설 + 영어 헤드라인으로 폴백")
         return fallback
+
+
+# ── 지정학·정책 브리핑 (웹 검색) ───────────────────────────────
+GEO_SYSTEM = """\
+당신은 지정학·정책 리스크를 한국 개인투자자에게 '인사이트' 있게 풀어주는 애널리스트입니다.
+
+먼저 web_search 로 '최근(오늘~며칠)' 시장에 영향 줄 만한 이슈를 찾으세요:
+트럼프 발언·정책 톤, 이란·이스라엘·중동 정세, 관세·제재·수출통제 등.
+
+그다음 아래 형식의 한국어 '참고 브리핑'을 쓰세요.
+
+중간 설명("검색하겠습니다" 등) 없이, 곧바로 '톤:'으로 시작하는 브리핑만 출력하세요.
+
+첫 줄: 톤: <고조|완화|혼재|특이사항 없음>
+본문(3~5문장):
+  - 핵심 이슈 1~2개를 짧게.
+  - ★연결(메커니즘): 그 이슈가 우리가 추적하는 지표(유가 WTI, VIX, 하이일드 스프레드, 미 10년물 금리)
+    중 무엇을 어떤 경로로 건드리는지.
+  - ★민감도: 아래 '현재 지표 상황'을 보고 그 지표가 지금 특히 민감한지(예: 유가가 위험선 코앞).
+  - ★지켜볼 트리거: 무엇이 더 진행되면 위험이 커질지 한 가지.
+마지막 줄들: 출처: 제목 - URL  (2~3개)
+
+[규칙]
+- 검색으로 확인된 내용만 쓰세요. 별일 없으면 솔직히 '특이사항 없음'.
+- 예측("오를 것")·매매조언("사라/팔아라") 금지. 정성 판단이라 '참고용'임을 의식해 단정 회피.
+- 존댓말, 쉽게.
+"""
+
+
+def _geo_snapshot(judged: list) -> str:
+    """지정학 브리핑이 '민감도' 판단에 쓸 현재 지표 상황 요약."""
+    want = {"WTI 유가", "VIX 공포지수", "하이일드 스프레드", "미 10년물 금리"}
+    rows = [
+        f"- {r['name']}: {r['value']}{r.get('unit','')} ({r['signal']})"
+        for r in judged if r["name"] in want and not r.get("missing")
+    ]
+    return "현재 지표 상황:\n" + "\n".join(rows)
+
+
+def geo_brief(judged: list) -> dict:
+    """
+    웹 검색으로 지정학/정책 이슈를 찾아 '우리 지표와 엮은' 참고 브리핑을 생성.
+    돌려주는 값: {"tone": str, "text": str} (출처 포함). 키 없음/실패면 None → 정적 '수동 확인' 유지.
+    """
+    if not os.getenv("ANTHROPIC_API_KEY"):
+        return None
+    try:
+        import anthropic
+
+        client = anthropic.Anthropic()
+        user = (
+            "오늘 시장에 영향 줄 지정학/정책 이슈를 웹에서 찾아, 아래 우리 지표 상황과 엮어 "
+            "한국어 참고 브리핑을 써줘.\n\n" + _geo_snapshot(judged)
+        )
+        messages = [{"role": "user", "content": user}]
+        resp = None
+        for _ in range(4):  # 웹검색 서버툴이 pause_turn 내면 이어서 재개
+            resp = client.messages.create(
+                model=MODEL,
+                max_tokens=1600,
+                tools=[{"type": "web_search_20260209", "name": "web_search"}],
+                system=[{"type": "text", "text": GEO_SYSTEM, "cache_control": {"type": "ephemeral"}}],
+                messages=messages,
+            )
+            if resp.stop_reason == "pause_turn":
+                messages.append({"role": "assistant", "content": resp.content})
+                continue
+            break
+
+        full = "\n".join(b.text for b in resp.content if b.type == "text").strip()
+        if not full:
+            return None
+
+        # 최종 브리핑만 추출: 마지막 '톤:' 이후 + 마크다운 군더더기 제거
+        idx = full.rfind("톤:")
+        if idx != -1:
+            full = full[idx:]
+        full = full.replace("**", "").replace("---", "").strip()
+
+        # 첫 줄에서 톤 분리
+        tone = "혼재"
+        lines = [ln for ln in full.splitlines()]
+        if lines and "톤:" in lines[0]:
+            tone = lines[0].split("톤:", 1)[1].strip()
+            full = "\n".join(lines[1:]).strip()
+        log.info(f"지정학 브리핑 생성 성공 (톤: {tone})")
+        return {"tone": tone, "text": full}
+
+    except Exception as e:
+        log.warning(f"지정학 브리핑 실패({e}) → 정적 '수동 확인' 유지")
+        return None
 
 
 if __name__ == "__main__":
