@@ -351,22 +351,25 @@
         const col = TIER_COLOR[tr[k]] || "var(--muted)";
         return '<span class="tierchip" style="border-color:'+col+';color:'+col+'">'+names[k]+" "+tr[k]+"</span>";
       }).join("");
-      // 해설: AI 코멘터리가 있으면 그것을 메인으로, 자동 분석은 '근거'로 접어둠
+      // 해설: AI든 엔진이든 '하나의 흐르는 문단'으로 보여줌
       const com = a.commentary || {};
-      const bullets = (a.narrative || ["해설 준비 중…"]).map(p=>"<p>"+p+"</p>").join("");
+      const paragraph = (a.narrative || ["해설 준비 중…"]).join(" ");
       const wrap = document.getElementById("narrative-wrap");
       const badge = document.getElementById("ai-badge");
       const comEl = document.getElementById("commentary");
+      comEl.style.display = "block";
+      badge.style.display = "inline-block";
       if (com.source === "ai" && com.text) {
-        badge.style.display = "inline-block";
-        comEl.style.display = "block";
+        badge.textContent = "✨ AI 해설";
+        badge.style.background = "linear-gradient(90deg,#6366f1,#8b5cf6)";
         comEl.textContent = com.text;
-        wrap.innerHTML = '<details class="ev"><summary>핵심 근거 (자동 분석 수치)</summary><div id="narrative">'+bullets+'</div></details>';
+        wrap.innerHTML = '<details class="ev"><summary>핵심 근거 (자동 분석 수치)</summary><div id="narrative">'
+          + (a.narrative||[]).map(p=>"<p>"+p+"</p>").join("") + '</div></details>';
       } else {
-        // AI 없음 → 자동 분석 문장을 그대로 본문으로
-        badge.style.display = "none";
-        comEl.style.display = "none";
-        wrap.innerHTML = '<div id="narrative">'+bullets+'</div>';
+        badge.textContent = "🧭 자동 분석";
+        badge.style.background = "#334155";
+        comEl.textContent = paragraph;
+        wrap.innerHTML = "";
       }
     }
 

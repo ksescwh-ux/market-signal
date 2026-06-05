@@ -217,48 +217,96 @@ def build_analysis(judged: list, composite: dict) -> dict:
 # ─────────────────────────────────────────────────────────────
 # 자동 작문 (재료 → 사람용 문장)
 # ─────────────────────────────────────────────────────────────
+# 점수 등급 → 헤드라인용 표현
+_BAND_PHRASE = {
+    "매우 차분": "잔잔한", "차분": "비교적 차분한", "보통": "중립적인",
+    "주의": "슬슬 경계해야 할", "위험": "위험 신호가 켜진", "심각": "매우 위험한",
+}
+
+
 def compose_narrative(a: dict) -> list:
+    """
+    AI 해설처럼 '헤드라인 → 핵심 통찰 → 체크포인트 → 마무리' 흐름으로
+    자동 작문합니다. (제공된 수치만 사용, 예측·조언 없음)
+    """
     s = []
     score, band = a["risk_score"], a["score_band"]
+    pctl = a.get("percentile", {})
 
-    # 1) 점수 + 과거 대비
-    line = f"오늘 위험 점수는 {score}/100 — '{band}' 수준이에요."
-    if a["score_pct"] is not None:
-        loc = "낮은(차분한)" if a["score_pct"] <= 40 else ("높은(긴장된)" if a["score_pct"] >= 60 else "중간")
-        line += f" 지난 1년 중 {a['score_pct']}% 지점으로 {loc} 편이고요."
-    s.append(line)
-
-    # 2) 주도 지표
-    if a["drivers"]:
-        names = ", ".join(f"{d['name']}({d['value']}{d['unit']})" for d in a["drivers"])
-        s.append(f"지금 읽기를 끌어올리는 건 {names}예요.")
+    # 1) 헤드라인 — 한마디 + 점수의 역사적 위치
+    head = f"지금 시장은 한마디로 '{_BAND_PHRASE.get(band, band)}' 상태예요. 위험 점수는 100점 만점에 {score}점"
+    pct = a.get("score_pct")
+    calm_band = band in ("매우 차분", "차분", "보통")
+    if pct is None:
+        head += "이에요."
+    elif pct >= 60 and calm_band:
+        # 절대값은 낮지만 '잠잠했던 1년' 기준으론 높은, 미묘한 상황
+        head += f"이에요. 절대적으론 낮지만, 워낙 잠잠했던 지난 1년 기준으로 보면 {pct}% 지점으로 살짝 올라온 편이고요."
+    elif pct <= 40:
+        head += "으로, 지난 1년 기준으로도 낮은 편이에요."
+    elif pct >= 60:
+        head += f"으로, 지난 1년 중 {pct}% 지점까지 올라온 다소 높은 수준이에요."
     else:
-        s.append("위험을 끌어올리는 지표가 거의 없어 전반적으로 잔잔해요.")
+        head += f"으로, 지난 1년 평균({a['score_avg']}점) 부근이에요."
+    s.append(head)
 
-    # 3) Tier별 + 괴리
-    tr = a["tier_reads"]
-    tline = f"층위별로는 신용시장 {tr[1]} · 매크로 {tr[2]} · 심리 {tr[3]} 상태예요."
-    if a["divergence"]:
-        tline += " 한쪽은 잔잔한데 한쪽은 달아오르는 '괴리'가 보여요 — 이런 엇갈림은 눈여겨볼 대목이에요."
-    s.append(tline)
+    # 2) 핵심 통찰 — '왕 지표' 하이일드 스프레드의 역사적 위치를 쉬운 말로
+    hy = pctl.get("하이일드 스프레드")
+    if hy is not None:
+        if hy <= 30:
+            s.append(
+                f"특히 시장이 가장 먼저 겁먹는 신용시장(하이일드 스프레드)이 "
+                f"지난 1년 중 하위 {hy}% 수준이라, '기업이 빚을 못 갚을 걱정'은 거의 없는 편안한 자리예요."
+            )
+        elif hy >= 70:
+            s.append(
+                f"특히 신용시장(하이일드 스프레드)이 지난 1년 중 상위 {100 - hy}%까지 올라, "
+                f"기업 부도를 걱정하는 분위기가 평소보다 커졌어요 — 폭락 전 가장 중요한 경고 신호예요."
+            )
+        else:
+            s.append("신용시장(하이일드 스프레드)은 1년 평균 부근으로, 아직 뚜렷한 긴장은 없어요.")
 
-    # 4) 위험선 근접
-    p = a["proximity"]
+    # 3) 체크포인트 — 위험선 근접 + 역사적으로 높은 지표 (같은 지표는 한 문장으로 합침)
+    clauses = []
+    p = a.get("proximity")
+    prox_name = p["name"] if p else None
     if p:
         subj = _josa(p["name"], "이", "가")
-        s.append(f"특히 {subj} {p['value']}{p['unit']}로 {p['line']}선까지 {p['gap']} 남아 '한 끗' 거리예요.")
+        note = ""
+        pp = pctl.get(p["name"])
+        if pp is not None and pp >= 70:
+            note = f" — 게다가 1년 기준으로도 높은 축(상위 {100 - pp}%)"
+        clauses.append(
+            f"{subj} {p['value']}{p['unit']}로 심리적 분기점인 {p['line']}선을 {p['gap']} 앞두고 있다는 점{note}"
+        )
+    for name, pc in pctl.items():
+        if name == "하이일드 스프레드" or name == prox_name or pc is None:
+            continue
+        if pc >= 70:
+            clauses.append(f"{_josa(name, '이', '가')} 1년 기준 이미 높은 축(상위 {100 - pc}%)이라는 점")
+    if a.get("divergence"):
+        clauses.append("층위 간 온도차(괴리)가 보인다는 점")
+    if clauses:
+        s.append("다만 체크포인트도 있어요 — " + ", 그리고 ".join(clauses) + "이에요.")
 
-    # 5) 모멘텀 + 연속
-    mo = []
-    if a["score_delta_5d"] is not None:
-        if a["score_delta_5d"] > 3: mo.append(f"지난주보다 위험이 +{a['score_delta_5d']}점 올랐고")
-        elif a["score_delta_5d"] < -3: mo.append(f"지난주보다 위험이 {a['score_delta_5d']}점 내렸고")
-        else: mo.append("지난주와 비슷하고")
+    # 4) 확산 여부 — 노란불이 번졌는지
+    if a["drivers"]:
+        names = ", ".join(d["name"] for d in a["drivers"][:2])
+        tr = a["tier_reads"]
+        calm = [nm for t, nm in {1: "신용시장", 3: "투자심리"}.items() if tr.get(t) in ("안정", "중립")]
+        tail = ("아직 " + "·".join(calm) + " 쪽으로는 번지지 않았어요.") if calm else "확산 여부를 지켜볼 단계예요."
+        s.append(f"{names} 등에 '노란불'이 켜졌지만, {tail}")
+
+    # 5) 마무리 — 연속 일수 + 모멘텀 (자연스러운 순서, 거짓 인과 없이)
+    close = []
     if a["streak_calm"] >= 2:
-        mo.append(f"{a['streak_calm']}일 연속 평상시예요")
+        close.append(f"최근 {a['streak_calm']}일째 '평상시'가 이어지고 있어요")
     elif a["days_since_danger"] == 0:
-        mo.append("오늘은 위험 구간이에요")
-    if mo:
-        s.append((" ".join(mo)).strip().rstrip(",") + ".")
+        close.append("오늘은 위험 구간에 들어선 상태예요")
+    d5 = a.get("score_delta_5d")
+    if d5 is not None and abs(d5) > 3:
+        close.append("지난주보다 위험 점수는 " + (f"{d5}점 올랐어요" if d5 > 0 else f"{abs(d5)}점 낮아졌어요"))
+    if close:
+        s.append(". ".join(close) + ".")
 
     return s
