@@ -1,6 +1,6 @@
 {
-  "updated_kst": "2026-06-05 17:38 KST",
-  "updated_iso": "2026-06-05T17:38:57.371631+09:00",
+  "updated_kst": "2026-06-05 18:46 KST",
+  "updated_iso": "2026-06-05T18:46:40.717057+09:00",
   "data_date": "2026-06-04",
   "composite": {
     "grade": "green",
@@ -77,7 +77,7 @@
         "최근 13일째 '평상시'가 이어지고 있어요. 지난주보다 위험 점수는 4점 낮아졌어요."
       ],
       "commentary": {
-        "text": "오늘 위험점수는 14점으로 '매우 차분'한 수준이고, 5일간 4점 더 내려가 안정적이에요. 다만 WTI 유가가 95.96달러로 위험선(100달러)까지 4달러밖에 안 남았고 과거 1년 백분위로도 84%라 높은 위치라, 유가 변동성을 다룬 뉴스(5번)는 지금 가장 민감하게 봐야 할 지표예요. 유가가 더 오르면 기업 비용과 물가(근원 CPI·PCE는 이미 노란불)를 통해 압박이 커질 수 있는 경로라서요. 한국·월가의 AI 관련주가 동반 급락한 뉴스(4번)는 VIX(공포지수, 현재 16.06·백분위 26%로 낮음)나 신용 쪽으로 아직 번지지 않았다는 점에서 일단 주식 내부의 흔들림으로 보여요. 다만 블랙스톤이 대표 펀드 환매를 제한했다는 뉴스(7번)는 사모자산 쪽 불안이 신용(하이일드 ETF는 이미 노란불) 경로로 옮겨갈지 지켜볼 트리거예요. 지금 당장 층위 간 괴리는 없어 신호는 일관되게 차분하지만, 유가 100달러 돌파와 환매 제한 확산 두 가지가 더 진행되는지가 관전 포인트예요.",
+        "text": "오늘 위험점수는 14점으로 '매우 차분'한 상태예요. 다만 시선을 끄는 건 호르무즈 해협 긴장(헤드라인 8)과 2026년 유가 변동성 이슈(헤드라인 7)인데, 이런 지정학 변수는 곧바로 WTI 유가로 전달되고, 유가가 오르면 기업 비용과 물가(근원 CPI·PCE)로 번지는 경로예요. 지금 WTI는 95.96달러로 위험선(100달러)까지 4달러 남짓밖에 안 남았고(근접), 과거 1년 백분위로도 84%라 역사적으로 높은 위치라 '특히 민감한' 상태예요. 게다가 근원 CPI·근원 PCE가 이미 노란불이라, 유가가 더 오르면 물가 지표 쪽으로 압력이 겹칠 수 있는 구조예요. 반면 신용 쪽(하이일드 스프레드 백분위 13%)과 변동성(VIX 백분위 26%)은 낮아 시장 전반의 불안은 아직 잠잠해요. 지켜볼 트리거는 단 하나, WTI가 100달러 선을 넘어서는지인데, 이 경우 물가 노란불과 맞물려 신호가 무거워질 수 있어요.",
         "source": "ai"
       }
     },
@@ -280,18 +280,54 @@
   ],
   "geo": {
     "tone": "고조",
-    "text": "중동 정세가 다시 불안해지고 있습니다. \n유가는 이란이 쿠웨이트와 바레인을 공격하면서 중동 긴장이 고조되자 수요일 장 초반 1% 넘게 올랐고, 브렌트유가 배럴당 97.05달러까지 상승했습니다.\n 또한 \n이란은 트럼프 행정부가 휴전을 위반했다고 비난하며 호르무즈 해협을 봉쇄하고 중개자를 통한 미국과의 메시지 교환을 중단하겠다고 밝혔습니다.\n ★연결(메커니즘): 호르무즈 해협은 세계 원유 수송의 핵심 길목이라, 봉쇄 우려가 커지면 공급 차질 불안이 WTI 유가를 직접 끌어올리는 경로로 작용하고, 이는 다시 인플레 우려를 자극해 미 10년물 금리에도 상방 압력을 줄 수 있습니다. ★민감도: 지금 WTI(95.96달러)와 10년물 금리(4.49%)가 모두 'yellow(주의)' 구간이라 추가 충격에 특히 민감한 상태인 반면, 하이일드 스프레드(2.75%p)와 VIX(16.06)는 'green'으로 아직 전반적 위험 회피 심리는 잠잠한 편입니다. ★지켜볼 트리거: 이란의 호르무즈 해협 실제 봉쇄·차단이 현실화되거나 쿠웨이트·바레인 등 산유 인접국으로 충돌이 확산되면 유가→금리 경로의 위험이 커질 수 있어 가장 주시할 변수입니다. (또한 \n트럼프 행정부가 캐나다·중국 등 주요 교역국을 포함한 다수 국가에 대한 대규모 신규 관세를 이번 주 제안\n한 점도 함께 지켜볼 정책 변수입니다.)\n\n참고로 이는 정성적 판단에 기반한 참고용 브리핑이며, 특정 방향 예측이나 매매 권유가 아닙니다.\n\n출처:\n- Iran peace talks in question as Trump pressures Israel for ceasefire (Fox News) - https://www.foxnews.com/live-news/trump-iran-war-israel-lebanon-hormuz-june-2\n- Iran halts ceasefire talks with US, says it will keep Strait of Hormuz closed (The Hill) - https://thehill.com/policy/defense/5903844-iran-accuses-trump-ceasefire-violations/\n- What to know about Trump's sweeping new tariff proposal (ABC News) - https://abcnews.go.com/"
+    "text": "중동 정세가 시장의 핵심 변수입니다. \n이란이 호르무즈 해협의 상당 구간을 기뢰로 봉쇄했다고 미 국무장관 루비오가 상원 외교위 청문회에서 밝혔고\n, \n최근 미군이 호르무즈 해협 인근에서 이란 유조선을 타격해 기관실이 손상되는 등 미국과 이란 간 새로운 무력 충돌이 이어지고 있습니다.\n ★연결(메커니즘): 호르무즈는 세계 에너지 교역의 핵심 길목이라, 봉쇄·충돌이 심화되면 원유 공급 차질 우려로 WTI 유가를 직접 끌어올리는 경로가 작동합니다 — 실제로 \n네타냐후 총리가 필요시 이란을 다시 공격할 준비가 돼 있다고 밝힌 뒤 WTI는 2% 넘게 올라 96.02달러에 마감했습니다.\n ★민감도: 현재 우리 WTI 지표가 95.96달러로 이미 '주의(yellow)' 구간에 있어, 추가 악재에 특히 민감한 위치로 보입니다(위험선 코앞). 다만 \n전쟁이 이미 유가와 물가를 끌어올렸음에도 유가는 교전 초기 고점보다는 낮은 수준이며, 월가에는 미·이란이 결국 호르무즈 재개방 합의에 이를 것이라는 기대가 남아 있어\n VIX(16.06, green)와 하이일드 스프레드(2.75%p, green)는 아직 차분한 편입니다. ★지켜볼 트리거: \n이란이 호르무즈를 완전 봉쇄하고 바브엘만데브 등 다른 해협으로 전선을 확대하겠다고 위협한 만큼\n, 이 봉쇄 범위가 실제로 넓어지는지가 유가·VIX 동반 자극 여부의 핵심 분기점입니다. (※ 정성 판단에 기반한 참고용 브리핑이며, 매매 권유가 아닙니다.)\n\n출처: Iran has mined 'large segments' of Hormuz Strait, Rubio says - https://www.cnbc.com/2026/06/02/iran-war-strait-hormuz-marco-rubio-mine.html\n출처: Oil prices rise after Netanyahu says U.S., Israel prepared to attack Iran again - https://www.cnbc.com/2026/06/03/oil-prices-trump-pushes-back-on-reports-us-iran-talks-collapsed.html\n출처: Israel, Lebanon renew ceasefire as Iran attacks Kuwait airport - https://www.cbsnews.com/live-updates/trump-iran-war-attacks-kuwait-airport-israel-hezbollah-ceasefire/"
   },
   "news": [
     {
-      "title": "In ‘wild’ twist, SpaceX won’t be allowed early entry to the S&P 500 after all",
-      "link": "https://www.marketwatch.com/story/in-wild-twist-spacex-wont-be-allowed-early-entry-to-the-s-p-500-after-all-2c1b8205?mod=mw_rss_topstories",
+      "title": "‘This would be a one-time event’: How can I take extra money from my 401(k) without triggering higher Medicare premiums?",
+      "link": "https://www.marketwatch.com/story/this-would-be-a-one-time-event-how-can-i-take-extra-money-from-my-401-k-without-triggering-higher-medicare-premiums-fef1586d?mod=mw_rss_topstories",
       "source": "MarketWatch",
-      "time": "06/05 17:23",
+      "time": "06/05 18:15",
       "risk": false,
       "matched": [],
-      "ko_title": "반전 드라마…스페이스X, 결국 S&P500 조기 편입 무산",
-      "summary": "스페이스X의 S&P500 조기 편입이 무산됐다는 소식이에요.",
+      "ko_title": "401(k)에서 추가 인출 시 메디케어 보험료 안 올리는 법",
+      "summary": "은퇴계좌에서 돈을 더 빼면서도 의료보험료 인상을 피하는 방법을 다룬 개인 재무 조언이에요.",
+      "theme": "기타",
+      "important": false
+    },
+    {
+      "title": "Actor Tate Donovan sells lush oasis in Texas Hill Country after big price cut",
+      "link": "https://www.marketwatch.com/story/actor-tate-donovan-sells-lush-oasis-in-texas-hill-country-after-big-price-cut-84143e3e?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "time": "06/05 18:02",
+      "risk": false,
+      "matched": [],
+      "ko_title": "배우 테이트 도노반, 가격 낮춰 텍사스 별장 매각",
+      "summary": "유명 배우의 부동산 매각 소식으로 시장과 무관한 가십이에요.",
+      "theme": "기타",
+      "important": false
+    },
+    {
+      "title": "OpenAI says it will comply with Trump's order requiring AI model reviews before release",
+      "link": "https://www.cnbc.com/2026/06/05/openai-trump-ai-model-review-order.html",
+      "source": "CNBC",
+      "time": "06/05 17:57",
+      "risk": false,
+      "matched": [],
+      "ko_title": "오픈AI, 출시 전 AI 모델 검토 요구한 트럼프 행정명령 준수키로",
+      "summary": "오픈AI가 AI 모델 공개 전 정부 검토를 받으라는 명령에 따르겠다고 밝혔어요.",
+      "theme": "기타",
+      "important": false
+    },
+    {
+      "title": "‘This is a tricky subject’: We’re in our 70s and our only child is 40. Do we leave her everything?",
+      "link": "https://www.marketwatch.com/story/it-makes-us-feel-uncomfortable-were-in-our-70s-and-our-only-child-is-40-do-we-tell-her-were-leaving-her-everything-28421776?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "time": "06/05 17:56",
+      "risk": false,
+      "matched": [],
+      "ko_title": "70대 부부의 고민: 외동딸에게 전 재산을 물려줄까",
+      "summary": "상속 계획을 둘러싼 개인 재무 상담 사연이에요.",
       "theme": "기타",
       "important": false
     },
@@ -299,12 +335,62 @@
       "title": "India scraps tax on overseas bond investors in bid to attract foreign capital and shore up the rupee",
       "link": "https://www.cnbc.com/2026/06/05/india-tax-overseas-bond-investors.html",
       "source": "CNBC",
-      "time": "06/05 17:19",
+      "time": "06/05 17:44",
       "risk": false,
       "matched": [],
-      "ko_title": "인도, 외국 자본 유치 위해 해외 채권 투자자 세금 폐지",
-      "summary": "인도가 루피 방어와 외자 유치를 위해 해외 채권 투자자에 대한 세금을 없앴어요.",
+      "ko_title": "인도, 외국인 채권 투자세 폐지…외자 유치·루피 방어",
+      "summary": "인도가 해외 채권 투자자에 대한 세금을 없애 외국 자본을 끌어들이려 해요.",
       "theme": "거시",
+      "important": false
+    },
+    {
+      "title": "The stock market is at its frothiest since the global financial crisis, proclaims Citi. Why dip buyers shouldn’t bail yet.",
+      "link": "https://www.marketwatch.com/story/the-stock-market-is-at-its-frothiest-since-the-global-financial-crisis-proclaims-citi-why-dip-buyers-shouldnt-bail-yet-bd66f5a3?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "time": "06/05 17:44",
+      "risk": true,
+      "matched": [
+        "crisis"
+      ],
+      "ko_title": "씨티 '금융위기 이후 가장 거품'…그래도 매수세 버텨야 하는 이유",
+      "summary": "씨티가 증시 과열을 경고했지만 저가 매수세는 아직 빠지지 말라는 분석이에요.",
+      "theme": "거시",
+      "important": true
+    },
+    {
+      "title": "Meet the big winners of 2026 oil price volatility — and why their strategies are now shifting focus",
+      "link": "https://www.cnbc.com/2026/06/05/oil-price-iran-hedge-funds-quant-traders-trends-energy-shock.html",
+      "source": "CNBC",
+      "time": "06/05 17:40",
+      "risk": false,
+      "matched": [],
+      "ko_title": "2026년 유가 변동성의 승자들…전략 변화 주목",
+      "summary": "앞으로 유가 변동성에서 이득을 본 주체들과 그들의 전략 변화를 다룬 기사예요.",
+      "theme": "지정학",
+      "important": true
+    },
+    {
+      "title": "How the Strait of Hormuz standoff flipped the energy security debate",
+      "link": "https://www.cnbc.com/2026/06/05/iran-war-strait-of-hormuz-renewables-oil-gas.html",
+      "source": "CNBC",
+      "time": "06/05 17:39",
+      "risk": false,
+      "matched": [],
+      "ko_title": "호르무즈 해협 대치, 에너지 안보 논쟁을 뒤집다",
+      "summary": "호르무즈 해협 긴장이 에너지 안보 구도를 바꾸고 있다는 내용으로 유가에 직결돼요.",
+      "theme": "지정학",
+      "important": true
+    },
+    {
+      "title": "In ‘wild’ twist, SpaceX won’t be allowed early entry to the S&P 500 after all",
+      "link": "https://www.marketwatch.com/story/in-wild-twist-spacex-wont-be-allowed-early-entry-to-the-s-p-500-after-all-2c1b8205?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "time": "06/05 17:23",
+      "risk": false,
+      "matched": [],
+      "ko_title": "스페이스X, 결국 S&P500 조기 편입 불가",
+      "summary": "스페이스X의 지수 조기 편입이 무산됐다는 개별 종목·지수 이슈예요.",
+      "theme": "기타",
       "important": false
     },
     {
@@ -314,97 +400,9 @@
       "time": "06/05 16:50",
       "risk": false,
       "matched": [],
-      "ko_title": "중국, 미국서 AI 인재 더 빼가며 차세대 '슈퍼앱' 노린다",
-      "summary": "중국이 미국의 AI 인재를 영입하며 차세대 슈퍼앱 경쟁을 준비하고 있어요.",
+      "ko_title": "중국, 미국서 AI 인재 추가 영입…차세대 '슈퍼앱' 노려",
+      "summary": "중국이 미국 AI 인재를 데려가며 차세대 앱 시장을 겨냥하고 있어요.",
       "theme": "기타",
-      "important": false
-    },
-    {
-      "title": "South Korea stocks fall over 5% as tech heavyweights follow plunge in Wall Street's AI-linked names",
-      "link": "https://www.cnbc.com/2026/06/05/asia-markets-today-nikkei-225-kospi-hang-seng-index-csi-300-nifty50.html",
-      "source": "CNBC",
-      "time": "06/05 16:49",
-      "risk": true,
-      "matched": [
-        "plunge"
-      ],
-      "ko_title": "한국 증시 5% 넘게 급락…월가 AI주 급락에 기술 대형주 동반 하락",
-      "summary": "월가 AI 관련주 급락을 따라 한국 기술 대형주가 떨어지며 코스피가 5% 넘게 빠졌어요.",
-      "theme": "실적",
-      "important": true
-    },
-    {
-      "title": "Meet the big winners of 2026 oil price volatility — and why their strategies are now shifting focus",
-      "link": "https://www.cnbc.com/2026/06/05/oil-price-iran-hedge-funds-quant-traders-trends-energy-shock.html",
-      "source": "CNBC",
-      "time": "06/05 16:45",
-      "risk": false,
-      "matched": [],
-      "ko_title": "2026년 유가 변동성의 승자들…전략은 어떻게 바뀌나",
-      "summary": "유가 변동성 속에서 이득을 본 기업들과 그들의 전략 변화를 다룬 기사예요.",
-      "theme": "거시",
-      "important": true
-    },
-    {
-      "title": "One quadrillion is the number used to describe the wealth effect of South Korea’s stock-market miracle",
-      "link": "https://www.marketwatch.com/story/one-quadrillion-is-the-number-used-to-describe-the-wealth-effect-of-south-koreas-stock-market-miracle-8ecad9dd?mod=mw_rss_topstories",
-      "source": "MarketWatch",
-      "time": "06/05 16:27",
-      "risk": false,
-      "matched": [],
-      "ko_title": "'1000조'…한국 증시 기적의 부의 효과를 표현한 숫자",
-      "summary": "한국 증시 상승이 만든 부의 효과 규모를 조명한 소식이에요.",
-      "theme": "기타",
-      "important": false
-    },
-    {
-      "title": "Blackstone restricts flagship fund withdrawals as private asset fears reemerge",
-      "link": "https://www.cnbc.com/2026/06/04/blackstone-caps-withdrawals-private-credit.html",
-      "source": "CNBC",
-      "time": "06/05 16:08",
-      "risk": false,
-      "matched": [],
-      "ko_title": "블랙스톤, 대표 펀드 환매 제한…사모자산 우려 재부상",
-      "summary": "블랙스톤이 대표 펀드의 자금 인출을 제한하면서 사모자산에 대한 불안이 다시 커졌어요.",
-      "theme": "신용",
-      "important": true
-    },
-    {
-      "title": "India's cenbank cuts growth outlook, raises inflation forecast as it keeps rates steady at 5.25%",
-      "link": "https://www.cnbc.com/2026/06/05/india-rbi-rate-gdp-inflation.html",
-      "source": "CNBC",
-      "time": "06/05 15:22",
-      "risk": true,
-      "matched": [
-        "inflation"
-      ],
-      "ko_title": "인도 중앙은행, 성장 전망 하향·물가 전망 상향…금리 5.25% 동결",
-      "summary": "인도 중앙은행이 금리를 동결하면서 성장은 낮추고 물가 전망은 올렸어요.",
-      "theme": "거시",
-      "important": false
-    },
-    {
-      "title": "Tracking website, food watch: South Korea is obsessing over Nvidia CEO Jensen Huang's visit",
-      "link": "https://www.cnbc.com/2026/06/05/south-korea-is-obsessing-over-nvidia-ceo-jensen-huangs-visit.html",
-      "source": "CNBC",
-      "time": "06/05 13:40",
-      "risk": false,
-      "matched": [],
-      "ko_title": "추적 사이트에 맛집까지…한국, 엔비디아 CEO 황젠슨 방문에 열광",
-      "summary": "엔비디아 CEO의 한국 방문에 관심이 쏠리고 있다는 소식이에요.",
-      "theme": "기타",
-      "important": false
-    },
-    {
-      "title": "Warren invites Nvidia CEO Jensen Huang to Senate hearing on China AI chip sales",
-      "link": "https://www.cnbc.com/2026/06/04/nvidia-ceo-jensen-huang-warren-senate-hearing-china-ai-chips.html",
-      "source": "CNBC",
-      "time": "06/05 09:58",
-      "risk": false,
-      "matched": [],
-      "ko_title": "워런 의원, 엔비디아 CEO를 중국 AI칩 판매 청문회에 초청",
-      "summary": "미 상원의 워런 의원이 엔비디아 CEO를 중국 AI칩 수출 관련 청문회에 불렀어요.",
-      "theme": "지정학",
       "important": false
     }
   ],
