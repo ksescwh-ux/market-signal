@@ -1,11 +1,12 @@
 {
-  "updated_kst": "2026-06-05 10:06 KST",
-  "updated_iso": "2026-06-05T10:06:50.767890+09:00",
-  "data_date": "2026-06-04",
+  "updated_kst": "2026-06-06 17:17 KST",
+  "updated_iso": "2026-06-06T17:17:30.578514+09:00",
+  "data_date": "2026-06-05",
   "composite": {
     "grade": "green",
     "emoji": "🟢",
     "title": "평상시 — 유지",
+    "plain": "지금은 평소처럼 투자해도 무난한 구간이에요. 큰 위험 신호는 안 보여요.",
     "actions": [
       "정상 보유 / 현금 10~20%"
     ],
@@ -13,6 +14,72 @@
       "1": 0,
       "2": 0,
       "3": 0
+    },
+    "watch": [],
+    "confidence": "-",
+    "direction": {
+      "state": "same",
+      "text": "어제와 같아요",
+      "arrow": "➖"
+    },
+    "analysis": {
+      "risk_score": 14,
+      "score_band": "매우 차분",
+      "score_pct": 46,
+      "score_avg": 16,
+      "score_delta_5d": -4,
+      "drivers": [
+        {
+          "name": "하이일드 ETF (HYG)",
+          "signal": "yellow",
+          "value": 79.43,
+          "unit": "$"
+        },
+        {
+          "name": "근원 CPI(전년비)",
+          "signal": "yellow",
+          "value": 335.423,
+          "unit": "지수"
+        },
+        {
+          "name": "근원 PCE(전년비)",
+          "signal": "yellow",
+          "value": 129.63,
+          "unit": "지수"
+        }
+      ],
+      "tier_reads": {
+        "1": "중립",
+        "2": "중립",
+        "3": "중립"
+      },
+      "divergence": false,
+      "proximity": {
+        "name": "WTI 유가",
+        "value": 95.96,
+        "unit": "$",
+        "line": 100,
+        "gap": 4.04,
+        "rel": 0.04210087536473538
+      },
+      "percentile": {
+        "하이일드 스프레드": 10,
+        "VIX 공포지수": 16,
+        "WTI 유가": 84
+      },
+      "streak_calm": 13,
+      "days_since_danger": 13,
+      "narrative": [
+        "지금 시장은 한마디로 '잔잔한' 상태예요. 위험 점수는 100점 만점에 14점으로, 지난 1년 평균(16점) 부근이에요.",
+        "특히 시장이 가장 먼저 겁먹는 신용시장(하이일드 스프레드)이 지난 1년 중 하위 10% 수준이라, '기업이 빚을 못 갚을 걱정'은 거의 없는 편안한 자리예요.",
+        "다만 체크포인트도 있어요 — WTI 유가가 95.96$로 심리적 분기점인 100선을 4.04 앞두고 있다는 점 — 게다가 1년 기준으로도 높은 축(상위 16%)이에요.",
+        "하이일드 ETF (HYG), 근원 CPI(전년비) 등에 '노란불'이 켜졌지만, 아직 신용시장·투자심리 쪽으로는 번지지 않았어요.",
+        "최근 13일째 '평상시'가 이어지고 있어요. 지난주보다 위험 점수는 4점 낮아졌어요."
+      ],
+      "commentary": {
+        "text": "지금 시장은 한마디로 '잔잔한' 상태예요. 위험 점수는 100점 만점에 14점으로, 지난 1년 평균(16점) 부근이에요. 특히 시장이 가장 먼저 겁먹는 신용시장(하이일드 스프레드)이 지난 1년 중 하위 10% 수준이라, '기업이 빚을 못 갚을 걱정'은 거의 없는 편안한 자리예요. 다만 체크포인트도 있어요 — WTI 유가가 95.96$로 심리적 분기점인 100선을 4.04 앞두고 있다는 점 — 게다가 1년 기준으로도 높은 축(상위 16%)이에요. 하이일드 ETF (HYG), 근원 CPI(전년비) 등에 '노란불'이 켜졌지만, 아직 신용시장·투자심리 쪽으로는 번지지 않았어요. 최근 13일째 '평상시'가 이어지고 있어요. 지난주보다 위험 점수는 4점 낮아졌어요.",
+        "source": "engine"
+      }
     },
     "missing": 0,
     "active": 11,
@@ -28,13 +95,17 @@
       "tier": 1,
       "source": "fred",
       "code": "BAMLH0A0HYM2",
-      "value": 2.75,
+      "value": 2.74,
       "unit": "%p",
-      "date": "2026-06-03",
+      "date": "2026-06-04",
       "signal": "green",
       "stale": false,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "신용도 낮은 기업이 돈 빌릴 때 무는 '위험 가산 이자폭'이에요.",
+      "why": "이 값이 치솟으면 = 시장이 '기업들이 빚 못 갚을라'며 겁먹는다는 뜻. 폭락보다 먼저 움직이는 대표 선행지표예요.",
+      "meaning": "지금은 안정적이에요",
+      "arrow": ""
     },
     {
       "name": "투자등급 스프레드",
@@ -43,37 +114,49 @@
       "code": "BAMLC0A0CM",
       "value": 0.74,
       "unit": "%p",
-      "date": "2026-06-03",
+      "date": "2026-06-04",
       "signal": "green",
       "stale": false,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "우량(투자등급) 기업이 돈 빌릴 때 무는 위험 가산폭이에요.",
+      "why": "우량 기업 이자까지 오르면 = 신용 경색이 넓게 번지는 신호.",
+      "meaning": "지금은 안정적이에요",
+      "arrow": ""
     },
     {
       "name": "하이일드 ETF (HYG)",
       "tier": 1,
       "source": "yahoo",
       "code": "HYG",
-      "value": 79.83,
+      "value": 79.43,
       "unit": "$",
-      "date": "2026-06-04",
+      "date": "2026-06-05",
       "signal": "yellow",
       "stale": false,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "위험한 회사채를 모아둔 ETF(상장펀드) 가격이에요.",
+      "why": "20일 평균선 아래로 빠지면 = 위험한 채권을 사람들이 던지는 중이라는 뜻.",
+      "meaning": "약간 주의가 필요해요",
+      "arrow": ""
     },
     {
       "name": "지역은행 ETF (KRE)",
       "tier": 1,
       "source": "yahoo",
       "code": "KRE",
-      "value": 69.98,
+      "value": 70.17,
       "unit": "$",
-      "date": "2026-06-04",
+      "date": "2026-06-05",
       "signal": "green",
       "stale": false,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "미국 지역은행들을 모아둔 ETF 가격이에요.",
+      "why": "지역은행이 흔들리면 금융위기 불씨가 되곤 해요(2023년 SVB 사태처럼).",
+      "meaning": "지금은 안정적이에요",
+      "arrow": ""
     },
     {
       "name": "근원 CPI(전년비)",
@@ -84,9 +167,13 @@
       "unit": "지수",
       "date": "2026-04-01",
       "signal": "yellow",
-      "stale": true,
+      "stale": false,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "변동 큰 항목(식품·에너지)을 뺀 '진짜 물가(근원 CPI)'예요.",
+      "why": "물가가 다시 오르면 = 금리 인하가 늦어져 증시에 부담.",
+      "meaning": "약간 주의가 필요해요",
+      "arrow": ""
     },
     {
       "name": "근원 PCE(전년비)",
@@ -97,9 +184,13 @@
       "unit": "지수",
       "date": "2026-04-01",
       "signal": "yellow",
-      "stale": true,
+      "stale": false,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "미국 중앙은행(연준)이 가장 중시하는 물가 지표(근원 PCE)예요.",
+      "why": "이게 재가속하면 = 연준이 긴축을 더 오래 끌어 증시를 누름.",
+      "meaning": "약간 주의가 필요해요",
+      "arrow": ""
     },
     {
       "name": "실업률",
@@ -108,37 +199,49 @@
       "code": "UNRATE",
       "value": 4.3,
       "unit": "%",
-      "date": "2026-04-01",
+      "date": "2026-05-01",
       "signal": "green",
-      "stale": true,
+      "stale": false,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "일자리 없는 사람의 비율(실업률)이에요.",
+      "why": "갑자기 급등하면 = 경기 침체가 다가온다는 신호.",
+      "meaning": "지금은 안정적이에요",
+      "arrow": ""
     },
     {
       "name": "수익률곡선 2s10s",
       "tier": 2,
       "source": "fred",
       "code": "T10Y2Y",
-      "value": 0.42,
+      "value": 0.38,
       "unit": "%p",
-      "date": "2026-06-04",
+      "date": "2026-06-05",
       "signal": "green",
       "stale": false,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "장기금리(10년) − 단기금리(2년) 차이예요(수익률곡선).",
+      "why": "마이너스(역전)가 되면 = 역사적으로 경기침체 1~2년 전 경고였어요.",
+      "meaning": "지금은 안정적이에요",
+      "arrow": ""
     },
     {
       "name": "VIX 공포지수",
       "tier": 3,
       "source": "fred",
       "code": "VIXCLS",
-      "value": 16.06,
+      "value": 15.4,
       "unit": "",
-      "date": "2026-06-03",
+      "date": "2026-06-04",
       "signal": "green",
       "stale": false,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "시장의 '공포 온도계'(VIX)예요.",
+      "why": "치솟으면 = 투자자들이 급히 보험을 산다는 뜻 = 패닉 분위기.",
+      "meaning": "지금은 안정적이에요",
+      "arrow": ""
     },
     {
       "name": "WTI 유가",
@@ -151,21 +254,145 @@
       "signal": "yellow",
       "stale": false,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "국제 원유(기름) 가격(WTI)이에요.",
+      "why": "급등하면 = 물가·기업 비용이 올라 증시에 부담. 지정학 위기 신호이기도.",
+      "meaning": "약간 주의가 필요해요",
+      "arrow": ""
     },
     {
       "name": "미 10년물 금리",
       "tier": 3,
       "source": "fred",
       "code": "DGS10",
-      "value": 4.49,
+      "value": 4.47,
       "unit": "%",
-      "date": "2026-06-03",
+      "date": "2026-06-04",
       "signal": "yellow",
       "stale": false,
       "missing": false,
-      "skipped": false
+      "skipped": false,
+      "what": "미국 국채 10년물의 이자율이에요.",
+      "why": "급등하면 = 주식의 상대 매력이 떨어지고, 특히 성장주에 타격.",
+      "meaning": "약간 주의가 필요해요",
+      "arrow": ""
     }
+  ],
+  "geo": null,
+  "news": [
+    {
+      "title": "Social media bans on teens risk strengthening Big Tech's grip on the sector, Bluesky exec warns",
+      "link": "https://www.cnbc.com/2026/06/06/bluesky-teen-social-media-ban-monopolies.html",
+      "source": "CNBC",
+      "time": "06/06 14:00",
+      "risk": false,
+      "matched": []
+    },
+    {
+      "title": "Here’s what’s worth streaming in June 2026 on Netflix, Hulu, HBO Max and more",
+      "link": "https://www.marketwatch.com/story/heres-whats-worth-streaming-in-june-2026-on-netflix-hulu-hbo-max-and-more-7c73c539?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "time": "06/06 08:00",
+      "risk": false,
+      "matched": []
+    },
+    {
+      "title": "Amazon unveils latest warehouse robot as tech giants continue AI layoffs",
+      "link": "https://www.cnbc.com/2026/06/05/amazon-robot-proteus-warehouse-ai-layoffs.html",
+      "source": "CNBC",
+      "time": "06/06 07:53",
+      "risk": false,
+      "matched": []
+    },
+    {
+      "title": "S&P 500 sees $1.8 trillion wipeout, Nasdaq tallies biggest point drop on record: What investors need to know about Friday’s selloff",
+      "link": "https://www.marketwatch.com/story/s-p-500-sees-1-8-trillion-wipeout-nasdaq-tallies-biggest-point-drop-on-record-heres-what-investors-need-to-know-about-fridays-selloff-4eb7b490?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "time": "06/06 07:27",
+      "risk": true,
+      "matched": [
+        "selloff"
+      ]
+    },
+    {
+      "title": "‘This would be a one-time event’: How can I take extra money from my 401(k) without triggering higher Medicare premiums?",
+      "link": "https://www.marketwatch.com/story/this-would-be-a-one-time-event-how-can-i-take-extra-money-from-my-401-k-without-triggering-higher-medicare-premiums-fef1586d?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "time": "06/06 07:07",
+      "risk": false,
+      "matched": []
+    },
+    {
+      "title": "We thought we found the perfect luxury retirement community, but it’s millions of dollars in debt. Are we trapped?",
+      "link": "https://www.marketwatch.com/story/we-thought-we-found-the-perfect-luxury-retirement-community-but-its-millions-of-dollars-in-debt-are-we-trapped-cde2e8f5?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "time": "06/06 07:07",
+      "risk": false,
+      "matched": []
+    },
+    {
+      "title": "Iran's threats against this Red Sea choke point are a big vulnerability for the oil market",
+      "link": "https://www.cnbc.com/2026/06/05/iran-war-oil-price-strait-hormuz-bab-el-mandeb-chokepoint.html",
+      "source": "CNBC",
+      "time": "06/06 07:05",
+      "risk": true,
+      "matched": [
+        "iran"
+      ]
+    },
+    {
+      "title": "Bitcoin is suffering from an ‘attention’ deficit, as momentum traders have moved on",
+      "link": "https://www.marketwatch.com/story/bitcoin-is-suffering-from-an-attention-deficit-as-momentum-traders-have-moved-on-17d2c140?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "time": "06/06 06:58",
+      "risk": false,
+      "matched": []
+    },
+    {
+      "title": "Marvell Technology and Flex to join S&P 500 index, replacing Pool and Campbell's",
+      "link": "https://www.cnbc.com/2026/06/05/marvell-technology-flex-sp-500-campbells-pool.html",
+      "source": "CNBC",
+      "time": "06/06 06:36",
+      "risk": false,
+      "matched": []
+    },
+    {
+      "title": "‘No one wears bling’: What does it say about America if people are afraid to wear their jewelry?",
+      "link": "https://www.marketwatch.com/story/no-one-seems-to-wear-their-bling-is-it-safe-to-show-off-your-expensive-jewelry-a807bc55?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "time": "06/06 06:30",
+      "risk": false,
+      "matched": []
+    }
+  ],
+  "calendar": [
+    {
+      "name": "근원 CPI (소비자물가)",
+      "date": "2026-06-10",
+      "kst": "06/10(Wed) 21:30",
+      "kst_full": "2026-06-10 21:30 KST",
+      "days_away": 4
+    },
+    {
+      "name": "근원 PCE (연준 선호 물가)",
+      "date": "2026-06-25",
+      "kst": "06/25(Thu) 21:30",
+      "kst_full": "2026-06-25 21:30 KST",
+      "days_away": 19
+    },
+    {
+      "name": "실업률 (고용보고서)",
+      "date": "2026-07-02",
+      "kst": "07/02(Thu) 21:30",
+      "kst_full": "2026-07-02 21:30 KST",
+      "days_away": 26
+    }
+  ],
+  "onboarding": [
+    "이 신호등은 미국 증시가 '폭락·조정 위험'에 가까운지를 11개 지표로 자동 점검해요.",
+    "🟢평상시 → 🟡경계 → 🟠위험 → 🔴최악 순으로 위험이 커져요. ⚪는 '데이터 부족(판단 보류)'.",
+    "각 지표 카드의 'ⓘ 쉬운 설명'을 누르면 그게 무슨 뜻인지 풀어서 보여줘요.",
+    "⚠️ 이건 투자 '조언'이 아니라 '참고용 온도계'예요. 최종 판단·책임은 본인에게 있어요."
   ],
   "manual_check": [
     "트럼프 내러티브 톤 / 발언",

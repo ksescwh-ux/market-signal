@@ -1,7 +1,7 @@
 {
-  "updated_kst": "2026-06-05 19:09 KST",
-  "updated_iso": "2026-06-05T19:09:07.625935+09:00",
-  "data_date": "2026-06-04",
+  "updated_kst": "2026-06-06 17:17 KST",
+  "updated_iso": "2026-06-06T17:17:30.578514+09:00",
+  "data_date": "2026-06-05",
   "composite": {
     "grade": "green",
     "emoji": "🟢",
@@ -32,7 +32,7 @@
         {
           "name": "하이일드 ETF (HYG)",
           "signal": "yellow",
-          "value": 79.83,
+          "value": 79.43,
           "unit": "$"
         },
         {
@@ -63,22 +63,22 @@
         "rel": 0.04210087536473538
       },
       "percentile": {
-        "하이일드 스프레드": 13,
-        "VIX 공포지수": 26,
+        "하이일드 스프레드": 10,
+        "VIX 공포지수": 16,
         "WTI 유가": 84
       },
       "streak_calm": 13,
       "days_since_danger": 13,
       "narrative": [
         "지금 시장은 한마디로 '잔잔한' 상태예요. 위험 점수는 100점 만점에 14점으로, 지난 1년 평균(16점) 부근이에요.",
-        "특히 시장이 가장 먼저 겁먹는 신용시장(하이일드 스프레드)이 지난 1년 중 하위 13% 수준이라, '기업이 빚을 못 갚을 걱정'은 거의 없는 편안한 자리예요.",
+        "특히 시장이 가장 먼저 겁먹는 신용시장(하이일드 스프레드)이 지난 1년 중 하위 10% 수준이라, '기업이 빚을 못 갚을 걱정'은 거의 없는 편안한 자리예요.",
         "다만 체크포인트도 있어요 — WTI 유가가 95.96$로 심리적 분기점인 100선을 4.04 앞두고 있다는 점 — 게다가 1년 기준으로도 높은 축(상위 16%)이에요.",
         "하이일드 ETF (HYG), 근원 CPI(전년비) 등에 '노란불'이 켜졌지만, 아직 신용시장·투자심리 쪽으로는 번지지 않았어요.",
         "최근 13일째 '평상시'가 이어지고 있어요. 지난주보다 위험 점수는 4점 낮아졌어요."
       ],
       "commentary": {
-        "text": "전반적으로 시장은 '매우 차분'한 상태(위험점수 14)를 유지하고 있지만, 세 가지 노란불이 켜져 있어 주의가 필요해요. 첫째, WTI 유가가 $95.96으로 $100 위험선까지 불과 4달러 남아 있는데, 중동 에너지 분쟁 뉴스(호르무즈 해협 긴장)가 이를 촉발할 수 있어요 — 유가는 기업 비용 상승 → 물가 압력으로 이어져 근원 CPI·PCE 노란불과도 연결됩니다. 둘째, 하이일드 ETF(HYG) 가격이 약세(노란불)지만 신용 스프레드는 여전히 낮아(2.75%p, 하위 13 백분위) 기업 부채 위험은 아직 낮은 상태예요. 셋째, 10년물 금리도 4.49%로 노란불이지만 역사적으로는 높은 위치(위험도 높음)라 하락 시 연쇄 반응 가능성이 있어요. 지켜봐야 할 것은 유가가 $100을 뚫고 올라가면서 물가 기대심리를 부추기는 움직임입니다.",
-        "source": "ai"
+        "text": "지금 시장은 한마디로 '잔잔한' 상태예요. 위험 점수는 100점 만점에 14점으로, 지난 1년 평균(16점) 부근이에요. 특히 시장이 가장 먼저 겁먹는 신용시장(하이일드 스프레드)이 지난 1년 중 하위 10% 수준이라, '기업이 빚을 못 갚을 걱정'은 거의 없는 편안한 자리예요. 다만 체크포인트도 있어요 — WTI 유가가 95.96$로 심리적 분기점인 100선을 4.04 앞두고 있다는 점 — 게다가 1년 기준으로도 높은 축(상위 16%)이에요. 하이일드 ETF (HYG), 근원 CPI(전년비) 등에 '노란불'이 켜졌지만, 아직 신용시장·투자심리 쪽으로는 번지지 않았어요. 최근 13일째 '평상시'가 이어지고 있어요. 지난주보다 위험 점수는 4점 낮아졌어요.",
+        "source": "engine"
       }
     },
     "missing": 0,
@@ -95,9 +95,9 @@
       "tier": 1,
       "source": "fred",
       "code": "BAMLH0A0HYM2",
-      "value": 2.75,
+      "value": 2.74,
       "unit": "%p",
-      "date": "2026-06-03",
+      "date": "2026-06-04",
       "signal": "green",
       "stale": false,
       "missing": false,
@@ -114,7 +114,7 @@
       "code": "BAMLC0A0CM",
       "value": 0.74,
       "unit": "%p",
-      "date": "2026-06-03",
+      "date": "2026-06-04",
       "signal": "green",
       "stale": false,
       "missing": false,
@@ -129,9 +129,9 @@
       "tier": 1,
       "source": "yahoo",
       "code": "HYG",
-      "value": 79.83,
+      "value": 79.43,
       "unit": "$",
-      "date": "2026-06-04",
+      "date": "2026-06-05",
       "signal": "yellow",
       "stale": false,
       "missing": false,
@@ -146,9 +146,9 @@
       "tier": 1,
       "source": "yahoo",
       "code": "KRE",
-      "value": 69.98,
+      "value": 70.17,
       "unit": "$",
-      "date": "2026-06-04",
+      "date": "2026-06-05",
       "signal": "green",
       "stale": false,
       "missing": false,
@@ -199,7 +199,7 @@
       "code": "UNRATE",
       "value": 4.3,
       "unit": "%",
-      "date": "2026-04-01",
+      "date": "2026-05-01",
       "signal": "green",
       "stale": false,
       "missing": false,
@@ -214,9 +214,9 @@
       "tier": 2,
       "source": "fred",
       "code": "T10Y2Y",
-      "value": 0.42,
+      "value": 0.38,
       "unit": "%p",
-      "date": "2026-06-04",
+      "date": "2026-06-05",
       "signal": "green",
       "stale": false,
       "missing": false,
@@ -231,9 +231,9 @@
       "tier": 3,
       "source": "fred",
       "code": "VIXCLS",
-      "value": 16.06,
+      "value": 15.4,
       "unit": "",
-      "date": "2026-06-03",
+      "date": "2026-06-04",
       "signal": "green",
       "stale": false,
       "missing": false,
@@ -265,9 +265,9 @@
       "tier": 3,
       "source": "fred",
       "code": "DGS10",
-      "value": 4.49,
+      "value": 4.47,
       "unit": "%",
-      "date": "2026-06-03",
+      "date": "2026-06-04",
       "signal": "yellow",
       "stale": false,
       "missing": false,
@@ -278,155 +278,114 @@
       "arrow": ""
     }
   ],
-  "geo": {
-    "tone": "혼재",
-    "text": "미 무역대표부가 강제노동 금지 미흡을 이유로 중국, EU, 일본 포함 60개 국가에 10~12.5% 관세 부과를 제안했다.\n 이번 제재는 광범위한 공급망을 건드리면서 시장 불확실성을 키우는 요인이다. 한편 \n이란 외교장관은 미국과의 협상에서 '실질적 진전이 없다'고 밝혔으나, 서방의 베이루트 공격 시 '전면 전쟁 재개'를 경고\n했으며, \n헤즈볼라는 이스라엘-레바논 휴전을 거부\n하면서 중동 긴장이 계속되고 있다.\n\n★연결(메커니즘): 관세 불확실성 → 미 10년물 금리(현재 4.49%, yellow) 변동성 확대, 위험자산 선호도 하락 → VIX 영향. 중동 분쟁 악화 가능성 → WTI 유가(95.96$, yellow) 상승 압력 가중.\n\n★민감도: WTI가 이미 yellow 수준으로 민감하며, 유가 100$ 근처가 위험선. 미 금리도 yellow 상태로 변동성에 민감한 상황. VIX와 하이일드 스프레드는 아직 완화(green)이나, 관세 협상 결과와 중동 정세 변화에 재빠르게 반응할 수 있음.\n\n★지켜볼 트리거: (1) 관세 comment period 진행 중 최종 부과 시점(조율 여부), (2) 중동 휴전 협상 재개 여부 또는 이스라엘의 베이루트 직접 공격 여부.\n\n출처: \n- US Proposes Fresh Tariffs on 60 Economies over Forced Labor Trade Practices - CNBC, https://www.cnbc.com/2026/06/03/us-tariffs-60-economies-dection-301-forced-labor-trade-practices-.html\n- Iran says \"no tangible progress\" made in talks; Hezbollah rejects ceasefire - CBS News, https://www.cbsnews.com/live-updates/iran-us-war-talks-no-progress-israel-lebanon-hezbollah/"
-  },
+  "geo": null,
   "news": [
     {
-      "title": "OpenAI says it will comply with Trump's order requiring AI model reviews before release",
-      "link": "https://www.cnbc.com/2026/06/05/openai-trump-ai-model-review-order.html",
+      "title": "Social media bans on teens risk strengthening Big Tech's grip on the sector, Bluesky exec warns",
+      "link": "https://www.cnbc.com/2026/06/06/bluesky-teen-social-media-ban-monopolies.html",
       "source": "CNBC",
-      "time": "06/05 19:04",
+      "time": "06/06 14:00",
       "risk": false,
-      "matched": [],
-      "ko_title": "OpenAI, 트럼프 행정명령에 따라 모델 출시 전 검토 수행 약속",
-      "summary": "OpenAI가 트럼프 대통령의 AI 모델 출시 전 정부 검토 요구에 응하기로 합의했어요.",
-      "theme": "기타",
-      "important": false
+      "matched": []
     },
     {
-      "title": "I own a house with my sister, but the mortgage is in her name. Could this come back to bite me?",
-      "link": "https://www.marketwatch.com/story/my-older-sister-and-i-co-own-a-home-where-my-son-lives-what-happens-if-she-dies-2913b928?mod=mw_rss_topstories",
+      "title": "Here’s what’s worth streaming in June 2026 on Netflix, Hulu, HBO Max and more",
+      "link": "https://www.marketwatch.com/story/heres-whats-worth-streaming-in-june-2026-on-netflix-hulu-hbo-max-and-more-7c73c539?mod=mw_rss_topstories",
       "source": "MarketWatch",
-      "time": "06/05 18:55",
+      "time": "06/06 08:00",
       "risk": false,
-      "matched": [],
-      "ko_title": "자매와 공동 소유 집, 모기지가 자매 명의일 때 리스크는?",
-      "summary": "부동산 공동소유 시 금융 의무가 한 사람에게만 있을 때의 법적·금융적 위험에 관한 개인 상담이에요.",
-      "theme": "기타",
-      "important": false
+      "matched": []
     },
     {
-      "title": "What SpaceX is really worth, according to the professor called the dean of valuation",
-      "link": "https://www.marketwatch.com/story/what-spacex-is-really-worth-according-to-the-professor-called-the-dean-of-valuation-bab6cdd2?mod=mw_rss_topstories",
-      "source": "MarketWatch",
-      "time": "06/05 18:44",
+      "title": "Amazon unveils latest warehouse robot as tech giants continue AI layoffs",
+      "link": "https://www.cnbc.com/2026/06/05/amazon-robot-proteus-warehouse-ai-layoffs.html",
+      "source": "CNBC",
+      "time": "06/06 07:53",
       "risk": false,
-      "matched": [],
-      "ko_title": "SpaceX 가치 평가, '평가의 대가'가 본 진짜 가치",
-      "summary": "유명 금융학 교수가 SpaceX의 실제 기업 가치를 분석한 내용이에요.",
-      "theme": "기타",
-      "important": false
+      "matched": []
+    },
+    {
+      "title": "S&P 500 sees $1.8 trillion wipeout, Nasdaq tallies biggest point drop on record: What investors need to know about Friday’s selloff",
+      "link": "https://www.marketwatch.com/story/s-p-500-sees-1-8-trillion-wipeout-nasdaq-tallies-biggest-point-drop-on-record-heres-what-investors-need-to-know-about-fridays-selloff-4eb7b490?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "time": "06/06 07:27",
+      "risk": true,
+      "matched": [
+        "selloff"
+      ]
     },
     {
       "title": "‘This would be a one-time event’: How can I take extra money from my 401(k) without triggering higher Medicare premiums?",
       "link": "https://www.marketwatch.com/story/this-would-be-a-one-time-event-how-can-i-take-extra-money-from-my-401-k-without-triggering-higher-medicare-premiums-fef1586d?mod=mw_rss_topstories",
       "source": "MarketWatch",
-      "time": "06/05 18:15",
+      "time": "06/06 07:07",
       "risk": false,
-      "matched": [],
-      "ko_title": "401(k)에서 추가 자금을 인출할 때 메디케어 보험료 상승 피하는 방법",
-      "summary": "은퇴 계좌 인출 전략으로 사회보장 혜택에 미치는 영향을 최소화하는 방법을 다룬 개인 재정 상담이에요.",
-      "theme": "기타",
-      "important": false
+      "matched": []
     },
     {
-      "title": "Actor Tate Donovan sells lush oasis in Texas Hill Country after big price cut",
-      "link": "https://www.marketwatch.com/story/actor-tate-donovan-sells-lush-oasis-in-texas-hill-country-after-big-price-cut-84143e3e?mod=mw_rss_topstories",
+      "title": "We thought we found the perfect luxury retirement community, but it’s millions of dollars in debt. Are we trapped?",
+      "link": "https://www.marketwatch.com/story/we-thought-we-found-the-perfect-luxury-retirement-community-but-its-millions-of-dollars-in-debt-are-we-trapped-cde2e8f5?mod=mw_rss_topstories",
       "source": "MarketWatch",
-      "time": "06/05 18:02",
+      "time": "06/06 07:07",
       "risk": false,
-      "matched": [],
-      "ko_title": "배우 테이트 도노반, 텍사스 힐컨트리 주택 대폭 인하 후 매각",
-      "summary": "연예인의 부동산 거래 소식이에요.",
-      "theme": "기타",
-      "important": false
+      "matched": []
     },
     {
-      "title": "‘This is a tricky subject’: We’re in our 70s and our only child is 40. Do we leave her everything?",
-      "link": "https://www.marketwatch.com/story/it-makes-us-feel-uncomfortable-were-in-our-70s-and-our-only-child-is-40-do-we-tell-her-were-leaving-her-everything-28421776?mod=mw_rss_topstories",
-      "source": "MarketWatch",
-      "time": "06/05 17:56",
-      "risk": false,
-      "matched": [],
-      "ko_title": "70대 부부, 40세 외동녀에게 유산 상속할지 고민 — '까다로운 주제'",
-      "summary": "고령 부부의 유산 계획에 관한 개인 재정 상담이에요.",
-      "theme": "기타",
-      "important": false
-    },
-    {
-      "title": "India scraps tax on overseas bond investors in bid to attract foreign capital and shore up the rupee",
-      "link": "https://www.cnbc.com/2026/06/05/india-tax-overseas-bond-investors.html",
+      "title": "Iran's threats against this Red Sea choke point are a big vulnerability for the oil market",
+      "link": "https://www.cnbc.com/2026/06/05/iran-war-oil-price-strait-hormuz-bab-el-mandeb-chokepoint.html",
       "source": "CNBC",
-      "time": "06/05 17:44",
-      "risk": false,
-      "matched": [],
-      "ko_title": "인도, 해외 채권 투자자 세금 철폐로 외국 자본 유치 및 루피화 방어",
-      "summary": "인도 정부가 국제 채권 투자에 대한 세금을 폐지해 외화 유입과 통화 가치를 지탱하려고 해요.",
-      "theme": "거시",
-      "important": true
-    },
-    {
-      "title": "The stock market is at its frothiest since the global financial crisis, proclaims Citi. Why dip buyers shouldn’t bail yet.",
-      "link": "https://www.marketwatch.com/story/the-stock-market-is-at-its-frothiest-since-the-global-financial-crisis-proclaims-citi-why-dip-buyers-shouldnt-bail-yet-bd66f5a3?mod=mw_rss_topstories",
-      "source": "MarketWatch",
-      "time": "06/05 17:44",
+      "time": "06/06 07:05",
       "risk": true,
       "matched": [
-        "crisis"
-      ],
-      "ko_title": "주가, 글로벌 금융위기 이후 '가장 과열' 상태 — 시티 분석, 매수자는 물러날 필요 없어",
-      "summary": "시티 애널리스트가 현재 주식시장 밸류에이션이 역사적으로 매우 높다고 지적하면서도 추가 상승 여지가 있을 수 있다고 봐요.",
-      "theme": "실적",
-      "important": true
+        "iran"
+      ]
     },
     {
-      "title": "Meet the big winners of 2026 oil price volatility — and why their strategies are now shifting focus",
-      "link": "https://www.cnbc.com/2026/06/05/oil-price-iran-hedge-funds-quant-traders-trends-energy-shock.html",
-      "source": "CNBC",
-      "time": "06/05 17:40",
+      "title": "Bitcoin is suffering from an ‘attention’ deficit, as momentum traders have moved on",
+      "link": "https://www.marketwatch.com/story/bitcoin-is-suffering-from-an-attention-deficit-as-momentum-traders-have-moved-on-17d2c140?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "time": "06/06 06:58",
       "risk": false,
-      "matched": [],
-      "ko_title": "2026년 유가 변동성의 큰 수혜자들 — 전략 초점이 이동 중",
-      "summary": "유가 변동성 확대로 이익을 보는 투자 전략과 그들의 전환 움직임을 다룬 내용이에요.",
-      "theme": "거시",
-      "important": false
+      "matched": []
     },
     {
-      "title": "How the Strait of Hormuz standoff flipped the energy security debate",
-      "link": "https://www.cnbc.com/2026/06/05/iran-war-strait-of-hormuz-renewables-oil-gas.html",
+      "title": "Marvell Technology and Flex to join S&P 500 index, replacing Pool and Campbell's",
+      "link": "https://www.cnbc.com/2026/06/05/marvell-technology-flex-sp-500-campbells-pool.html",
       "source": "CNBC",
-      "time": "06/05 17:39",
+      "time": "06/06 06:36",
       "risk": false,
-      "matched": [],
-      "ko_title": "호르무즈 해협 교착 상태, 에너지 안보 논의 판 바꿨다",
-      "summary": "중동 분쟁이 글로벌 에너지 공급 안정성 논의를 근본적으로 바꾸고 있어요.",
-      "theme": "지정학",
-      "important": true
+      "matched": []
+    },
+    {
+      "title": "‘No one wears bling’: What does it say about America if people are afraid to wear their jewelry?",
+      "link": "https://www.marketwatch.com/story/no-one-seems-to-wear-their-bling-is-it-safe-to-show-off-your-expensive-jewelry-a807bc55?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "time": "06/06 06:30",
+      "risk": false,
+      "matched": []
     }
   ],
   "calendar": [
-    {
-      "name": "실업률 (고용보고서)",
-      "date": "2026-06-05",
-      "kst": "06/05(Fri) 21:30",
-      "kst_full": "2026-06-05 21:30 KST",
-      "days_away": 0
-    },
     {
       "name": "근원 CPI (소비자물가)",
       "date": "2026-06-10",
       "kst": "06/10(Wed) 21:30",
       "kst_full": "2026-06-10 21:30 KST",
-      "days_away": 5
+      "days_away": 4
     },
     {
       "name": "근원 PCE (연준 선호 물가)",
       "date": "2026-06-25",
       "kst": "06/25(Thu) 21:30",
       "kst_full": "2026-06-25 21:30 KST",
-      "days_away": 20
+      "days_away": 19
+    },
+    {
+      "name": "실업률 (고용보고서)",
+      "date": "2026-07-02",
+      "kst": "07/02(Thu) 21:30",
+      "kst_full": "2026-07-02 21:30 KST",
+      "days_away": 26
     }
   ],
   "onboarding": [
