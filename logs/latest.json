@@ -1,6 +1,6 @@
 {
-  "updated_kst": "2026-06-06 17:17 KST",
-  "updated_iso": "2026-06-06T17:17:30.578514+09:00",
+  "updated_kst": "2026-06-07 19:10 KST",
+  "updated_iso": "2026-06-07T19:10:36.133285+09:00",
   "data_date": "2026-06-05",
   "composite": {
     "grade": "green",
@@ -55,29 +55,29 @@
       },
       "divergence": false,
       "proximity": {
-        "name": "WTI 유가",
-        "value": 95.96,
-        "unit": "$",
-        "line": 100,
-        "gap": 4.04,
-        "rel": 0.04210087536473538
+        "name": "미 10년물 금리",
+        "value": 4.47,
+        "unit": "%",
+        "line": 4.7,
+        "gap": 0.23,
+        "rel": 0.05145413870246095
       },
       "percentile": {
         "하이일드 스프레드": 10,
         "VIX 공포지수": 16,
-        "WTI 유가": 84
+        "WTI 유가": 76
       },
-      "streak_calm": 13,
-      "days_since_danger": 13,
+      "streak_calm": 14,
+      "days_since_danger": 14,
       "narrative": [
         "지금 시장은 한마디로 '잔잔한' 상태예요. 위험 점수는 100점 만점에 14점으로, 지난 1년 평균(16점) 부근이에요.",
         "특히 시장이 가장 먼저 겁먹는 신용시장(하이일드 스프레드)이 지난 1년 중 하위 10% 수준이라, '기업이 빚을 못 갚을 걱정'은 거의 없는 편안한 자리예요.",
-        "다만 체크포인트도 있어요 — WTI 유가가 95.96$로 심리적 분기점인 100선을 4.04 앞두고 있다는 점 — 게다가 1년 기준으로도 높은 축(상위 16%)이에요.",
+        "다만 체크포인트도 있어요 — 미 10년물 금리가 4.47%로 심리적 분기점인 4.7선을 0.23 앞두고 있다는 점, 그리고 WTI 유가가 1년 기준 이미 높은 축(상위 24%)이라는 점이에요.",
         "하이일드 ETF (HYG), 근원 CPI(전년비) 등에 '노란불'이 켜졌지만, 아직 신용시장·투자심리 쪽으로는 번지지 않았어요.",
-        "최근 13일째 '평상시'가 이어지고 있어요. 지난주보다 위험 점수는 4점 낮아졌어요."
+        "최근 14일째 '평상시'가 이어지고 있어요. 지난주보다 위험 점수는 4점 낮아졌어요."
       ],
       "commentary": {
-        "text": "지금 시장은 한마디로 '잔잔한' 상태예요. 위험 점수는 100점 만점에 14점으로, 지난 1년 평균(16점) 부근이에요. 특히 시장이 가장 먼저 겁먹는 신용시장(하이일드 스프레드)이 지난 1년 중 하위 10% 수준이라, '기업이 빚을 못 갚을 걱정'은 거의 없는 편안한 자리예요. 다만 체크포인트도 있어요 — WTI 유가가 95.96$로 심리적 분기점인 100선을 4.04 앞두고 있다는 점 — 게다가 1년 기준으로도 높은 축(상위 16%)이에요. 하이일드 ETF (HYG), 근원 CPI(전년비) 등에 '노란불'이 켜졌지만, 아직 신용시장·투자심리 쪽으로는 번지지 않았어요. 최근 13일째 '평상시'가 이어지고 있어요. 지난주보다 위험 점수는 4점 낮아졌어요.",
+        "text": "지금 시장은 한마디로 '잔잔한' 상태예요. 위험 점수는 100점 만점에 14점으로, 지난 1년 평균(16점) 부근이에요. 특히 시장이 가장 먼저 겁먹는 신용시장(하이일드 스프레드)이 지난 1년 중 하위 10% 수준이라, '기업이 빚을 못 갚을 걱정'은 거의 없는 편안한 자리예요. 다만 체크포인트도 있어요 — 미 10년물 금리가 4.47%로 심리적 분기점인 4.7선을 0.23 앞두고 있다는 점, 그리고 WTI 유가가 1년 기준 이미 높은 축(상위 24%)이라는 점이에요. 하이일드 ETF (HYG), 근원 CPI(전년비) 등에 '노란불'이 켜졌지만, 아직 신용시장·투자심리 쪽으로는 번지지 않았어요. 최근 14일째 '평상시'가 이어지고 있어요. 지난주보다 위험 점수는 4점 낮아졌어요.",
         "source": "engine"
       }
     },
@@ -246,11 +246,11 @@
     {
       "name": "WTI 유가",
       "tier": 3,
-      "source": "fred",
+      "source": "yahoo",
       "code": "DCOILWTICO",
-      "value": 95.96,
+      "value": 90.54,
       "unit": "$",
-      "date": "2026-06-01",
+      "date": "2026-06-05",
       "signal": "yellow",
       "stale": false,
       "missing": false,
@@ -281,78 +281,71 @@
   "geo": null,
   "news": [
     {
-      "title": "Social media bans on teens risk strengthening Big Tech's grip on the sector, Bluesky exec warns",
-      "link": "https://www.cnbc.com/2026/06/06/bluesky-teen-social-media-ban-monopolies.html",
-      "source": "CNBC",
-      "time": "06/06 14:00",
+      "title": "Best money market account rates today, Sunday, June 7, 2026: Best account provides 4.01% APY",
+      "link": "https://finance.yahoo.com/personal-finance/banking/article/best-money-market-account-rates-today-sunday-june-7-2026-100000344.html",
+      "source": "Yahoo Finance",
+      "time": "06/07 19:00",
       "risk": false,
       "matched": []
     },
     {
-      "title": "Here’s what’s worth streaming in June 2026 on Netflix, Hulu, HBO Max and more",
-      "link": "https://www.marketwatch.com/story/heres-whats-worth-streaming-in-june-2026-on-netflix-hulu-hbo-max-and-more-7c73c539?mod=mw_rss_topstories",
-      "source": "MarketWatch",
-      "time": "06/06 08:00",
-      "risk": false,
-      "matched": []
-    },
-    {
-      "title": "Amazon unveils latest warehouse robot as tech giants continue AI layoffs",
-      "link": "https://www.cnbc.com/2026/06/05/amazon-robot-proteus-warehouse-ai-layoffs.html",
-      "source": "CNBC",
-      "time": "06/06 07:53",
-      "risk": false,
-      "matched": []
-    },
-    {
-      "title": "S&P 500 sees $1.8 trillion wipeout, Nasdaq tallies biggest point drop on record: What investors need to know about Friday’s selloff",
-      "link": "https://www.marketwatch.com/story/s-p-500-sees-1-8-trillion-wipeout-nasdaq-tallies-biggest-point-drop-on-record-heres-what-investors-need-to-know-about-fridays-selloff-4eb7b490?mod=mw_rss_topstories",
-      "source": "MarketWatch",
-      "time": "06/06 07:27",
+      "title": "Best high-yield savings interest rates today, Sunday, June 7, 2026: Earn up to 4.1% APY",
+      "link": "https://finance.yahoo.com/personal-finance/banking/article/best-high-yield-savings-interest-rates-today-sunday-june-7-2026-100000357.html",
+      "source": "Yahoo Finance",
+      "time": "06/07 19:00",
       "risk": true,
       "matched": [
-        "selloff"
+        "yield"
       ]
     },
     {
-      "title": "‘This would be a one-time event’: How can I take extra money from my 401(k) without triggering higher Medicare premiums?",
-      "link": "https://www.marketwatch.com/story/this-would-be-a-one-time-event-how-can-i-take-extra-money-from-my-401-k-without-triggering-higher-medicare-premiums-fef1586d?mod=mw_rss_topstories",
-      "source": "MarketWatch",
-      "time": "06/06 07:07",
+      "title": "HELOC and home equity loan rates Sunday, June 7, 2026: Truist stays Yahoo's top HELOC lender in June",
+      "link": "https://finance.yahoo.com/personal-finance/mortgages/article/heloc-home-equity-loan-interest-rates-today-sunday-june-7-2026-100000404.html",
+      "source": "Yahoo Finance",
+      "time": "06/07 19:00",
       "risk": false,
       "matched": []
     },
     {
-      "title": "We thought we found the perfect luxury retirement community, but it’s millions of dollars in debt. Are we trapped?",
-      "link": "https://www.marketwatch.com/story/we-thought-we-found-the-perfect-luxury-retirement-community-but-its-millions-of-dollars-in-debt-are-we-trapped-cde2e8f5?mod=mw_rss_topstories",
-      "source": "MarketWatch",
-      "time": "06/06 07:07",
+      "title": "Mortgage and refinance interest rates today, Sunday, June 7, 2026: Fixed rates rising, adjustable rates falling",
+      "link": "https://finance.yahoo.com/personal-finance/mortgages/article/mortgage-refinance-interest-rates-today-sunday-june-7-2026-100000607.html",
+      "source": "Yahoo Finance",
+      "time": "06/07 19:00",
       "risk": false,
       "matched": []
     },
     {
-      "title": "Iran's threats against this Red Sea choke point are a big vulnerability for the oil market",
-      "link": "https://www.cnbc.com/2026/06/05/iran-war-oil-price-strait-hormuz-bab-el-mandeb-chokepoint.html",
+      "title": "Best CD rates today, Sunday, June 7, 2026: Lock in up to 4% APY",
+      "link": "https://finance.yahoo.com/personal-finance/banking/article/best-cd-rates-today-sunday-june-7-2026-100000587.html",
+      "source": "Yahoo Finance",
+      "time": "06/07 19:00",
+      "risk": false,
+      "matched": []
+    },
+    {
+      "title": "‘He’s taking advantage of me’: My husband won’t sell his home so we can combine our finances and live in comfort. Am I unreasonable?",
+      "link": "https://www.marketwatch.com/story/hes-very-short-tempered-my-husband-wont-sell-his-home-so-we-can-combine-our-finances-and-live-in-comfort-am-i-unreasonable-f261176a?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "time": "06/07 16:40",
+      "risk": false,
+      "matched": []
+    },
+    {
+      "title": "100 days of the Iran war: How global markets and the economy have been affected, in charts",
+      "link": "https://www.cnbc.com/2026/06/07/iran-war-100-days-trump-stocks-sp500-bonds-oil.html",
       "source": "CNBC",
-      "time": "06/06 07:05",
+      "time": "06/07 14:00",
       "risk": true,
       "matched": [
+        "war",
         "iran"
       ]
     },
     {
-      "title": "Bitcoin is suffering from an ‘attention’ deficit, as momentum traders have moved on",
-      "link": "https://www.marketwatch.com/story/bitcoin-is-suffering-from-an-attention-deficit-as-momentum-traders-have-moved-on-17d2c140?mod=mw_rss_topstories",
-      "source": "MarketWatch",
-      "time": "06/06 06:58",
-      "risk": false,
-      "matched": []
-    },
-    {
-      "title": "Marvell Technology and Flex to join S&P 500 index, replacing Pool and Campbell's",
-      "link": "https://www.cnbc.com/2026/06/05/marvell-technology-flex-sp-500-campbells-pool.html",
+      "title": "Global week ahead: Soccer isn't the only thing that's kicking off",
+      "link": "https://www.cnbc.com/2026/06/07/investors-watch-world-cup-ai-stocks-spacex-ipo.html",
       "source": "CNBC",
-      "time": "06/06 06:36",
+      "time": "06/07 14:00",
       "risk": false,
       "matched": []
     },
@@ -360,7 +353,15 @@
       "title": "‘No one wears bling’: What does it say about America if people are afraid to wear their jewelry?",
       "link": "https://www.marketwatch.com/story/no-one-seems-to-wear-their-bling-is-it-safe-to-show-off-your-expensive-jewelry-a807bc55?mod=mw_rss_topstories",
       "source": "MarketWatch",
-      "time": "06/06 06:30",
+      "time": "06/07 08:15",
+      "risk": false,
+      "matched": []
+    },
+    {
+      "title": "‘This would be a one-time event’: How can I take extra money from my 401(k) without triggering higher Medicare premiums?",
+      "link": "https://www.marketwatch.com/story/this-would-be-a-one-time-event-how-can-i-take-extra-money-from-my-401-k-without-triggering-higher-medicare-premiums-fef1586d?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "time": "06/07 07:51",
       "risk": false,
       "matched": []
     }
@@ -371,21 +372,21 @@
       "date": "2026-06-10",
       "kst": "06/10(Wed) 21:30",
       "kst_full": "2026-06-10 21:30 KST",
-      "days_away": 4
+      "days_away": 3
     },
     {
       "name": "근원 PCE (연준 선호 물가)",
       "date": "2026-06-25",
       "kst": "06/25(Thu) 21:30",
       "kst_full": "2026-06-25 21:30 KST",
-      "days_away": 19
+      "days_away": 18
     },
     {
       "name": "실업률 (고용보고서)",
       "date": "2026-07-02",
       "kst": "07/02(Thu) 21:30",
       "kst_full": "2026-07-02 21:30 KST",
-      "days_away": 26
+      "days_away": 25
     }
   ],
   "onboarding": [
